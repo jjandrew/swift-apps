@@ -91,4 +91,40 @@ class tamagotchi_test: XCTestCase {
         //assert
         XCTAssertEqual(actual, 3)
     }
+    
+    func testDisciplineCanBeLessThan100AndMoreThan0() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.discipline = 60
+        
+        //act
+        let actual = tamagotchi.makeSureDisciplineIsLessThan100AndMoreThan0()
+        
+        //assert
+        XCTAssertEqual(actual, 60)
+    }
+    
+    func testDisciplineCantBeMoreThan100() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.discipline = 150
+        
+        //act
+        let actual = tamagotchi.makeSureDisciplineIsLessThan100AndMoreThan0()
+        
+        //assert
+        XCTAssertEqual(actual, 100)
+    }
+    
+    func testDisciplineCantBeLessThan0() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.discipline = -50
+        
+        //act
+        let actual = tamagotchi.makeSureDisciplineIsLessThan100AndMoreThan0()
+        
+        //assert
+        XCTAssertEqual(actual, 0)
+    }
 }
