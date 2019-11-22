@@ -67,4 +67,28 @@ class tamagotchi_test: XCTestCase {
         //assert
         XCTAssertFalse(actual)
     }
+    
+    func testHealthCantBeMoreThan5() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.health = 7
+        
+        //act
+        let actual = tamagotchi.makeSureHealthCantBeMoreThan5()
+        
+        //assert
+        XCTAssertEqual(actual, 5)
+    }
+    
+    func testHealthCanBeLessThan5() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.health = 3
+        
+        //act
+        let actual = tamagotchi.makeSureHealthCantBeMoreThan5()
+        
+        //assert
+        XCTAssertEqual(actual, 3)
+    }
 }

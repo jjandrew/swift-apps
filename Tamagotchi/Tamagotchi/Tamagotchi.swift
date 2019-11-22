@@ -11,9 +11,10 @@ import Foundation
 class Tamagotchi {
     static let lifespan = 26
     var age = 0
-    var health = 4
+    var health = 5
     static let minHealth = 0
-
+    static let maxHealth = 5
+    
     func checkDeathByAge() -> Bool {
         if age > Tamagotchi.lifespan {
             return true
@@ -24,8 +25,6 @@ class Tamagotchi {
     }
         
     func checkDeathByHearts() -> Bool {
-            if health <= Tamagotchi.minHealth {
-        }
         if health <= Tamagotchi.minHealth {
             return true
         } else {
@@ -33,4 +32,10 @@ class Tamagotchi {
         }
     }
     
+    func makeSureHealthCantBeMoreThan5() -> Int {
+        if health > Tamagotchi.maxHealth {
+            health = 5
+        }
+        return health
+    }
 }

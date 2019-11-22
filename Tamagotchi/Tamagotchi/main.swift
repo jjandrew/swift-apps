@@ -8,4 +8,13 @@
 
 import Foundation
 
-
+func testHealthCantBeMoreThan5() {
+    //arrange
+    let tamagotchi = Tamagotchi()
+    
+    //act
+//    let actual = tamagotchi.
+    
+    //assert
+//    XCTAssertEqual()
+}
