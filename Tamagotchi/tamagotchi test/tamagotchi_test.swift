@@ -26,7 +26,7 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.age = 30
         
         //act
-        let actual = tamagotchi.checkDead()
+        let actual = tamagotchi.checkDeathByAge()
         
         //assert
         XCTAssertTrue(actual)
@@ -38,7 +38,31 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.age = 8
         
         //act
-        let actual = tamagotchi.checkDead()
+        let actual = tamagotchi.checkDeathByAge()
+        
+        //assert
+        XCTAssertFalse(actual)
+    }
+    
+    func testTamagotchiCheckDeadReturnTrueIfHeartsAreZero() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.health = 0
+        
+        //act
+        let actual = tamagotchi.checkDeathByHearts()
+        
+        //assert
+        XCTAssertTrue(actual)
+    }
+    
+    func testTamagotchiCheckDeadReturnsFalseIfHeartsAreZero() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.health = 4
+        
+        //act
+        let actual = tamagotchi.checkDeathByHearts()
         
         //assert
         XCTAssertFalse(actual)
