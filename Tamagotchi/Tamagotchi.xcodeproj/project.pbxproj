@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C6C6EFC82387F4B400A07E45 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6EFC72387F4B400A07E45 /* Tamagotchi.swift */; };
+		C6C6EFC92387F4B400A07E45 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C6EFC72387F4B400A07E45 /* Tamagotchi.swift */; };
 		C6C9A61A238421A2004C6285 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C9A619238421A2004C6285 /* main.swift */; };
 		C6C9A627238421D4004C6285 /* tamagotchi_test.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C9A626238421D4004C6285 /* tamagotchi_test.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C6C6EFC72387F4B400A07E45 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 		C6C9A616238421A2004C6285 /* Tamagotchi */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tamagotchi; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C9A619238421A2004C6285 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C6C9A624238421D4004C6285 /* tamagotchi test.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tamagotchi test.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				C6C9A619238421A2004C6285 /* main.swift */,
+				C6C6EFC72387F4B400A07E45 /* Tamagotchi.swift */,
 			);
 			path = Tamagotchi;
 			sourceTree = "<group>";
@@ -173,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6C6EFC82387F4B400A07E45 /* Tamagotchi.swift in Sources */,
 				C6C9A61A238421A2004C6285 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6C6EFC92387F4B400A07E45 /* Tamagotchi.swift in Sources */,
 				C6C9A627238421D4004C6285 /* tamagotchi_test.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

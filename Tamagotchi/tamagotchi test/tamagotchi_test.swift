@@ -10,12 +10,37 @@ import XCTest
 
 class tamagotchi_test: XCTestCase {
     
-    func testTamagotchiWothNoArgumentsReturnsNonNilObject() {
+    func testTamagotchiWothNoArgumentsReturnsNonNilObjectWithDefaultValuesSet() {
         //arrange
         //act
         let tamagotchi = Tamagotchi()
         //assert
         XCTAssertNotNil(tamagotchi)
+        XCTAssertEqual(Tamagotchi.lifespan, 26)
+        
     }
     
+    func testTamagotchiCheckDeadReturnsTrueIfAgeIsGreaterThanLifespan() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.age = 30
+        
+        //act
+        let actual = tamagotchi.checkDead()
+        
+        //assert
+        XCTAssertTrue(actual)
+    }
+    
+    func testTamagotchiCheckDeadReturnFalseIfAgeIsLessThanLifespan() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.age = 8
+        
+        //act
+        let actual = tamagotchi.checkDead()
+        
+        //assert
+        XCTAssertFalse(actual)
+    }
 }
