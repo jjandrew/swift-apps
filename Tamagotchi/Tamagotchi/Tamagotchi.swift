@@ -17,6 +17,9 @@ class Tamagotchi {
     var discipline = 50
     static let minDiscipline = 0
     static let maxDiscipline = 100
+    var hunger = 5
+    static let maxHunger = 10
+    static let minHunger = 0
     
     func deathByAge() -> Bool {
         if age > Tamagotchi.lifespan {
@@ -55,5 +58,15 @@ class Tamagotchi {
     func birthday() -> Int {
         age += 1
         return age
+    }
+    
+    func hungerWithinRange() -> Int {
+        if hunger > Tamagotchi.maxHunger {
+            hunger = 10
+        }
+        if hunger < Tamagotchi.minHunger {
+            hunger = 0
+        }
+        return hunger
     }
 }
