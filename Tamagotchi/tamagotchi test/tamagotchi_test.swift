@@ -176,28 +176,28 @@ class tamagotchi_test: XCTestCase {
         XCTAssertEqual(actual, 0)
     }
     
-    func testEatFunctionHungerCanBeLessThan10AndMoreThan0() {
+    func testEatIncreasesHungerBy1() {
         //arrange
         let tamagotchi = Tamagotchi()
-        tamagotchi.hunger = 7
+        let originalHunger = tamagotchi.hunger
         
         //act
-        let actual = tamagotchi.eat()
+        tamagotchi.eat()
         
         //assert
-        XCTAssertEqual(actual, 8)
+        XCTAssertEqual(tamagotchi.hunger, originalHunger + 1)
     }
     
-    func testEatFunctionHungerCantBeMoreThan100() {
+    func testEatFunctionHungerCantBeMoreThan10() {
         //arrange
         let tamagotchi = Tamagotchi()
-        tamagotchi.hunger = 9
+        tamagotchi.hunger = 12
         
         //act
-        let actual = tamagotchi.eat()
+        tamagotchi.eat()
         
         //assert
-        XCTAssertEqual(actual, 10)
+        XCTAssertEqual(tamagotchi.hunger, 10)
     }
     
     func testEatFunctionHungerCantBeLessThan0() {
@@ -206,10 +206,10 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.hunger = -50
         
         //act
-        let actual = tamagotchi.eat()
+        tamagotchi.eat()
         
         //assert
-        XCTAssertEqual(actual, 0)
+        XCTAssertEqual(tamagotchi.hunger, 0)
     }
     
     func testWeightDeathWhenFalse() {

@@ -88,19 +88,27 @@ class Tamagotchi {
         }
     }
     
-    func death() {
-        deathByHearts()
-        deathByAge()
-        weightDeath()
+    func hasDied() {
+        let heartDeath = deathByHearts()
+        let ageDeath = deathByAge()
+        let deathWeight = weightDeath()
+        if heartDeath == true {
+            print("ooww")
+        } else if ageDeath == true {
+            print("dead")
+        } else if deathWeight == true {
+            print("dead")
+        }
     }
     
-    func eat() -> Int {
+    func eat() {
         hunger += 1
         hungerWithinRange()
-        return hunger
+        weight += 10
+        hasDied()
     }
     
-    func Discipline() -> Int {
-        return discipline
+    func Discipline() {
+        
     }
 }

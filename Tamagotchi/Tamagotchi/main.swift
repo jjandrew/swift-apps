@@ -8,13 +8,17 @@
 
 import Foundation
 
-func testHealthCantBeMoreThan5() {
-    //arrange
-    let tamagotchi = Tamagotchi()
+let tamagotchi = Tamagotchi()
+
+func main() {
+    var end = 0
+    repeat {
+        print("Health:", tamagotchi.health)
+        print("Discipline:", tamagotchi.discipline)
+        print("Weight:", tamagotchi.weight)
+        print("Age:", tamagotchi.age)
+        print("Hunger:", tamagotchi.hunger)
+    } while end == 0
     
-    //act
-//    let actual = tamagotchi.
-    
-    //assert
-//    XCTAssertEqual()
 }
+
