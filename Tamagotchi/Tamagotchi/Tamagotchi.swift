@@ -69,4 +69,10 @@ class Tamagotchi {
         }
         return hunger
     }
+    
+    func eat() -> Int {
+        hunger += 1
+        hungerWithinRange()
+        return hunger
+    }
 }
