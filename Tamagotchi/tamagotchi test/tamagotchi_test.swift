@@ -211,4 +211,35 @@ class tamagotchi_test: XCTestCase {
         //assert
         XCTAssertEqual(actual, 0)
     }
+    
+    func testWeightDeathWhenFalse() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.weight = 70
+        //act
+        let actual = tamagotchi.weightDeath()
+        //assert
+        XCTAssertFalse(actual)
+    }
+    
+    func testWeightDeathWhenOverweight() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.weight = 110
+        //act
+        let actual = tamagotchi.weightDeath()
+        //assert
+        XCTAssertTrue(actual)
+    }
+    
+    func testWeightDeathWhenUnderweight() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.weight = 5
+        //act
+        let actual = tamagotchi.weightDeath()
+        //assert
+        XCTAssertTrue(actual)
+    }
+    
 }

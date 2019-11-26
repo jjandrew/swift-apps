@@ -20,6 +20,9 @@ class Tamagotchi {
     var hunger = 5
     static let maxHunger = 10
     static let minHunger = 0
+    var weight = 50
+    static let maxWeight = 100
+    static let minWeight = 10
     
     func deathByAge() -> Bool {
         if age > Tamagotchi.lifespan {
@@ -70,9 +73,34 @@ class Tamagotchi {
         return hunger
     }
     
+    func weightDeath() -> Bool {
+        if weight > Tamagotchi.maxWeight {
+            health = 0
+            let dead = deathByHearts()
+            return dead
+        } else if weight < Tamagotchi.minWeight {
+            health = 0
+            let dead = deathByHearts()
+            return dead
+        } else {
+            let dead = false
+            return dead
+        }
+    }
+    
+    func death() {
+        deathByHearts()
+        deathByAge()
+        weightDeath()
+    }
+    
     func eat() -> Int {
         hunger += 1
         hungerWithinRange()
         return hunger
+    }
+    
+    func Discipline() -> Int {
+        return discipline
     }
 }
