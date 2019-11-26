@@ -18,7 +18,7 @@ class Tamagotchi {
     static let minDiscipline = 0
     static let maxDiscipline = 100
     
-    func checkDeathByAge() -> Bool {
+    func deathByAge() -> Bool {
         if age > Tamagotchi.lifespan {
             return true
         } else {
@@ -27,7 +27,7 @@ class Tamagotchi {
     
     }
         
-    func checkDeathByHearts() -> Bool {
+    func deathByHearts() -> Bool {
         if health <= Tamagotchi.minHealth {
             return true
         } else {
@@ -35,14 +35,14 @@ class Tamagotchi {
         }
     }
     
-    func makeSureHealthCantBeMoreThan5() -> Int {
+    func healthWithinRange() -> Int {
         if health > Tamagotchi.maxHealth {
             health = 5
         }
         return health
     }
     
-    func makeSureDisciplineIsLessThan100AndMoreThan0() -> Int {
+    func disciplineWithinRange() -> Int {
         if discipline > Tamagotchi.maxDiscipline {
             discipline = 100
         }
@@ -50,5 +50,10 @@ class Tamagotchi {
             discipline = 0
         }
         return discipline
+    }
+    
+    func birthday() -> Int {
+        age += 1
+        return age
     }
 }

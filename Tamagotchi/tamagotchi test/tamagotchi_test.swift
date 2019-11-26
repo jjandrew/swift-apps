@@ -26,7 +26,7 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.age = 30
         
         //act
-        let actual = tamagotchi.checkDeathByAge()
+        let actual = tamagotchi.deathByAge()
         
         //assert
         XCTAssertTrue(actual)
@@ -38,7 +38,7 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.age = 8
         
         //act
-        let actual = tamagotchi.checkDeathByAge()
+        let actual = tamagotchi.deathByAge()
         
         //assert
         XCTAssertFalse(actual)
@@ -50,7 +50,7 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.health = 0
         
         //act
-        let actual = tamagotchi.checkDeathByHearts()
+        let actual = tamagotchi.deathByHearts()
         
         //assert
         XCTAssertTrue(actual)
@@ -62,7 +62,7 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.health = 4
         
         //act
-        let actual = tamagotchi.checkDeathByHearts()
+        let actual = tamagotchi.deathByHearts()
         
         //assert
         XCTAssertFalse(actual)
@@ -74,7 +74,7 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.health = 7
         
         //act
-        let actual = tamagotchi.makeSureHealthCantBeMoreThan5()
+        let actual = tamagotchi.healthWithinRange()
         
         //assert
         XCTAssertEqual(actual, 5)
@@ -86,7 +86,7 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.health = 3
         
         //act
-        let actual = tamagotchi.makeSureHealthCantBeMoreThan5()
+        let actual = tamagotchi.healthWithinRange()
         
         //assert
         XCTAssertEqual(actual, 3)
@@ -98,7 +98,7 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.discipline = 60
         
         //act
-        let actual = tamagotchi.makeSureDisciplineIsLessThan100AndMoreThan0()
+        let actual = tamagotchi.disciplineWithinRange()
         
         //assert
         XCTAssertEqual(actual, 60)
@@ -110,7 +110,7 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.discipline = 150
         
         //act
-        let actual = tamagotchi.makeSureDisciplineIsLessThan100AndMoreThan0()
+        let actual = tamagotchi.disciplineWithinRange()
         
         //assert
         XCTAssertEqual(actual, 100)
@@ -122,9 +122,21 @@ class tamagotchi_test: XCTestCase {
         tamagotchi.discipline = -50
         
         //act
-        let actual = tamagotchi.makeSureDisciplineIsLessThan100AndMoreThan0()
+        let actual = tamagotchi.disciplineWithinRange()
         
         //assert
         XCTAssertEqual(actual, 0)
+    }
+    
+    func checkBirthdayFunction() {
+        //arrange
+        let tamagotchi = Tamagotchi()
+        tamagotchi.age = 2
+        
+        //act
+        let actual = tamagotchi.birthday()
+        
+        //assert
+        XCTAssertEqual(actual, 3)
     }
 }
