@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3F78EB23CBAE130075AA76 /* starterCars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3F78EA23CBAE130075AA76 /* starterCars.swift */; };
 		0D41072B23C8C89200811CF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D41072A23C8C89200811CF6 /* AppDelegate.swift */; };
 		0D41072D23C8C89200811CF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D41072C23C8C89200811CF6 /* SceneDelegate.swift */; };
 		0D41072F23C8C89200811CF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D41072E23C8C89200811CF6 /* ViewController.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D3F78EA23CBAE130075AA76 /* starterCars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = starterCars.swift; sourceTree = "<group>"; };
 		0D41072723C8C89200811CF6 /* CarCustomiser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarCustomiser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D41072A23C8C89200811CF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0D41072C23C8C89200811CF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				0D41073523C8C89C00811CF6 /* LaunchScreen.storyboard */,
 				0D41073823C8C89C00811CF6 /* Info.plist */,
 				0D41075A23C8CAE000811CF6 /* Car.swift */,
+				0D3F78EA23CBAE130075AA76 /* starterCars.swift */,
 			);
 			path = CarCustomiser;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				0D41072F23C8C89200811CF6 /* ViewController.swift in Sources */,
 				0D41072B23C8C89200811CF6 /* AppDelegate.swift in Sources */,
 				0D41075B23C8CAE000811CF6 /* Car.swift in Sources */,
+				0D3F78EB23CBAE130075AA76 /* starterCars.swift in Sources */,
 				0D41072D23C8C89200811CF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
