@@ -12,9 +12,10 @@ class ViewController: UIViewController {
     
     @IBOutlet var engineAndExhaustPackage: UISwitch!
     @IBOutlet var tiresPackage: UISwitch!
+
     @IBOutlet var brakesPackage: UISwitch!
-    @IBOutlet var suspensionPackage: UISwitch!
     
+    @IBOutlet var suspensionPackage: UISwitch!
     @IBOutlet var carStatistics: UILabel!
     @IBOutlet var remainingFundsDisplay: UILabel!
     
@@ -115,10 +116,10 @@ class ViewController: UIViewController {
     
     @IBAction func suspensionPackageToggle(_ sender: Any) {
         if suspensionPackage.isOn {
-            car?.acceleration += 1.0
+            car?.acceleration += 0.5
             remainingFunds -= 250
         } else {
-            car?.acceleration -= 1.0
+            car?.acceleration -= 0.5
             remainingFunds += 250
         }
         checkPrices()

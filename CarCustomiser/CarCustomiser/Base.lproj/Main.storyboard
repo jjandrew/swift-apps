@@ -79,20 +79,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="CFd-Jg-AfH">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UQp-o1-YbU">
                                 <rect key="frame" x="324" y="349" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="brakesPackageToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ctz-Cf-AwQ"/>
-                                    <action selector="tiresPackageToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="V7M-aI-0Ks"/>
+                                    <action selector="brakesPackageToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="126-tn-pIK"/>
                                 </connections>
                             </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x8j-YN-Z6I">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tr0-ZS-h3a">
                                 <rect key="frame" x="324" y="388" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="suspensionPackageToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="LPD-BP-wGF"/>
-                                    <action selector="tiresPackageToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="X5f-KX-Sfk"/>
+                                    <action selector="suspensionPackageToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="bdj-c8-bqc"/>
                                 </connections>
                             </switch>
                         </subviews>
@@ -100,11 +98,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="brakesPackage" destination="CFd-Jg-AfH" id="u5p-N7-eFx"/>
+                        <outlet property="brakesPackage" destination="UQp-o1-YbU" id="6F3-SK-sGI"/>
                         <outlet property="carStatistics" destination="yAR-mt-wAJ" id="DHh-Ze-XrQ"/>
                         <outlet property="engineAndExhaustPackage" destination="CG8-52-iDv" id="NRK-nX-nFu"/>
                         <outlet property="remainingFundsDisplay" destination="qDb-cT-9a2" id="gjA-6f-uBl"/>
-                        <outlet property="suspensionPackage" destination="x8j-YN-Z6I" id="u0Z-e8-4aW"/>
+                        <outlet property="suspensionPackage" destination="tr0-ZS-h3a" id="XFD-X8-D9U"/>
                         <outlet property="tiresPackage" destination="wih-m0-HOx" id="7ib-6O-5JO"/>
                     </connections>
                 </viewController>
