@@ -10,9 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var tamagotchiStats: UILabel!
+    
+    var tamagotchi: Tamagotchi? {
+        didSet {
+            tamagotchiStats.text = tamagotchi?.displayStats()
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tamagotchi = starterTamagotchis.tamagotchis[0]
     }
 
 
