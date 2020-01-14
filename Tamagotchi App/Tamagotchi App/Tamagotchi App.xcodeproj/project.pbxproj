@@ -15,6 +15,7 @@
 		C6CA1DDC23CDE9E100EDA4D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6CA1DDA23CDE9E100EDA4D7 /* LaunchScreen.storyboard */; };
 		C6CA1DE723CDE9E100EDA4D7 /* Tamagotchi_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1DE623CDE9E100EDA4D7 /* Tamagotchi_AppTests.swift */; };
 		C6CA1DF223CDE9E100EDA4D7 /* Tamagotchi_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1DF123CDE9E100EDA4D7 /* Tamagotchi_AppUITests.swift */; };
+		C6CA1E0423CDEC8F00EDA4D7 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CA1E0323CDEC8F00EDA4D7 /* Tamagotchi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C6CA1DED23CDE9E100EDA4D7 /* Tamagotchi AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tamagotchi AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CA1DF123CDE9E100EDA4D7 /* Tamagotchi_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi_AppUITests.swift; sourceTree = "<group>"; };
 		C6CA1DF323CDE9E100EDA4D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6CA1E0323CDEC8F00EDA4D7 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C6CA1DD823CDE9E100EDA4D7 /* Assets.xcassets */,
 				C6CA1DDA23CDE9E100EDA4D7 /* LaunchScreen.storyboard */,
 				C6CA1DDD23CDE9E100EDA4D7 /* Info.plist */,
+				C6CA1E0323CDEC8F00EDA4D7 /* Tamagotchi.swift */,
 			);
 			path = "Tamagotchi App";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6CA1E0423CDEC8F00EDA4D7 /* Tamagotchi.swift in Sources */,
 				C6CA1DD423CDE9E000EDA4D7 /* ViewController.swift in Sources */,
 				C6CA1DD023CDE9E000EDA4D7 /* AppDelegate.swift in Sources */,
 				C6CA1DD223CDE9E000EDA4D7 /* SceneDelegate.swift in Sources */,
