@@ -18,6 +18,7 @@ func main() {
         print("Weight:", tamagotchi.weight)
         print("Age:", tamagotchi.age)
         print("Hunger:", tamagotchi.hunger)
+        end = 1
     } while end == 0
     
 }
