@@ -48,6 +48,15 @@ class ViewController: UIViewController {
             carNumber = 0
         }
         car = StarterCars.cars[carNumber]
+        engineAndExhaustPackage.isEnabled = true
+        tiresPackage.isEnabled = true
+        brakesPackage.isEnabled = true
+        suspensionPackage.isEnabled = true
+        engineAndExhaustPackage.setOn(false, animated: true)
+        tiresPackage.setOn(false, animated: true)
+        brakesPackage.setOn(false, animated: true)
+        suspensionPackage.setOn(false, animated: true)
+        remainingFunds = 800
     }
 
     func checkPrices() {
