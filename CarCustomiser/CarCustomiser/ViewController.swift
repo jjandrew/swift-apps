@@ -12,13 +12,13 @@ class ViewController: UIViewController {
     
     @IBOutlet var engineAndExhaustPackage: UISwitch!
     @IBOutlet var tiresPackage: UISwitch!
-
     @IBOutlet var brakesPackage: UISwitch!
-    
     @IBOutlet var suspensionPackage: UISwitch!
     @IBOutlet var carStatistics: UILabel!
     @IBOutlet var remainingFundsDisplay: UILabel!
+    @IBOutlet var remainingTimeDisplay: UILabel!
     
+    var timeRemaining = 30
     let maxFunds = 800
     var remainingFunds = 800 {
         didSet {
@@ -35,29 +35,35 @@ class ViewController: UIViewController {
         }
     }
     
+    var timer: Timer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         car = StarterCars.cars[0]
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+        remainingTimeDisplay.text = "\(timeRemaining)"
         remainingFundsDisplay.text = "Remaining Funds: \(remainingFunds)"
     }
 
     @IBAction func nextCar(_ sender: Any) {
-        let length = StarterCars.cars.count
-        carNumber += 1
-        if carNumber >= length {
-            carNumber = 0
+        if timeRemaining > 0 {
+            let length = StarterCars.cars.count
+            carNumber += 1
+            if carNumber >= length {
+                carNumber = 0
+            }
+            car = StarterCars.cars[carNumber]
+            engineAndExhaustPackage.isEnabled = true
+            tiresPackage.isEnabled = true
+            brakesPackage.isEnabled = true
+            suspensionPackage.isEnabled = true
+            engineAndExhaustPackage.setOn(false, animated: true)
+            tiresPackage.setOn(false, animated: true)
+            brakesPackage.setOn(false, animated: true)
+            suspensionPackage.setOn(false, animated: true)
+            remainingFunds = maxFunds
         }
-        car = StarterCars.cars[carNumber]
-        engineAndExhaustPackage.isEnabled = true
-        tiresPackage.isEnabled = true
-        brakesPackage.isEnabled = true
-        suspensionPackage.isEnabled = true
-        engineAndExhaustPackage.setOn(false, animated: true)
-        tiresPackage.setOn(false, animated: true)
-        brakesPackage.setOn(false, animated: true)
-        suspensionPackage.setOn(false, animated: true)
-        remainingFunds = maxFunds
     }
 
     func checkPrices() {
@@ -139,5 +145,19 @@ class ViewController: UIViewController {
         checkPrices()
     }
     
+    @objc func countdown() {
+        if timeRemaining > 0{
+            timeRemaining -= 1
+            remainingTimeDisplay.text = "\(timeRemaining)"
+        } else {
+            timer?.invalidate()
+            engineAndExhaustPackage.isEnabled = false
+            tiresPackage.isEnabled = false
+            brakesPackage.isEnabled = false
+            suspensionPackage.isEnabled = false
+        }
+    }
     
+    // optional alert that shows finish Stats and how much money they spent
+    // add finished button which shows popup before timer = 0
 }

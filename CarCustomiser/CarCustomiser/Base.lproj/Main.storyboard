@@ -56,7 +56,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remaining Funds" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDb-cT-9a2">
-                                <rect key="frame" x="-38" y="543" width="374" height="21"/>
+                                <rect key="frame" x="20" y="466" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration" identifier="remainingFundsLabel"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -100,6 +100,14 @@
                                     <action selector="suspensionPackageToggle:" destination="BYZ-38-t0r" eventType="valueChanged" id="bdj-c8-bqc"/>
                                 </connections>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Left" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbd-j5-BeJ">
+                                <rect key="frame" x="298" y="44" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="timeRemainingLabel"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -109,6 +117,7 @@
                         <outlet property="carStatistics" destination="yAR-mt-wAJ" id="DHh-Ze-XrQ"/>
                         <outlet property="engineAndExhaustPackage" destination="CG8-52-iDv" id="NRK-nX-nFu"/>
                         <outlet property="remainingFundsDisplay" destination="qDb-cT-9a2" id="gjA-6f-uBl"/>
+                        <outlet property="remainingTimeDisplay" destination="zbd-j5-BeJ" id="JZs-Ka-e8y"/>
                         <outlet property="suspensionPackage" destination="tr0-ZS-h3a" id="XFD-X8-D9U"/>
                         <outlet property="tiresPackage" destination="wih-m0-HOx" id="7ib-6O-5JO"/>
                     </connections>
