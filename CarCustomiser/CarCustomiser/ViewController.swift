@@ -126,9 +126,13 @@ class ViewController: UIViewController {
     @IBAction func suspensionPackageToggle(_ sender: Any) {
         if suspensionPackage.isOn {
             car?.acceleration += 0.5
+            let temp = String(format:"%.1f", car!.acceleration)
+            car?.acceleration = Double(temp)!
             remainingFunds -= 250
         } else {
             car?.acceleration -= 0.5
+            let temp = String(format:"%.1f", car!.acceleration)
+            car?.acceleration = Double(temp)!
             remainingFunds += 250
         }
         checkPrices()
