@@ -22,6 +22,18 @@ class CarCustomiserUITests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
+    
+    func testDisplayStatsAreLoaded() {
+        let app = XCUIApplication()
+        app.launch()
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "carStats").label, """
+        Make: Mazda
+        Model: MX-5
+        Top Speed: 125mph
+        Acceleration (0-60 in): 7.7s
+        Handling: 5
+        """)
+    }
 
     func testWhenBoughtEngineAndTBrakesPackagesTiresPackageIsDisabled() {
         // UI tests must launch the application that they test.
@@ -38,6 +50,29 @@ class CarCustomiserUITests: XCTestCase {
         
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+    }
+    
+    func testWhenNextCarButtonPressedUpgradesAreReset() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.switches["engineSwitch"].tap()
+        app.switches["brakesSwitch"].tap()
+        app.buttons["nextCarButton"].tap()
+        
+        XCTAssertEqual(app.switches["tiresSwitch"].isSelected, false)
+        XCTAssertEqual(app.switches["suspensionSwitch"].isSelected, false)
+
+    }
+    
+    func testRemainingFundsIsUpdated() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.switches["engineSwitch"].tap()
+        app.switches["brakesSwitch"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching:.any, identifier: "remainingFundsLabel").label, "Remaining Funds: 50")
     }
 
     func testLaunchPerformance() {
