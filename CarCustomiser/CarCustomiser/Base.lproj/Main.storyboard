@@ -108,6 +108,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="         " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rI-UY-93k">
+                                <rect key="frame" x="20" y="507" width="374" height="259"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ntY-ls-XTV">
+                                <rect key="frame" x="286" y="193" width="108" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Finish Selection"/>
+                                <connections>
+                                    <action selector="finishSelectionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5ja-kk-UhC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -119,6 +135,7 @@
                         <outlet property="remainingFundsDisplay" destination="qDb-cT-9a2" id="gjA-6f-uBl"/>
                         <outlet property="remainingTimeDisplay" destination="zbd-j5-BeJ" id="JZs-Ka-e8y"/>
                         <outlet property="suspensionPackage" destination="tr0-ZS-h3a" id="XFD-X8-D9U"/>
+                        <outlet property="timerDoneDisplay" destination="4rI-UY-93k" id="2Zh-yl-eXG"/>
                         <outlet property="tiresPackage" destination="wih-m0-HOx" id="7ib-6O-5JO"/>
                     </connections>
                 </viewController>

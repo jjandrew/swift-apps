@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet var carStatistics: UILabel!
     @IBOutlet var remainingFundsDisplay: UILabel!
     @IBOutlet var remainingTimeDisplay: UILabel!
+    @IBOutlet var timerDoneDisplay: UILabel!
     
     var timeRemaining = 30
     let maxFunds = 800
@@ -46,8 +47,14 @@ class ViewController: UIViewController {
         remainingFundsDisplay.text = "Remaining Funds: \(remainingFunds)"
     }
 
+    @IBAction func finishSelectionButton(_ sender: Any) {
+        remainingTimeDisplay.text = "0"
+        timerDone()
+    }
+    
+    
     @IBAction func nextCar(_ sender: Any) {
-        if timeRemaining > 0 {
+        if timeRemaining > 0 && remainingTimeDisplay.text != "0" {
             let length = StarterCars.cars.count
             carNumber += 1
             if carNumber >= length {
@@ -145,19 +152,33 @@ class ViewController: UIViewController {
         checkPrices()
     }
     
+    func timerDone() {
+        timer?.invalidate()
+        engineAndExhaustPackage.isEnabled = false
+        tiresPackage.isEnabled = false
+        brakesPackage.isEnabled = false
+        suspensionPackage.isEnabled = false
+        let alert = UIAlertController(title: "Timer Finished", message: """
+        Car name: \(String(describing: car!.make))
+        Model: \(String(describing: car!.model))
+        Top Speed: \(String(describing: car!.topSpeed))
+        Acceleration: \(String(describing: car!.acceleration))
+        Handling: \(String(describing: car!.handling))
+        Money Spent: \(800-remainingFunds)
+        """, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+    
     @objc func countdown() {
         if timeRemaining > 0{
             timeRemaining -= 1
             remainingTimeDisplay.text = "\(timeRemaining)"
         } else {
-            timer?.invalidate()
-            engineAndExhaustPackage.isEnabled = false
-            tiresPackage.isEnabled = false
-            brakesPackage.isEnabled = false
-            suspensionPackage.isEnabled = false
+            timerDone()
         }
     }
     
-    // optional alert that shows finish Stats and how much money they spent
-    // add finished button which shows popup before timer = 0
 }
