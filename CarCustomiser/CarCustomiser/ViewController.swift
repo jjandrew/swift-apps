@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet var carStatistics: UILabel!
     @IBOutlet var remainingFundsDisplay: UILabel!
     
+    let maxFunds = 800
     var remainingFunds = 800 {
         didSet {
             remainingFundsDisplay.text = "Remaining Funds: \(remainingFunds)"
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
         tiresPackage.setOn(false, animated: true)
         brakesPackage.setOn(false, animated: true)
         suspensionPackage.setOn(false, animated: true)
-        remainingFunds = 800
+        remainingFunds = maxFunds
     }
 
     func checkPrices() {
