@@ -9,5 +9,5 @@
 import Foundation
 
 struct StarterTamagotchis {
-    var tamagotchis = [Tamagotchi(name: "Carl", age: 1, health: 5, discipline: 5, weight: 50, hunger: 5), Tamagotchi(name: "Dave", age: 1, health: 5, discipline: 5, weight: 50, hunger: 5)]
+    var tamagotchis = [Tamagotchi(name: "Carl", age: 1, health: 5, discipline: 5, weight: 50, hunger: 5, happiness: 5), Tamagotchi(name: "Dave", age: 1, health: 5, discipline: 5, weight: 50, hunger: 5, happiness: 5)]
 }

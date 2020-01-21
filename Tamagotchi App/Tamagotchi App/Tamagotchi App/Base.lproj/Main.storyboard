@@ -14,55 +14,78 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="448" affinity="minY"/>
+                            <userLayoutGuide location="448" affinity="minY"/>
+                        </userGuides>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tamagotchi Stats " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkx-Uq-u5W">
-                                <rect key="frame" x="20" y="65" width="271" height="157"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tamagotchi Stats " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xkx-Uq-u5W">
+                                <rect key="frame" x="20" y="64" width="137.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzw-kI-xUo">
-                                <rect key="frame" x="20" y="288" width="71" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration" identifier="feedMeal"/>
-                                <state key="normal" title="Feed meal"/>
-                                <connections>
-                                    <action selector="feedMealButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MLC-3o-TLw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBl-go-JPx">
-                                <rect key="frame" x="20" y="345" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBl-go-JPx">
+                                <rect key="frame" x="20" y="184.5" width="80" height="30"/>
                                 <state key="normal" title="Feed Snack"/>
                                 <connections>
                                     <action selector="feedSnackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ACm-8w-YCC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt7-Gk-saR">
-                                <rect key="frame" x="20" y="399" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt7-Gk-saR">
+                                <rect key="frame" x="20" y="234.5" width="73" height="30"/>
                                 <accessibility key="accessibilityConfiguration" identifier="playGame"/>
                                 <state key="normal" title="Play Game"/>
                                 <connections>
                                     <action selector="playGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e7f-TQ-aGP"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXv-AC-fXB">
-                                <rect key="frame" x="20" y="447" width="67" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXv-AC-fXB">
+                                <rect key="frame" x="20" y="284.5" width="67" height="30"/>
                                 <accessibility key="accessibilityConfiguration" identifier="discipline"/>
                                 <state key="normal" title="Discipline"/>
                                 <connections>
                                     <action selector="disiplineButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iYr-rY-Qwl"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzw-kI-xUo">
+                                <rect key="frame" x="20" y="134.5" width="71" height="30"/>
+                                <accessibility key="accessibilityConfiguration" identifier="feedMeal"/>
+                                <state key="normal" title="Feed meal"/>
+                                <connections>
+                                    <action selector="feedMealButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MLC-3o-TLw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYr-Ei-9hK">
+                                <rect key="frame" x="338" y="44" width="56" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <state key="normal" title="💩"/>
+                                <connections>
+                                    <action selector="pooButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UUQ-24-SiW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <accessibility key="accessibilityConfiguration" identifier="feedSnack"/>
+                        <constraints>
+                            <constraint firstItem="bYr-Ei-9hK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xkx-Uq-u5W" secondAttribute="trailing" constant="20" id="24I-kF-rRC"/>
+                            <constraint firstItem="LXv-AC-fXB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4dk-a4-gMc"/>
+                            <constraint firstItem="Nzw-kI-xUo" firstAttribute="top" secondItem="Xkx-Uq-u5W" secondAttribute="bottom" constant="50" id="7mx-kc-fKk"/>
+                            <constraint firstItem="Xkx-Uq-u5W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="FlS-Tk-jjk"/>
+                            <constraint firstItem="bYr-Ei-9hK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OHv-8E-xlA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bYr-Ei-9hK" secondAttribute="trailing" constant="20" id="QlT-d3-oqp"/>
+                            <constraint firstItem="Nzw-kI-xUo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="beH-ni-DOz"/>
+                            <constraint firstItem="LXv-AC-fXB" firstAttribute="top" secondItem="Pt7-Gk-saR" secondAttribute="bottom" constant="20" id="kcd-fs-Oc8"/>
+                            <constraint firstItem="IBl-go-JPx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="o6p-es-ezN"/>
+                            <constraint firstItem="Pt7-Gk-saR" firstAttribute="top" secondItem="IBl-go-JPx" secondAttribute="bottom" constant="20" id="p7f-v7-Tlf"/>
+                            <constraint firstItem="IBl-go-JPx" firstAttribute="top" secondItem="Nzw-kI-xUo" secondAttribute="bottom" constant="20" id="sAd-lP-TZB"/>
+                            <constraint firstItem="Xkx-Uq-u5W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uE4-yG-Rm3"/>
+                            <constraint firstItem="Pt7-Gk-saR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zEU-Yr-gMY"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="pooIcon" destination="bYr-Ei-9hK" id="4Eh-zs-s2v"/>
                         <outlet property="tamagotchiStats" destination="Xkx-Uq-u5W" id="2G8-LR-3BZ"/>
                     </connections>
                 </viewController>

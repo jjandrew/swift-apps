@@ -15,6 +15,7 @@ struct Tamagotchi {
     var discipline: Int
     var weight: Int
     var hunger: Int
+    var happiness: Int
     static let lifespan = 26
     static let minHealth = 0
     static let maxHealth = 5
@@ -24,6 +25,8 @@ struct Tamagotchi {
     static let minHunger = 0
     static let maxWeight = 100
     static let minWeight = 10
+    static let maxHappiness = 10
+    static let minHappiness = 0
     
     func displayStats() -> String {
         return """
@@ -33,6 +36,7 @@ struct Tamagotchi {
         Discipline \(discipline)
         Weight: \(weight)
         Hunger: \(hunger)
+        Happiness: \(happiness)
         """
         
     }

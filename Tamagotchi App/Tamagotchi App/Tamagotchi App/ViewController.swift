@@ -11,9 +11,13 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var tamagotchiStats: UILabel!
+    @IBOutlet var pooIcon: UIButton!
     
     var starterTamagotchis = StarterTamagotchis()
     var age = 0
+    var ageCounter = 0
+    var timer: Timer?
+    var timeDone = 0
     
     var tamagotchi: Tamagotchi? {
         didSet {
@@ -24,10 +28,42 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        pooIcon.isHidden = true
         // Do any additional setup after loading the view.
         tamagotchi = starterTamagotchis.tamagotchis[Int.random(in: 0...1)]
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
     }
-
+    
+    @objc func countdown() {
+        timeDone += 1
+        poo()
+    }
+    
+    func poo() {
+        if tamagotchi!.discipline < 3 {
+            if timeDone%4 == 0 {
+                pooIcon.isHidden = false
+            }
+        } else if tamagotchi!.discipline < 7 {
+            if timeDone%6 == 0 {
+                pooIcon.isHidden = false
+            }
+        } else if tamagotchi!.discipline < 10 {
+            if timeDone%8 == 0 {
+                pooIcon.isHidden = false
+            }
+        }
+    }
+    
+    func happinessWithinRange() {
+        if tamagotchi!.happiness > Tamagotchi.maxHappiness {
+            tamagotchi?.happiness = 10
+        }
+        if tamagotchi!.happiness < Tamagotchi.minHappiness {
+            tamagotchi?.happiness = 0
+        }
+    }
+    
     func hungerWithinRange() {
         if tamagotchi!.hunger > Tamagotchi.maxHunger {
             tamagotchi?.hunger = 10
@@ -45,7 +81,7 @@ class ViewController: UIViewController {
     
     func disciplineWithinRange() {
         if tamagotchi!.discipline > Tamagotchi.maxDiscipline {
-            tamagotchi?.discipline = 100
+            tamagotchi?.discipline = 10
         }
         if tamagotchi!.discipline < Tamagotchi.minDiscipline {
             tamagotchi?.discipline = 0
@@ -89,13 +125,27 @@ class ViewController: UIViewController {
     }
     
     func disciplineDeath() -> Bool {
-        let random = Int.random(in: 0...1)
+        let random = Int.random(in: 0...10)
         if tamagotchi!.discipline == Tamagotchi.maxDiscipline {
             if random  == 1 {
                 return true
             } else {
                 return false
             }
+        } else if tamagotchi!.discipline == Tamagotchi.minDiscipline {
+            if random == 1 {
+                return true
+            } else {
+                return false
+            }
+        } else {
+            return false
+        }
+    }
+    
+    func happinessDeath() -> Bool {
+        if tamagotchi!.happiness == Tamagotchi.minHappiness {
+            return true
         } else {
             return false
         }
@@ -113,12 +163,27 @@ class ViewController: UIViewController {
             self.present(alert, animated: true)
         
         } else if reason == "weight" {
-            let alert = UIAlertController(title: "Your Tamagotchi Has Died", message: "Your tamagotchi got too fat and exploded", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
-        
+            if tamagotchi!.weight == Tamagotchi.maxWeight {
+                let alert = UIAlertController(title: "Your Tamagotchi Has Died", message: "Your tamagotchi got too fat and exploded", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            } else {
+                let alert = UIAlertController(title: "Your Tamagotchi Has Died", message: "Your tamagotchi got too thin and imploded", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
         } else if reason == "discipline" {
-            let alert = UIAlertController(title: "Your Tamagotchi Has Died", message: "You disciplined your tamagotchi so much that you broke its neck", preferredStyle: .alert)
+            if tamagotchi!.discipline == Tamagotchi.maxDiscipline {
+                let alert = UIAlertController(title: "Your Tamagotchi Has Died", message: "You disciplined your tamagotchi too much that you hurt him", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            } else {
+                let alert = UIAlertController(title: "Your Tamagotchi Has Died", message: "Your Tamagotchi had no discipline and joined the circus", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+        } else if reason == "happiness" {
+            let alert = UIAlertController(title: "Your Tamagotchi Has Died", message: "Your Tamagotchi got so sad he died", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
@@ -129,6 +194,7 @@ class ViewController: UIViewController {
         let ageDeath = deathByAge()
         let deathWeight = weightDeath()
         let DisciplineDeath = disciplineDeath()
+        let HappinessDeath = happinessDeath()
         if heartDeath == true {
             deathAlert(reason: "hearts")
         } else if ageDeath == true {
@@ -137,11 +203,16 @@ class ViewController: UIViewController {
             deathAlert(reason: "weight")
         } else if DisciplineDeath == true {
             deathAlert(reason: "discipline")
+        } else if HappinessDeath == true {
+            deathAlert(reason: "happiness")
         }
     }
     
     func birthday() {
-        tamagotchi?.age += 1
+        if ageCounter == 2 {
+            tamagotchi?.age += 1
+            ageCounter = 0
+        }
     }
     
     @IBAction func feedMealButton(_ sender: Any) {
@@ -150,6 +221,8 @@ class ViewController: UIViewController {
         tamagotchi?.weight += 20
         weightWithinRange()
         hasDied()
+        ageCounter += 1
+        birthday()
     }
     @IBAction func feedSnackButton(_ sender: Any) {
         tamagotchi?.hunger -= 1
@@ -157,6 +230,8 @@ class ViewController: UIViewController {
         tamagotchi?.weight += 10
         weightWithinRange()
         hasDied()
+        ageCounter += 1
+        birthday()
     }
     @IBAction func playGameButton(_ sender: Any) {
         tamagotchi?.discipline -= 3
@@ -167,9 +242,24 @@ class ViewController: UIViewController {
         weightWithinRange()
         tamagotchi?.hunger += 2
         hungerWithinRange()
+        tamagotchi?.happiness += 2
+        happinessWithinRange()
+        hasDied()
+        ageCounter += 1
+        birthday()
     }
     @IBAction func disiplineButton(_ sender: Any) {
+        tamagotchi?.discipline += 3
         disciplineWithinRange()
+        tamagotchi?.happiness -= 3
+        happinessWithinRange()
+        hasDied()
+        ageCounter += 1
+        birthday()
+    }
+    
+    @IBAction func pooButton(_ sender: Any) {
+        pooIcon.isHidden = true
     }
     
 }
