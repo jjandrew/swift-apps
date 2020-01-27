@@ -12,12 +12,21 @@ class ViewController: UIViewController {
 
     @IBOutlet var tamagotchiStats: UILabel!
     @IBOutlet var pooIcon: UIButton!
+    @IBOutlet var resetIcon: UIButton!
+    @IBOutlet var sickIcon: UIButton!
+    @IBOutlet var feedMealIcon: UIButton!
+    @IBOutlet var feedSnackIcon: UIButton!
+    @IBOutlet var playGameIcon: UIButton!
+    @IBOutlet var disciplineIcon: UIButton!
+    
+    
     
     var starterTamagotchis = StarterTamagotchis()
     var age = 0
     var ageCounter = 0
     var timer: Timer?
     var timeDone = 0
+    var dead = false
     
     var tamagotchi: Tamagotchi? {
         didSet {
@@ -29,6 +38,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pooIcon.isHidden = true
+        resetIcon.isHidden = true
+        sickIcon.isHidden = true
         // Do any additional setup after loading the view.
         tamagotchi = starterTamagotchis.tamagotchis[Int.random(in: 0...1)]
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
@@ -36,7 +47,44 @@ class ViewController: UIViewController {
     
     @objc func countdown() {
         timeDone += 1
-        poo()
+        if dead == true {
+            reset()
+        }
+        if dead == false {
+            poo()
+            pooHealth()
+            medicine()
+        }
+    }
+    
+    func medicine() {
+        if tamagotchi!.health < 3 {
+            let random = Int.random(in: 0...2)
+            if random == 1 {
+                sickIcon.isHidden = false
+            }
+        }
+    }
+    
+    func reset() {
+        resetIcon.isHidden = false
+        pooIcon.isHidden = true
+        sickIcon.isHidden = true
+        feedMealIcon.isHidden = true
+        feedSnackIcon.isHidden = true
+        playGameIcon.isHidden = true
+        disciplineIcon.isHidden = true
+        
+    }
+    
+    func pooHealth() {
+        if timeDone%3 == 0 {
+            if pooIcon.isHidden == false {
+                tamagotchi?.health -= 1
+            }
+        }
+        healthWithinRange()
+        hasDied()
     }
     
     func poo() {
@@ -52,6 +100,9 @@ class ViewController: UIViewController {
             if timeDone%8 == 0 {
                 pooIcon.isHidden = false
             }
+        }
+        if dead == true {
+            pooIcon.isHidden = true
         }
     }
     
@@ -103,7 +154,6 @@ class ViewController: UIViewController {
         } else {
             return false
         }
-    
     }
         
     func deathByHearts() -> Bool {
@@ -187,6 +237,7 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
+        dead = true
     }
     
     func hasDied() {
@@ -260,6 +311,23 @@ class ViewController: UIViewController {
     
     @IBAction func pooButton(_ sender: Any) {
         pooIcon.isHidden = true
+    }
+    @IBAction func resetButton(_ sender: Any) {
+        resetIcon.isHidden = true
+        tamagotchi = starterTamagotchis.tamagotchis[Int.random(in: 0...1)]
+        dead = false
+        timeDone = 0
+        age = 0
+        ageCounter = 0
+        feedMealIcon.isHidden = false
+        feedSnackIcon.isHidden = false
+        playGameIcon.isHidden = false
+        disciplineIcon.isHidden = false
+    }
+    
+    @IBAction func sickButton(_ sender: Any) {
+        sickIcon.isHidden = true
+        tamagotchi?.health += 1
     }
     
 }
