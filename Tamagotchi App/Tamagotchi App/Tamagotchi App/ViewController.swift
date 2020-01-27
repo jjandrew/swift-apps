@@ -18,9 +18,6 @@ class ViewController: UIViewController {
     @IBOutlet var feedSnackIcon: UIButton!
     @IBOutlet var playGameIcon: UIButton!
     @IBOutlet var disciplineIcon: UIButton!
-//    @IBOutlet var normalTamagotchi: UIImageView!
-//    @IBOutlet var halfDeadTamogotchi: UIImageView!
-//    @IBOutlet var hungryTamagotchi: UIImageView!
     
     
     var starterTamagotchis = StarterTamagotchis()
