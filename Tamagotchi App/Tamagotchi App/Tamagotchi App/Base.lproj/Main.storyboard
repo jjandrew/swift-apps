@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <userGuides>
-                            <userLayoutGuide location="448" affinity="minY"/>
+                            <userLayoutGuide location="450" affinity="minY"/>
                             <userLayoutGuide location="448" affinity="minY"/>
                         </userGuides>
                         <subviews>
@@ -25,15 +25,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBl-go-JPx">
-                                <rect key="frame" x="20" y="184.5" width="80" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBl-go-JPx">
+                                <rect key="frame" x="20" y="349" width="80" height="30"/>
                                 <state key="normal" title="Feed Snack"/>
                                 <connections>
                                     <action selector="feedSnackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ACm-8w-YCC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pt7-Gk-saR">
-                                <rect key="frame" x="20" y="234.5" width="73" height="30"/>
+                                <rect key="frame" x="20" y="399" width="73" height="30"/>
                                 <accessibility key="accessibilityConfiguration" identifier="playGame"/>
                                 <state key="normal" title="Play Game"/>
                                 <connections>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LXv-AC-fXB">
-                                <rect key="frame" x="20" y="284.5" width="67" height="30"/>
+                                <rect key="frame" x="20" y="449" width="67" height="30"/>
                                 <accessibility key="accessibilityConfiguration" identifier="discipline"/>
                                 <state key="normal" title="Discipline"/>
                                 <connections>
@@ -49,7 +49,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nzw-kI-xUo">
-                                <rect key="frame" x="20" y="134.5" width="71" height="30"/>
+                                <rect key="frame" x="20" y="134.5" width="71" height="194.5"/>
                                 <accessibility key="accessibilityConfiguration" identifier="feedMeal"/>
                                 <state key="normal" title="Feed meal"/>
                                 <connections>
@@ -65,42 +65,59 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQb-bc-XHw">
-                                <rect key="frame" x="346.5" y="284.5" width="39" height="30"/>
+                                <rect key="frame" x="346.5" y="449" width="39" height="30"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="resetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NXS-C0-Nk0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJP-nt-o9C">
-                                <rect key="frame" x="215" y="160.5" width="59" height="78"/>
+                                <rect key="frame" x="335" y="325" width="59" height="78"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <state key="normal" title="🤒"/>
                                 <connections>
                                     <action selector="sickButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uN5-Rf-Zbe"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="normalTamagotchi" translatesAutoresizingMaskIntoConstraints="NO" id="2c2-uJ-52C">
+                                <rect key="frame" x="161" y="164" width="106" height="400"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="hungryTamagotchi" translatesAutoresizingMaskIntoConstraints="NO" id="4PF-k0-cTF">
+                                <rect key="frame" x="261" y="64" width="133" height="204"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="halfDeadTamagotchi" translatesAutoresizingMaskIntoConstraints="NO" id="0Ww-8a-wPj">
+                                <rect key="frame" x="44" y="-55" width="88" height="484"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <accessibility key="accessibilityConfiguration" identifier="feedSnack"/>
                         <constraints>
+                            <constraint firstItem="BJP-nt-o9C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2c2-uJ-52C" secondAttribute="trailing" constant="20" id="1gc-hV-M4o"/>
                             <constraint firstItem="bYr-Ei-9hK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xkx-Uq-u5W" secondAttribute="trailing" constant="20" id="24I-kF-rRC"/>
                             <constraint firstItem="LXv-AC-fXB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4dk-a4-gMc"/>
                             <constraint firstItem="Nzw-kI-xUo" firstAttribute="top" secondItem="Xkx-Uq-u5W" secondAttribute="bottom" constant="50" id="7mx-kc-fKk"/>
+                            <constraint firstItem="0Ww-8a-wPj" firstAttribute="centerX" secondItem="2c2-uJ-52C" secondAttribute="centerX" id="CV1-ca-lS3"/>
                             <constraint firstItem="Xkx-Uq-u5W" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="FlS-Tk-jjk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BJP-nt-o9C" secondAttribute="trailing" constant="20" id="HY5-kN-N2G"/>
+                            <constraint firstItem="4PF-k0-cTF" firstAttribute="centerX" secondItem="2c2-uJ-52C" secondAttribute="centerX" id="Lbq-a0-cf0"/>
                             <constraint firstItem="WQb-bc-XHw" firstAttribute="centerY" secondItem="LXv-AC-fXB" secondAttribute="centerY" id="NME-uJ-huN"/>
-                            <constraint firstItem="BJP-nt-o9C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IBl-go-JPx" secondAttribute="trailing" constant="20" id="NiJ-rF-RBh"/>
                             <constraint firstItem="bYr-Ei-9hK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="OHv-8E-xlA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bYr-Ei-9hK" secondAttribute="trailing" constant="20" id="QlT-d3-oqp"/>
+                            <constraint firstItem="WQb-bc-XHw" firstAttribute="firstBaseline" secondItem="4PF-k0-cTF" secondAttribute="baseline" constant="22" symbolType="layoutAnchor" id="WqS-zj-LQH"/>
+                            <constraint firstItem="0Ww-8a-wPj" firstAttribute="centerY" secondItem="2c2-uJ-52C" secondAttribute="centerY" id="ZCq-ZG-Lw3"/>
+                            <constraint firstItem="0Ww-8a-wPj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="78" id="bGI-T3-Vqm"/>
                             <constraint firstItem="Nzw-kI-xUo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="beH-ni-DOz"/>
+                            <constraint firstItem="2c2-uJ-52C" firstAttribute="centerY" secondItem="BJP-nt-o9C" secondAttribute="centerY" id="cj2-dW-aFV"/>
                             <constraint firstItem="WQb-bc-XHw" firstAttribute="centerX" secondItem="bYr-Ei-9hK" secondAttribute="centerX" id="dJg-2S-u3N"/>
                             <constraint firstItem="BJP-nt-o9C" firstAttribute="centerY" secondItem="IBl-go-JPx" secondAttribute="centerY" id="ddN-JW-e1u"/>
                             <constraint firstItem="WQb-bc-XHw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LXv-AC-fXB" secondAttribute="trailing" constant="30" id="hRU-Gg-OwY"/>
+                            <constraint firstItem="WQb-bc-XHw" firstAttribute="top" secondItem="4PF-k0-cTF" secondAttribute="bottom" constant="10" id="j7n-z9-VOX"/>
                             <constraint firstItem="LXv-AC-fXB" firstAttribute="top" secondItem="Pt7-Gk-saR" secondAttribute="bottom" constant="20" id="kcd-fs-Oc8"/>
                             <constraint firstItem="IBl-go-JPx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="o6p-es-ezN"/>
                             <constraint firstItem="Pt7-Gk-saR" firstAttribute="top" secondItem="IBl-go-JPx" secondAttribute="bottom" constant="20" id="p7f-v7-Tlf"/>
+                            <constraint firstItem="2c2-uJ-52C" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IBl-go-JPx" secondAttribute="trailing" constant="20" id="q27-aN-XR2"/>
                             <constraint firstItem="IBl-go-JPx" firstAttribute="top" secondItem="Nzw-kI-xUo" secondAttribute="bottom" constant="20" id="sAd-lP-TZB"/>
                             <constraint firstItem="Xkx-Uq-u5W" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uE4-yG-Rm3"/>
-                            <constraint firstItem="bYr-Ei-9hK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BJP-nt-o9C" secondAttribute="trailing" constant="30" id="xyb-5w-Ayb"/>
                             <constraint firstItem="Pt7-Gk-saR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="zEU-Yr-gMY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -109,6 +126,9 @@
                         <outlet property="disciplineIcon" destination="LXv-AC-fXB" id="blk-c7-jet"/>
                         <outlet property="feedMealIcon" destination="Nzw-kI-xUo" id="pu6-5I-SYJ"/>
                         <outlet property="feedSnackIcon" destination="IBl-go-JPx" id="JPP-Dh-gCR"/>
+                        <outlet property="halfDeadTamogotchi" destination="4PF-k0-cTF" id="E0G-B5-6sc"/>
+                        <outlet property="hungryTamagotchi" destination="4PF-k0-cTF" id="p0a-x9-TCl"/>
+                        <outlet property="normalTamagotchi" destination="2c2-uJ-52C" id="Srb-uM-59S"/>
                         <outlet property="playGameIcon" destination="Pt7-Gk-saR" id="AIp-Cn-dtu"/>
                         <outlet property="pooIcon" destination="bYr-Ei-9hK" id="4Eh-zs-s2v"/>
                         <outlet property="resetIcon" destination="WQb-bc-XHw" id="yUf-ee-A5T"/>
@@ -121,4 +141,9 @@
             <point key="canvasLocation" x="131.8840579710145" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="halfDeadTamagotchi" width="366" height="484"/>
+        <image name="hungryTamagotchi" width="247" height="204"/>
+        <image name="normalTamagotchi" width="400" height="400"/>
+    </resources>
 </document>

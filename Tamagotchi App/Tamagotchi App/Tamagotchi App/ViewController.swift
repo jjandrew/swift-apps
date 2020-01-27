@@ -18,7 +18,9 @@ class ViewController: UIViewController {
     @IBOutlet var feedSnackIcon: UIButton!
     @IBOutlet var playGameIcon: UIButton!
     @IBOutlet var disciplineIcon: UIButton!
-    
+//    @IBOutlet var normalTamagotchi: UIImageView!
+//    @IBOutlet var halfDeadTamogotchi: UIImageView!
+//    @IBOutlet var hungryTamagotchi: UIImageView!
     
     
     var starterTamagotchis = StarterTamagotchis()
@@ -40,6 +42,9 @@ class ViewController: UIViewController {
         pooIcon.isHidden = true
         resetIcon.isHidden = true
         sickIcon.isHidden = true
+//        normalTamagotchi.isHidden = true
+//        halfDeadTamogotchi.isHidden = true
+//        hungryTamagotchi.isHidden = true
         // Do any additional setup after loading the view.
         tamagotchi = starterTamagotchis.tamagotchis[Int.random(in: 0...1)]
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
@@ -47,6 +52,7 @@ class ViewController: UIViewController {
     
     @objc func countdown() {
         timeDone += 1
+//        changePhoto()
         if dead == true {
             reset()
         }
@@ -56,6 +62,27 @@ class ViewController: UIViewController {
             medicine()
         }
     }
+    
+//    func changePhoto() {
+//        if tamagotchi!.health < 4 {
+//            normalTamagotchi.isHidden = true
+//            hungryTamagotchi.isHidden = true
+//            halfDeadTamogotchi.isHidden = false
+//        } else if tamagotchi!.hunger > 7 {
+//            normalTamagotchi.isHidden = true
+//            hungryTamagotchi.isHidden = false
+//            halfDeadTamogotchi.isHidden = true
+//        } else if tamagotchi!.weight > 70 {
+//            normalTamagotchi.isHidden = true
+//            hungryTamagotchi.isHidden = false
+//            halfDeadTamogotchi.isHidden = true
+//        } else {
+//            normalTamagotchi.isHidden = false
+//            hungryTamagotchi.isHidden = true
+//            halfDeadTamogotchi.isHidden = true
+//        }
+//    }
+        
     
     func medicine() {
         if tamagotchi!.health < 3 {
