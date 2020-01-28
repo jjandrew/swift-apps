@@ -73,20 +73,7 @@ class Tamagotchi {
         return hunger
     }
     
-    func weightDeath() -> Bool {
-        if weight > Tamagotchi.maxWeight {
-            health = 0
-            let dead = deathByHearts()
-            return dead
-        } else if weight < Tamagotchi.minWeight {
-            health = 0
-            let dead = deathByHearts()
-            return dead
-        } else {
-            let dead = false
-            return dead
-        }
-    }
+     
     
     func hasDied() {
         let heartDeath = deathByHearts()
