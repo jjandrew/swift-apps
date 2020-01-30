@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct starterStudents {
+    var students = [Student(forename: "JJ", surname: "Andrew", birthday: Date()), Student(forename: "Sam", surname: "Barnham", birthday: Date()), Student(forename: "Seb", surname: "Wade", birthday: Date()), Student(forename: "Oscar", surname: "Hassel", birthday: Date())]
+}
