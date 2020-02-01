@@ -10,8 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //label 0 = top label
+    
     @IBOutlet var stackPush: UIButton!
-    @IBOutlet var textBox: UITextField!
+    @IBOutlet var label0: UILabel!
+    @IBOutlet var label1: UILabel!
+    @IBOutlet var label2: UILabel!
+    @IBOutlet var label3: UILabel!
+    @IBOutlet var label4: UILabel!
+    @IBOutlet var label5: UILabel!
+    @IBOutlet var label6: UILabel!
+    @IBOutlet var label7: UILabel!
+    @IBOutlet var label8: UILabel!
+    @IBOutlet var label9: UILabel!
+    
+    
     
     
     var stack = Stack(maxSize: 10, top: -1, array: ["_", "_", "_", "_", "_", "_", "_", "_", "_", "_"])
@@ -19,7 +32,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         stackMain()
-        textBox.isHidden = true
         // Do any additional setup after loading the view.
     }
     
@@ -70,12 +82,7 @@ class ViewController: UIViewController {
         stack.push(item: item)
         print(stack.array)
     }
-    @IBAction func textField(_ sender: Any) {
-        if let item = sender as? UITextField {
-            stack.push(item: item.text!)
-        }
-        
-    }
+
     
 }
 
