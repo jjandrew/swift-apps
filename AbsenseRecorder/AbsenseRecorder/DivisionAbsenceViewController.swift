@@ -17,6 +17,13 @@ class DivisionAbsenceViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = division?.code
+        
+        if let selectedRows = absence?.selectedRows {
+            for selectedRow in selectedRows {
+                tableView.selectRow(at: selectedRow, animated: false, scrollPosition: .none)
+            }
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,6 +54,10 @@ class DivisionAbsenceViewController: UITableViewController {
                 $0.forename == selectedStudent.forename && $0.surname == selectedStudent.surname
             }
         }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        absence?.selectedRows = tableView.indexPathsForSelectedRows
     }
     
 }

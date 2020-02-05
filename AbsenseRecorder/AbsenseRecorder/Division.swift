@@ -17,4 +17,8 @@ class Division {
     init(code: String) {
         self.code = code
     }
+    
+    //func hasAbsence(for date:Date) -> Bool {
+    
+    //fun getAbsence(for date: Date) -> Absence? {
 }

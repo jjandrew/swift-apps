@@ -12,6 +12,7 @@ class Absence {
     var takenOn: Date
     var present: [Student] = []
     var absent: [Student] = []
+    var selectedRows: [IndexPath]?
     
     init(date: Date) {
         takenOn = date
