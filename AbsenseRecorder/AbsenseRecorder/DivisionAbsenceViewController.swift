@@ -51,7 +51,6 @@ class DivisionAbsenceViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedStudent = division.students[indexPath.row]
         absence.present.append(selectedStudent)
-        
     }
 
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
