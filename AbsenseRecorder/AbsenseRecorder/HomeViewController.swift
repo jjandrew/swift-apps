@@ -32,11 +32,14 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Division", for: indexPath)
         
-        if divisions[indexPath.row].getAbsence(for: currentDate) != nil {
-            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-        }
+        //if divisions[indexPath.row].getAbsence(for: currentDate) != nil {
+        //    tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        //}
+        //cell.textLabel?.text = divisions[indexPath.row].code
+        let selectedDivision = divisions[indexPath.row]
+        cell.textLabel?.text = selectedDivision.code
+        cell.accessoryType = selectedDivision.getAbsence(for: currentDate) == nil ? .none: .checkmark
         
-        cell.textLabel?.text = divisions[indexPath.row].code
         return cell
     }
     
@@ -61,6 +64,19 @@ class HomeViewController: UITableViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let allPresent = UIContextualAction(style: .normal, title: "All Present") { action, view, completionHandler in
+            let division = self.divisions[indexPath.row]
+            let absence = Absence(date: self.currentDate, present: division.students)
+            division.absences.append(absence)
+            tableView.reloadData()
+            completionHandler(true)
+        }
+        
+        allPresent.backgroundColor = UIColor.blue
+        return UISwipeActionsConfiguration(actions: [allPresent])
+    }
 
     
     @IBAction func previousDay(_ sender: Any) {
@@ -83,6 +99,7 @@ class HomeViewController: UITableViewController {
         //go over enums
         
         navigationItem.title = formatter.string(from: currentDate)
+        tableView.reloadData()
     }
     
     
