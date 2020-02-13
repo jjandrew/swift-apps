@@ -10,14 +10,14 @@ import Foundation
 
 class Absence {
     var takenOn: Date
-    var present: [Student] = []
+    var absent: [Student] = []
     
     init(date: Date) {
         takenOn = date
     }
     
-    init(date: Date, present: [Student]) {
+    init(date: Date, absent: [Student]) {
         takenOn = date
-        self.present = present
+        self.absent = absent
     }
 }

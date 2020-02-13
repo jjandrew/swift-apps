@@ -18,6 +18,7 @@ class HomeViewController: UITableViewController {
         super.viewDidLoad()
         addDummyData()
         updateDateDisplay()
+        
     }
     
 
@@ -32,10 +33,6 @@ class HomeViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Division", for: indexPath)
         
-        //if divisions[indexPath.row].getAbsence(for: currentDate) != nil {
-        //    tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
-        //}
-        //cell.textLabel?.text = divisions[indexPath.row].code
         let selectedDivision = divisions[indexPath.row]
         cell.textLabel?.text = selectedDivision.code
         cell.accessoryType = selectedDivision.getAbsence(for: currentDate) == nil ? .none: .checkmark
@@ -65,10 +62,11 @@ class HomeViewController: UITableViewController {
         navigationController?.pushViewController(vc, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let allPresent = UIContextualAction(style: .normal, title: "All Present") { action, view, completionHandler in
             let division = self.divisions[indexPath.row]
-            let absence = Absence(date: self.currentDate, present: division.students)
+            //let absence = Absence(date: self.currentDate, present: division.students)
+            let absence = Absence(date: self.currentDate, absent: [])
             division.absences.append(absence)
             tableView.reloadData()
             completionHandler(true)
@@ -76,6 +74,18 @@ class HomeViewController: UITableViewController {
         
         allPresent.backgroundColor = UIColor.blue
         return UISwipeActionsConfiguration(actions: [allPresent])
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            let wipeAbsence = UIContextualAction(style: .normal, title: "Delete Absence") { action, view, completionHandler in
+                let division = self.divisions[indexPath.row]
+                division.removeAbsence(for: self.currentDate)
+                tableView.reloadData()
+                completionHandler(true)
+        }
+        
+        wipeAbsence.backgroundColor = UIColor.red
+        return UISwipeActionsConfiguration(actions: [wipeAbsence])
     }
 
     

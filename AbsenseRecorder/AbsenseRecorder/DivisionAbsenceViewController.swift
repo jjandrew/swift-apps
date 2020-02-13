@@ -34,7 +34,8 @@ class DivisionAbsenceViewController: UITableViewController {
     
     func selectRowsForPresentStudents() {
         for (position, student) in division.students.enumerated() {
-            if absence.present.contains(student) {
+            if absence.absent.contains(student) {
+            } else {
                 let indexPath = IndexPath(row: position, section: 0)
                 tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
             }
@@ -54,15 +55,14 @@ class DivisionAbsenceViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedStudent = division.students[indexPath.row]
-        absence.present.append(selectedStudent)
+        absence.absent.removeAll {
+            $0 == selectedStudent
+        }
     }
 
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         let selectedStudent = division.students[indexPath.row]
-        absence.present.removeAll {
-            $0 == selectedStudent
-        }
-            // what does $0 actually mean
+        absence.absent.append(selectedStudent)
     }
     
 }
