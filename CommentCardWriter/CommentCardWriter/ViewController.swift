@@ -39,11 +39,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func generate(_ sender: Any) {
-        var enjoyment = enjoymentText.text
-        var progress = progressText.text
-        enjoyment = Int(enjoyment!)
-        progress = Int(progress!)
-        let comment = Comment(enjoyment: enjoyment, progress: progress, challenges: challengeArray)
+        let enjoyment = enjoymentText.text
+        let progress = progressText.text
+        let enjoyment1 = Int(enjoyment!)!
+        let progress1 = Int(progress!)!
+        let student = addDummyData()
+        let comment = Comment(enjoyment: enjoyment1, progress: progress1, challenges: challengeArray, subject: student.subjects[0])
     }
     
     @IBAction func progressChoice(_ sender: Any) {
