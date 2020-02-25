@@ -12,13 +12,15 @@ class Comment {
     var enjoyment: Int
     var progress: Int
     var challenges: [String]
-    let subject: Subject
+    var subject: Subject
+    var comment: String
     
     init(enjoyment: Int, progress: Int, challenges: [String], subject: Subject) {
         self.enjoyment = enjoyment
         self.progress = progress
         self.challenges = challenges
         self.subject = subject
+        self.comment = ""
     }
     
     func commentCompiler() {
