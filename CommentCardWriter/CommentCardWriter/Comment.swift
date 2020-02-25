@@ -26,13 +26,13 @@ class Comment {
     func commentCompiler() {
         var enjoymentComment: String
         if enjoyment == 0 {
-            enjoymentComment = "I have found \(subject) tricky this half."
+            enjoymentComment = "I have found \(subject.subjectName) tricky this half."
         } else if enjoyment == 1 {
-            enjoymentComment = "I have found \(subject) alright this half."
+            enjoymentComment = "I have found \(subject.subjectName) alright this half."
         } else if enjoyment == 2 {
-                enjoymentComment = "I have found \(subject) fun this half."
+                enjoymentComment = "I have found \(subject.subjectName) fun this half."
         } else {
-            enjoymentComment = "I have found \(subject) really enjoyable this half."
+            enjoymentComment = "I have found \(subject.subjectName) really enjoyable this half."
         }
         var progressComment: String
         if progress == 0 {

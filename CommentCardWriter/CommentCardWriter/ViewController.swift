@@ -23,6 +23,7 @@ class ViewController: UIViewController {
         let student = addDummyData()
         changeLabel(student: student)
         // Do any additional setup after loading the view.
+        commentLabel.isHidden = true
     }
 
     func addDummyData() -> Student{
@@ -48,6 +49,7 @@ class ViewController: UIViewController {
         let comment = Comment(enjoyment: enjoyment1, progress: progress1, challenges: challengeArray, subject: student.subjects[0])
         comment.commentCompiler()
         commentLabel.text = comment.comment
+        commentLabel.isHidden = false
     }
     
     @IBAction func progressChoice(_ sender: Any) {
@@ -55,6 +57,7 @@ class ViewController: UIViewController {
     
     @IBAction func addChallenge(_ sender: Any) {
         challengeArray.append(challengeText.text!)
+        challengeText.text = ""
     }
 }
 
