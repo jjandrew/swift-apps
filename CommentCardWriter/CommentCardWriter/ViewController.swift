@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var enjoymentText: UITextField!
     @IBOutlet var progressText: UITextField!
     @IBOutlet var challengeText: UITextField!
+    @IBOutlet var commentLabel: UILabel!
     
     var challengeArray: [String] = []
     
@@ -45,6 +46,8 @@ class ViewController: UIViewController {
         let progress1 = Int(progress!)!
         let student = addDummyData()
         let comment = Comment(enjoyment: enjoyment1, progress: progress1, challenges: challengeArray, subject: student.subjects[0])
+        comment.commentCompiler()
+        commentLabel.text = comment.comment
     }
     
     @IBAction func progressChoice(_ sender: Any) {

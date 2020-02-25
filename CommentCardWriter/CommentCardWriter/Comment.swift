@@ -52,5 +52,6 @@ class Comment {
         }
         challengeList += "."
         challengeComment = "The things that I have found challenging this half are: \(challengeList)"
+        self.comment = "\(enjoymentComment) \(progressComment) \(challengeComment)"
     }
 }
