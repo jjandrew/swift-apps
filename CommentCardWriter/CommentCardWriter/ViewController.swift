@@ -43,13 +43,29 @@ class ViewController: UIViewController {
     @IBAction func generate(_ sender: Any) {
         let enjoyment = enjoymentText.text
         let progress = progressText.text
-        let enjoyment1 = Int(enjoyment!)!
-        let progress1 = Int(progress!)!
-        let student = addDummyData()
-        let comment = Comment(enjoyment: enjoyment1, progress: progress1, challenges: challengeArray, subject: student.subjects[0])
-        comment.commentCompiler()
-        commentLabel.text = comment.comment
-        commentLabel.isHidden = false
+        if let enjoymentInt = Int(enjoyment!) {
+            if let progressInt = Int(progress!) {
+                let student = addDummyData()
+                if enjoymentInt >= 0 && enjoymentInt <= 3 {
+                    if progressInt >= 0 && progressInt <= 3 {
+                        let comment = Comment(enjoyment: enjoymentInt, progress: progressInt, challenges: challengeArray, subject: student.subjects[0])
+                        comment.commentCompiler()
+                        commentLabel.text = comment.comment
+                        commentLabel.isHidden = false
+                    } else {
+                        //display error next to progress for out of range
+                    }
+                } else {
+                    // display error next to enjoyment for our of range
+                }
+            } else {
+                // display error for progress not integer entered
+                progressText.text = ""
+            }
+        } else {
+            // display error for enjoyment not integer entered
+            enjoymentText.text = ""
+        }
     }
     
     @IBAction func progressChoice(_ sender: Any) {
