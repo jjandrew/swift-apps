@@ -14,6 +14,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     let geocoder = CLGeocoder()
     
+    var streetName: String? = nil
+    var county: String? = nil
+    var country: String? = nil
+    var postCode: String? = nil
+    var houseName: String? = nil
+    
     @IBOutlet var musicRecommendations: UILabel!
     
     override func viewDidLoad() {
@@ -32,11 +38,46 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 if error != nil {
                     self.musicRecommendations.text = "Could not perform lookup of location for latitude: \(firstLocation.coordinate.latitude.description)"
                 } else {
-                    self.musicRecommendations.text = placemarks?[0].locality
+                    self.houseName = placemarks?[0].name
+                    if self.houseName == nil {
+                        self.houseName = "No house name available"
+                    } else {
+                        self.houseName = self.houseName!
+                    }
+                    self.streetName = placemarks?[0].thoroughfare
+                    if self.streetName == nil {
+                        self.streetName = "No street name available"
+                    } else {
+                        self.streetName = self.streetName!
+                    }
+                    self.county = placemarks?[0].locality
+                    if self.county == nil {
+                        self.county = "No county available"
+                    } else {
+                        self.county = self.county!
+                    }
+                    self.country = placemarks?[0].country
+                    if self.country == nil {
+                        self.country = "No country available"
+                    } else {
+                        self.country = self.country!
+                    }
+                    self.postCode = placemarks?[0].postalCode
+                    if self.postCode == nil {
+                        self.postCode = "No postal code available"
+                    } else {
+                        self.postCode = self.postCode!
+                    }
+                    self.musicRecommendations.text = """
+                    \(self.houseName!)
+                    \(self.streetName!)
+                    \(self.county!)
+                    \(self.country!)
+                    \(self.postCode!)
+                    """
                 }
-                //build up a nice display and break down of the users location.
             })
-            musicRecommendations.text = firstLocation.coordinate.latitude.description
+            //musicRecommendations.text = firstLocation.coordinate.latitude.description
         }
     }
     
