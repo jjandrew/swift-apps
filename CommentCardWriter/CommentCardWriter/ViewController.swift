@@ -11,10 +11,14 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var SubjectLabel: UILabel!
-    @IBOutlet var enjoymentText: UITextField!
     @IBOutlet var progressText: UITextField!
     @IBOutlet var challengeText: UITextField!
     @IBOutlet var commentLabel: UILabel!
+    @IBOutlet var enjoymentSlider: UISlider!
+    @IBOutlet var progressSlider: UISlider!
+    @IBOutlet var enjoymentValue: UILabel!
+    @IBOutlet var progressValue: UILabel!
+    @IBOutlet var removeChallengeOutlet: UIButton!
     
     var challengeArray: [String] = []
     
@@ -24,6 +28,7 @@ class ViewController: UIViewController {
         changeLabel(student: student)
         // Do any additional setup after loading the view.
         commentLabel.isHidden = true
+        removeChallengeOutlet.isHidden = true
     }
 
     func addDummyData() -> Student{
@@ -37,43 +42,52 @@ class ViewController: UIViewController {
         SubjectLabel.text = student.subjects[0].subjectName
     }
 
-    @IBAction func enjoymentChoice(_ sender: Any) {
+    @IBAction func enjoymentChanged(_ sender: UISlider) {
+        let myString = String(format: "%1.0f", sender.value)
+        enjoymentValue.text = myString
+    }
+    
+    @IBAction func progressChanged(_ sender: UISlider) {
+        let myString = String(format:  "%1.0f", sender.value)
+        progressValue.text = myString
     }
     
     @IBAction func generate(_ sender: Any) {
-        let enjoyment = enjoymentText.text
-        let progress = progressText.text
-        if let enjoymentInt = Int(enjoyment!) {
-            if let progressInt = Int(progress!) {
-                let student = addDummyData()
-                if enjoymentInt >= 0 && enjoymentInt <= 3 {
-                    if progressInt >= 0 && progressInt <= 3 {
-                        let comment = Comment(enjoyment: enjoymentInt, progress: progressInt, challenges: challengeArray, subject: student.subjects[0])
-                        comment.commentCompiler()
-                        commentLabel.text = comment.comment
-                        commentLabel.isHidden = false
-                    } else {
-                        //display error next to progress for out of range
-                    }
-                } else {
-                    // display error next to enjoyment for our of range
-                }
-            } else {
-                // display error for progress not integer entered
-                progressText.text = ""
-            }
+        let enjoyment = enjoymentValue.text
+        let progress = progressValue.text
+        let enjoymentInt = Int(enjoyment!)!
+        let progressInt = Int(progress!)!
+        let student = addDummyData()
+        if challengeArray != [] {
+            let comment = Comment(enjoyment: enjoymentInt, progress: progressInt, challenges: challengeArray, subject: student.subjects[0])
+            comment.commentCompiler()
+            commentLabel.text = comment.comment
+            commentLabel.isHidden = false
         } else {
-            // display error for enjoyment not integer entered
-            enjoymentText.text = ""
+            let alert = UIAlertController(title: "Error", message: "Please enter at least one challenge.", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
         }
     }
     
-    @IBAction func progressChoice(_ sender: Any) {
-    }
     
     @IBAction func addChallenge(_ sender: Any) {
+        if challengeText.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Please enter a challenge", preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+            self.present(alert, animated: true)
+        } else {
         challengeArray.append(challengeText.text!)
-        challengeText.text = ""
+            challengeText.text = ""
+            removeChallengeOutlet.isHidden = false
+        }
+    }
+    @IBAction func removeChallenge(_ sender: Any) {
+        challengeArray.remove[challengeArray.count-1 ]
     }
 }
 

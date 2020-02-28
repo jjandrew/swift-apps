@@ -47,8 +47,10 @@ class Comment {
         var challengeList: String
         var challengeComment: String
         challengeList = challenges[0]
-        for i in (1...challenges.count-1) {
+        if challenges.count > 1 {
+            for i in (1...challenges.count-1) {
             challengeList = challengeList + ", " + challenges[i]
+            }
         }
         challengeList += "."
         challengeComment = "The things that I have found challenging this half are: \(challengeList)"
