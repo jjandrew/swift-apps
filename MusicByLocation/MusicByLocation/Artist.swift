@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct Artist: Codable {
+    var artistName: String
+}
