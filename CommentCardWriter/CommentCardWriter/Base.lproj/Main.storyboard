@@ -46,13 +46,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7h-JF-YN2">
-                                <rect key="frame" x="20" y="365" width="266" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w7h-JF-YN2">
+                                <rect key="frame" x="20" y="365" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co6-j9-R4L">
-                                <rect key="frame" x="296" y="367" width="98" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="co6-j9-R4L">
+                                <rect key="frame" x="296" y="409" width="98" height="30"/>
                                 <state key="normal" title="Add challenge"/>
                                 <connections>
                                     <action selector="addChallenge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tlt-64-ycL"/>
@@ -83,26 +83,26 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6Y-7M-55a">
-                                <rect key="frame" x="266" y="405" width="128" height="30"/>
+                                <rect key="frame" x="266" y="449" width="128" height="30"/>
                                 <state key="normal" title="Remove Challenge"/>
                                 <connections>
                                     <action selector="removeChallenge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uUH-TK-His"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqf-vO-owY">
-                                <rect key="frame" x="169.5" y="454.5" width="75" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqf-vO-owY">
+                                <rect key="frame" x="161" y="535" width="75" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge Array" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tu-3e-qjX">
-                                <rect key="frame" x="20" y="414" width="122" height="20.5"/>
+                                <rect key="frame" x="20" y="454" width="122" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPj-xM-aA2">
-                                <rect key="frame" x="293.5" y="495" width="100.5" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Character Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPj-xM-aA2">
+                                <rect key="frame" x="295" y="535" width="100.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -111,10 +111,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QAN-Du-K4p" firstAttribute="top" secondItem="7a1-LK-I48" secondAttribute="bottom" constant="30" id="3pp-hI-L3E"/>
-                            <constraint firstItem="I6Y-7M-55a" firstAttribute="top" secondItem="co6-j9-R4L" secondAttribute="bottom" constant="8" id="7bB-KY-YS2"/>
                             <constraint firstItem="Se0-lc-0wP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="110" id="ACb-X6-tGX"/>
-                            <constraint firstItem="1Tu-3e-qjX" firstAttribute="top" secondItem="w7h-JF-YN2" secondAttribute="bottom" constant="15" id="Bf2-e4-wxt"/>
                             <constraint firstItem="zlL-ZS-pv6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="CdS-dL-Ghv"/>
+                            <constraint firstItem="co6-j9-R4L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="296" id="DSC-IU-qKh"/>
+                            <constraint firstItem="I6Y-7M-55a" firstAttribute="top" secondItem="co6-j9-R4L" secondAttribute="bottom" constant="10" id="EgX-dn-N0S"/>
+                            <constraint firstItem="co6-j9-R4L" firstAttribute="top" secondItem="w7h-JF-YN2" secondAttribute="bottom" constant="10" id="Ezk-tl-npl"/>
                             <constraint firstItem="oqf-vO-owY" firstAttribute="top" secondItem="1Tu-3e-qjX" secondAttribute="bottom" constant="20" id="FG2-xV-Jrr"/>
                             <constraint firstItem="w7h-JF-YN2" firstAttribute="top" secondItem="QAN-Du-K4p" secondAttribute="bottom" constant="8" id="GMO-1R-7zY"/>
                             <constraint firstItem="Se0-lc-0wP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="M2Y-UU-DNo"/>
@@ -134,15 +135,14 @@
                             <constraint firstItem="I6Y-7M-55a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Tu-3e-qjX" secondAttribute="trailing" constant="15" id="e0D-Ri-OKV"/>
                             <constraint firstItem="oqf-vO-owY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eH8-PL-SAy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3gT-Fn-0Kr" secondAttribute="trailing" constant="20" id="etd-ft-B1e"/>
+                            <constraint firstItem="1Tu-3e-qjX" firstAttribute="centerY" secondItem="I6Y-7M-55a" secondAttribute="centerY" id="gKl-Ub-ZEI"/>
                             <constraint firstItem="zlL-ZS-pv6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hpO-TU-vbe"/>
                             <constraint firstItem="3gT-Fn-0Kr" firstAttribute="centerY" secondItem="eWP-pB-mK5" secondAttribute="centerY" id="jPm-cl-vO1"/>
                             <constraint firstItem="vPj-xM-aA2" firstAttribute="top" secondItem="oqf-vO-owY" secondAttribute="bottom" constant="20" id="kho-Aj-mxx"/>
                             <constraint firstItem="eWP-pB-mK5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="khs-FO-jeG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Rg-ap-7jD" secondAttribute="trailing" constant="20" id="l3a-P5-ktE"/>
                             <constraint firstItem="7a1-LK-I48" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lMY-NH-pnQ"/>
-                            <constraint firstItem="co6-j9-R4L" firstAttribute="centerY" secondItem="w7h-JF-YN2" secondAttribute="centerY" id="m3J-7g-jAZ"/>
                             <constraint firstItem="2Rg-ap-7jD" firstAttribute="leading" secondItem="7a1-LK-I48" secondAttribute="trailing" constant="10" id="mgA-jo-h4w"/>
-                            <constraint firstItem="co6-j9-R4L" firstAttribute="leading" secondItem="w7h-JF-YN2" secondAttribute="trailing" constant="10" id="miZ-ZD-DAY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I6Y-7M-55a" secondAttribute="trailing" constant="20" id="sHk-yd-5mg"/>
                             <constraint firstItem="vPj-xM-aA2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tqW-gC-kHz"/>
                             <constraint firstItem="eWP-pB-mK5" firstAttribute="top" secondItem="Se0-lc-0wP" secondAttribute="bottom" constant="10" id="yDe-Ny-TNH"/>
@@ -153,6 +153,7 @@
                     </view>
                     <connections>
                         <outlet property="SubjectLabel" destination="zlL-ZS-pv6" id="yY4-Ow-Wmw"/>
+                        <outlet property="addChallengeOutlet" destination="co6-j9-R4L" id="0A3-nP-cVb"/>
                         <outlet property="challengeArrayLabel" destination="1Tu-3e-qjX" id="Xz2-NF-wOt"/>
                         <outlet property="challengeText" destination="w7h-JF-YN2" id="QxK-ho-p3G"/>
                         <outlet property="characterCountLabel" destination="vPj-xM-aA2" id="fWT-6i-ILf"/>

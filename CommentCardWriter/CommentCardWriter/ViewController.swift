@@ -21,8 +21,10 @@ class ViewController: UIViewController {
     @IBOutlet var commentLabel: UILabel!
     @IBOutlet var challengeArrayLabel: UILabel!
     @IBOutlet var characterCountLabel: UILabel!
+    @IBOutlet var addChallengeOutlet: UIButton!
     
     var challengeArray: [String] = []
+    let maxLength = 300
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,9 +74,7 @@ class ViewController: UIViewController {
             challengeArrayLabel.isHidden = true
         } else {
             let alert = UIAlertController(title: "Error", message: "Please enter at least one challenge.", preferredStyle: .alert)
-
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-
             self.present(alert, animated: true)
         }
     }
@@ -83,15 +83,38 @@ class ViewController: UIViewController {
     @IBAction func addChallenge(_ sender: Any) {
         if challengeText.text == "" {
             let alert = UIAlertController(title: "Error", message: "Please enter a challenge", preferredStyle: .alert)
-
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-
             self.present(alert, animated: true)
         } else {
-            challengeArray.append(challengeText.text!)
-            challengeText.text = ""
-            removeChallengeOutlet.isHidden = false
-            challengeArrayLabel.isHidden = false
+            var challengeList: String
+            let enjoyment = enjoymentValue.text
+            let progress = progressValue.text
+            let enjoymentInt = Int(enjoyment!)!
+            let progressInt = Int(progress!)!
+            let student = addDummyData()
+            var commentLength = 0
+            if challengeArray.count > 0 {
+                let commentCharacters = Comment(enjoyment: enjoymentInt, progress: progressInt, challenges: challengeArray, subject: student.subjects[0])
+                commentCharacters.commentCompiler()
+                commentLength = commentCharacters.comment.count
+            } else {
+                let commentCharacters = Comment(enjoyment: enjoymentInt, progress: progressInt, challenges: [""], subject: student.subjects[0])
+                commentCharacters.commentCompiler()
+                commentLength = commentCharacters.comment.count
+            }
+            for challenge in challengeArray {
+                commentLength += 1
+            }
+            if commentLength + challengeText.text!.count + 2 <= maxLength {
+                challengeArray.append(challengeText.text!)
+                challengeText.text = ""
+                removeChallengeOutlet.isHidden = false
+                challengeArrayLabel.isHidden = false
+            } else {
+                let alert = UIAlertController(title: "Error", message: "You have exceded the word count", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
         }
         var challenges = ""
         for challenge in challengeArray {
@@ -101,7 +124,6 @@ class ViewController: UIViewController {
         challenges = String(challenges.dropLast())
         challenges += "."
         challengeArrayLabel.text = challenges
-        
     }
     @IBAction func removeChallenge(_ sender: Any) {
         challengeArray.removeLast()
