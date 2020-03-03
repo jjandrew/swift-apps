@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C67D48C923F2DFBD000A0A03 /* CommentFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D48C823F2DFBD000A0A03 /* CommentFactory.swift */; };
 		C67D48CB23F2DFCA000A0A03 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67D48CA23F2DFCA000A0A03 /* Comment.swift */; };
 		C68805F523F2D0B3000428E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68805F423F2D0B3000428E8 /* AppDelegate.swift */; };
 		C68805F723F2D0B3000428E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68805F623F2D0B3000428E8 /* SceneDelegate.swift */; };
@@ -19,7 +18,6 @@
 		C688061723F2D0B5000428E8 /* CommentCardWriterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688061623F2D0B5000428E8 /* CommentCardWriterUITests.swift */; };
 		C688062523F2D14A000428E8 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688062423F2D14A000428E8 /* Student.swift */; };
 		C688062723F2D161000428E8 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C688062623F2D161000428E8 /* Subject.swift */; };
-		C6D5F76D2405452D006A5087 /* CommentCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D5F76C2405452D006A5087 /* CommentCompiler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C67D48C823F2DFBD000A0A03 /* CommentFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentFactory.swift; sourceTree = "<group>"; };
 		C67D48CA23F2DFCA000A0A03 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		C68805F123F2D0B3000428E8 /* CommentCardWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommentCardWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68805F423F2D0B3000428E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +55,6 @@
 		C688061823F2D0B5000428E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C688062423F2D14A000428E8 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		C688062623F2D161000428E8 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
-		C6D5F76C2405452D006A5087 /* CommentCompiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCompiler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +114,7 @@
 				C688060223F2D0B5000428E8 /* Info.plist */,
 				C688062423F2D14A000428E8 /* Student.swift */,
 				C688062623F2D161000428E8 /* Subject.swift */,
-				C67D48C823F2DFBD000A0A03 /* CommentFactory.swift */,
 				C67D48CA23F2DFCA000A0A03 /* Comment.swift */,
-				C6D5F76C2405452D006A5087 /* CommentCompiler.swift */,
 			);
 			path = CommentCardWriter;
 			sourceTree = "<group>";
@@ -274,13 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C67D48C923F2DFBD000A0A03 /* CommentFactory.swift in Sources */,
 				C68805F923F2D0B3000428E8 /* ViewController.swift in Sources */,
 				C68805F523F2D0B3000428E8 /* AppDelegate.swift in Sources */,
 				C67D48CB23F2DFCA000A0A03 /* Comment.swift in Sources */,
 				C68805F723F2D0B3000428E8 /* SceneDelegate.swift in Sources */,
 				C688062523F2D14A000428E8 /* Student.swift in Sources */,
-				C6D5F76D2405452D006A5087 /* CommentCompiler.swift in Sources */,
 				C688062723F2D161000428E8 /* Subject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

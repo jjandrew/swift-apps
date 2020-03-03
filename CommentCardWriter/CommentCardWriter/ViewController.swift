@@ -13,12 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet var SubjectLabel: UILabel!
     @IBOutlet var progressText: UITextField!
     @IBOutlet var challengeText: UITextField!
-    @IBOutlet var commentLabel: UILabel!
     @IBOutlet var enjoymentSlider: UISlider!
     @IBOutlet var progressSlider: UISlider!
     @IBOutlet var enjoymentValue: UILabel!
     @IBOutlet var progressValue: UILabel!
     @IBOutlet var removeChallengeOutlet: UIButton!
+    @IBOutlet var commentLabel: UILabel!
+    @IBOutlet var challengeArrayLabel: UILabel!
+    @IBOutlet var characterCountLabel: UILabel!
     
     var challengeArray: [String] = []
     
@@ -29,6 +31,8 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         commentLabel.isHidden = true
         removeChallengeOutlet.isHidden = true
+        challengeArrayLabel.isHidden = true
+        characterCountLabel.isHidden = true
     }
 
     func addDummyData() -> Student{
@@ -62,7 +66,10 @@ class ViewController: UIViewController {
             let comment = Comment(enjoyment: enjoymentInt, progress: progressInt, challenges: challengeArray, subject: student.subjects[0])
             comment.commentCompiler()
             commentLabel.text = comment.comment
+            characterCountLabel.text = String(comment.comment.count) + " Characters"
             commentLabel.isHidden = false
+            characterCountLabel.isHidden = false
+            challengeArrayLabel.isHidden = true
         } else {
             let alert = UIAlertController(title: "Error", message: "Please enter at least one challenge.", preferredStyle: .alert)
 
@@ -81,13 +88,35 @@ class ViewController: UIViewController {
 
             self.present(alert, animated: true)
         } else {
-        challengeArray.append(challengeText.text!)
+            challengeArray.append(challengeText.text!)
             challengeText.text = ""
             removeChallengeOutlet.isHidden = false
+            challengeArrayLabel.isHidden = false
         }
+        var challenges = ""
+        for challenge in challengeArray {
+            challenges += challenge + ", "
+        }
+        challenges = String(challenges.dropLast())
+        challenges = String(challenges.dropLast())
+        challenges += "."
+        challengeArrayLabel.text = challenges
+        
     }
     @IBAction func removeChallenge(_ sender: Any) {
-        challengeArray.remove[challengeArray.count-1 ]
+        challengeArray.removeLast()
+        if challengeArray == [] {
+            removeChallengeOutlet.isHidden = true
+            challengeArrayLabel.isHidden = true
+        }
+        var challenges = ""
+        for challenge in challengeArray {
+            challenges += challenge + ", "
+        }
+        challenges = String(challenges.dropLast())
+        challenges = String(challenges.dropLast())
+        challenges += "."
+        challengeArrayLabel.text = challenges
     }
 }
 

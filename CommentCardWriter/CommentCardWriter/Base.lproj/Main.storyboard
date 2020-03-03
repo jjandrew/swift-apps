@@ -58,12 +58,6 @@
                                     <action selector="addChallenge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tlt-64-ycL"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqf-vO-owY">
-                                <rect key="frame" x="169.5" y="445" width="75" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="eWP-pB-mK5">
                                 <rect key="frame" x="18" y="185" width="357" height="31"/>
                                 <connections>
@@ -95,48 +89,74 @@
                                     <action selector="removeChallenge:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uUH-TK-His"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqf-vO-owY">
+                                <rect key="frame" x="169.5" y="454.5" width="75" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Challenge Array" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tu-3e-qjX">
+                                <rect key="frame" x="20" y="414" width="122" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPj-xM-aA2">
+                                <rect key="frame" x="293.5" y="495" width="100.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="QAN-Du-K4p" firstAttribute="top" secondItem="7a1-LK-I48" secondAttribute="bottom" constant="30" id="3pp-hI-L3E"/>
                             <constraint firstItem="I6Y-7M-55a" firstAttribute="top" secondItem="co6-j9-R4L" secondAttribute="bottom" constant="8" id="7bB-KY-YS2"/>
                             <constraint firstItem="Se0-lc-0wP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="110" id="ACb-X6-tGX"/>
+                            <constraint firstItem="1Tu-3e-qjX" firstAttribute="top" secondItem="w7h-JF-YN2" secondAttribute="bottom" constant="15" id="Bf2-e4-wxt"/>
                             <constraint firstItem="zlL-ZS-pv6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="CdS-dL-Ghv"/>
+                            <constraint firstItem="oqf-vO-owY" firstAttribute="top" secondItem="1Tu-3e-qjX" secondAttribute="bottom" constant="20" id="FG2-xV-Jrr"/>
                             <constraint firstItem="w7h-JF-YN2" firstAttribute="top" secondItem="QAN-Du-K4p" secondAttribute="bottom" constant="8" id="GMO-1R-7zY"/>
-                            <constraint firstItem="oqf-vO-owY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="IF0-mK-iLR"/>
                             <constraint firstItem="Se0-lc-0wP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="M2Y-UU-DNo"/>
+                            <constraint firstItem="1Tu-3e-qjX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="MLs-sZ-Xh0"/>
                             <constraint firstItem="0nJ-gI-UDl" firstAttribute="top" secondItem="zlL-ZS-pv6" secondAttribute="bottom" constant="17" id="Ndo-kF-q7C"/>
                             <constraint firstItem="2Rg-ap-7jD" firstAttribute="centerY" secondItem="7a1-LK-I48" secondAttribute="centerY" id="ODE-MH-A7S"/>
-                            <constraint firstItem="oqf-vO-owY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ro7-TY-4Gg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0nJ-gI-UDl" secondAttribute="trailing" constant="11" id="T4N-2t-kD1"/>
                             <constraint firstItem="3gT-Fn-0Kr" firstAttribute="leading" secondItem="eWP-pB-mK5" secondAttribute="trailing" constant="10" id="Wcw-wi-Wwv"/>
                             <constraint firstItem="QAN-Du-K4p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Xkc-0g-KBm"/>
                             <constraint firstItem="q9A-fd-Bm8" firstAttribute="top" secondItem="eWP-pB-mK5" secondAttribute="bottom" constant="30" id="ZYV-RD-gLK"/>
                             <constraint firstItem="w7h-JF-YN2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zqi-Ed-sHK"/>
                             <constraint firstItem="q9A-fd-Bm8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="a3X-Fc-A3i"/>
+                            <constraint firstItem="oqf-vO-owY" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bVh-VE-dTC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vPj-xM-aA2" secondAttribute="trailing" constant="20" id="bZl-qn-x9w"/>
                             <constraint firstItem="I6Y-7M-55a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="cFh-Ms-w52"/>
                             <constraint firstItem="7a1-LK-I48" firstAttribute="top" secondItem="q9A-fd-Bm8" secondAttribute="bottom" constant="10" id="cWj-b9-pRA"/>
+                            <constraint firstItem="I6Y-7M-55a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Tu-3e-qjX" secondAttribute="trailing" constant="15" id="e0D-Ri-OKV"/>
+                            <constraint firstItem="oqf-vO-owY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eH8-PL-SAy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3gT-Fn-0Kr" secondAttribute="trailing" constant="20" id="etd-ft-B1e"/>
                             <constraint firstItem="zlL-ZS-pv6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="hpO-TU-vbe"/>
                             <constraint firstItem="3gT-Fn-0Kr" firstAttribute="centerY" secondItem="eWP-pB-mK5" secondAttribute="centerY" id="jPm-cl-vO1"/>
+                            <constraint firstItem="vPj-xM-aA2" firstAttribute="top" secondItem="oqf-vO-owY" secondAttribute="bottom" constant="20" id="kho-Aj-mxx"/>
                             <constraint firstItem="eWP-pB-mK5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="khs-FO-jeG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2Rg-ap-7jD" secondAttribute="trailing" constant="20" id="l3a-P5-ktE"/>
                             <constraint firstItem="7a1-LK-I48" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lMY-NH-pnQ"/>
                             <constraint firstItem="co6-j9-R4L" firstAttribute="centerY" secondItem="w7h-JF-YN2" secondAttribute="centerY" id="m3J-7g-jAZ"/>
-                            <constraint firstItem="oqf-vO-owY" firstAttribute="top" secondItem="I6Y-7M-55a" secondAttribute="bottom" constant="10" id="mea-w2-JMJ"/>
                             <constraint firstItem="2Rg-ap-7jD" firstAttribute="leading" secondItem="7a1-LK-I48" secondAttribute="trailing" constant="10" id="mgA-jo-h4w"/>
                             <constraint firstItem="co6-j9-R4L" firstAttribute="leading" secondItem="w7h-JF-YN2" secondAttribute="trailing" constant="10" id="miZ-ZD-DAY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I6Y-7M-55a" secondAttribute="trailing" constant="20" id="sHk-yd-5mg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oqf-vO-owY" secondAttribute="trailing" constant="20" id="tRY-q9-93k"/>
+                            <constraint firstItem="vPj-xM-aA2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tqW-gC-kHz"/>
                             <constraint firstItem="eWP-pB-mK5" firstAttribute="top" secondItem="Se0-lc-0wP" secondAttribute="bottom" constant="10" id="yDe-Ny-TNH"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="co6-j9-R4L" secondAttribute="trailing" constant="20" id="yJw-Lc-zII"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oqf-vO-owY" secondAttribute="trailing" constant="20" id="zIm-Rx-D0q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="SubjectLabel" destination="zlL-ZS-pv6" id="yY4-Ow-Wmw"/>
+                        <outlet property="challengeArrayLabel" destination="1Tu-3e-qjX" id="Xz2-NF-wOt"/>
                         <outlet property="challengeText" destination="w7h-JF-YN2" id="QxK-ho-p3G"/>
-                        <outlet property="commentLabel" destination="oqf-vO-owY" id="JUK-Qt-Nbn"/>
+                        <outlet property="characterCountLabel" destination="vPj-xM-aA2" id="fWT-6i-ILf"/>
+                        <outlet property="commentLabel" destination="oqf-vO-owY" id="sxn-jA-TrM"/>
                         <outlet property="enjoymentSlider" destination="eWP-pB-mK5" id="wEe-Do-gaU"/>
                         <outlet property="enjoymentValue" destination="3gT-Fn-0Kr" id="q7h-HB-XdC"/>
                         <outlet property="progressSlider" destination="7a1-LK-I48" id="XO2-zC-Jff"/>

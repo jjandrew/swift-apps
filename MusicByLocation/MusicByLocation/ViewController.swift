@@ -15,7 +15,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let geocoder = CLGeocoder()
     
     var streetName: String? = nil
-    var county: String? = nil
+    var county: String? = ""
     var country: String? = nil
     var postCode: String? = nil
     var houseName: String? = nil
@@ -26,11 +26,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
-        getArtists()
+        locationManager.requestLocation()
     }
 
-    @IBAction func findMusic(_ sender: Any) {
-        locationManager.requestLocation()
+    @IBAction func findArtists(_ sender: Any) {
+        getArtists()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -78,7 +78,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     """
                 }
             })
-            //musicRecommendations.text = firstLocation.coordinate.latitude.description
         }
     }
     
@@ -87,7 +86,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func getArtists() -> String {
-        guard let url = URL(string: "https://itunes.apple.com/search?term=Lionel%20Richie&entity=musicArtist")
+        guard let url = URL(string:
+            "https://itunes.apple.com/search?term=\(self.county!)&entity=musicArtist")
             else {
                 print("Invalid URL")
                 return "Invalid URL. Wasn't able to search ITunes"
@@ -98,7 +98,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         URLSession.shared.dataTask(with: request) { (data,response, error) in
             if let data = data {
                 if let response = self.parseJson(json: data) {
-                    //confused as to where to use self
                     let names = response.results.map {
                         return $0.artistName
                     }
@@ -127,3 +126,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 }
 
+
+//1. What is a thread.
+//2. I am a bit confused with when self needs to be used.
+//3. How does swift decode from a java response.
