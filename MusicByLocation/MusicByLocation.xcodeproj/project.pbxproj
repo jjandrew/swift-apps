@@ -17,6 +17,7 @@
 		0D15C1962406CC7300DDF59D /* MusicByLocationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15C1952406CC7300DDF59D /* MusicByLocationUITests.swift */; };
 		0D15C1A42409618100DDF59D /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15C1A32409618100DDF59D /* ArtistResponse.swift */; };
 		0D15C1A6240961DD00DDF59D /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15C1A5240961DC00DDF59D /* Artist.swift */; };
+		0D15C1AA24102F8F00DDF59D /* ITunesAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15C1A924102F8F00DDF59D /* ITunesAdaptor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		0D15C1972406CC7300DDF59D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D15C1A32409618100DDF59D /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
 		0D15C1A5240961DC00DDF59D /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		0D15C1A924102F8F00DDF59D /* ITunesAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAdaptor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				0D15C1812406CC7200DDF59D /* Info.plist */,
 				0D15C1A32409618100DDF59D /* ArtistResponse.swift */,
 				0D15C1A5240961DC00DDF59D /* Artist.swift */,
+				0D15C1A924102F8F00DDF59D /* ITunesAdaptor.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D15C1782406CC6B00DDF59D /* ViewController.swift in Sources */,
+				0D15C1AA24102F8F00DDF59D /* ITunesAdaptor.swift in Sources */,
 				0D15C1A42409618100DDF59D /* ArtistResponse.swift in Sources */,
 				0D15C1742406CC6A00DDF59D /* AppDelegate.swift in Sources */,
 				0D15C1A6240961DD00DDF59D /* Artist.swift in Sources */,
