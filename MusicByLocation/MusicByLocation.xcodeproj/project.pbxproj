@@ -18,6 +18,7 @@
 		0D15C1A42409618100DDF59D /* ArtistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15C1A32409618100DDF59D /* ArtistResponse.swift */; };
 		0D15C1A6240961DD00DDF59D /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15C1A5240961DC00DDF59D /* Artist.swift */; };
 		0D15C1AA24102F8F00DDF59D /* ITunesAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15C1A924102F8F00DDF59D /* ITunesAdaptor.swift */; };
+		0D15C1AC2411696E00DDF59D /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15C1AB2411696D00DDF59D /* LocationManagerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0D15C1A32409618100DDF59D /* ArtistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistResponse.swift; sourceTree = "<group>"; };
 		0D15C1A5240961DC00DDF59D /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		0D15C1A924102F8F00DDF59D /* ITunesAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAdaptor.swift; sourceTree = "<group>"; };
+		0D15C1AB2411696D00DDF59D /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				0D15C1A32409618100DDF59D /* ArtistResponse.swift */,
 				0D15C1A5240961DC00DDF59D /* Artist.swift */,
 				0D15C1A924102F8F00DDF59D /* ITunesAdaptor.swift */,
+				0D15C1AB2411696D00DDF59D /* LocationManagerDelegate.swift */,
 			);
 			path = MusicByLocation;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				0D15C1A42409618100DDF59D /* ArtistResponse.swift in Sources */,
 				0D15C1742406CC6A00DDF59D /* AppDelegate.swift in Sources */,
 				0D15C1A6240961DD00DDF59D /* Artist.swift in Sources */,
+				0D15C1AC2411696E00DDF59D /* LocationManagerDelegate.swift in Sources */,
 				0D15C1762406CC6B00DDF59D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
