@@ -43,8 +43,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func updateArtistsByLocation(text: String?) {
         iTunesAdaptor.getArtists(search: text) { (artists) in
-            let names = artists?.map { return $0.artistName }
-            self.musicRecommendations.text = names?.joined(separator: ", " )
+            DispatchQueue.main.async {
+                let names = artists?.map { return $0.artistName }
+                self.musicRecommendations.text = names?.joined(separator: ", " )
+            }
         }
     }
     

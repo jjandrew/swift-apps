@@ -12,12 +12,14 @@ class ITunesAdaptor {
     let baseUrl = "https://itunes.apple.com"
     let decoder = JSONDecoder()
     
+    //search?
+    
     func getArtists(search: String?, completion: @escaping ([Artist]?) -> Void) {
         guard let search = search else {
             print("No search term provided terminting request")
             return }
         
-        let path = "/term=\(search)&entitu=musicArtist".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let path = "/search?term=\(search)&entitu=musicArtist".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: baseUrl + path) else {
                 print("Invalid URL")
