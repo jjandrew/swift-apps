@@ -30,7 +30,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = locationManagerDelegate
         locationManagerDelegate.vc = self
-        locationManager.requestLocation()
     }
 
     @IBAction func findArtists(_ sender: Any) {

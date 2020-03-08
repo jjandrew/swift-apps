@@ -12,7 +12,6 @@ class ITunesAdaptor {
     let baseUrl = "https://itunes.apple.com"
     let decoder = JSONDecoder()
     
-    //search?
     
     func getArtists(search: String?, completion: @escaping ([Artist]?) -> Void) {
         guard let search = search else {
@@ -30,8 +29,6 @@ class ITunesAdaptor {
         let request = URLRequest(url: url)
         
         URLSession.shared.dataTask(with: request) { (data,response, error) in
-            //what is an escape enclosure is this the outside closure?
-            //when do we use escape enclosures
             if let data = data {
                 if let response = self.parseJson(json: data) {
                     completion(response.results)

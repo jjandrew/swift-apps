@@ -12,8 +12,6 @@ import CoreLocation
 class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     let geocoder = CLGeocoder()
     weak var vc: ViewController?
-    //when to use weak reference
-    //whats a strong reference cycle and how is it not being cleared up from memory an issue
     
     var streetName: String? = nil
     var county: String? = ""

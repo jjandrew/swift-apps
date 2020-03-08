@@ -20,13 +20,16 @@ class Division {
     
     func getAbsence(for date: Date) -> Absence? {
         return absences.first {
-            $0.takenOn == date
+            let comparison = Calendar.current.compare($0.takenOn, to: date, toGranularity: .day)
+            return comparison == .orderedSame
+            //what does this mean
         }
     }
     
     func removeAbsence(for date: Date) {
         absences.removeAll {
-            $0.takenOn == date
+            let comparison = Calendar.current.compare($0.takenOn, to: date, toGranularity: .day)
+            return comparison == .orderedSame
         }
     }
 }
