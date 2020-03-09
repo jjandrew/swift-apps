@@ -16,18 +16,16 @@ class HomeViewController: UITableViewController {
     //add places to envoke encoding and decoding of json
     override func viewDidLoad() {
         super.viewDidLoad()
-        addDummyData()
         updateDateDisplay()
         
     }
     
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return divisions.count
-    }
-    
     override func viewDidAppear(_ animated: Bool) {
         tableView.reloadData()
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return divisions.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
