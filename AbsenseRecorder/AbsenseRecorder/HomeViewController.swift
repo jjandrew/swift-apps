@@ -137,6 +137,35 @@ class HomeViewController: UITableViewController {
         return decoded
     }
     
+    func saveDataToFile() {
+        guard let divisionsJson = convertDivisionsToJson() else {
+            return
+        }
+        
+        let filePath = UserDocumentManager.getDocumentDirectory().appendingPathComponent("divisions.txt")
+        //is where the file saved controlled by computer of XCode
+        
+        do {
+            try divisionsJson.write(to: filePath, atomically: true, encoding: String.Encoding.utf8)
+        } catch {
+            print("Unable to save by writing to a file")
+        }
+        //what does atomically mean
+        //what is .utf8
+    }
+    
+    func loadDataFromFile() {
+        let filePath = UserDocumentManager.getDocumentDirectory().appendingPathComponent("divisions.txt")
+        
+        do {
+            let json = try Data(contentsOf: filePath)
+            divisions = convertJsonToDivisions(json: json) ?? []
+        } catch {
+            print("Failed to read from file")
+            addDummyData()
+        }
+    }
+    
     func addDummyData() {
         divisions.append(DivisionFactory.createDivision(code: "BY-1", of: 8))
         divisions.append(DivisionFactory.createDivision(code: "CW-1", of: 10))

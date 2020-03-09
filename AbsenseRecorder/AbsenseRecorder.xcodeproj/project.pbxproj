@@ -14,6 +14,7 @@
 		0D15C1B22415987800DDF59D /* DivisionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF328123E36EB4006133CF /* DivisionFactory.swift */; };
 		0D15C1B32415987B00DDF59D /* Division.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF327F23E36D8D006133CF /* Division.swift */; };
 		0D15C1B42415987D00DDF59D /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF327D23E36D0C006133CF /* Student.swift */; };
+		0D15C1B62416C6F700DDF59D /* UserDocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D15C1B52416C6F700DDF59D /* UserDocumentManager.swift */; };
 		0DAF324E23E35F90006133CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF324D23E35F90006133CF /* AppDelegate.swift */; };
 		0DAF325023E35F90006133CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF324F23E35F90006133CF /* SceneDelegate.swift */; };
 		0DAF325223E35F90006133CF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DAF325123E35F90006133CF /* HomeViewController.swift */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		0D15C1AD2415980D00DDF59D /* DivisionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionTests.swift; sourceTree = "<group>"; };
+		0D15C1B52416C6F700DDF59D /* UserDocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDocumentManager.swift; sourceTree = "<group>"; };
 		0DAF324A23E35F90006133CF /* AbsenseRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AbsenseRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DAF324D23E35F90006133CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DAF324F23E35F90006133CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				0DFDC8E723E8B2950051761F /* DivisionAbsenceViewController.swift */,
 				0DFDC8EB23EB13F40051761F /* StudentCell.swift */,
 				0DFDC8ED23EB168B0051761F /* Absence.swift */,
+				0D15C1B52416C6F700DDF59D /* UserDocumentManager.swift */,
 			);
 			path = AbsenseRecorder;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				0DFDC8EC23EB13F40051761F /* StudentCell.swift in Sources */,
 				0DAF325023E35F90006133CF /* SceneDelegate.swift in Sources */,
 				0DFDC8E823E8B2950051761F /* DivisionAbsenceViewController.swift in Sources */,
+				0D15C1B62416C6F700DDF59D /* UserDocumentManager.swift in Sources */,
 				0DAF327E23E36D0D006133CF /* Student.swift in Sources */,
 				0DAF328223E36EB4006133CF /* DivisionFactory.swift in Sources */,
 			);
