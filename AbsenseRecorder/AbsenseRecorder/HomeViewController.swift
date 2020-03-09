@@ -13,7 +13,7 @@ class HomeViewController: UITableViewController {
     var divisions: [Division] = []
     var currentDate: Date = Date()
 
-    
+    //add places to envoke encoding and decoding of json
     override func viewDidLoad() {
         super.viewDidLoad()
         addDummyData()
@@ -112,6 +112,30 @@ class HomeViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    func convertDivisionsToJson() -> String? {
+        let encoder = JSONEncoder()
+        guard let encoded = try? encoder.encode(divisions) else {
+            print("Unable to encode divisions into json")
+            return nil
+        }
+        
+        guard let json = String(data: encoded, encoding: .utf8) else {
+            print("Unable to turn encoded divisions into a string")
+            return nil
+        }
+        
+        return json
+    }
+    
+    func convertJsonToDivisions(json: Data) -> [Division]? {
+        let decoder = JSONDecoder()
+        
+        guard let decoded = try? decoder.decode([Division].self, from: json) else {
+            return nil
+        }
+        
+        return decoded
+    }
     
     func addDummyData() {
         divisions.append(DivisionFactory.createDivision(code: "BY-1", of: 8))
