@@ -13,7 +13,6 @@ class HomeViewController: UITableViewController {
     var divisions: [Division] = []
     var currentDate: Date = Date()
 
-    //add places to envoke encoding and decoding of json
     override func viewDidLoad() {
         super.viewDidLoad()
         updateDateDisplay()

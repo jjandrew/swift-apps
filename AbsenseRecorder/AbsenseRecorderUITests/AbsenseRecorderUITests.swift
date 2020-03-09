@@ -42,6 +42,42 @@ class AbsenseRecorderUITests: XCTestCase {
         XCTAssertEqual(divisionCellNoAbsence.isSelected, false)
     }
 
+    func testDeleteAbsenseTrailingSwipeActionDeselectsCell() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.staticTexts["BY-1"]/*[[".cells.staticTexts[\"BY-1\"]",".staticTexts[\"BY-1\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        app.navigationBars["BY-1"].buttons["Mar 9, 2020"].tap()
+        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"BY-1").element/*[[".cells.containing(.button, identifier:\"Delete Absence\").element",".cells.containing(.button, identifier:\"trailing0\").element",".cells.containing(.button, identifier:\"checkmark\").element",".cells.containing(.staticText, identifier:\"BY-1\").element"],[[[-1,3],[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeLeft()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["trailing0"]/*[[".cells",".buttons[\"Delete Absence\"]",".buttons[\"trailing0\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        let divisionCell = tablesQuery.cells.element(boundBy: 0)
+        let divisionCellNoAbsence = tablesQuery.cells.element(boundBy: 1)
+        XCTAssertEqual(divisionCell.isSelected, false)
+    }
+    
+    func testLeadingSwipeActionSelectsCell() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        
+        let tablesQuery = app.tables
+        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"BY-1").element/*[[".cells.containing(.button, identifier:\"Delete Absence\").element",".cells.containing(.button, identifier:\"trailing0\").element",".cells.containing(.button, identifier:\"checkmark\").element",".cells.containing(.staticText, identifier:\"BY-1\").element"],[[[-1,3],[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeLeft()
+        tablesQuery/*@START_MENU_TOKEN@*/.buttons["trailing0"]/*[[".cells",".buttons[\"Delete Absence\"]",".buttons[\"trailing0\"]"],[[[-1,2],[-1,1],[-1,0,1]],[[-1,2],[-1,1]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
+        tablesQuery/*@START_MENU_TOKEN@*/.cells.containing(.staticText, identifier:"BY-1").element/*[[".cells.containing(.button, identifier:\"Delete Absence\").element",".cells.containing(.button, identifier:\"trailing0\").element",".cells.containing(.button, identifier:\"checkmark\").element",".cells.containing(.staticText, identifier:\"BY-1\").element"],[[[-1,3],[-1,2],[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.swipeRight()
+        tablesQuery.buttons["leading0"].tap()
+        
+        let divisionCell = tablesQuery.cells.element(boundBy: 0)
+        let divisionCellNoAbsence = tablesQuery.cells.element(boundBy: 1)
+        XCTAssertEqual(divisionCell.isSelected, true)
+    }
+    
+    
     func testLaunchPerformance() {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
             // This measures how long it takes to launch your application.
