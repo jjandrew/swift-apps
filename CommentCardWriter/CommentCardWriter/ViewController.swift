@@ -18,10 +18,10 @@ class ViewController: UIViewController {
     @IBOutlet var enjoymentValue: UILabel!
     @IBOutlet var progressValue: UILabel!
     @IBOutlet var removeChallengeOutlet: UIButton!
-    @IBOutlet var commentLabel: UILabel!
     @IBOutlet var challengeArrayLabel: UILabel!
     @IBOutlet var characterCountLabel: UILabel!
     @IBOutlet var addChallengeOutlet: UIButton!
+    @IBOutlet var commentTextView: UITextView!
     
     var challengeArray: [String] = []
     let maxLength = 300
@@ -31,10 +31,11 @@ class ViewController: UIViewController {
         let student = addDummyData()
         changeLabel(student: student)
         // Do any additional setup after loading the view.
-        commentLabel.isHidden = true
         removeChallengeOutlet.isHidden = true
+        commentTextView.isHidden = true
         challengeArrayLabel.isHidden = true
         characterCountLabel.isHidden = true
+        
     }
 
     func addDummyData() -> Student{
@@ -67,9 +68,9 @@ class ViewController: UIViewController {
         if challengeArray != [] {
             let comment = Comment(enjoyment: enjoymentInt, progress: progressInt, challenges: challengeArray, subject: student.subjects[0])
             comment.commentCompiler()
-            commentLabel.text = comment.comment
             characterCountLabel.text = String(comment.comment.count) + " Characters"
-            commentLabel.isHidden = false
+            commentTextView.text = comment.comment
+            commentTextView.isHidden = false
             characterCountLabel.isHidden = false
             challengeArrayLabel.isHidden = true
         } else {
@@ -86,7 +87,7 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         } else {
-            var challengeList: String
+//           var challengeList: String
             let enjoyment = enjoymentValue.text
             let progress = progressValue.text
             let enjoymentInt = Int(enjoyment!)!
@@ -102,7 +103,7 @@ class ViewController: UIViewController {
                 commentCharacters.commentCompiler()
                 commentLength = commentCharacters.comment.count
             }
-            for challenge in challengeArray {
+            for _ in challengeArray {
                 commentLength += 1
             }
             if commentLength + challengeText.text!.count + 2 <= maxLength {

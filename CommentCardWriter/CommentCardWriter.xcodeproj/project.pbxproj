@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D15C1B7241A9A2600DDF59D /* CommentCardWriter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommentCardWriter.entitlements; sourceTree = "<group>"; };
 		C67D48CA23F2DFCA000A0A03 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		C68805F123F2D0B3000428E8 /* CommentCardWriter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommentCardWriter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C68805F423F2D0B3000428E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 		C68805F323F2D0B3000428E8 /* CommentCardWriter */ = {
 			isa = PBXGroup;
 			children = (
+				0D15C1B7241A9A2600DDF59D /* CommentCardWriter.entitlements */,
 				C68805F423F2D0B3000428E8 /* AppDelegate.swift */,
 				C68805F623F2D0B3000428E8 /* SceneDelegate.swift */,
 				C68805F823F2D0B3000428E8 /* ViewController.swift */,
@@ -446,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CommentCardWriter/CommentCardWriter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CommentCardWriter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -463,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CommentCardWriter/CommentCardWriter.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = CommentCardWriter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

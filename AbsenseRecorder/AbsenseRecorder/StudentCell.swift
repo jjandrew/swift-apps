@@ -15,7 +15,6 @@ class StudentCell: UITableViewCell {
 
         self.accessoryType = selected ? .checkmark : .none
         
-        //are these enums
     }
 
 }
