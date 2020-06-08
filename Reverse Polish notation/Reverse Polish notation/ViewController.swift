@@ -30,7 +30,8 @@ class ViewController: UIViewController {
     @IBOutlet var multiplyButton: UIButton!
     @IBOutlet var divideButton: UIButton!
     
-    var expression = " "
+    var expression = ""
+    var numberEntry = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,24 +40,50 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zeroAction(_ sender: Any) {
+        numberEntry + "0"
     }
     @IBAction func oneAction(_ sender: Any) {
+        numberEntry + "1"
     }
     @IBAction func twoAction(_ sender: Any) {
+        numberEntry + "2"
     }
     @IBAction func threeAction(_ sender: Any) {
+        numberEntry + "3"
     }
     @IBAction func fourAction(_ sender: Any) {
+        numberEntry + "4"
     }
     @IBAction func fiveAction(_ sender: Any) {
+        numberEntry + "5"
     }
     @IBAction func sixAction(_ sender: Any) {
+        numberEntry + "6"
     }
     @IBAction func sevenAction(_ sender: Any) {
+        numberEntry + "7"
     }
     @IBAction func eightAction(_ sender: Any) {
+        numberEntry + "8"
     }
     @IBAction func nineAction(_ sender: Any) {
+        numberEntry + "9"
+    }
+    @IBAction func evalAction(_ sender: Any) {
+    }
+    @IBAction func clearAction(_ sender: Any) {
+    }
+    @IBAction func enterAction(_ sender: Any) {
+    }
+    @IBAction func negateAction(_ sender: Any) {
+    }
+    @IBAction func plusAction(_ sender: Any) {
+    }
+    @IBAction func minusAction(_ sender: Any) {
+    }
+    @IBAction func multiplyAction(_ sender: Any) {
+    }
+    @IBAction func divideAction(_ sender: Any) {
     }
 }
 
