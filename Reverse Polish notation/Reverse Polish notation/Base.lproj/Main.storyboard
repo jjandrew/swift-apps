@@ -161,6 +161,27 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="clearButton" destination="IRN-rZ-T9C" id="uFW-6J-Y4Z"/>
+                        <outlet property="divideButton" destination="Atc-IG-5XP" id="4sz-HC-xpn"/>
+                        <outlet property="eightButton" destination="FlK-9j-1i0" id="w14-AA-2Eu"/>
+                        <outlet property="enterButton" destination="MEQ-qb-35Q" id="wVB-tP-rJv"/>
+                        <outlet property="evaluateButton" destination="GCP-Jp-Ebp" id="nE6-Pf-pBY"/>
+                        <outlet property="expressionDisplay" destination="eWe-qg-4lP" id="NzK-Di-SRA"/>
+                        <outlet property="fiveButton" destination="1YS-oI-8ax" id="gM8-VX-THM"/>
+                        <outlet property="fourButton" destination="1Wl-x8-nEZ" id="N8q-Qu-Fbk"/>
+                        <outlet property="minusButton" destination="TFI-of-gzv" id="1V7-V4-63K"/>
+                        <outlet property="multiplyButton" destination="SLw-Mw-xsZ" id="v5V-yZ-7Wh"/>
+                        <outlet property="negateButton" destination="CNl-GK-n62" id="zrq-pH-0Ar"/>
+                        <outlet property="nineButton" destination="YN8-zP-xMt" id="Ncl-2v-a1E"/>
+                        <outlet property="oneButton" destination="b8j-Dd-kn7" id="pVn-ML-J7O"/>
+                        <outlet property="plusButton" destination="3kO-Ex-6n0" id="DGG-cA-Wqi"/>
+                        <outlet property="sevenButton" destination="gyF-z5-jXY" id="Fyw-vZ-M56"/>
+                        <outlet property="sixButton" destination="o8e-oH-sj7" id="azO-vy-tqZ"/>
+                        <outlet property="threeButton" destination="MB2-DZ-7tQ" id="8oD-1H-N5t"/>
+                        <outlet property="twoButton" destination="Uqc-kG-Kvb" id="UWL-88-gUK"/>
+                        <outlet property="zeroButton" destination="dQM-op-tqE" id="mUF-dq-2uY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
