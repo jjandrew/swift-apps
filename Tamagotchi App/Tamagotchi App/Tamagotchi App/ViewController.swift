@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var tamagotchiStats: UILabel!
+    @IBOutlet var tamago.tchiStats: UILabel!
     @IBOutlet var pooIcon: UIButton!
     @IBOutlet var resetIcon: UIButton!
     @IBOutlet var sickIcon: UIButton!

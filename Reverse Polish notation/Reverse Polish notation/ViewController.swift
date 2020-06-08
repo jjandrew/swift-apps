@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var expressionDisplay: UILabel!
+    @IBOutlet var expressionLabel: UILabel!
     @IBOutlet var zeroButton: UIButton!
     @IBOutlet var oneButton: UIButton!
     @IBOutlet var twoButton: UIButton!
@@ -30,12 +30,33 @@ class ViewController: UIViewController {
     @IBOutlet var multiplyButton: UIButton!
     @IBOutlet var divideButton: UIButton!
     
+    var expression = " "
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        expressionLabel.text = expression
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func zeroAction(_ sender: Any) {
+    }
+    @IBAction func oneAction(_ sender: Any) {
+    }
+    @IBAction func twoAction(_ sender: Any) {
+    }
+    @IBAction func threeAction(_ sender: Any) {
+    }
+    @IBAction func fourAction(_ sender: Any) {
+    }
+    @IBAction func fiveAction(_ sender: Any) {
+    }
+    @IBAction func sixAction(_ sender: Any) {
+    }
+    @IBAction func sevenAction(_ sender: Any) {
+    }
+    @IBAction func eightAction(_ sender: Any) {
+    }
+    @IBAction func nineAction(_ sender: Any) {
+    }
 }
 
