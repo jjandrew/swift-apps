@@ -15,6 +15,8 @@
 		0D67782C248E464B00D8CF36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D67782A248E464B00D8CF36 /* LaunchScreen.storyboard */; };
 		0D677837248E464C00D8CF36 /* Reverse_Polish_notationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D677836248E464C00D8CF36 /* Reverse_Polish_notationTests.swift */; };
 		0D677842248E464C00D8CF36 /* Reverse_Polish_notationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D677841248E464C00D8CF36 /* Reverse_Polish_notationUITests.swift */; };
+		0D677850248E7A3E00D8CF36 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D67784F248E7A3E00D8CF36 /* Evaluation.swift */; };
+		0D677852248E7B4400D8CF36 /* Validate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D677851248E7B4400D8CF36 /* Validate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		0D67783D248E464C00D8CF36 /* Reverse Polish notationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Reverse Polish notationUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D677841248E464C00D8CF36 /* Reverse_Polish_notationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reverse_Polish_notationUITests.swift; sourceTree = "<group>"; };
 		0D677843248E464C00D8CF36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D67784F248E7A3E00D8CF36 /* Evaluation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Evaluation.swift; sourceTree = "<group>"; };
+		0D677851248E7B4400D8CF36 /* Validate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 				0D67781F248E464100D8CF36 /* AppDelegate.swift */,
 				0D677821248E464100D8CF36 /* SceneDelegate.swift */,
 				0D677823248E464100D8CF36 /* ViewController.swift */,
+				0D67784F248E7A3E00D8CF36 /* Evaluation.swift */,
+				0D677851248E7B4400D8CF36 /* Validate.swift */,
 				0D677825248E464100D8CF36 /* Main.storyboard */,
 				0D677828248E464B00D8CF36 /* Assets.xcassets */,
 				0D67782A248E464B00D8CF36 /* LaunchScreen.storyboard */,
@@ -262,6 +268,8 @@
 				0D677824248E464100D8CF36 /* ViewController.swift in Sources */,
 				0D677820248E464100D8CF36 /* AppDelegate.swift in Sources */,
 				0D677822248E464100D8CF36 /* SceneDelegate.swift in Sources */,
+				0D677852248E7B4400D8CF36 /* Validate.swift in Sources */,
+				0D677850248E7A3E00D8CF36 /* Evaluation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

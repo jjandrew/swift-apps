@@ -30,8 +30,16 @@ class ViewController: UIViewController {
     @IBOutlet var multiplyButton: UIButton!
     @IBOutlet var divideButton: UIButton!
     
-    var expression = ""
+    var evaluation = Evaluation()
+    var validate = validate()
+    
+    var expression: String = "" {
+        didSet {
+            expressionLabel.text = expression
+        }
+    }
     var numberEntry = ""
+    var expressionStack = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,40 +48,58 @@ class ViewController: UIViewController {
     }
     
     @IBAction func zeroAction(_ sender: Any) {
-        numberEntry + "0"
+        numberEntry += "0"
+        expression += "0"
     }
     @IBAction func oneAction(_ sender: Any) {
-        numberEntry + "1"
+        numberEntry += "1"
+        expression += "1"
     }
     @IBAction func twoAction(_ sender: Any) {
-        numberEntry + "2"
+        numberEntry += "2"
+        expression += "2"
     }
     @IBAction func threeAction(_ sender: Any) {
-        numberEntry + "3"
+        numberEntry += "3"
+        expression += "3"
     }
     @IBAction func fourAction(_ sender: Any) {
-        numberEntry + "4"
+        numberEntry += "4"
+        expression += "4"
     }
     @IBAction func fiveAction(_ sender: Any) {
-        numberEntry + "5"
+        numberEntry += "5"
+        expression += "5"
     }
     @IBAction func sixAction(_ sender: Any) {
-        numberEntry + "6"
+        numberEntry += "6"
+        expression += "6"
     }
     @IBAction func sevenAction(_ sender: Any) {
-        numberEntry + "7"
+        numberEntry += "7"
+        expression += "7"
     }
     @IBAction func eightAction(_ sender: Any) {
-        numberEntry + "8"
+        numberEntry += "8"
+        expression += "8"
     }
     @IBAction func nineAction(_ sender: Any) {
-        numberEntry + "9"
+        numberEntry += "9"
+        expression += "9"
     }
     @IBAction func evalAction(_ sender: Any) {
+        validate.self(expressionStack)
+        evaluation = evaluation(equationStack: expressionStack)
+        evaluation.evaluate()
     }
     @IBAction func clearAction(_ sender: Any) {
+        expression = ""
+        expressionStack = []
     }
     @IBAction func enterAction(_ sender: Any) {
+        expressionStack.append(numberEntry)
+        expression += " "
+        numberEntry=""
     }
     @IBAction func negateAction(_ sender: Any) {
     }
