@@ -30,12 +30,15 @@ class ViewController: UIViewController {
     @IBOutlet var multiplyButton: UIButton!
     @IBOutlet var divideButton: UIButton!
     
-    var evaluation = Evaluation()
-    var validate = validate()
     
     var expression: String = "" {
         didSet {
             expressionLabel.text = expression
+        }
+    }
+    var tempExpression: String = "" {
+        didSet {
+            expressionLabel.text = tempExpression
         }
     }
     var numberEntry = ""
@@ -49,57 +52,81 @@ class ViewController: UIViewController {
     
     @IBAction func zeroAction(_ sender: Any) {
         numberEntry += "0"
-        expression += "0"
+        tempExpression += "0"
     }
     @IBAction func oneAction(_ sender: Any) {
         numberEntry += "1"
-        expression += "1"
+        tempExpression += "1"
     }
     @IBAction func twoAction(_ sender: Any) {
         numberEntry += "2"
-        expression += "2"
+        tempExpression += "2"
     }
     @IBAction func threeAction(_ sender: Any) {
         numberEntry += "3"
-        expression += "3"
+        tempExpression += "3"
     }
     @IBAction func fourAction(_ sender: Any) {
         numberEntry += "4"
-        expression += "4"
+        tempExpression += "4"
     }
     @IBAction func fiveAction(_ sender: Any) {
         numberEntry += "5"
-        expression += "5"
+        tempExpression += "5"
     }
     @IBAction func sixAction(_ sender: Any) {
         numberEntry += "6"
-        expression += "6"
+        tempExpression += "6"
     }
     @IBAction func sevenAction(_ sender: Any) {
         numberEntry += "7"
-        expression += "7"
+        tempExpression += "7"
     }
     @IBAction func eightAction(_ sender: Any) {
         numberEntry += "8"
-        expression += "8"
+        tempExpression += "8"
     }
     @IBAction func nineAction(_ sender: Any) {
         numberEntry += "9"
-        expression += "9"
+        tempExpression += "9"
     }
     @IBAction func evalAction(_ sender: Any) {
-        validate.self(expressionStack)
-        evaluation = evaluation(equationStack: expressionStack)
-        evaluation.evaluate()
+        let validation = Validate(expressionStack: expressionStack)
+        validation.validate()
+        if validation.reason == "true" {
+            let evaluation = Evaluation(equationStack: expressionStack)
+            evaluation.evaluate()
+        } else {
+            let alert = UIAlertController(title: "Error", message: validation.reason, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            expression = ""
+            expressionStack = []
+        }
     }
     @IBAction func clearAction(_ sender: Any) {
         expression = ""
         expressionStack = []
     }
     @IBAction func enterAction(_ sender: Any) {
+        if let intNumberEntry = Int(numberEntry) {
+            if intNumberEntry > 999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+            } else if intNumberEntry < -999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+            }
+        }
         expressionStack.append(numberEntry)
+        expression = tempExpression
         expression += " "
-        numberEntry=""
+        tempExpression = expression
+        numberEntry = ""
     }
     @IBAction func negateAction(_ sender: Any) {
     }

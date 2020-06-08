@@ -9,7 +9,11 @@
 import Foundation
 
 class Evaluation {
-    let equationStack: [String] = []
+    var equationStack: [String] = []
+    
+    init(equationStack: [String]){
+        self.equationStack = equationStack
+    }
     
     func evaluate() {
         

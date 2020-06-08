@@ -8,6 +8,16 @@
 
 import Foundation
 
-func validate(expressionStack: [String]) {
+class Validate {
+    let expressionStack: [String]
+    var reason = ""
     
+    init(expressionStack: [String]) {
+        self.expressionStack = expressionStack
+    }
+    
+    func validate() {
+        self.reason = "Test"
+    }
 }
+
