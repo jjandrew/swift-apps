@@ -138,7 +138,7 @@ class ViewController: UIViewController {
     @IBAction func negateAction(_ sender: Any) {
         if numberEntry.count > 0 {
             //need to index here
-            //if numberEntry[0] == "-" {
+            //if let subString = numberEntry.index(ofAccessibilityElement: 0) {
             //    numberEntry.remove[0]
             //} else {
             //    numberEntry += "-"
