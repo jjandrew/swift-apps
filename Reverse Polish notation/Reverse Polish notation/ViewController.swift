@@ -106,29 +106,47 @@ class ViewController: UIViewController {
     }
     @IBAction func clearAction(_ sender: Any) {
         expression = ""
+        tempExpression = expression
         expressionStack = []
     }
     @IBAction func enterAction(_ sender: Any) {
-        if let intNumberEntry = Int(numberEntry) {
-            if intNumberEntry > 999 {
-                let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(alert, animated: true)
-                tempExpression = expression
-            } else if intNumberEntry < -999 {
-                let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                self.present(alert, animated: true)
-                tempExpression = expression
+        if numberEntry == "" {
+            let alert = UIAlertController(title: "Error", message: "Must enter a number", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            if let intNumberEntry = Int(numberEntry) {
+                if intNumberEntry > 999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                } else if intNumberEntry < -999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                }
             }
+            expressionStack.append(numberEntry)
+            expression = tempExpression
+            expression += " "
+            tempExpression = expression
+            numberEntry = ""
         }
-        expressionStack.append(numberEntry)
-        expression = tempExpression
-        expression += " "
-        tempExpression = expression
-        numberEntry = ""
     }
     @IBAction func negateAction(_ sender: Any) {
+        if numberEntry.count > 0 {
+            //need to index here
+            //if numberEntry[0] == "-" {
+            //    numberEntry.remove[0]
+            //} else {
+            //    numberEntry += "-"
+            //}
+        } else {
+            numberEntry += "-"
+            tempExpression = expression + numberEntry
+        }
     }
     @IBAction func plusAction(_ sender: Any) {
     }
