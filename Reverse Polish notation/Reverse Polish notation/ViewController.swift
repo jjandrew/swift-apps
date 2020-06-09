@@ -149,12 +149,40 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func plusAction(_ sender: Any) {
+        numberEntry += "+"
+        tempExpression += "+"
+        expressionStack.append(numberEntry)
+        expression = tempExpression
+        expression += " "
+        tempExpression = expression
+        numberEntry = ""
     }
     @IBAction func minusAction(_ sender: Any) {
+        numberEntry += "-"
+        tempExpression += "-"
+        expressionStack.append(numberEntry)
+        expression = tempExpression
+        expression += " "
+        tempExpression = expression
+        numberEntry = ""
     }
     @IBAction func multiplyAction(_ sender: Any) {
+        numberEntry += "*"
+        tempExpression += "*"
+        expressionStack.append(numberEntry)
+        expression = tempExpression
+        expression += " "
+        tempExpression = expression
+        numberEntry = ""
     }
     @IBAction func divideAction(_ sender: Any) {
+        numberEntry += "/"
+        tempExpression += "/"
+        expressionStack.append(numberEntry)
+        expression = tempExpression
+        expression += " "
+        tempExpression = expression
+        numberEntry = ""
     }
 }
 
