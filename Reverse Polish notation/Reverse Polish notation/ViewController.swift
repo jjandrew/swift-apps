@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         }
     }
     var numberEntry = ""
-    var expressionStack = [String]()
+    var expressionArray = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,24 +91,26 @@ class ViewController: UIViewController {
         tempExpression += "9"
     }
     @IBAction func evalAction(_ sender: Any) {
-        let validation = Validate(expressionStack: expressionStack)
+        let validation = Validate(expressionStack: expressionArray)
         validation.validate()
         if validation.reason == "true" {
-            let evaluation = Evaluation(equationStack: expressionStack)
-            evaluation.evaluate()
+            let evaluation = Evaluation(equationArray: expressionArray)
+            let result = evaluation.evaluate()
+            expressionLabel.text = result
         } else {
             let alert = UIAlertController(title: "Error", message: validation.reason, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
             expression = ""
-            expressionStack = []
+            expressionArray = []
         }
     }
     @IBAction func clearAction(_ sender: Any) {
         expression = ""
         tempExpression = expression
         numberEntry = expression
-        expressionStack = []
+        expressionArray = []
+        expressionLabel.text = ""
     }
     @IBAction func enterAction(_ sender: Any) {
         if numberEntry == "" {
@@ -129,7 +131,7 @@ class ViewController: UIViewController {
                     tempExpression = expression
                 }
             }
-            expressionStack.append(numberEntry)
+            expressionArray.append(numberEntry)
             expression = tempExpression
             expression += " "
             tempExpression = expression
