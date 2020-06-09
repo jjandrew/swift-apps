@@ -107,6 +107,7 @@ class ViewController: UIViewController {
     @IBAction func clearAction(_ sender: Any) {
         expression = ""
         tempExpression = expression
+        numberEntry = expression
         expressionStack = []
     }
     @IBAction func enterAction(_ sender: Any) {
@@ -135,54 +136,50 @@ class ViewController: UIViewController {
             numberEntry = ""
         }
     }
+    
     @IBAction func negateAction(_ sender: Any) {
-        if numberEntry.count > 0 {
-            //need to index here
-            //if let subString = numberEntry.index(ofAccessibilityElement: 0) {
-            //    numberEntry.remove[0]
-            //} else {
-            //    numberEntry += "-"
-            //}
-        } else {
+        if numberEntry.count == 0 {
+            print("Option 3")
             numberEntry += "-"
-            tempExpression = expression + numberEntry
+            tempExpression += numberEntry
+        } else {
+            //need to index here
+            var numberEntryArray = Array(numberEntry)
+            if numberEntryArray[0] == "-" {
+                print("option 1")
+                numberEntryArray.remove(at:0)
+                print(numberEntryArray)
+                numberEntry = String(numberEntryArray)
+                tempExpression = expression + numberEntry
+            } else {
+                print("Option 2")
+                numberEntry = "-" + numberEntry
+                tempExpression = expression + numberEntry
+            }
         }
+        print("Number entry")
+        print(numberEntry)
+        print("tempExpression")
+        print(tempExpression)
+        print("Expression")
+        print(expression)
     }
+    
     @IBAction func plusAction(_ sender: Any) {
         numberEntry += "+"
         tempExpression += "+"
-        expressionStack.append(numberEntry)
-        expression = tempExpression
-        expression += " "
-        tempExpression = expression
-        numberEntry = ""
     }
     @IBAction func minusAction(_ sender: Any) {
         numberEntry += "-"
         tempExpression += "-"
-        expressionStack.append(numberEntry)
-        expression = tempExpression
-        expression += " "
-        tempExpression = expression
-        numberEntry = ""
     }
     @IBAction func multiplyAction(_ sender: Any) {
         numberEntry += "*"
         tempExpression += "*"
-        expressionStack.append(numberEntry)
-        expression = tempExpression
-        expression += " "
-        tempExpression = expression
-        numberEntry = ""
     }
     @IBAction func divideAction(_ sender: Any) {
         numberEntry += "/"
         tempExpression += "/"
-        expressionStack.append(numberEntry)
-        expression = tempExpression
-        expression += " "
-        tempExpression = expression
-        numberEntry = ""
     }
 }
 
