@@ -168,20 +168,116 @@ class ViewController: UIViewController {
     }
     
     @IBAction func plusAction(_ sender: Any) {
-        numberEntry += "+"
-        tempExpression += "+"
+        if numberEntry == "" {
+            let alert = UIAlertController(title: "Error", message: "Must enter a number", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            if let intNumberEntry = Int(numberEntry) {
+                if intNumberEntry > 999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                } else if intNumberEntry < -999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                }
+            }
+            expressionArray.append(numberEntry)
+            expression = tempExpression
+            expression += " "
+            tempExpression = expression
+            numberEntry = ""
+            numberEntry += "+"
+            tempExpression += "+"
+        }
     }
     @IBAction func minusAction(_ sender: Any) {
-        numberEntry += "-"
-        tempExpression += "-"
+        if numberEntry == "" {
+            let alert = UIAlertController(title: "Error", message: "Must enter a number", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            if let intNumberEntry = Int(numberEntry) {
+                if intNumberEntry > 999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                } else if intNumberEntry < -999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                }
+            }
+            expressionArray.append(numberEntry)
+            expression = tempExpression
+            expression += " "
+            tempExpression = expression
+            numberEntry = ""
+            numberEntry += "-"
+            tempExpression += "-"
+        }
     }
     @IBAction func multiplyAction(_ sender: Any) {
-        numberEntry += "*"
-        tempExpression += "*"
+        if numberEntry == "" {
+            let alert = UIAlertController(title: "Error", message: "Must enter a number", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            if let intNumberEntry = Int(numberEntry) {
+                if intNumberEntry > 999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                } else if intNumberEntry < -999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                }
+            }
+            expressionArray.append(numberEntry)
+            expression = tempExpression
+            expression += " "
+            tempExpression = expression
+            numberEntry = ""
+            numberEntry += "*"
+            tempExpression += "*"
+        }
     }
     @IBAction func divideAction(_ sender: Any) {
-        numberEntry += "/"
-        tempExpression += "/"
+        if numberEntry == "" {
+            let alert = UIAlertController(title: "Error", message: "Must enter a number", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            if let intNumberEntry = Int(numberEntry) {
+                if intNumberEntry > 999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                } else if intNumberEntry < -999 {
+                    let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    tempExpression = expression
+                }
+            }
+            expressionArray.append(numberEntry)
+            expression = tempExpression
+            expression += " "
+            tempExpression = expression
+            numberEntry = ""
+            numberEntry += "/"
+            tempExpression += "/"
+        }
     }
 }
 
