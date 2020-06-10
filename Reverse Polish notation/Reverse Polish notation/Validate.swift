@@ -17,7 +17,7 @@ class Validate {
     }
     
     func validate() {
-        self.reason = "Test"
+        self.reason = "true"
     }
 }
 
