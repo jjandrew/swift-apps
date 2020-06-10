@@ -46,7 +46,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        expressionLabel.text = expression
+        expressionLabel.text = "Enter equation"
         // Do any additional setup after loading the view.
     }
     
@@ -110,7 +110,7 @@ class ViewController: UIViewController {
         tempExpression = expression
         numberEntry = expression
         expressionArray = []
-        expressionLabel.text = ""
+        expressionLabel.text = "Enter equation"
     }
     @IBAction func enterAction(_ sender: Any) {
         if numberEntry == "" {
