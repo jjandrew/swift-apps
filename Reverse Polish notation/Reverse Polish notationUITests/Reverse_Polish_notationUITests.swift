@@ -13,7 +13,6 @@ class Reverse_Polish_notationUITests: XCTestCase {
     func testAllButtonsExist() {
         let app = XCUIApplication()
         app.launch()
-        let viewController = UIViewController()
         
         app.buttons["0"].tap()
         app.buttons["1"].tap()
@@ -103,11 +102,82 @@ class Reverse_Polish_notationUITests: XCTestCase {
         
         let button = app.buttons["+/-"]
         button.tap()
-        
-        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "-").label , "-")
         button.tap()
         XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "Enter equation").label , "Enter equation")
         
     }
+    
+    func testMinusButtonWorks() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["9"].tap()
+        app.buttons["9"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["3"].tap()
+        app.buttons["-"].tap()
+        app.buttons["Eval"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "96").label, "96")
+    }
+    
+    func testMultiplyButtonWorks() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["9"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["3"].tap()
+        app.buttons["*"].tap()
+        app.buttons["Eval"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "27").label, "27")
+    }
+    
+    func testPlusButtonWorks() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["4"].tap()
+        app.buttons["0"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["2"].tap()
+        app.buttons["+"].tap()
+        app.buttons["Eval"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "42").label, "42")
+    }
 
+    func testDivideButtonWorks() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["9"].tap()
+        app.buttons["9"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["3"].tap()
+        app.buttons["/"].tap()
+        app.buttons["Eval"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "33").label, "33")
+    }
+    
+    func testAlertButtonWorks() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons["9"].tap()
+        app.buttons["9"].tap()
+        app.buttons["9"].tap()
+        app.buttons["9"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["Ok"].tap()
+        
+    }
+    
 }
