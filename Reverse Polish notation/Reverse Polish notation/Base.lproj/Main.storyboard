@@ -125,7 +125,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="55"/>
                                 <state key="normal" title="+"/>
                                 <connections>
-                                    <action selector="negateAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GfZ-iE-c3S"/>
                                     <action selector="plusAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DtO-Vp-h8g"/>
                                 </connections>
                             </button>

@@ -91,7 +91,7 @@ class ViewController: UIViewController {
         tempExpression += "9"
     }
     @IBAction func evalAction(_ sender: Any) {
-        let validation = Validate(expressionStack: expressionArray)
+        let validation = Validate(expressionArray: expressionArray)
         validation.validate()
         if validation.reason == "true" {
             let evaluation = Evaluation(equationArray: expressionArray)
@@ -102,7 +102,9 @@ class ViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
             expression = ""
+            numberEntry = ""
             expressionArray = []
+            expressionLabel.text = "Enter equation"
         }
     }
     @IBAction func clearAction(_ sender: Any) {
@@ -130,6 +132,11 @@ class ViewController: UIViewController {
                     self.present(alert, animated: true)
                     tempExpression = expression
                 }
+            } else {
+                let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
             }
             expressionArray.append(numberEntry)
             expression = tempExpression
@@ -141,67 +148,101 @@ class ViewController: UIViewController {
     
     @IBAction func negateAction(_ sender: Any) {
         if numberEntry.count == 0 {
-            print("Option 3")
             numberEntry += "-"
             tempExpression += numberEntry
         } else {
-            //need to index here
             var numberEntryArray = Array(numberEntry)
             if numberEntryArray[0] == "-" {
-                print("option 1")
                 numberEntryArray.remove(at:0)
                 print(numberEntryArray)
                 numberEntry = String(numberEntryArray)
                 tempExpression = expression + numberEntry
             } else {
-                print("Option 2")
                 numberEntry = "-" + numberEntry
                 tempExpression = expression + numberEntry
             }
         }
-        print("Number entry")
-        print(numberEntry)
-        print("tempExpression")
-        print(tempExpression)
-        print("Expression")
-        print(expression)
     }
     
     @IBAction func plusAction(_ sender: Any) {
-        numberEntry += "+"
-        tempExpression += "+"
-        expressionArray.append(numberEntry)
-        expression = tempExpression
-        expression += " "
-        tempExpression = expression
-        numberEntry = ""
+        if let numberEntryInt = Int(numberEntry) {
+            let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+             self.present(alert, animated: true)
+             tempExpression = expression
+            numberEntry = ""
+            if expression == "" {
+                expressionLabel.text = "Enter equation"
+            }
+        } else {
+            numberEntry += "+"
+            tempExpression += "+"
+            expressionArray.append(numberEntry)
+            expression = tempExpression
+            expression += " "
+            tempExpression = expression
+            numberEntry = ""
+        }
     }
     @IBAction func minusAction(_ sender: Any) {
-        numberEntry += "-"
-        tempExpression += "-"
-        expressionArray.append(numberEntry)
-        expression = tempExpression
-        expression += " "
-        tempExpression = expression
-        numberEntry = ""
+        if let numberEntryInt = Int(numberEntry) {
+            let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+             self.present(alert, animated: true)
+             tempExpression = expression
+            numberEntry = ""
+            if expression == "" {
+                expressionLabel.text = "Enter equation"
+            }
+        } else {
+            numberEntry += "-"
+            tempExpression += "-"
+            expressionArray.append(numberEntry)
+            expression = tempExpression
+            expression += " "
+            tempExpression = expression
+            numberEntry = ""
+        }
     }
     @IBAction func multiplyAction(_ sender: Any) {
-        numberEntry += "*"
-        tempExpression += "*"
-        expressionArray.append(numberEntry)
-        expression = tempExpression
-        expression += " "
-        tempExpression = expression
-        numberEntry = ""
+        if let numberEntryInt = Int(numberEntry) {
+            let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+             self.present(alert, animated: true)
+             tempExpression = expression
+            numberEntry = ""
+            if expression == "" {
+                expressionLabel.text = "Enter equation"
+            }
+        } else {
+            numberEntry += "*"
+            tempExpression += "*"
+            expressionArray.append(numberEntry)
+            expression = tempExpression
+            expression += " "
+            tempExpression = expression
+            numberEntry = ""
+        }
     }
     @IBAction func divideAction(_ sender: Any) {
-        numberEntry += "/"
-        tempExpression += "/"
-        expressionArray.append(numberEntry)
-        expression = tempExpression
-        expression += " "
-        tempExpression = expression
-        numberEntry = ""
+        if let numberEntryInt = Int(numberEntry) {
+            let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
+             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+             self.present(alert, animated: true)
+             tempExpression = expression
+            numberEntry = ""
+            if expression == "" {
+                expressionLabel.text = "Enter equation"
+            }
+        } else {
+            numberEntry += "/"
+            tempExpression += "/"
+            expressionArray.append(numberEntry)
+            expression = tempExpression
+            expression += " "
+            tempExpression = expression
+            numberEntry = ""
+        }
     }
 
 }

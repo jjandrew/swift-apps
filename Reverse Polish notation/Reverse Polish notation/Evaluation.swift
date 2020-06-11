@@ -21,8 +21,11 @@ class Evaluation {
         var result = 0
         for i in (0 ..< equationArray.count) {
             let currentPart = equationArray[i]
+            print(equationStack)
             if let currentPart = Int(currentPart) {
                 equationStack.append(String(currentPart))
+            } else if equationStack.count == 1 {
+                print("error must have more than one operand")
             } else if correctOperator(part: currentPart) == true {
                 let operand2 = Int(equationStack[equationStack.count - 1])!
                 equationStack.remove(at: equationStack.count - 1)
