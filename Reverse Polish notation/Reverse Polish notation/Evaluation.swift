@@ -21,7 +21,6 @@ class Evaluation {
         var result = 0
         for i in (0 ..< equationArray.count) {
             let currentPart = equationArray[i]
-            print(equationStack)
             if let currentPart = Int(currentPart) {
                 equationStack.append(String(currentPart))
             } else if equationStack.count == 1 {

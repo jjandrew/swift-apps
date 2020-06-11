@@ -96,6 +96,10 @@ class ViewController: UIViewController {
         if validation.reason == "true" {
             let evaluation = Evaluation(equationArray: expressionArray)
             let result = evaluation.evaluate()
+            expression = ""
+            numberEntry = ""
+            tempExpression = expression
+            expressionArray = []
             expressionLabel.text = result
         } else {
             let alert = UIAlertController(title: "Error", message: validation.reason, preferredStyle: .alert)
@@ -176,6 +180,9 @@ class ViewController: UIViewController {
                 numberEntry = "-" + numberEntry
                 tempExpression = expression + numberEntry
             }
+        }
+        if tempExpression.count == 0 {
+            expressionLabel.text = "Enter equation"
         }
     }
     

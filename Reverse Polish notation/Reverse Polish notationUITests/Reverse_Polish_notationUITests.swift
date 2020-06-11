@@ -10,7 +10,7 @@ import XCTest
 
 class Reverse_Polish_notationUITests: XCTestCase {
 
-    func testPlusButtonAddsToNumberEntry() {
+    func testAllButtonsExist() {
         let app = XCUIApplication()
         app.launch()
         let viewController = UIViewController()
@@ -25,52 +25,88 @@ class Reverse_Polish_notationUITests: XCTestCase {
         app.buttons["7"].tap()
         app.buttons["8"].tap()
         app.buttons["9"].tap()
+        app.buttons["CLR"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["Eval"].tap()
+        app.buttons["+"].tap()
+        app.buttons["-"].tap()
+        app.buttons["*"].tap()
+        app.buttons["/"].tap()
+        app.buttons["+/-"].tap()
         
-        //XCTAssertEqual(numberEntry, "0123456789")
     }
     
-    func testPlusButtonAddsToNumberEntr() {
+    func testEnterAddsNumbersToExpression() {
         let app = XCUIApplication()
         app.launch()
-        let viewController = UIViewController()
         
-        app.buttons["0"].tap()
         app.buttons["1"].tap()
         app.buttons["2"].tap()
+        app.buttons["Enter"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "12 ").label, "12 ")
+        
+    }
+    
+    func testEvaluateWithAValidExpressionDisplaysCorrectAnswerToUser() {
+        let app = XCUIApplication()
+        app.launch()
+        
         app.buttons["3"].tap()
+        app.buttons["Enter"].tap()
         app.buttons["4"].tap()
-        app.buttons["5"].tap()
-        app.buttons["6"].tap()
-        app.buttons["7"].tap()
-        app.buttons["8"].tap()
-        app.buttons["9"].tap()
+        app.buttons["*"].tap()
+        app.buttons["Eval"].tap()
         
-        //XCTAssertEqual(numberEntry, "0123456789")
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "12").label, "12")
+        
     }
     
-    func checkAllButtonsExist() {
+    func testWhenAppLaunchesEnterEquationIsDisplayed() {
+        let app = XCUIApplication()
+        app.launch()
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "Enter equation").label, "Enter equation")
+    }
+    
+    func testWhenClearIsPressedEnterEquationIsDisplayed() {
         let app = XCUIApplication()
         app.launch()
         
-        XCTAssertTrue(app.alerts["0"].exists)
-        XCTAssertTrue(app.alerts["1"].exists)
-        XCTAssertTrue(app.alerts["2"].exists)
-        XCTAssertTrue(app.alerts["3"].exists)
-        XCTAssertTrue(app.alerts["4"].exists)
-        XCTAssertTrue(app.alerts["5"].exists)
-        XCTAssertTrue(app.alerts["6"].exists)
-        XCTAssertTrue(app.alerts["7"].exists)
-        XCTAssertTrue(app.alerts["8"].exists)
-        XCTAssertTrue(app.alerts["9"].exists)
+        app.buttons["3"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["4"].tap()
+        app.buttons["Enter"].tap()
+        app.buttons["CLR"].tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "Enter equation").label, "Enter equation")
     }
     
-    func checkEnterAddsNumbersToExpression() {
+    func testNegateButtonNegatesNumberAndCanBeUndone() {
         let app = XCUIApplication()
         app.launch()
         
-        let expected = ""
+        app.buttons["3"].tap()
+        app.buttons["3"].tap()
+        app.buttons["+/-"].tap()
         
-        app.buttons["0"].tap()
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "-33").label, "-33")
+        
+        app.buttons["+/-"].tap()
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "33").label, "33")
+        
+    }
+    
+    func testNegateButtonWithNoNumberEnteredNegatesNumberAnCanBeUndone() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let button = app.buttons["+/-"]
+        button.tap()
+        
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "-").label , "-")
+        button.tap()
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "Enter equation").label , "Enter equation")
         
     }
 
