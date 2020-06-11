@@ -67,4 +67,67 @@ class Reverse_Polish_notationTests: XCTestCase {
         XCTAssertEqual(result, expected)
     }
     
+    func testEvaluationWithMultipleOperatorsReturnsCorrectAnswer() {
+        let evaluation = Evaluation(equationArray: ["-12", "2", "/", "5", "100", "+", "*"])
+        let result = evaluation.evaluate()
+        let expected = "-630"
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testValidateWillReturnErrorIfNothingIsEntered() {
+        let validate = Validate(expressionArray: [])
+        validate.validate()
+        let result = validate.reason
+        let expected = "Expression must have at least 3 items"
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testValidateWillReturnErrorIfOneDigitIsEntered() {
+        let validate = Validate(expressionArray: ["1"])
+        validate.validate()
+        let result = validate.reason
+        let expected = "Expression must have at least 3 items"
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testValidateWillReturnErrorIfTwoDigitsAreEntered() {
+        let validate = Validate(expressionArray: ["1","2"])
+        validate.validate()
+        let result = validate.reason
+        let expected = "Expression must have at least 3 items"
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testValidateWillReturnErrorIfEquationEndingInOperatorIsEntered() {
+        let validate = Validate(expressionArray: ["4", "5", "+", "6"])
+        validate.validate()
+        let result = validate.reason
+        let expected = "Expression must end in an operator"
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testValidateWillReturnErrorIfThreeIntegersInARowAreEntered() {
+        let validate = Validate(expressionArray: ["4", "5", "+", "6", "9", "10", "-"])
+        validate.validate()
+        let result = validate.reason
+        let expected = "Cannot have 3 integers in a row"
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testValidateWillReturnTrueIfShortValidExpressionIsEntered() {
+        let validate = Validate(expressionArray: ["4", "5", "+"])
+        validate.validate()
+        let result = validate.reason
+        let expected = "true"
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testValidateWillReturnTrueIfLongValidExpressionIsEntered() {
+        let validate = Validate(expressionArray: ["-12", "2", "/", "5", "100", "+", "*"])
+        validate.validate()
+        let result = validate.reason
+        let expected = "true"
+        XCTAssertEqual(result, expected)
+    }
+    
 }
