@@ -10,6 +10,11 @@ import XCTest
 
 class Reverse_Polish_notationUITests: XCTestCase {
 
-
+    func testPlusButtonAddsToNumberEntry() {
+        let app = XCUIApplication()
+        app.launch()
+        
+        app.buttons[]
+    }
 
 }

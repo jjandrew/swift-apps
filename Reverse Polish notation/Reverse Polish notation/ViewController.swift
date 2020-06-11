@@ -207,14 +207,6 @@ class ViewController: UIViewController {
                 tempExpression = expression
                 numberEntry = ""
             }
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
-            tempExpression = expression
-            if expression == "" {
-                expressionLabel.text = "Enter equation"
-            }
         }
         if error == false {
             numberEntry += "+"
@@ -253,14 +245,6 @@ class ViewController: UIViewController {
                 expression += " "
                 tempExpression = expression
                 numberEntry = ""
-            }
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
-            tempExpression = expression
-            if expression == "" {
-                expressionLabel.text = "Enter equation"
             }
         }
         if error == false {
@@ -301,14 +285,6 @@ class ViewController: UIViewController {
                 tempExpression = expression
                 numberEntry = ""
             }
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
-            tempExpression = expression
-            if expression == "" {
-                expressionLabel.text = "Enter equation"
-            }
         }
         if error == false {
             numberEntry += "*"
@@ -347,14 +323,6 @@ class ViewController: UIViewController {
                 expression += " "
                 tempExpression = expression
                 numberEntry = ""
-            }
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
-            tempExpression = expression
-            if expression == "" {
-                expressionLabel.text = "Enter equation"
             }
         }
         if error == false {
