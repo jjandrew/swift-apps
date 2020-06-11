@@ -18,8 +18,6 @@ class Validate {
     
     func validate() {
         var validated = true
-        print(expressionArray)
-        print(expressionArray.count)
         if expressionArray.count < 3 {
             self.reason = "Expression must have at least 3 items"
             validated = false
