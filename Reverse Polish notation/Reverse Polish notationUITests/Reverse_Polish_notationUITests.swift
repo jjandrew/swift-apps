@@ -180,4 +180,126 @@ class Reverse_Polish_notationUITests: XCTestCase {
         
     }
     
+    func testIfMultipleOperatorsAreEnteredSystemFails() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let button = app.buttons["+"]
+        button.tap()
+        button.tap()
+        button.tap()
+        app.buttons["Eval"].tap()
+        app.alerts["Error"].scrollViews.otherElements.buttons["Ok"].tap()
+        
+    }
+    
+    func testPlusButtonDisplaysErrorForAboveAndBelowRange() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let button = app.buttons["8"]
+        button.tap()
+        button.tap()
+        button.tap()
+        button.tap()
+        app.buttons["+"].tap()
+        
+        let okButton = app.alerts["Error"].scrollViews.otherElements.buttons["Ok"]
+        okButton.tap()
+        app.buttons["CLR"].tap()
+        
+        let button2 = app.buttons["9"]
+        button2.tap()
+        button2.tap()
+        button2.tap()
+        button2.tap()
+        app.buttons["+/-"].tap()
+        app.buttons["+"].tap()
+        okButton.tap()
+        
+    }
+    
+    func testMinusButtonDisplaysErrorForAboveAndBelowRange() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let button = app.buttons["8"]
+        button.tap()
+        button.tap()
+        button.tap()
+        button.tap()
+        app.buttons["-"].tap()
+        
+        let okButton = app.alerts["Error"].scrollViews.otherElements.buttons["Ok"]
+        okButton.tap()
+        app.buttons["CLR"].tap()
+        
+        let button2 = app.buttons["9"]
+        button2.tap()
+        button2.tap()
+        button2.tap()
+        button2.tap()
+        app.buttons["+/-"].tap()
+        app.buttons["-"].tap()
+        okButton.tap()
+        
+    }
+    
+    func testTimesButtonDisplaysErrorForAboveAndBelowRange() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let button = app.buttons["8"]
+        button.tap()
+        button.tap()
+        button.tap()
+        button.tap()
+        app.buttons["*"].tap()
+        
+        let okButton = app.alerts["Error"].scrollViews.otherElements.buttons["Ok"]
+        okButton.tap()
+        app.buttons["CLR"].tap()
+        
+        let button2 = app.buttons["9"]
+        button2.tap()
+        button2.tap()
+        button2.tap()
+        button2.tap()
+        app.buttons["+/-"].tap()
+        app.buttons["*"].tap()
+        okButton.tap()
+        
+    }
+    
+    func testDivideButtonDisplaysErrorForAboveAndBelowRange() {
+        
+        let app = XCUIApplication()
+        app.launch()
+        
+        let button = app.buttons["8"]
+        button.tap()
+        button.tap()
+        button.tap()
+        button.tap()
+        app.buttons["/"].tap()
+        
+        let okButton = app.alerts["Error"].scrollViews.otherElements.buttons["Ok"]
+        okButton.tap()
+        app.buttons["CLR"].tap()
+        
+        let button2 = app.buttons["9"]
+        button2.tap()
+        button2.tap()
+        button2.tap()
+        button2.tap()
+        app.buttons["+/-"].tap()
+        app.buttons["/"].tap()
+        okButton.tap()
+        
+    }
+    
 }

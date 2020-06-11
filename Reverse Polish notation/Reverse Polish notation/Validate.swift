@@ -24,6 +24,9 @@ class Validate {
         } else if correctOperator(part: expressionArray[expressionArray.count - 1]) == false {
             self.reason = "Expression must end in an operator"
             validated = false
+        } else if correctOperator(part: expressionArray[0]) == true {
+            self.reason = "Expression must start with an operand"
+            validated = false
         } else {
             for i in (2 ..< expressionArray.count - 1) {
                 if let checkInteger = Int(expressionArray[i]) {

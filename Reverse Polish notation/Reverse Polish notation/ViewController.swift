@@ -173,7 +173,6 @@ class ViewController: UIViewController {
             var numberEntryArray = Array(numberEntry)
             if numberEntryArray[0] == "-" {
                 numberEntryArray.remove(at:0)
-                print(numberEntryArray)
                 numberEntry = String(numberEntryArray)
                 tempExpression = expression + numberEntry
             } else {
