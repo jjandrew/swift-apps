@@ -103,6 +103,7 @@ class ViewController: UIViewController {
             self.present(alert, animated: true)
             expression = ""
             numberEntry = ""
+            tempExpression = expression
             expressionArray = []
             expressionLabel.text = "Enter equation"
         }
@@ -119,6 +120,9 @@ class ViewController: UIViewController {
             let alert = UIAlertController(title: "Error", message: "Must enter a number", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
+            if expression == "" {
+                expressionLabel.text = "Enter equation"
+            }
         } else {
             if let intNumberEntry = Int(numberEntry) {
                 if intNumberEntry > 999 {
@@ -126,23 +130,34 @@ class ViewController: UIViewController {
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true)
                     tempExpression = expression
+                    if expression == "" {
+                        expressionLabel.text = "Enter equation"
+                    }
                 } else if intNumberEntry < -999 {
                     let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true)
                     tempExpression = expression
+                    if expression == "" {
+                        expressionLabel.text = "Enter equation"
+                    }
+                } else {
+                    expressionArray.append(numberEntry)
+                    expression = tempExpression
+                    expression += " "
+                    tempExpression = expression
+                    numberEntry = ""
                 }
             } else {
                 let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true)
                 tempExpression = expression
+                if expression == "" {
+                    expressionLabel.text = "Enter equation"
+                }
             }
-            expressionArray.append(numberEntry)
-            expression = tempExpression
-            expression += " "
-            tempExpression = expression
-            numberEntry = ""
+
         }
     }
     
@@ -165,16 +180,43 @@ class ViewController: UIViewController {
     }
     
     @IBAction func plusAction(_ sender: Any) {
-        if let numberEntryInt = Int(numberEntry) {
+        var error = false
+        if let intNumberEntry = Int(numberEntry) {
+            if intNumberEntry > 999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+                if expression == "" {
+                    expressionLabel.text = "Enter equation"
+                }
+                error = true
+            } else if intNumberEntry < -999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+                if expression == "" {
+                    expressionLabel.text = "Enter equation"
+                }
+                error = true
+            } else {
+                expressionArray.append(numberEntry)
+                expression = tempExpression
+                expression += " "
+                tempExpression = expression
+                numberEntry = ""
+            }
+        } else {
             let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-             self.present(alert, animated: true)
-             tempExpression = expression
-            numberEntry = ""
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            tempExpression = expression
             if expression == "" {
                 expressionLabel.text = "Enter equation"
             }
-        } else {
+        }
+        if error == false {
             numberEntry += "+"
             tempExpression += "+"
             expressionArray.append(numberEntry)
@@ -185,16 +227,43 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func minusAction(_ sender: Any) {
-        if let numberEntryInt = Int(numberEntry) {
+        var error = false
+        if let intNumberEntry = Int(numberEntry) {
+            if intNumberEntry > 999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+                if expression == "" {
+                    expressionLabel.text = "Enter equation"
+                }
+                error = true
+            } else if intNumberEntry < -999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+                if expression == "" {
+                    expressionLabel.text = "Enter equation"
+                }
+                error = true
+            } else {
+                expressionArray.append(numberEntry)
+                expression = tempExpression
+                expression += " "
+                tempExpression = expression
+                numberEntry = ""
+            }
+        } else {
             let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-             self.present(alert, animated: true)
-             tempExpression = expression
-            numberEntry = ""
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            tempExpression = expression
             if expression == "" {
                 expressionLabel.text = "Enter equation"
             }
-        } else {
+        }
+        if error == false {
             numberEntry += "-"
             tempExpression += "-"
             expressionArray.append(numberEntry)
@@ -205,16 +274,43 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func multiplyAction(_ sender: Any) {
-        if let numberEntryInt = Int(numberEntry) {
+        var error = false
+        if let intNumberEntry = Int(numberEntry) {
+            if intNumberEntry > 999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+                if expression == "" {
+                    expressionLabel.text = "Enter equation"
+                }
+                error = true
+            } else if intNumberEntry < -999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+                if expression == "" {
+                    expressionLabel.text = "Enter equation"
+                }
+                error = true
+            } else {
+                expressionArray.append(numberEntry)
+                expression = tempExpression
+                expression += " "
+                tempExpression = expression
+                numberEntry = ""
+            }
+        } else {
             let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-             self.present(alert, animated: true)
-             tempExpression = expression
-            numberEntry = ""
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            tempExpression = expression
             if expression == "" {
                 expressionLabel.text = "Enter equation"
             }
-        } else {
+        }
+        if error == false {
             numberEntry += "*"
             tempExpression += "*"
             expressionArray.append(numberEntry)
@@ -225,16 +321,43 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func divideAction(_ sender: Any) {
-        if let numberEntryInt = Int(numberEntry) {
+        var error = false
+        if let intNumberEntry = Int(numberEntry) {
+            if intNumberEntry > 999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be less than 999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+                if expression == "" {
+                    expressionLabel.text = "Enter equation"
+                }
+                error = true
+            } else if intNumberEntry < -999 {
+                let alert = UIAlertController(title: "Error", message: "Number must be more than -999", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                tempExpression = expression
+                if expression == "" {
+                    expressionLabel.text = "Enter equation"
+                }
+                error = true
+            } else {
+                expressionArray.append(numberEntry)
+                expression = tempExpression
+                expression += " "
+                tempExpression = expression
+                numberEntry = ""
+            }
+        } else {
             let alert = UIAlertController(title: "Error", message: "Must enter an integer", preferredStyle: .alert)
-             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-             self.present(alert, animated: true)
-             tempExpression = expression
-            numberEntry = ""
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+            tempExpression = expression
             if expression == "" {
                 expressionLabel.text = "Enter equation"
             }
-        } else {
+        }
+        if error == false {
             numberEntry += "/"
             tempExpression += "/"
             expressionArray.append(numberEntry)
