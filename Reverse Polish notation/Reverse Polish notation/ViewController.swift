@@ -36,11 +36,13 @@ class ViewController: UIViewController {
             expressionLabel.text = expression
         }
     }
+    
     var tempExpression: String = "" {
         didSet {
             expressionLabel.text = tempExpression
         }
     }
+    
     var numberEntry = ""
     var expressionArray = [String]()
     
@@ -54,42 +56,52 @@ class ViewController: UIViewController {
         numberEntry += "0"
         tempExpression += "0"
     }
+    
     @IBAction func oneAction(_ sender: Any) {
         numberEntry += "1"
         tempExpression += "1"
     }
+    
     @IBAction func twoAction(_ sender: Any) {
         numberEntry += "2"
         tempExpression += "2"
     }
+    
     @IBAction func threeAction(_ sender: Any) {
         numberEntry += "3"
         tempExpression += "3"
     }
+    
     @IBAction func fourAction(_ sender: Any) {
         numberEntry += "4"
         tempExpression += "4"
     }
+    
     @IBAction func fiveAction(_ sender: Any) {
         numberEntry += "5"
         tempExpression += "5"
     }
+    
     @IBAction func sixAction(_ sender: Any) {
         numberEntry += "6"
         tempExpression += "6"
     }
+    
     @IBAction func sevenAction(_ sender: Any) {
         numberEntry += "7"
         tempExpression += "7"
     }
+    
     @IBAction func eightAction(_ sender: Any) {
         numberEntry += "8"
         tempExpression += "8"
     }
+    
     @IBAction func nineAction(_ sender: Any) {
         numberEntry += "9"
         tempExpression += "9"
     }
+    
     @IBAction func evalAction(_ sender: Any) {
         let validation = Validate(expressionArray: expressionArray)
         validation.validate()
@@ -112,6 +124,7 @@ class ViewController: UIViewController {
             expressionLabel.text = "Enter equation"
         }
     }
+    
     @IBAction func clearAction(_ sender: Any) {
         expression = ""
         tempExpression = expression
@@ -119,6 +132,7 @@ class ViewController: UIViewController {
         expressionArray = []
         expressionLabel.text = "Enter equation"
     }
+    
     @IBAction func enterAction(_ sender: Any) {
         if numberEntry == "" {
             let alert = UIAlertController(title: "Error", message: "Must enter a number", preferredStyle: .alert)
@@ -224,6 +238,7 @@ class ViewController: UIViewController {
             numberEntry = ""
         }
     }
+    
     @IBAction func minusAction(_ sender: Any) {
         var error = false
         if let intNumberEntry = Int(numberEntry) {
@@ -263,6 +278,7 @@ class ViewController: UIViewController {
             numberEntry = ""
         }
     }
+    
     @IBAction func multiplyAction(_ sender: Any) {
         var error = false
         if let intNumberEntry = Int(numberEntry) {
@@ -302,6 +318,7 @@ class ViewController: UIViewController {
             numberEntry = ""
         }
     }
+    
     @IBAction func divideAction(_ sender: Any) {
         var error = false
         if let intNumberEntry = Int(numberEntry) {
