@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalculationsViewController.swift
 //  Bloating Labels
 //
 //  Created by JJ Andrew on 23/06/2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,4 +17,3 @@ class ViewController: UIViewController {
 
 
 }
-
