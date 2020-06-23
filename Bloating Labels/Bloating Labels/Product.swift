@@ -15,6 +15,7 @@ class Product {
     var cost: Double
     var predictedPrice: Double
     var soldPrice: Double?
+    var profit: Double?
     
     init(name: String, brand: String, colour: String, cost: Double, predictedPrice: Double){
         self.name = name
@@ -23,5 +24,6 @@ class Product {
         self.cost = cost
         self.predictedPrice = predictedPrice
         self.soldPrice = nil
+        self.profit = nil
     }
 }
