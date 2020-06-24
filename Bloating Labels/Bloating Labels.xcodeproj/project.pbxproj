@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DCDFB5C24A3445B005BE621 /* ProductTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDFB5B24A3445B005BE621 /* ProductTableViewController.swift */; };
+		0DCDFB5E24A34474005BE621 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDFB5D24A34474005BE621 /* ProfileViewController.swift */; };
+		0DCDFB6024A34481005BE621 /* CalculationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCDFB5F24A34481005BE621 /* CalculationsViewController.swift */; };
 		0DE10E4324A2A5F60050042F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E4224A2A5F60050042F /* AppDelegate.swift */; };
 		0DE10E4524A2A5F60050042F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E4424A2A5F60050042F /* SceneDelegate.swift */; };
 		0DE10E4A24A2A5F60050042F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE10E4824A2A5F60050042F /* Main.storyboard */; };
@@ -14,9 +17,6 @@
 		0DE10E4F24A2A5FE0050042F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DE10E4D24A2A5FE0050042F /* LaunchScreen.storyboard */; };
 		0DE10E5A24A2A5FE0050042F /* Bloating_LabelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E5924A2A5FE0050042F /* Bloating_LabelsTests.swift */; };
 		0DE10E6524A2A5FE0050042F /* Bloating_LabelsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E6424A2A5FE0050042F /* Bloating_LabelsUITests.swift */; };
-		0DE10E7324A2AC030050042F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E7224A2AC030050042F /* ProfileViewController.swift */; };
-		0DE10E7724A2AC800050042F /* CalculationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E7624A2AC800050042F /* CalculationsViewController.swift */; };
-		0DE10E7B24A2ACC90050042F /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E7A24A2ACC90050042F /* ProductsViewController.swift */; };
 		0DE10E7D24A2AD280050042F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E7C24A2AD280050042F /* Profile.swift */; };
 		0DE10E7F24A2AD390050042F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E7E24A2AD390050042F /* Product.swift */; };
 		0DE10E8124A3334F0050042F /* ProfitPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E8024A3334F0050042F /* ProfitPredictor.swift */; };
@@ -41,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0DCDFB5B24A3445B005BE621 /* ProductTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewController.swift; sourceTree = "<group>"; };
+		0DCDFB5D24A34474005BE621 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0DCDFB5F24A34481005BE621 /* CalculationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsViewController.swift; sourceTree = "<group>"; };
 		0DE10E3F24A2A5F60050042F /* Bloating Labels.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloating Labels.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE10E4224A2A5F60050042F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DE10E4424A2A5F60050042F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,9 +57,6 @@
 		0DE10E6024A2A5FE0050042F /* Bloating LabelsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bloating LabelsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DE10E6424A2A5FE0050042F /* Bloating_LabelsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bloating_LabelsUITests.swift; sourceTree = "<group>"; };
 		0DE10E6624A2A5FE0050042F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0DE10E7224A2AC030050042F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		0DE10E7624A2AC800050042F /* CalculationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationsViewController.swift; sourceTree = "<group>"; };
-		0DE10E7A24A2ACC90050042F /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		0DE10E7C24A2AD280050042F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0DE10E7E24A2AD390050042F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		0DE10E8024A3334F0050042F /* ProfitPredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitPredictor.swift; sourceTree = "<group>"; };
@@ -113,13 +113,13 @@
 			children = (
 				0DE10E4224A2A5F60050042F /* AppDelegate.swift */,
 				0DE10E4424A2A5F60050042F /* SceneDelegate.swift */,
-				0DE10E7A24A2ACC90050042F /* ProductsViewController.swift */,
+				0DCDFB5B24A3445B005BE621 /* ProductTableViewController.swift */,
+				0DCDFB5D24A34474005BE621 /* ProfileViewController.swift */,
+				0DCDFB5F24A34481005BE621 /* CalculationsViewController.swift */,
 				0DE10E4824A2A5F60050042F /* Main.storyboard */,
 				0DE10E4B24A2A5FE0050042F /* Assets.xcassets */,
 				0DE10E4D24A2A5FE0050042F /* LaunchScreen.storyboard */,
 				0DE10E5024A2A5FE0050042F /* Info.plist */,
-				0DE10E7224A2AC030050042F /* ProfileViewController.swift */,
-				0DE10E7624A2AC800050042F /* CalculationsViewController.swift */,
 				0DE10E7C24A2AD280050042F /* Profile.swift */,
 				0DE10E8024A3334F0050042F /* ProfitPredictor.swift */,
 				0DE10E8224A333670050042F /* HighestPrice.swift */,
@@ -278,13 +278,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DE10E8124A3334F0050042F /* ProfitPredictor.swift in Sources */,
-				0DE10E7724A2AC800050042F /* CalculationsViewController.swift in Sources */,
+				0DCDFB6024A34481005BE621 /* CalculationsViewController.swift in Sources */,
 				0DE10E7D24A2AD280050042F /* Profile.swift in Sources */,
 				0DE10E4324A2A5F60050042F /* AppDelegate.swift in Sources */,
-				0DE10E7324A2AC030050042F /* ProfileViewController.swift in Sources */,
 				0DE10E4524A2A5F60050042F /* SceneDelegate.swift in Sources */,
-				0DE10E7B24A2ACC90050042F /* ProductsViewController.swift in Sources */,
 				0DE10E8324A333670050042F /* HighestPrice.swift in Sources */,
+				0DCDFB5C24A3445B005BE621 /* ProductTableViewController.swift in Sources */,
+				0DCDFB5E24A34474005BE621 /* ProfileViewController.swift in Sources */,
 				0DE10E7F24A2AD390050042F /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
