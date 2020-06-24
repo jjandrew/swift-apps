@@ -40,7 +40,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aPw-3I-OZF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1135" y="873"/>
+            <point key="canvasLocation" x="-1061" y="771"/>
         </scene>
         <!--Products-->
         <scene sceneID="WMf-bR-uWU">
@@ -69,7 +69,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zRu-VS-0IF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="129"/>
+            <point key="canvasLocation" x="116" y="70"/>
         </scene>
         <!--Stats-->
         <scene sceneID="jBs-KY-Pbh">
@@ -85,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bfy-1q-a9U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1983" y="1371"/>
+            <point key="canvasLocation" x="116" y="1497"/>
         </scene>
     </scenes>
     <resources>

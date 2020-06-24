@@ -19,6 +19,8 @@
 		0DE10E7B24A2ACC90050042F /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E7A24A2ACC90050042F /* ProductsViewController.swift */; };
 		0DE10E7D24A2AD280050042F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E7C24A2AD280050042F /* Profile.swift */; };
 		0DE10E7F24A2AD390050042F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E7E24A2AD390050042F /* Product.swift */; };
+		0DE10E8124A3334F0050042F /* ProfitPredictor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E8024A3334F0050042F /* ProfitPredictor.swift */; };
+		0DE10E8324A333670050042F /* HighestPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE10E8224A333670050042F /* HighestPrice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		0DE10E7A24A2ACC90050042F /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		0DE10E7C24A2AD280050042F /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0DE10E7E24A2AD390050042F /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		0DE10E8024A3334F0050042F /* ProfitPredictor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitPredictor.swift; sourceTree = "<group>"; };
+		0DE10E8224A333670050042F /* HighestPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighestPrice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				0DE10E7224A2AC030050042F /* ProfileViewController.swift */,
 				0DE10E7624A2AC800050042F /* CalculationsViewController.swift */,
 				0DE10E7C24A2AD280050042F /* Profile.swift */,
+				0DE10E8024A3334F0050042F /* ProfitPredictor.swift */,
+				0DE10E8224A333670050042F /* HighestPrice.swift */,
 				0DE10E7E24A2AD390050042F /* Product.swift */,
 			);
 			path = "Bloating Labels";
@@ -271,12 +277,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE10E8124A3334F0050042F /* ProfitPredictor.swift in Sources */,
 				0DE10E7724A2AC800050042F /* CalculationsViewController.swift in Sources */,
 				0DE10E7D24A2AD280050042F /* Profile.swift in Sources */,
 				0DE10E4324A2A5F60050042F /* AppDelegate.swift in Sources */,
 				0DE10E7324A2AC030050042F /* ProfileViewController.swift in Sources */,
 				0DE10E4524A2A5F60050042F /* SceneDelegate.swift in Sources */,
 				0DE10E7B24A2ACC90050042F /* ProductsViewController.swift in Sources */,
+				0DE10E8324A333670050042F /* HighestPrice.swift in Sources */,
 				0DE10E7F24A2AD390050042F /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
