@@ -10,21 +10,46 @@ import UIKit
 
 class CalculationsViewController: UIViewController {
 
+    var itemCost: Double = 0.00
+    var sellerShippingCost: Double = 0.00
+    var potentialSell: Double = 0.00
+    var myShippingCost: Double = 0.00
+    
+    @IBOutlet var profitCalculator: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func itemCostText(_ sender: Any) {
+        let tempText = itemCostText.text
     }
-    */
+    
+    @IBAction func shippingCost(_ sender: Any) {
+    }
+    
+    @IBAction func potentialSell(_ sender: Any) {
+    }
+    
+    @IBAction func smallPackage(_ sender: Any) {
+        myShippingCost = 2.80
+    }
+    
+    @IBAction func mediumPackage(_ sender: Any) {
+        myShippingCost = 3.75
+    }
+    
+    @IBAction func largePackage(_ sender: Any) {
+        myShippingCost = 5.30
+    }
+    
+    
+    @IBAction func profitCalculatorButton(_ sender: Any) {
+        
+    }
+    
+
 
 }

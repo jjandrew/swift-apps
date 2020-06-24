@@ -23,4 +23,12 @@ class ProfitPredictor {
         self.predictedSell = predictedSell
         self.shippingPrice = shippingPrice
     }
+    
+    func calculate() -> Double {
+        let worth = 0.8 * predictedSell
+        let totalCost = itemBuy + shippingBuy
+        var totalSell = worth + shippingPrice
+        totalSell = (paypalPercentage * totalSell) - (depopFee * totalSell) - shippingPrice
+        return totalSell - totalCost
+    }
 }
