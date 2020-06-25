@@ -24,7 +24,6 @@ class CalculationsViewController: UIViewController {
     }
     
     @IBAction func itemCostText(_ sender: Any) {
-        let tempText = itemCostText.text
     }
     
     @IBAction func shippingCost(_ sender: Any) {

@@ -12,8 +12,9 @@ class ProfitPredictor {
     let paypalPercentage: Double = 0.971
     let paypalConstant: Double = 0.2
     let depopFee: Double = 0.10
+    let worthCutter: Double = 0.8
     let shippingBuy: Double
-    let itemBuy: Double
+    let itemBuy: Double?
     let predictedSell: Double
     let shippingPrice: Double
     
@@ -24,11 +25,18 @@ class ProfitPredictor {
         self.shippingPrice = shippingPrice
     }
     
-    func calculate() -> Double {
-        let worth = 0.8 * predictedSell
-        let totalCost = itemBuy + shippingBuy
+    func calculateProfit() -> Double {
+        let worth = worthCutter * predictedSell
+        let totalCost = itemBuy! + shippingBuy
         var totalSell = worth + shippingPrice
         totalSell = (paypalPercentage * totalSell) - (depopFee * totalSell) - shippingPrice
         return totalSell - totalCost
+    }
+    
+    func calculateMaxBid() -> String {
+        let worth = worthCutter * predictedSell
+        let totalSell = worth + shippingPrice
+        let itemBuy = (paypalPercentage * totalSell) - (depopFee * totalSell) - shippingPrice - shippingBuy - 5
+        return String(format: "%.2f", itemBuy)
     }
 }
