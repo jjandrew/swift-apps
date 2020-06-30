@@ -14,12 +14,28 @@ class CalculationsViewController: UIViewController {
     var sellerShippingCost: Double = 0.00
     var potentialSell: Double = 0.00
     var myShippingCost: Double = 0.00
+    var depopFee = 0.0
+    var worthCutter = 0.0
     
+    @IBOutlet var answerDisplay: UILabel!
     @IBOutlet var profitCalculator: UIButton!
+    @IBOutlet var maxBidCalculator: UIButton!
+    @IBOutlet var depopFeesSwitch: UISwitch!
+    @IBOutlet var shippingCostSwitch: UISwitch!
+    @IBOutlet var worthReductionSwitch: UISwitch!
+    @IBOutlet var costentry: UITextField!
+    @IBOutlet var shippingentry: UITextField!
+    @IBOutlet var sellPrice: UITextField!
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        answerDisplay.text = ""
+        costentry.text = "Enter Item Cost"
+        shippingentry.text = "Enter shipping cost"
+        sellPrice.text = "Enter potential sell price"
         // Do any additional setup after loading the view.
     }
     
@@ -46,9 +62,47 @@ class CalculationsViewController: UIViewController {
     
     
     @IBAction func profitCalculatorButton(_ sender: Any) {
+        let profitPredictor = enterIntoProfitPredictor()
+        let result = profitPredictor.calculateProfit()
+        answerDisplay.text = String(format: "%.2f", result)
+    }
+    
+    @IBAction func maxBidcalculatorButton(_ sender: Any) {
+        let profitPredictor = enterIntoProfitPredictor()
+        let result = profitPredictor.calculateMaxBid()
+        answerDisplay.text = String(result)
+    }
+    
+    @IBAction func depopFeesAction(_ sender: Any) {
+    }
+    
+    @IBAction func shippingCostAction(_ sender: Any) {
+    }
+    
+    @IBAction func worthReductionAction(_ sender: Any) {
+    }
+    
+    func enterIntoProfitPredictor() -> ProfitPredictor {
+        if depopFeesSwitch.isOn == true {
+            depopFee = 0.1
+        } else {
+            depopFee = 0
+        }
+        if shippingCostSwitch.isOn == false {
+            myShippingCost = 0.0
+        }
+        if worthReductionSwitch.isOn == true {
+            worthCutter = 0.8
+        } else {
+            worthCutter = 1
+        }
+        itemCost = Double(costentry.text!)!
+        sellerShippingCost = Double(shippingentry.text!)!
+        potentialSell = Double(sellPrice.text!)!
+        return ProfitPredictor(shippingBuy: myShippingCost, itemBuy: itemCost, predictedSell: potentialSell, shippingPrice: myShippingCost, depopFee: depopFee, worthCutter: worthCutter)
+        
         
     }
     
-
-
+    
 }
