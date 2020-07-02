@@ -26,6 +26,7 @@ class CalculationsViewController: UIViewController {
     @IBOutlet var costentry: UITextField!
     @IBOutlet var shippingentry: UITextField!
     @IBOutlet var sellPrice: UITextField!
+    @IBOutlet var clearOutlet: UIButton!
     
     
     
@@ -33,10 +34,23 @@ class CalculationsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         answerDisplay.text = ""
-        costentry.text = "Enter Item Cost"
-        shippingentry.text = "Enter shipping cost"
-        sellPrice.text = "Enter potential sell price"
         // Do any additional setup after loading the view.
+    }
+    
+    func clear() {
+        costentry.text = nil
+        shippingentry.text = nil
+        sellPrice.text = nil
+        itemCost = 0.00
+        sellerShippingCost = 0.00
+        potentialSell = 0.00
+        myShippingCost = 0.00
+        depopFee = 0.0
+        worthCutter = 0.0
+        depopFeesSwitch.isOn = true
+        shippingCostSwitch.isOn = true
+        worthReductionSwitch.isOn = true
+        answerDisplay.text = ""
     }
     
     @IBAction func itemCostText(_ sender: Any) {
@@ -96,13 +110,26 @@ class CalculationsViewController: UIViewController {
         } else {
             worthCutter = 1
         }
-        itemCost = Double(costentry.text!)!
-        sellerShippingCost = Double(shippingentry.text!)!
-        potentialSell = Double(sellPrice.text!)!
+        if costentry.text == nil {
+            itemCost = 0
+        } else {
+            itemCost = Double(costentry.text!)!
+        }
+        if shippingentry.text == nil {
+            sellerShippingCost = 0
+        } else {
+            sellerShippingCost = Double(shippingentry.text!)!
+        }
+        if sellPrice.text == nil {
+            potentialSell = 0
+        } else {
+            potentialSell = Double(sellPrice.text!)!
+        }
         return ProfitPredictor(shippingBuy: myShippingCost, itemBuy: itemCost, predictedSell: potentialSell, shippingPrice: myShippingCost, depopFee: depopFee, worthCutter: worthCutter)
-        
-        
-    }
+        }
     
+    @IBAction func clearAction(_ sender: Any) {
+        clear()
+    }
     
 }

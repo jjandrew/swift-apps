@@ -10,21 +10,16 @@ import Foundation
 
 class Profile {
     var soldItems: [Product]
-    var currentItems: [Product]
-    var costs: Double
-    var income: Double
-    var profit: Double
+    var itemsToList: [Product]
+    var postedItems: [Product]
     
-    init(soldItems: [Product], currentItems: [Product], costs: Double, income: Double) {
+    init(soldItems: [Product], itemsToList: [Product], postedItems: [Product]) {
         self.soldItems = soldItems
-        self.currentItems = currentItems
-        self.costs = costs
-        self.income = income
-        self.profit = 0.00
+        self.itemsToList = itemsToList
+        self.postedItems = postedItems
         calculateProfit()
     }
     
     func calculateProfit() {
-        self.profit = self.income - self.costs
     }
 }
