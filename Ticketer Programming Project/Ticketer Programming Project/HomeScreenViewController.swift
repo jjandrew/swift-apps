@@ -24,7 +24,42 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        leftHandInterestedEvent.text = """
+        Event Title
+        
+        Location
+        
+        Date
+        
+        Availability
+        """
+        rightHandInterestedEvent.text = """
+        Event Title
+                
+        Location
+                
+        Date
+                
+        Availability
+        """
+        leftHandSuggestedEvent.text = """
+        Event Title
+                
+        Location
+                
+        Date
+                
+        Availability
+        """
+        rightHandSuggestedEvent.text = """
+        Event Title
+                
+        Location
+                
+        Date
+                
+        Availability
+        """
         // Do any additional setup after loading the view.
     }
     
