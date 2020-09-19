@@ -10,13 +10,35 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
 
+    @IBOutlet var homeLabel: UILabel!
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var currentLocationLabel: UILabel!
+    @IBOutlet var searchByLocationButton: UIButton!
+    @IBOutlet var leftHandInterestedEvent: UILabel!
+    @IBOutlet var rightHandInterestedEvent: UILabel!
+    @IBOutlet var leftHandSuggestedEvent: UILabel!
+    @IBOutlet var rightHandSuggestedEvent: UILabel!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func searchByLocationAction(_ sender: Any) {
+    }
+    @IBAction func interestedPreviousAction(_ sender: Any) {
+    }
+    @IBAction func interestedNextAction(_ sender: Any) {
+    }
+    @IBAction func suggestedPreviousAction(_ sender: Any) {
+    }
+    @IBAction func suggestedNextAction(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
