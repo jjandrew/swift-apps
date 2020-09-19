@@ -195,13 +195,22 @@
                     </view>
                     <connections>
                         <outlet property="currentLocationLabel" destination="rIn-Xp-PBk" id="cj8-kU-0Ru"/>
+                        <outlet property="eventsYouAreInterestedInLabel" destination="VYv-F0-Mf6" id="L2T-P2-Hug"/>
                         <outlet property="homeLabel" destination="YMD-QN-HhB" id="6lG-WG-SCA"/>
+                        <outlet property="interestedEventsMore" destination="Zr1-CB-MXh" id="HlA-iv-U6F"/>
                         <outlet property="leftHandInterestedEvent" destination="LCM-hJ-40K" id="DzO-mS-VCE"/>
                         <outlet property="leftHandSuggestedEvent" destination="lUs-Uu-xKV" id="2DW-gr-OzH"/>
+                        <outlet property="nextInterestedEvent" destination="sD6-kK-dTP" id="aBI-ld-2qg"/>
+                        <outlet property="nextSuggestedEvent" destination="Biy-9k-E1r" id="Txt-DS-YJV"/>
+                        <outlet property="previousInterestedEvent" destination="4Bp-AO-40S" id="T9b-6L-hUW"/>
+                        <outlet property="previousSuggestedEvent" destination="C0M-eX-c0M" id="j1T-RR-AKu"/>
                         <outlet property="rightHandInterestedEvent" destination="07t-W5-DIj" id="zTf-R3-bXS"/>
                         <outlet property="rightHandSuggestedEvent" destination="Wye-tY-YOZ" id="RNB-nT-a28"/>
                         <outlet property="searchBar" destination="tuY-Dx-wUB" id="3IT-EP-S9D"/>
+                        <outlet property="searchBarAction" destination="tuY-Dx-wUB" id="EGX-YA-htd"/>
                         <outlet property="searchByLocationButton" destination="iMX-xt-yuG" id="BdO-3U-xm1"/>
+                        <outlet property="suggestedEventsLabel" destination="eCL-kj-MZh" id="Cgn-aB-Orc"/>
+                        <outlet property="suggestedEventsMore" destination="P2k-4F-5Vk" id="KHT-sA-aMS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

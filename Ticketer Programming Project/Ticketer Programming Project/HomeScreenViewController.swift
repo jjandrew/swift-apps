@@ -14,10 +14,18 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var currentLocationLabel: UILabel!
     @IBOutlet var searchByLocationButton: UIButton!
+    @IBOutlet var eventsYouAreInterestedInLabel: UILabel!
+    @IBOutlet var interestedEventsMore: UIButton!
     @IBOutlet var leftHandInterestedEvent: UILabel!
     @IBOutlet var rightHandInterestedEvent: UILabel!
+    @IBOutlet var previousInterestedEvent: UIButton!
+    @IBOutlet var nextInterestedEvent: UIButton!
+    @IBOutlet var suggestedEventsLabel: UILabel!
+    @IBOutlet var suggestedEventsMore: UIButton!
     @IBOutlet var leftHandSuggestedEvent: UILabel!
     @IBOutlet var rightHandSuggestedEvent: UILabel!
+    @IBOutlet var previousSuggestedEvent: UIButton!
+    @IBOutlet var nextSuggestedEvent: UIButton!
     
     
     
@@ -60,7 +68,6 @@ class HomeScreenViewController: UIViewController {
                 
         Availability
         """
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func searchByLocationAction(_ sender: Any) {
@@ -73,15 +80,4 @@ class HomeScreenViewController: UIViewController {
     }
     @IBAction func suggestedNextAction(_ sender: Any) {
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
