@@ -41,7 +41,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Events:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-kj-MZh">
-                                <rect key="frame" x="20" y="338.5" width="143" height="21"/>
+                                <rect key="frame" x="20" y="333.5" width="143" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -56,60 +56,84 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bp-AO-40S">
-                                <rect key="frame" x="291" y="288.5" width="41" height="30"/>
+                                <rect key="frame" x="291" y="283.5" width="41" height="30"/>
                                 <state key="normal" title="&lt;Prev"/>
                                 <connections>
                                     <action selector="interestedPreviousAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dw9-lW-kdm"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCM-hJ-40K">
-                                <rect key="frame" x="20" y="258" width="174" height="20.5"/>
+                                <rect key="frame" x="20" y="253" width="174" height="20.5"/>
                                 <color key="backgroundColor" red="0.80170910648146831" green="1" blue="0.98714693266916231" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sD6-kK-dTP">
-                                <rect key="frame" x="352" y="288.5" width="42" height="30"/>
+                                <rect key="frame" x="352" y="283.5" width="42" height="30"/>
                                 <state key="normal" title="Next&gt;"/>
                                 <connections>
                                     <action selector="interestedNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40w-eB-MVV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2k-4F-5Vk">
-                                <rect key="frame" x="358" y="334" width="36" height="30"/>
+                                <rect key="frame" x="358" y="329" width="36" height="30"/>
                                 <state key="normal" title="More"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wye-tY-YOZ">
-                                <rect key="frame" x="220" y="384.5" width="174" height="20.5"/>
+                                <rect key="frame" x="220" y="374.5" width="174" height="20.5"/>
                                 <color key="backgroundColor" red="0.80170910650000005" green="1" blue="0.98714693269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biy-9k-E1r">
-                                <rect key="frame" x="352" y="415" width="42" height="30"/>
+                                <rect key="frame" x="352" y="405" width="42" height="30"/>
                                 <state key="normal" title="Next&gt;"/>
                                 <connections>
                                     <action selector="suggestedNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EjB-qx-GMk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0M-eX-c0M">
-                                <rect key="frame" x="291" y="415" width="41" height="30"/>
+                                <rect key="frame" x="291" y="405" width="41" height="30"/>
                                 <state key="normal" title="&lt;Prev"/>
                                 <connections>
                                     <action selector="suggestedPreviousAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fdi-ov-jNw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUs-Uu-xKV">
-                                <rect key="frame" x="20" y="384.5" width="174" height="20.5"/>
+                                <rect key="frame" x="20" y="374.5" width="174" height="20.5"/>
                                 <color key="backgroundColor" red="0.80170910650000005" green="1" blue="0.98714693269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search By Name" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tuY-Dx-wUB">
                                 <rect key="frame" x="0.0" y="75" width="414" height="56"/>
@@ -133,7 +157,7 @@
                             <constraint firstItem="sD6-kK-dTP" firstAttribute="centerX" secondItem="Zr1-CB-MXh" secondAttribute="centerX" id="HqW-VZ-p3e"/>
                             <constraint firstItem="eCL-kj-MZh" firstAttribute="top" secondItem="4Bp-AO-40S" secondAttribute="bottom" constant="20" id="MDv-H7-S6q"/>
                             <constraint firstItem="LCM-hJ-40K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-100" id="OO1-Vq-pvg"/>
-                            <constraint firstItem="LCM-hJ-40K" firstAttribute="top" secondItem="VYv-F0-Mf6" secondAttribute="bottom" constant="25" id="PLc-6s-z4J"/>
+                            <constraint firstItem="LCM-hJ-40K" firstAttribute="top" secondItem="VYv-F0-Mf6" secondAttribute="bottom" constant="20" id="PLc-6s-z4J"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tuY-Dx-wUB" secondAttribute="trailing" id="Qjc-C5-mrh"/>
                             <constraint firstItem="rIn-Xp-PBk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SNj-F9-UJF"/>
                             <constraint firstItem="Wye-tY-YOZ" firstAttribute="centerY" secondItem="lUs-Uu-xKV" secondAttribute="centerY" id="TD0-hu-iXP"/>
@@ -149,7 +173,7 @@
                             <constraint firstItem="LCM-hJ-40K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hDK-Db-DcM"/>
                             <constraint firstItem="C0M-eX-c0M" firstAttribute="top" secondItem="lUs-Uu-xKV" secondAttribute="bottom" constant="10" id="jJB-ap-PXc"/>
                             <constraint firstItem="lUs-Uu-xKV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jex-80-7be"/>
-                            <constraint firstItem="lUs-Uu-xKV" firstAttribute="top" secondItem="eCL-kj-MZh" secondAttribute="bottom" constant="25" id="kMV-sI-Ock"/>
+                            <constraint firstItem="lUs-Uu-xKV" firstAttribute="top" secondItem="eCL-kj-MZh" secondAttribute="bottom" constant="20" id="kMV-sI-Ock"/>
                             <constraint firstItem="4Bp-AO-40S" firstAttribute="top" relation="greaterThanOrEqual" secondItem="07t-W5-DIj" secondAttribute="bottom" constant="10" id="kTr-pL-Sv6"/>
                             <constraint firstItem="Biy-9k-E1r" firstAttribute="centerY" secondItem="C0M-eX-c0M" secondAttribute="centerY" id="l7O-Vi-PjN"/>
                             <constraint firstItem="VYv-F0-Mf6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lQX-Wv-uUC"/>
