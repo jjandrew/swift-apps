@@ -8,7 +8,7 @@
 
 import Foundation
 
-class handlingOfSkiddle {
+class HandlingOfSkiddle {
     let baseUrl = "https://www.skiddle.com/api/v1/events/search/?"
     let apiKey = "api_key=52f07458a25911d3e1b89ab9f7f0c448"
     let decoder = JSONDecoder()
@@ -18,7 +18,7 @@ class handlingOfSkiddle {
             print("No search term provided terminting request")
             return }
         
-        let path = "&keyword=\(name)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let path = "&keyword=\(name)&ticketsavailable=1&description=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         guard let url = URL(string: baseUrl + apiKey + path) else {
                 print("Invalid URL")
@@ -30,11 +30,8 @@ class handlingOfSkiddle {
         
         URLSession.shared.dataTask(with: request) { (data,response, error) in
             if let data = data {
-                print(data)
                 if let response = self.parseJson(json: data) {
                     completion(response.results)
-                    print(response)
-                    print(response.results)
                 }
             }
         }.resume()

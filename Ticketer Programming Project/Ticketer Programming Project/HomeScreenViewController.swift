@@ -27,7 +27,7 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet var previousSuggestedEvent: UIButton!
     @IBOutlet var nextSuggestedEvent: UIButton!
     
-    
+    let handlingOfSkiddle = HandlingOfSkiddle()
     
     
     override func viewDidLoad() {
@@ -68,8 +68,16 @@ class HomeScreenViewController: UIViewController {
                 
         Availability
         """
+        updateEventsByKeyword()
     }
-    
+    func updateEventsByKeyword() {
+        handlingOfSkiddle.getEvents(name: "the subways") { (events) in
+            DispatchQueue.main.async {
+                let names = events?.map { return $0.eventName }
+                print(names?.joined(separator: ", " ))
+            }
+        }
+    }
     @IBAction func searchByLocationAction(_ sender: Any) {
     }
     @IBAction func interestedPreviousAction(_ sender: Any) {
