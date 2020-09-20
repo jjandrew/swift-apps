@@ -207,7 +207,6 @@
                         <outlet property="rightHandInterestedEvent" destination="07t-W5-DIj" id="zTf-R3-bXS"/>
                         <outlet property="rightHandSuggestedEvent" destination="Wye-tY-YOZ" id="RNB-nT-a28"/>
                         <outlet property="searchBar" destination="tuY-Dx-wUB" id="3IT-EP-S9D"/>
-                        <outlet property="searchBarAction" destination="tuY-Dx-wUB" id="EGX-YA-htd"/>
                         <outlet property="searchByLocationButton" destination="iMX-xt-yuG" id="BdO-3U-xm1"/>
                         <outlet property="suggestedEventsLabel" destination="eCL-kj-MZh" id="Cgn-aB-Orc"/>
                         <outlet property="suggestedEventsMore" destination="P2k-4F-5Vk" id="KHT-sA-aMS"/>

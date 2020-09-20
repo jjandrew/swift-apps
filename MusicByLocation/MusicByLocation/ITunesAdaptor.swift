@@ -32,6 +32,7 @@ class ITunesAdaptor {
             if let data = data {
                 if let response = self.parseJson(json: data) {
                     completion(response.results)
+                    print(data)
                 }
             }
         }.resume()
