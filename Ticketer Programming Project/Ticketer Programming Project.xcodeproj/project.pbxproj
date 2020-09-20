@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */; };
 		0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */; };
 		0D50F9922517692D00ADEBCF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F9912517692D00ADEBCF /* Event.swift */; };
 		0D50F99425176FE800ADEBCF /* Demographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F99325176FE800ADEBCF /* Demographic.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEventResponse.swift; sourceTree = "<group>"; };
 		0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingOfSkiddle.swift; sourceTree = "<group>"; };
 		0D50F9912517692D00ADEBCF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0D50F99325176FE800ADEBCF /* Demographic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demographic.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				0DF003602510C1B20059BBDE /* APIs.swift */,
 				0D50F9912517692D00ADEBCF /* Event.swift */,
 				0D50F99325176FE800ADEBCF /* Demographic.swift */,
+				0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */,
 				0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */,
 				0DF0033C2510C0070059BBDE /* Info.plist */,
 			);
@@ -278,6 +281,7 @@
 				0DF0035F2510C0F00059BBDE /* HomeScreenViewController.swift in Sources */,
 				0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */,
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,
+				0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */,
 				0DF003612510C1B20059BBDE /* APIs.swift in Sources */,
 				0D50F9922517692D00ADEBCF /* Event.swift in Sources */,
 				0DF003312510C0040059BBDE /* SceneDelegate.swift in Sources */,

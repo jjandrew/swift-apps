@@ -30,9 +30,11 @@ class ITunesAdaptor {
         
         URLSession.shared.dataTask(with: request) { (data,response, error) in
             if let data = data {
+                print(data)
                 if let response = self.parseJson(json: data) {
                     completion(response.results)
-                    print(data)
+                    print(response)
+                    print(response.results)
                 }
             }
         }.resume()

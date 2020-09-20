@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-struct Event {
+struct Event: Codable {
     let eventName : String
     let location: String
     let date: Date
     var description: String
-    var image: UIImage?
-    var demographic: Demographic?
+//    var image: UIImage?
+//    var demographic: Demographic?
     var saved: Bool
     var website: [String]
     
@@ -24,8 +24,8 @@ struct Event {
         self.location = location
         self.date = date
         self.description = description
-        self.image = image
-        self.demographic = demographic
+//        self.image = image
+//        self.demographic = demographic
         self.saved = saved
         self.website = website
     }
