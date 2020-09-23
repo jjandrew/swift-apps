@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct SkiddleEventResponse: Codable {
+struct SkiddleEventResponse {
     var count: Int
-    var results: [SkiddleEvent]
+    var results: [Event]
     
     private enum CodingKeys: String, CodingKey {
         case count = "totalcount"

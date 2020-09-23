@@ -73,7 +73,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
     func updateEventsByKeyword() {
         handlingOfSkiddle.getEvents(name: "vivaldi") { (events) in
             DispatchQueue.main.async {
-                let names = events?.map { return $0.eventname }
+                let names = events?.map { return $0.eventName }
                 print(names?.joined(separator: ", " ))
             }
         }

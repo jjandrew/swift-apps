@@ -7,30 +7,13 @@
 //
 
 import Foundation
-import Alamofire
-import SwiftyJSON
+//import Alamofire
+//import SwiftyJSON
 
 class HandlingOfSkiddle {
     let baseUrl = "https://www.skiddle.com/api/v1/events/search/?"
     let apiKey = "api_key=52f07458a25911d3e1b89ab9f7f0c448"
     let decoder = JSONDecoder()
-    
-    func createUrl(searhTerm: String?) -> String {
-        guard let searchTerm = searchTerm else {
-            print("No search term provided terminating request")
-            return }
-        
-        let path = "&keyword=\(search)&order=date&description=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-        guard let url = URL(string: baseUrl + apiKey + path) else {
-                print("Invalid URL")
-                completion(nil)
-                return
-        }
-        return url
-    }
-    
-    
     
     
     func getEvents(name: String?, completion: @escaping ([SkiddleEvent]?) -> Void) {
@@ -65,6 +48,23 @@ class HandlingOfSkiddle {
             return nil
         }
     }
+    
+    
+    
+    func createUrl(term: String?) -> URL? {
+        guard let searchTerm = term else {
+            print("No search term provided terminating request")
+            return nil}
+        
+        let path = "&keyword=\(searchTerm)&order=date&description=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        guard let url = URL(string: baseUrl + apiKey + path) else {
+                print("Invalid URL")
+                return nil
+        }
+        return url
+    }
+    
     
     func almofireJson(url: String) {
         Alamofire.request(.GET, url).validate().responseJSON {

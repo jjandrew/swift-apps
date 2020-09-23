@@ -6,7 +6,7 @@
 //  Copyright © 2020 JJ Andrew. All rights reserved.
 //
 
-import Foundation
+/*import Foundation
 
 struct SkiddleEvent: Codable {
     let id : String
@@ -36,3 +36,4 @@ struct SkiddleEvent: Codable {
     
 
 }
+ */
