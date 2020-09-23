@@ -24,7 +24,7 @@ class HandlingOfSkiddle {
                 return
         }
         let request = URLRequest(url: url)
-        parseJson(json: String(request))
+        //parseJson(json: String(request))
         //URLSession.shared.dataTask(with: request) { (data,response, error) in
         //    self.parseJson(json: String(data)!)
         //}.resume()

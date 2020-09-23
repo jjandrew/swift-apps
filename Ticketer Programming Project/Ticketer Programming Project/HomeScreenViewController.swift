@@ -28,7 +28,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet var nextSuggestedEvent: UIButton!
     
     let handlingOfSkiddle = HandlingOfSkiddle()
-    
+    var searchEntry: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,6 +85,28 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
         }
  */
     }
+    
+    func searchByName() {
+        
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("Searched")
+        if let searchEntry = searchBar.text {
+            self.searchEntry = searchEntry
+            view.endEditing(true)
+            searchByName()
+        } else {
+            let alert = UIAlertController(title: "Please enter a value to search", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+        print("cancelled")
+    }
+    
     @IBAction func searchByLocationAction(_ sender: Any) {
     }
     @IBAction func interestedPreviousAction(_ sender: Any) {

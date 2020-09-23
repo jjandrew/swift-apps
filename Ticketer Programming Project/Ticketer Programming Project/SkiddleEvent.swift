@@ -16,7 +16,7 @@ import Foundation
     var cancelled: String
     var cancellationDate: String
     var cancellationType: String
-    var venue: [{String}]
+    var venue: [String: Any]
     //dictionary but how do you show ^^
     var imageurl: String
     var largeimageurl: String
@@ -31,10 +31,10 @@ import Foundation
     var goingtos: String
     var goingtocount: String
     var tickets: Bool
+
+    
+    
 */
-    
-    
-    
     
 
 
