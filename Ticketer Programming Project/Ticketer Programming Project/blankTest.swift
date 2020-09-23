@@ -7,14 +7,14 @@
 //
 
 import Foundation
-//import Alamofire
-//import SwiftyJSON
+import Alamofire
+import SwiftyJSON
 
-/*class HandlingOf {
+class HandlingOf {
     let baseUrl = "https://www.skiddle.com/api/v1/events/search/?"
     let apiKey = "api_key=52f07458a25911d3e1b89ab9f7f0c448"
     let decoder = JSONDecoder()
-    
+    /*
     
     func getEvents(name: String?, completion: @escaping ([SkiddleEvent]?) -> Void) {
         guard let name = name else {
@@ -64,10 +64,10 @@ import Foundation
         }
         return url
     }
-    
+     
     
     func almofireJson(url: String) {
-        Alamofire.request(.GET, url).validate().responseJSON {
+        Alamofire.request(url, method: .get).validate().responseJSON {
             response in switch response.result {
                 case .Success:
                     if let json = response.result.value {
@@ -80,5 +80,6 @@ import Foundation
             }
         }
     }
+     */
 }
-*/
+

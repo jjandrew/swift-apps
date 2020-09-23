@@ -92,7 +92,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
         let skiddleEvents = handlingOfSkiddle.searchByName()
     }
     
-    optional func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchEntry = searchBar.text {
             if searchEntry.count > 2 {
                 self.searchEntry = searchEntry
@@ -109,7 +109,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
             self.present(alert, animated: true)
         }
     }
-    optional func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
     }
     

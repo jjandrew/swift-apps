@@ -22,6 +22,9 @@
 		0DF003512510C0070059BBDE /* Ticketer_Programming_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF003502510C0070059BBDE /* Ticketer_Programming_ProjectUITests.swift */; };
 		0DF0035F2510C0F00059BBDE /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF0035E2510C0F00059BBDE /* HomeScreenViewController.swift */; };
 		0DF003612510C1B20059BBDE /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF003602510C1B20059BBDE /* APIs.swift */; };
+		56839FDA8B39042354583CDA /* Pods_Ticketer_Programming_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F820007F444E43373C08CA2 /* Pods_Ticketer_Programming_ProjectTests.framework */; };
+		66A74A1606B63CB74D8BC891 /* Pods_Ticketer_Programming_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BC8B5BBEC6F0400A49CB988 /* Pods_Ticketer_Programming_Project.framework */; };
+		F28A9A7F9DB8FA00F6667813 /* Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C80A258D6A5B234903C7B30 /* Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C80A258D6A5B234903C7B30 /* Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEventResponse.swift; sourceTree = "<group>"; };
 		0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingOfSkiddle.swift; sourceTree = "<group>"; };
 		0D50F9912517692D00ADEBCF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -63,6 +67,14 @@
 		0DF003522510C0070059BBDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DF0035E2510C0F00059BBDE /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		0DF003602510C1B20059BBDE /* APIs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
+		1911D316D5EEFF9F6D1198C3 /* Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.debug.xcconfig"; path = "Target Support Files/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		313800ABCF7E784E43F6E45C /* Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4F820007F444E43373C08CA2 /* Pods_Ticketer_Programming_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ticketer_Programming_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BC8B5BBEC6F0400A49CB988 /* Pods_Ticketer_Programming_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ticketer_Programming_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		730A0B33260D1402DD59E2E9 /* Pods-Ticketer Programming Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ticketer Programming Project.release.xcconfig"; path = "Target Support Files/Pods-Ticketer Programming Project/Pods-Ticketer Programming Project.release.xcconfig"; sourceTree = "<group>"; };
+		AA1E337ADBAEDFF76A4CABDA /* Pods-Ticketer Programming ProjectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ticketer Programming ProjectTests.debug.xcconfig"; path = "Target Support Files/Pods-Ticketer Programming ProjectTests/Pods-Ticketer Programming ProjectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D0510B3B1FC12F28014D946D /* Pods-Ticketer Programming ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ticketer Programming ProjectTests.release.xcconfig"; path = "Target Support Files/Pods-Ticketer Programming ProjectTests/Pods-Ticketer Programming ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
+		D88F23A324E64CC0E28B7FA1 /* Pods-Ticketer Programming Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ticketer Programming Project.debug.xcconfig"; path = "Target Support Files/Pods-Ticketer Programming Project/Pods-Ticketer Programming Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A74A1606B63CB74D8BC891 /* Pods_Ticketer_Programming_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56839FDA8B39042354583CDA /* Pods_Ticketer_Programming_ProjectTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F28A9A7F9DB8FA00F6667813 /* Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +112,8 @@
 				0DF003442510C0070059BBDE /* Ticketer Programming ProjectTests */,
 				0DF0034F2510C0070059BBDE /* Ticketer Programming ProjectUITests */,
 				0DF0032C2510C0040059BBDE /* Products */,
+				F8E9EC0FE21DF75A6AFBB233 /* Pods */,
+				36921E9F556DD5A6900F0A4F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +166,30 @@
 			path = "Ticketer Programming ProjectUITests";
 			sourceTree = "<group>";
 		};
+		36921E9F556DD5A6900F0A4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BC8B5BBEC6F0400A49CB988 /* Pods_Ticketer_Programming_Project.framework */,
+				0C80A258D6A5B234903C7B30 /* Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework */,
+				4F820007F444E43373C08CA2 /* Pods_Ticketer_Programming_ProjectTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F8E9EC0FE21DF75A6AFBB233 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D88F23A324E64CC0E28B7FA1 /* Pods-Ticketer Programming Project.debug.xcconfig */,
+				730A0B33260D1402DD59E2E9 /* Pods-Ticketer Programming Project.release.xcconfig */,
+				1911D316D5EEFF9F6D1198C3 /* Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.debug.xcconfig */,
+				313800ABCF7E784E43F6E45C /* Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.release.xcconfig */,
+				AA1E337ADBAEDFF76A4CABDA /* Pods-Ticketer Programming ProjectTests.debug.xcconfig */,
+				D0510B3B1FC12F28014D946D /* Pods-Ticketer Programming ProjectTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -156,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF003552510C0070059BBDE /* Build configuration list for PBXNativeTarget "Ticketer Programming Project" */;
 			buildPhases = (
+				EBD9D5DF017D565916AE5CAE /* [CP] Check Pods Manifest.lock */,
 				0DF003272510C0040059BBDE /* Sources */,
 				0DF003282510C0040059BBDE /* Frameworks */,
 				0DF003292510C0040059BBDE /* Resources */,
+				9DD8F9149DC7DFAD2CA1CF17 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +216,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF003582510C0070059BBDE /* Build configuration list for PBXNativeTarget "Ticketer Programming ProjectTests" */;
 			buildPhases = (
+				9A4A4CE52C0E39EBDECC55B2 /* [CP] Check Pods Manifest.lock */,
 				0DF0033D2510C0070059BBDE /* Sources */,
 				0DF0033E2510C0070059BBDE /* Frameworks */,
 				0DF0033F2510C0070059BBDE /* Resources */,
@@ -191,9 +235,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0DF0035B2510C0070059BBDE /* Build configuration list for PBXNativeTarget "Ticketer Programming ProjectUITests" */;
 			buildPhases = (
+				D7BFA07A5D3D9B93229FBEEC /* [CP] Check Pods Manifest.lock */,
 				0DF003482510C0070059BBDE /* Sources */,
 				0DF003492510C0070059BBDE /* Frameworks */,
 				0DF0034A2510C0070059BBDE /* Resources */,
+				BC6A36D6715ACEB487E3D76E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,6 +320,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9A4A4CE52C0E39EBDECC55B2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ticketer Programming ProjectTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9DD8F9149DC7DFAD2CA1CF17 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ticketer Programming Project/Pods-Ticketer Programming Project-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ticketer Programming Project/Pods-Ticketer Programming Project-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ticketer Programming Project/Pods-Ticketer Programming Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC6A36D6715ACEB487E3D76E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7BFA07A5D3D9B93229FBEEC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBD9D5DF017D565916AE5CAE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Ticketer Programming Project-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0DF003272510C0040059BBDE /* Sources */ = {
@@ -460,6 +609,7 @@
 		};
 		0DF003562510C0070059BBDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D88F23A324E64CC0E28B7FA1 /* Pods-Ticketer Programming Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -477,6 +627,7 @@
 		};
 		0DF003572510C0070059BBDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 730A0B33260D1402DD59E2E9 /* Pods-Ticketer Programming Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -494,6 +645,7 @@
 		};
 		0DF003592510C0070059BBDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA1E337ADBAEDFF76A4CABDA /* Pods-Ticketer Programming ProjectTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +667,7 @@
 		};
 		0DF0035A2510C0070059BBDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0510B3B1FC12F28014D946D /* Pods-Ticketer Programming ProjectTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -536,6 +689,7 @@
 		};
 		0DF0035C2510C0070059BBDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1911D316D5EEFF9F6D1198C3 /* Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -555,6 +709,7 @@
 		};
 		0DF0035D2510C0070059BBDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 313800ABCF7E784E43F6E45C /* Pods-Ticketer Programming Project-Ticketer Programming ProjectUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

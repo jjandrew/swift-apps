@@ -1,4 +1,6 @@
 import Foundation
+import Alamofire
+import SwiftyJSON
 
 class HandlingOfSkiddle {
     let baseUrl = "https://www.skiddle.com/api/v1/events/search/?"
