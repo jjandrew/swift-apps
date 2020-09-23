@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct SkiddleEventResponse {
+struct SkiddleEventResponse: Codable {
     var count: Int
     var results: [Event]
     

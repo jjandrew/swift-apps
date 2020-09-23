@@ -14,8 +14,10 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
     func testUrlCreatorWorks() {
         let handlingOfSkiddle = HandlingOfSkiddle()
         let search = "vivaldi"
-        let result = handlingOfSkiddle.createUrl()
+        let resultUrl = handlingOfSkiddle.createUrl(term: search)
+        let result = resultUrl!
         let expected = "https://www.skiddle.com/api/v1/events/search/?api_key=52f07458a25911d3e1b89ab9f7f0c448&keyword=vivaldi&order=date&description=1"
+        XCTAssertEqual(result, expected)
         
     }
 

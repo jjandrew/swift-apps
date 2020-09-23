@@ -71,12 +71,19 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
         updateEventsByKeyword()
     }
     func updateEventsByKeyword() {
-        handlingOfSkiddle.getEvents(name: "vivaldi") { (events) in
+        if let url = handlingOfSkiddle.createUrl(term: "vivaldi") {
+            handlingOfSkiddle.getJson(urlString: url)
+        } else {
+            print("Error")
+        }
+        
+        /*handlingOfSkiddle.getEvents(name: "vivaldi") { (events) in
             DispatchQueue.main.async {
                 let names = events?.map { return $0.eventName }
                 print(names?.joined(separator: ", " ))
             }
         }
+ */
     }
     @IBAction func searchByLocationAction(_ sender: Any) {
     }

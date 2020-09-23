@@ -6,16 +6,17 @@
 //  Copyright © 2020 JJ Andrew. All rights reserved.
 //
 
-/*import Foundation
+import Foundation
 
-struct SkiddleEvent: Codable {
+/*struct SkiddleEvent: Codable {
+    
     let id : String
     let EventCode: String
     let eventname: String
     var cancelled: String
     var cancellationDate: String
     var cancellationType: String
-    var venue: {String}
+    var venue: [{String}]
     //dictionary but how do you show ^^
     var imageurl: String
     var largeimageurl: String
@@ -30,10 +31,11 @@ struct SkiddleEvent: Codable {
     var goingtos: String
     var goingtocount: String
     var tickets: Bool
+*/
     
     
     
     
 
-}
- */
+
+ 
