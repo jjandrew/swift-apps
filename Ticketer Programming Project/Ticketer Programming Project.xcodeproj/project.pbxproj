@@ -11,9 +11,9 @@
 		0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */; };
 		0D50F9922517692D00ADEBCF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F9912517692D00ADEBCF /* Event.swift */; };
 		0D50F99425176FE800ADEBCF /* Demographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F99325176FE800ADEBCF /* Demographic.swift */; };
+		0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */; };
 		0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF0032E2510C0040059BBDE /* AppDelegate.swift */; };
 		0DF003312510C0040059BBDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF003302510C0040059BBDE /* SceneDelegate.swift */; };
-		0DF003332510C0040059BBDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF003322510C0040059BBDE /* ViewController.swift */; };
 		0DF003362510C0040059BBDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF003342510C0040059BBDE /* Main.storyboard */; };
 		0DF003382510C0070059BBDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DF003372510C0070059BBDE /* Assets.xcassets */; };
 		0DF0033B2510C0070059BBDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DF003392510C0070059BBDE /* LaunchScreen.storyboard */; };
@@ -45,10 +45,10 @@
 		0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingOfSkiddle.swift; sourceTree = "<group>"; };
 		0D50F9912517692D00ADEBCF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0D50F99325176FE800ADEBCF /* Demographic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demographic.swift; sourceTree = "<group>"; };
+		0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEvent.swift; sourceTree = "<group>"; };
 		0DF0032B2510C0040059BBDE /* Ticketer Programming Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ticketer Programming Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF0032E2510C0040059BBDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0DF003302510C0040059BBDE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0DF003322510C0040059BBDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0DF003352510C0040059BBDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0DF003372510C0070059BBDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0DF0033A2510C0070059BBDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,13 +113,13 @@
 			children = (
 				0DF0032E2510C0040059BBDE /* AppDelegate.swift */,
 				0DF003302510C0040059BBDE /* SceneDelegate.swift */,
-				0DF003322510C0040059BBDE /* ViewController.swift */,
 				0DF0035E2510C0F00059BBDE /* HomeScreenViewController.swift */,
 				0DF003342510C0040059BBDE /* Main.storyboard */,
 				0DF003372510C0070059BBDE /* Assets.xcassets */,
 				0DF003392510C0070059BBDE /* LaunchScreen.storyboard */,
 				0DF003602510C1B20059BBDE /* APIs.swift */,
 				0D50F9912517692D00ADEBCF /* Event.swift */,
+				0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */,
 				0D50F99325176FE800ADEBCF /* Demographic.swift */,
 				0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */,
 				0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */,
@@ -277,10 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF003332510C0040059BBDE /* ViewController.swift in Sources */,
 				0DF0035F2510C0F00059BBDE /* HomeScreenViewController.swift in Sources */,
 				0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */,
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,
+				0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */,
 				0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */,
 				0DF003612510C1B20059BBDE /* APIs.swift in Sources */,
 				0D50F9922517692D00ADEBCF /* Event.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet var homeLabel: UILabel!
     @IBOutlet var searchBar: UISearchBar!
@@ -71,9 +71,9 @@ class HomeScreenViewController: UIViewController {
         updateEventsByKeyword()
     }
     func updateEventsByKeyword() {
-        handlingOfSkiddle.getEvents(name: "the subways") { (events) in
+        handlingOfSkiddle.getEvents(name: "vivaldi") { (events) in
             DispatchQueue.main.async {
-                let names = events?.map { return $0.eventName }
+                let names = events?.map { return $0.eventname }
                 print(names?.joined(separator: ", " ))
             }
         }

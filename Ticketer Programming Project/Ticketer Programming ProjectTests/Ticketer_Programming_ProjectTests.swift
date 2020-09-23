@@ -11,24 +11,11 @@ import XCTest
 
 class Ticketer_Programming_ProjectTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testUrlCreatorWorks() {
+        let handlingOfSkiddle = HandlingOfSkiddle()
+        let search = "vivaldi"
+        let result = handlingOfSkiddle.creatUrl(searchTerm: search)
+        let expected = "https://www.skiddle.com/api/v1/events/search/?api_key=52f07458a25911d3e1b89ab9f7f0c448&keyword=vivaldi&order=date&description=1"
     }
 
 }
