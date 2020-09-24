@@ -20,29 +20,22 @@ class HandlingOfSkiddle {
         return url
         
     }
-    func returnJsonString(urlEntry: String) {
+    
+    func createJsonString(urlEntry: String) {
         if let url = URL(string: urlEntry) {
            URLSession.shared.dataTask(with: url) { data, response, error in
               if let data = data {
                  if let jsonString = String(data: data, encoding: .utf8) {
                     print(jsonString)
+                 } else {
+                    print("Error creating json string")
                  }
                }
            }.resume()
         }
     }
     
-    func getJson(urlString: String) {
-        guard let url = URL(string: urlString) else {
-                print("Invalid URL")
-                return
-        }
-        let request = URLRequest(url: url)
-        //parseJson(json: String(request))
-        //URLSession.shared.dataTask(with: request) { (data,response, error) in
-        //    self.parseJson(json: String(data)!)
-        //}.resume()
-    }
+    
         
     func parseJson(json: String) {
         guard let jsonString = try? String(contentsOf: URL(fileURLWithPath: json), encoding: String.Encoding.utf8) else {
