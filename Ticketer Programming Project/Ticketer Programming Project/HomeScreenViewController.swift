@@ -74,10 +74,9 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
     func updateEventsByKeyword() {
         let handlingOfSkiddle = HandlingOfSkiddle()
         let url = handlingOfSkiddle.createUrl(term: "vivaldi")
-        handlingOfSkiddle.returnJsonString(urlEntry: url!)
+        handlingOfSkiddle.createJsonString(urlEntry: url!)
          //   handlingOfSkiddle.getJson(urlString: url)
         //} else {
-            print("Error")
         //}
         
        // handlingOfSkiddle.getEvents(name: "vivaldi") { (events) in
