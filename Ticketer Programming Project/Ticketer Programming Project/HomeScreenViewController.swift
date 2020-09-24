@@ -72,7 +72,9 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
     }
     
     func updateEventsByKeyword() {
-        //if let url = handlingOfSkiddle.createUrl(term: "vivaldi") {
+        let handlingOfSkiddle = HandlingOfSkiddle()
+        let url = handlingOfSkiddle.createUrl(term: "vivaldi")
+        handlingOfSkiddle.returnJsonString(urlEntry: url!)
          //   handlingOfSkiddle.getJson(urlString: url)
         //} else {
             print("Error")
@@ -88,7 +90,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
     }
     
     func searchByName() {
-        let handlingOfSkiddle = HandlingOfSkiddle(search: self.searchEntry)
+        let handlingOfSkiddle = HandlingOfSkiddle()
         let skiddleEvents = handlingOfSkiddle.searchByName()
     }
     

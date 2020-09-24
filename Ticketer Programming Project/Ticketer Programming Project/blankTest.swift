@@ -67,6 +67,7 @@ class HandlingOf {
      
     
     func almofireJson(url: String) {
+        
         Alamofire.request(url, method: .get).validate().responseJSON {
             response in switch response.result {
                 case .Success:
@@ -80,6 +81,7 @@ class HandlingOf {
             }
         }
     }
-     */
+    */
+   
 }
 
