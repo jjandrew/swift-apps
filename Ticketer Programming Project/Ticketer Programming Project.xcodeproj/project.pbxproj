@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,8 @@
 		0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */; };
 		0D50F9922517692D00ADEBCF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F9912517692D00ADEBCF /* Event.swift */; };
 		0D50F99425176FE800ADEBCF /* Demographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F99325176FE800ADEBCF /* Demographic.swift */; };
+		0D576BCF2520958A00BA7DEE /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BCE2520958A00BA7DEE /* ProfileViewController.swift */; };
+		0D576BD42520972A00BA7DEE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BD32520972A00BA7DEE /* Profile.swift */; };
 		0D888D33251B6A630009EDB1 /* blankTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D888D32251B6A630009EDB1 /* blankTest.swift */; };
 		0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */; };
 		0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF0032E2510C0040059BBDE /* AppDelegate.swift */; };
@@ -50,6 +52,8 @@
 		0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingOfSkiddle.swift; sourceTree = "<group>"; };
 		0D50F9912517692D00ADEBCF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0D50F99325176FE800ADEBCF /* Demographic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demographic.swift; sourceTree = "<group>"; };
+		0D576BCE2520958A00BA7DEE /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0D576BD32520972A00BA7DEE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0D888D32251B6A630009EDB1 /* blankTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blankTest.swift; sourceTree = "<group>"; };
 		0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEvent.swift; sourceTree = "<group>"; };
 		0DF0032B2510C0040059BBDE /* Ticketer Programming Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ticketer Programming Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,7 @@
 				0DF0032E2510C0040059BBDE /* AppDelegate.swift */,
 				0DF003302510C0040059BBDE /* SceneDelegate.swift */,
 				0DF0035E2510C0F00059BBDE /* HomeScreenViewController.swift */,
+				0D576BCE2520958A00BA7DEE /* ProfileViewController.swift */,
 				0DF003342510C0040059BBDE /* Main.storyboard */,
 				0DF003372510C0070059BBDE /* Assets.xcassets */,
 				0DF003392510C0070059BBDE /* LaunchScreen.storyboard */,
@@ -140,6 +145,7 @@
 				0D50F9912517692D00ADEBCF /* Event.swift */,
 				0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */,
 				0D50F99325176FE800ADEBCF /* Demographic.swift */,
+				0D576BD32520972A00BA7DEE /* Profile.swift */,
 				0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */,
 				0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */,
 				0D888D32251B6A630009EDB1 /* blankTest.swift */,
@@ -186,7 +192,6 @@
 				AA1E337ADBAEDFF76A4CABDA /* Pods-Ticketer Programming ProjectTests.debug.xcconfig */,
 				D0510B3B1FC12F28014D946D /* Pods-Ticketer Programming ProjectTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -430,11 +435,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DF0035F2510C0F00059BBDE /* HomeScreenViewController.swift in Sources */,
+				0D576BD42520972A00BA7DEE /* Profile.swift in Sources */,
 				0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */,
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,
 				0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */,
 				0D888D33251B6A630009EDB1 /* blankTest.swift in Sources */,
 				0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */,
+				0D576BCF2520958A00BA7DEE /* ProfileViewController.swift in Sources */,
 				0DF003612510C1B20059BBDE /* APIs.swift in Sources */,
 				0D50F9922517692D00ADEBCF /* Event.swift in Sources */,
 				0DF003312510C0040059BBDE /* SceneDelegate.swift in Sources */,

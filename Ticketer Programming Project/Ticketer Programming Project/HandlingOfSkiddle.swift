@@ -25,6 +25,7 @@ class HandlingOfSkiddle {
            URLSession.shared.dataTask(with: url) { data, response, error in
               if let data = data {
                  if let jsonString = String(data: data, encoding: .utf8) {
+                    print("")
                     print(jsonString)
                     self.jsonString = jsonString
                  } else {
@@ -37,6 +38,14 @@ class HandlingOfSkiddle {
         }
     }
     
+    func parsingJson(json: Data) -> SkiddleEventResponse? {
+        if let eventResponse = try? decoder.decode(SkiddleEventResponse.self, from: json) {
+            return eventResponse
+        } else {
+            print("Failed to decode to Event Response")
+            return nil
+        }
+    }
     
         
     func parseJson(json: String) {
