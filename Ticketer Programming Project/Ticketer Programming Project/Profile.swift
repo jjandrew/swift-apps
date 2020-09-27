@@ -27,4 +27,13 @@ class Profile {
         self.attendingEvents = attendingEvents
     }
     
+    func changeName(newName: String) {
+    }
+    func changeBirthday(newBirthday: String) {
+    }
+    func changeGender(newGender: String) {
+    }
+    func changeAge() {
+    }
+    
 }

@@ -19,10 +19,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet var leftHandAttendingEvent: UILabel!
     @IBOutlet var rightHandAttendingEvent: UILabel!
     
-    
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         var profile = Profile(userName: "Firstname, Surname", userBirthday: "01/01/2003", userGender: "Male", userLocation: nil, userAge: 17, savedEvents: [], attendingEvents: [])
@@ -67,17 +63,6 @@ class ProfileViewController: UIViewController {
         genderLabel.text = "Gender: \(profile.userGender)"
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func editProfileButton(_ sender: Any) {
     }
