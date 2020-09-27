@@ -468,7 +468,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdY-gz-VIr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1617" y="915"/>
+            <point key="canvasLocation" x="1616" y="903"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="dCb-E4-9Xh">
@@ -576,7 +576,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhJ-Du-faq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="-475"/>
+            <point key="canvasLocation" x="1616" y="-425"/>
         </scene>
         <!--Suggested Events-->
         <scene sceneID="lTK-8K-a73">
@@ -605,7 +605,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xy-XA-UrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1641" y="223"/>
+            <point key="canvasLocation" x="1616" y="241"/>
         </scene>
         <!--Home-->
         <scene sceneID="RAs-by-AMB">
