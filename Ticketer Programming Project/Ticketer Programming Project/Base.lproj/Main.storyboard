@@ -78,6 +78,7 @@
                                 <state key="normal" title="More"/>
                                 <connections>
                                     <action selector="suggestedMoreButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="g3H-pv-7Vh"/>
+                                    <segue destination="Ddc-P9-mRe" kind="show" id="z3K-To-mKj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJF-Hx-Yp3">
@@ -112,6 +113,7 @@
                                 <state key="normal" title="More"/>
                                 <connections>
                                     <action selector="attendingMoreButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="1mT-RF-4j3"/>
+                                    <segue destination="SaA-T7-9kJ" kind="show" id="8Ko-EW-uN2"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa7-fS-yEN">
@@ -268,6 +270,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zr1-CB-MXh">
                                 <rect key="frame" x="353" y="220.5" width="40" height="30"/>
                                 <state key="normal" title="More"/>
+                                <connections>
+                                    <segue destination="Ddc-P9-mRe" kind="show" id="ffG-Po-hV3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07t-W5-DIj">
                                 <rect key="frame" x="220" y="266" width="174" height="20.5"/>
@@ -313,6 +318,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2k-4F-5Vk">
                                 <rect key="frame" x="358" y="342" width="36" height="30"/>
                                 <state key="normal" title="More"/>
+                                <connections>
+                                    <segue destination="VaU-YD-hZd" kind="show" id="JTg-6L-7GD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wye-tY-YOZ">
                                 <rect key="frame" x="220" y="387.5" width="174" height="20.5"/>
@@ -433,6 +441,35 @@
             </objects>
             <point key="canvasLocation" x="728.98550724637687" y="-132.58928571428572"/>
         </scene>
+        <!--Attending Events-->
+        <scene sceneID="jCr-B3-Qca">
+            <objects>
+                <tableViewController id="SaA-T7-9kJ" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jhA-tO-IaY">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="azc-KE-Jct">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="azc-KE-Jct" id="Vr1-ts-s9U">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SaA-T7-9kJ" id="R1x-do-17j"/>
+                            <outlet property="delegate" destination="SaA-T7-9kJ" id="9K2-5R-u4t"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Attending Events" id="SjM-GO-7fx"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YdY-gz-VIr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1617" y="915"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="dCb-E4-9Xh">
             <objects>
@@ -510,9 +547,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npy-Np-apa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2402.898550724638" y="751.33928571428567"/>
+            <point key="canvasLocation" x="4249" y="632"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Interested Events-->
         <scene sceneID="xAZ-cj-l1D">
             <objects>
                 <tableViewController id="Ddc-P9-mRe" sceneMemberID="viewController">
@@ -535,11 +572,40 @@
                             <outlet property="delegate" destination="Ddc-P9-mRe" id="HnA-iT-DKg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="0oI-9a-RaM"/>
+                    <navigationItem key="navigationItem" title="Interested Events" id="0oI-9a-RaM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhJ-Du-faq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3313.04347826087" y="76.339285714285708"/>
+            <point key="canvasLocation" x="1641" y="-475"/>
+        </scene>
+        <!--Suggested Events-->
+        <scene sceneID="lTK-8K-a73">
+            <objects>
+                <tableViewController id="VaU-YD-hZd" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ztT-NG-G7u">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vVv-eJ-ePT">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vVv-eJ-ePT" id="C95-a8-tjg">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="VaU-YD-hZd" id="qFD-h6-2kO"/>
+                            <outlet property="delegate" destination="VaU-YD-hZd" id="jsj-Oo-RWo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Suggested Events" id="9if-kM-qUh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8xy-XA-UrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1641" y="223"/>
         </scene>
         <!--Home-->
         <scene sceneID="RAs-by-AMB">
@@ -580,6 +646,9 @@
             <point key="canvasLocation" x="-181" y="567"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ffG-Po-hV3"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
