@@ -313,6 +313,7 @@
                                 <state key="normal" title="Next&gt;"/>
                                 <connections>
                                     <action selector="interestedNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40w-eB-MVV"/>
+                                    <segue destination="wBK-RE-QdD" kind="show" id="42c-VR-rvr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2k-4F-5Vk">
@@ -470,7 +471,7 @@
             </objects>
             <point key="canvasLocation" x="1616" y="903"/>
         </scene>
-        <!--View Controller-->
+        <!--Event-->
         <scene sceneID="dCb-E4-9Xh">
             <objects>
                 <viewController id="wBK-RE-QdD" sceneMemberID="viewController">
@@ -527,27 +528,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CF6-rB-uhX">
-                                <rect key="frame" x="19" y="385" width="375" height="184"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CF6-rB-uhX">
+                                <rect key="frame" x="163.5" y="232" width="87.5" height="184"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TpR-TY-Tu8">
-                                <rect key="frame" x="19" y="242" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Demographics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bws-KE-kmw">
+                                <rect key="frame" x="151.5" y="450" width="111" height="112"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c9G-Rs-RrT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bws-KE-kmw" firstAttribute="centerX" secondItem="c9G-Rs-RrT" secondAttribute="centerX" id="eL2-xc-EIp"/>
+                            <constraint firstItem="Bws-KE-kmw" firstAttribute="centerX" secondItem="CF6-rB-uhX" secondAttribute="centerX" id="mGh-ei-fG8"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Event" id="kR2-E3-yxP"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="npy-Np-apa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4249" y="632"/>
+            <point key="canvasLocation" x="2715.9420289855075" y="-105.13392857142857"/>
         </scene>
         <!--Interested Events-->
         <scene sceneID="xAZ-cj-l1D">
