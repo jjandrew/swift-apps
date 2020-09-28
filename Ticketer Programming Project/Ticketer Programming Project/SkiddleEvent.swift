@@ -41,12 +41,13 @@ struct SkiddleEvent: Decodable {
     var startdate: String
     var enddate: String
     var description: String
-    //var openingtimes: [String: Any]
     /*
-     var doorsopen: string
+     var openingtimes: [SkiddleOpeningTimes]
+     var doorsopen: String
      var doorsclose: String
      var lastentry: String
-    */
+     */
+
      var minage: String
      var imgoing: String?
      var goingtos: Int

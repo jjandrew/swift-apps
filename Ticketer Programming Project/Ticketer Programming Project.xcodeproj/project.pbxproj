@@ -16,7 +16,6 @@
 		0D576BD92520AEF200BA7DEE /* AttendingEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */; };
 		0D576BDE2520AF1200BA7DEE /* SavedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */; };
 		0D576BE32520AF2100BA7DEE /* SuggestedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */; };
-		0D888D33251B6A630009EDB1 /* blankTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D888D32251B6A630009EDB1 /* blankTest.swift */; };
 		0D90FD832521EBE700F2C189 /* SkiddleArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */; };
 		0D90FD882521EC7C00F2C189 /* SkiddleGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */; };
 		0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */; };
@@ -62,7 +61,6 @@
 		0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendingEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedEventsTableViewController.swift; sourceTree = "<group>"; };
-		0D888D32251B6A630009EDB1 /* blankTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = blankTest.swift; sourceTree = "<group>"; };
 		0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleArtist.swift; sourceTree = "<group>"; };
 		0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleGenres.swift; sourceTree = "<group>"; };
 		0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEvent.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				0D576BD32520972A00BA7DEE /* Profile.swift */,
 				0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */,
 				0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */,
-				0D888D32251B6A630009EDB1 /* blankTest.swift */,
 				0DF0033C2510C0070059BBDE /* Info.plist */,
 			);
 			path = "Ticketer Programming Project";
@@ -459,7 +456,6 @@
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,
 				0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */,
 				0D90FD882521EC7C00F2C189 /* SkiddleGenres.swift in Sources */,
-				0D888D33251B6A630009EDB1 /* blankTest.swift in Sources */,
 				0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */,
 				0D576BCF2520958A00BA7DEE /* ProfileViewController.swift in Sources */,
 				0DF003612510C1B20059BBDE /* APIs.swift in Sources */,

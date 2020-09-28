@@ -38,8 +38,9 @@ class HandlingOfSkiddle {
                     self.jsonString = jsonString
                     let json = JSON(jsonString)
                     print(json)
-                    let response = self.parsingJson(json: data)
-                    print(response!.totalcount)
+                    if let response = self.parsingJson(json: data) {
+                        print(response.results[0].openingtimes[0].doorsopen)
+                    }
                  } else {
                     print("Error creating json string")
                  }

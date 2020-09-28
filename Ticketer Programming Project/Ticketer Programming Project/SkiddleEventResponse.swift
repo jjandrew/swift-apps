@@ -19,4 +19,18 @@ struct SkiddleEventResponse: Decodable {
         case results
     }
  */
+    /*
+     
+     
+    func convertToEventClass() -> [Event]{
+        if self.error == 0 && Int(self.totalcount) ?? -1 > 0 {
+            let i = Int(self.totalcount)
+            for i in (0,i) {
+                
+            }
+        } else {
+            return []
+        }
+    }
+     */
 }
