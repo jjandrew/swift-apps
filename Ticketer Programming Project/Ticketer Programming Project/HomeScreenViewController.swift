@@ -10,7 +10,6 @@ import UIKit
 
 class HomeScreenViewController: UIViewController, UISearchBarDelegate {
 
-    @IBOutlet var homeLabel: UILabel!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var currentLocationLabel: UILabel!
     @IBOutlet var searchByLocationButton: UIButton!
@@ -92,7 +91,7 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
     
     func searchByName() {
         let handlingOfSkiddle = HandlingOfSkiddle()
-        let skiddleEvents = handlingOfSkiddle.searchByName()
+        //let skiddleEvents = handlingOfSkiddle.searchByName()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

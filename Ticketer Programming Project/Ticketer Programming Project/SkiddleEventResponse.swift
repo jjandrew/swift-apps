@@ -8,13 +8,15 @@
 
 import Foundation
 
-struct SkiddleEventResponse: Codable {
-    var count: Int
-    var results: [Event]
+struct SkiddleEventResponse: Decodable {
+    var error: Int
+    var totalcount: String = ""
+    var pagecount: Int
+    var results: [SkiddleEvent]
     
-    private enum CodingKeys: String, CodingKey {
+    /*private enum CodingKeys: String, CodingKey {
         case count = "totalcount"
         case results
     }
-    
+ */
 }
