@@ -38,7 +38,8 @@ class HandlingOfSkiddle {
                     self.jsonString = jsonString
                     let json = JSON(jsonString)
                     print(json)
-                    self.parsingJson(json: data)
+                    let response = self.parsingJson(json: data)
+                    print(response!.totalcount)
                  } else {
                     print("Error creating json string")
                  }
