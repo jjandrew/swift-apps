@@ -37,7 +37,7 @@ struct SkiddleEvent: Decodable {
     //var rep: [SkiddleRep]
     var artists: [SkiddleArtist]
     var genres: [SkiddleGenres]
-    
+
 }
     
 

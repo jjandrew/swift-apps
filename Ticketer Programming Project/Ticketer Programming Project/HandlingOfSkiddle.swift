@@ -15,6 +15,8 @@ class HandlingOfSkiddle {
     let apiKey = "api_key=52f07458a25911d3e1b89ab9f7f0c448"
     let decoder = JSONDecoder()
     var jsonString = ""
+    var skiddleEvents: SkiddleEventResponse? = nil
+    var events: [Event] = []
 
     
     func createUrl(term: String?) -> String? {
@@ -40,6 +42,10 @@ class HandlingOfSkiddle {
                     print(json)
                     if let response = self.parsingJson(json: data) {
                         print(response.results[0].eventname)
+                        self.skiddleEvents = response
+                        if let events = (self.skiddleEvents?.convertToEventClass()) {
+                            self.events = events
+                        }
                     }
                  } else {
                     print("Error creating json string")

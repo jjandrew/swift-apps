@@ -19,18 +19,25 @@ struct SkiddleEventResponse: Decodable {
         case results
     }
  */
-    /*
+    
      
      
-    func convertToEventClass() -> [Event]{
+    func convertToEventClass() -> [Event] {
+        var events: [Event] = []
         if self.error == 0 && Int(self.totalcount) ?? -1 > 0 {
-            let i = Int(self.totalcount)
-            for i in (0,i) {
-                
-            }
+            let i = Int(self.totalcount)!
+                for j in (0...i-1) {
+                    let eventName = self.results[j].eventname
+                    let date = self.results[j].date
+                    let description = self.results[j].description
+                    let website = self.results[j].link
+                    events.append(Event(eventName: eventName, location: nil, date: date, description: description, saved: nil, website: [website]))
+                }
+                return events
+
         } else {
             return []
         }
     }
-     */
+     
 }

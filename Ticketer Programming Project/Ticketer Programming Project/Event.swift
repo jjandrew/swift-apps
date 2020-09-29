@@ -11,15 +11,15 @@ import UIKit
 
 struct Event: Codable {
     let eventName : String
-    let location: String
-    let date: Date
+    let location: String?
+    let date: String
     var description: String
 //    var image: UIImage?
 //    var demographic: Demographic?
-    var saved: Bool
+    var saved: Bool?
     var website: [String]
     
-    init(eventName: String, location: String, date: Date, description: String, image: UIImage, demographic: Demographic, saved: Bool, website: [String]) {
+    init(eventName: String, location: String?, date: String, description: String, saved: Bool?, website: [String]) {
         self.eventName = eventName
         self.location = location
         self.date = date
