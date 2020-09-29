@@ -10,7 +10,6 @@ import Foundation
 
 struct SkiddleEvent: Decodable {
     
-
     var id : String
     var EventCode: String
     var eventname: String
@@ -19,21 +18,7 @@ struct SkiddleEvent: Decodable {
     var cancellationType: String
     var cancellationReason: String
     var rescheduledDate: String
-    //var venue: [String: Any]
-    /*
-     var id: Int
-     var name: String
-     var address: String
-     var town: String
-     var postcode_lookup: Sheffield
-     var postcode: String
-     var country: String
-     var phone: String
-     var lattitude: Float
-     var longitude: Float
-     var type: String
-     var rating: Int
-     */
+    //var venue: [SkiddleVenues]
     var imageurl: String
     var largeimageurl: String
     var link: String
@@ -41,24 +26,15 @@ struct SkiddleEvent: Decodable {
     var startdate: String
     var enddate: String
     var description: String
-    /*
-     var openingtimes: [SkiddleOpeningTimes]
-     var doorsopen: String
-     var doorsclose: String
-     var lastentry: String
-     */
-
-     var minage: String
-     var imgoing: String?
-     var goingtos: Int
-     var goingtocount: String
-     var tickets: Bool
-     var entryprice: String
-     var eventvisibility: String
-     //var rep: [String: Any]
-    /*
-     var enabled: Bool
-     */
+    //var openingtimes: [SkiddleOpeningTimes]
+    var minage: String
+    var imgoing: String?
+    var goingtos: Int
+    var goingtocount: String
+    var tickets: Bool
+    var entryprice: String
+    var eventvisibility: String
+    //var rep: [SkiddleRep]
     var artists: [SkiddleArtist]
     var genres: [SkiddleGenres]
     

@@ -39,7 +39,7 @@ class HandlingOfSkiddle {
                     let json = JSON(jsonString)
                     print(json)
                     if let response = self.parsingJson(json: data) {
-                        print(response.results[0].openingtimes[0].doorsopen)
+                        print(response.results[0].eventname)
                     }
                  } else {
                     print("Error creating json string")

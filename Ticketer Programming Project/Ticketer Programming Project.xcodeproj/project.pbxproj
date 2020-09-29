@@ -18,6 +18,9 @@
 		0D576BE32520AF2100BA7DEE /* SuggestedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */; };
 		0D90FD832521EBE700F2C189 /* SkiddleArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */; };
 		0D90FD882521EC7C00F2C189 /* SkiddleGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */; };
+		0D90FD9E2522284C00F2C189 /* SkiddleOpeningTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */; };
+		0D90FDA3252228F500F2C189 /* SkiddleVenues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FDA2252228F500F2C189 /* SkiddleVenues.swift */; };
+		0D90FDA82522294D00F2C189 /* SkiddleRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FDA72522294D00F2C189 /* SkiddleRep.swift */; };
 		0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */; };
 		0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF0032E2510C0040059BBDE /* AppDelegate.swift */; };
 		0DF003312510C0040059BBDE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF003302510C0040059BBDE /* SceneDelegate.swift */; };
@@ -63,6 +66,9 @@
 		0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleArtist.swift; sourceTree = "<group>"; };
 		0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleGenres.swift; sourceTree = "<group>"; };
+		0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleOpeningTimes.swift; sourceTree = "<group>"; };
+		0D90FDA2252228F500F2C189 /* SkiddleVenues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleVenues.swift; sourceTree = "<group>"; };
+		0D90FDA72522294D00F2C189 /* SkiddleRep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleRep.swift; sourceTree = "<group>"; };
 		0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEvent.swift; sourceTree = "<group>"; };
 		0DF0032B2510C0040059BBDE /* Ticketer Programming Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ticketer Programming Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DF0032E2510C0040059BBDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +161,9 @@
 				0DF003602510C1B20059BBDE /* APIs.swift */,
 				0D50F9912517692D00ADEBCF /* Event.swift */,
 				0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */,
+				0D90FDA72522294D00F2C189 /* SkiddleRep.swift */,
+				0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */,
+				0D90FDA2252228F500F2C189 /* SkiddleVenues.swift */,
 				0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */,
 				0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */,
 				0D50F99325176FE800ADEBCF /* Demographic.swift */,
@@ -452,6 +461,8 @@
 				0D576BDE2520AF1200BA7DEE /* SavedEventsTableViewController.swift in Sources */,
 				0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */,
 				0D90FD832521EBE700F2C189 /* SkiddleArtist.swift in Sources */,
+				0D90FDA82522294D00F2C189 /* SkiddleRep.swift in Sources */,
+				0D90FDA3252228F500F2C189 /* SkiddleVenues.swift in Sources */,
 				0D576BD92520AEF200BA7DEE /* AttendingEventsTableViewController.swift in Sources */,
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,
 				0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */,
@@ -461,6 +472,7 @@
 				0DF003612510C1B20059BBDE /* APIs.swift in Sources */,
 				0D50F9922517692D00ADEBCF /* Event.swift in Sources */,
 				0DF003312510C0040059BBDE /* SceneDelegate.swift in Sources */,
+				0D90FD9E2522284C00F2C189 /* SkiddleOpeningTimes.swift in Sources */,
 				0D50F99425176FE800ADEBCF /* Demographic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
