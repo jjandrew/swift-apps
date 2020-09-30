@@ -43,6 +43,7 @@ class HandlingOfSkiddle {
                     if let response = self.parsingJson(json: data) {
                         print(response.results[0].eventname)
                         self.skiddleEvents = response
+                        print(self.skiddleEvents?.results[0].eventname)
                         if let events = (self.skiddleEvents?.convertToEventClass()) {
                             self.events = events
                         }
