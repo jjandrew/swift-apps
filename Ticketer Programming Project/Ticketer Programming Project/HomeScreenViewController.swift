@@ -8,9 +8,9 @@
 
 import UIKit
 
-class HomeScreenViewController: UIViewController, UISearchBarDelegate {
+class HomeScreenViewController: UIViewController {
 
-    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var nameTextEntry: UITextField!
     @IBOutlet var currentLocationLabel: UILabel!
     @IBOutlet var searchByLocationButton: UIButton!
     @IBOutlet var eventsYouAreInterestedInLabel: UILabel!
@@ -68,7 +68,6 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
                 
         Availability
         """
-        updateEventsByKeyword()
 
     }
     
@@ -76,25 +75,47 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
         let handlingOfSkiddle = HandlingOfSkiddle()
         let url = handlingOfSkiddle.createUrl(term: "vivaldi")
         handlingOfSkiddle.createJsonString(urlEntry: url!)
-         //   handlingOfSkiddle.getJson(urlString: url)
-        //} else {
-        //}
-        
-       // handlingOfSkiddle.getEvents(name: "vivaldi") { (events) in
-        //    DispatchQueue.main.async {
-        //        let names = events?.map { return $0.eventName }
-        //        print(names?.joined(separator: ", " ))
-        //    }
-       // }
  
     }
     
     func searchByName() {
         let handlingOfSkiddle = HandlingOfSkiddle()
-        //let skiddleEvents = handlingOfSkiddle.searchByName()
+        let url = handlingOfSkiddle.createUrl(term: self.searchEntry)!
+        handlingOfSkiddle.createJsonString(urlEntry: url)
     }
     
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    @IBAction func searchByNameButton(_ sender: Any) {
+        if let searchEntry = nameTextEntry.text {
+            if searchEntry.count > 2 {
+                self.searchEntry = searchEntry
+                view.endEditing(true)
+                searchByName()
+            } else {
+                let alert = UIAlertController(title: "Please Enter more than two characters of text", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+        } else {
+            let alert = UIAlertController(title: "Please enter a value to search", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+    }
+    @IBAction func searchByLocationAction(_ sender: Any) {
+    }
+    @IBAction func interestedPreviousAction(_ sender: Any) {
+    }
+    @IBAction func interestedNextAction(_ sender: Any) {
+    }
+    @IBAction func suggestedPreviousAction(_ sender: Any) {
+    }
+    @IBAction func suggestedNextAction(_ sender: Any) {
+    }
+    
+    
+    /*
+     
+    internal func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let searchEntry = searchBar.text {
             if searchEntry.count > 2 {
                 self.searchEntry = searchEntry
@@ -111,18 +132,9 @@ class HomeScreenViewController: UIViewController, UISearchBarDelegate {
             self.present(alert, animated: true)
         }
     }
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    internal func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
     }
-    
-    @IBAction func searchByLocationAction(_ sender: Any) {
-    }
-    @IBAction func interestedPreviousAction(_ sender: Any) {
-    }
-    @IBAction func interestedNextAction(_ sender: Any) {
-    }
-    @IBAction func suggestedPreviousAction(_ sender: Any) {
-    }
-    @IBAction func suggestedNextAction(_ sender: Any) {
-    }
+ 
+     */
 }

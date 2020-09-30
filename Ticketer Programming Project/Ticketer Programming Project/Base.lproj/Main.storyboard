@@ -313,7 +313,6 @@
                                 <state key="normal" title="Next&gt;"/>
                                 <connections>
                                     <action selector="interestedNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="40w-eB-MVV"/>
-                                    <segue destination="wBK-RE-QdD" kind="show" id="42c-VR-rvr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2k-4F-5Vk">
@@ -363,49 +362,55 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" text="" placeholder="Search for Keyword" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tuY-Dx-wUB">
-                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
-                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5v-fh-Hpc">
+                                <rect key="frame" x="346" y="93" width="48" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchByNameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0jg-MC-eeG"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search For Keyword" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VQo-tb-e8Y">
+                                <rect key="frame" x="20" y="93" width="157.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Zr1-CB-MXh" firstAttribute="centerY" secondItem="VYv-F0-Mf6" secondAttribute="centerY" id="0Xb-uT-C2x"/>
                             <constraint firstItem="P2k-4F-5Vk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eCL-kj-MZh" secondAttribute="trailing" constant="10" id="0sx-sw-S14"/>
-                            <constraint firstItem="tuY-Dx-wUB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="34Z-Mx-4I3"/>
                             <constraint firstItem="P2k-4F-5Vk" firstAttribute="centerY" secondItem="eCL-kj-MZh" secondAttribute="centerY" id="64U-ej-bQe"/>
                             <constraint firstItem="Zr1-CB-MXh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VYv-F0-Mf6" secondAttribute="trailing" constant="10" id="7Hn-EV-fMc"/>
                             <constraint firstItem="07t-W5-DIj" firstAttribute="top" secondItem="VYv-F0-Mf6" secondAttribute="bottom" constant="20" id="7xz-xq-GDa"/>
                             <constraint firstItem="eCL-kj-MZh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ax4-KV-a0A"/>
+                            <constraint firstItem="VQo-tb-e8Y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="DPe-BN-yZy"/>
                             <constraint firstItem="iMX-xt-yuG" firstAttribute="centerY" secondItem="rIn-Xp-PBk" secondAttribute="centerY" id="Gtg-Vg-mbK"/>
                             <constraint firstItem="sD6-kK-dTP" firstAttribute="centerX" secondItem="Zr1-CB-MXh" secondAttribute="centerX" id="HqW-VZ-p3e"/>
+                            <constraint firstItem="VQo-tb-e8Y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="J9C-vh-dm4"/>
+                            <constraint firstItem="D5v-fh-Hpc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VQo-tb-e8Y" secondAttribute="trailing" constant="10" id="JED-mq-Egq"/>
                             <constraint firstItem="eCL-kj-MZh" firstAttribute="top" secondItem="4Bp-AO-40S" secondAttribute="bottom" constant="20" id="MDv-H7-S6q"/>
                             <constraint firstItem="LCM-hJ-40K" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-100" id="OO1-Vq-pvg"/>
                             <constraint firstItem="LCM-hJ-40K" firstAttribute="top" secondItem="VYv-F0-Mf6" secondAttribute="bottom" constant="20" id="PLc-6s-z4J"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tuY-Dx-wUB" secondAttribute="trailing" id="Qjc-C5-mrh"/>
                             <constraint firstItem="rIn-Xp-PBk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SNj-F9-UJF"/>
                             <constraint firstItem="Wye-tY-YOZ" firstAttribute="centerY" secondItem="lUs-Uu-xKV" secondAttribute="centerY" id="TD0-hu-iXP"/>
                             <constraint firstItem="iMX-xt-yuG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rIn-Xp-PBk" secondAttribute="trailing" constant="15" id="UdG-nb-gNA"/>
                             <constraint firstItem="07t-W5-DIj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="100" id="Ujn-Sp-9fX"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wye-tY-YOZ" secondAttribute="trailing" constant="20" id="WkL-lK-4CA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="07t-W5-DIj" secondAttribute="trailing" constant="20" id="awU-vF-0ei"/>
-                            <constraint firstItem="rIn-Xp-PBk" firstAttribute="top" secondItem="tuY-Dx-wUB" secondAttribute="bottom" constant="30" id="bgH-hM-gtm"/>
-                            <constraint firstItem="tuY-Dx-wUB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fAM-Lf-frx"/>
+                            <constraint firstItem="rIn-Xp-PBk" firstAttribute="top" secondItem="VQo-tb-e8Y" secondAttribute="bottom" constant="47" id="bVg-7a-SXQ"/>
                             <constraint firstItem="sD6-kK-dTP" firstAttribute="leading" secondItem="4Bp-AO-40S" secondAttribute="trailing" constant="20" id="fD7-jf-b5q"/>
                             <constraint firstItem="4Bp-AO-40S" firstAttribute="top" secondItem="LCM-hJ-40K" secondAttribute="bottom" constant="10" id="fYL-Dm-j5t"/>
                             <constraint firstItem="Biy-9k-E1r" firstAttribute="centerX" secondItem="sD6-kK-dTP" secondAttribute="centerX" id="gr7-QQ-K3i"/>
                             <constraint firstItem="LCM-hJ-40K" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="hDK-Db-DcM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D5v-fh-Hpc" secondAttribute="trailing" constant="20" id="hxR-t2-JFT"/>
                             <constraint firstItem="C0M-eX-c0M" firstAttribute="top" secondItem="lUs-Uu-xKV" secondAttribute="bottom" constant="10" id="jJB-ap-PXc"/>
                             <constraint firstItem="lUs-Uu-xKV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="jex-80-7be"/>
                             <constraint firstItem="lUs-Uu-xKV" firstAttribute="top" secondItem="eCL-kj-MZh" secondAttribute="bottom" constant="20" id="kMV-sI-Ock"/>
                             <constraint firstItem="4Bp-AO-40S" firstAttribute="top" relation="greaterThanOrEqual" secondItem="07t-W5-DIj" secondAttribute="bottom" constant="10" id="kTr-pL-Sv6"/>
                             <constraint firstItem="Biy-9k-E1r" firstAttribute="centerY" secondItem="C0M-eX-c0M" secondAttribute="centerY" id="l7O-Vi-PjN"/>
                             <constraint firstItem="VYv-F0-Mf6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lQX-Wv-uUC"/>
+                            <constraint firstItem="D5v-fh-Hpc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="nV1-lm-fVz"/>
                             <constraint firstItem="C0M-eX-c0M" firstAttribute="centerX" secondItem="4Bp-AO-40S" secondAttribute="centerX" id="oEX-gK-bFD"/>
                             <constraint firstItem="lUs-Uu-xKV" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-100" id="pbD-Qy-rMP"/>
                             <constraint firstItem="VYv-F0-Mf6" firstAttribute="top" secondItem="rIn-Xp-PBk" secondAttribute="bottom" constant="30" id="ppI-K3-Tnd"/>
@@ -415,7 +420,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Zr1-CB-MXh" secondAttribute="trailing" constant="21" id="vqe-Au-5Yv"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iMX-xt-yuG" secondAttribute="trailing" constant="20" id="wuf-6o-Jau"/>
                             <constraint firstItem="sD6-kK-dTP" firstAttribute="centerY" secondItem="4Bp-AO-40S" secondAttribute="centerY" id="z6b-6a-yIu"/>
-                            <constraint firstItem="tuY-Dx-wUB" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="z8c-He-Lc7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Biy-9k-E1r" secondAttribute="trailing" constant="20" id="zXw-g6-OU0"/>
                         </constraints>
                     </view>
@@ -426,13 +430,13 @@
                         <outlet property="interestedEventsMore" destination="Zr1-CB-MXh" id="HlA-iv-U6F"/>
                         <outlet property="leftHandInterestedEvent" destination="LCM-hJ-40K" id="DzO-mS-VCE"/>
                         <outlet property="leftHandSuggestedEvent" destination="lUs-Uu-xKV" id="2DW-gr-OzH"/>
+                        <outlet property="nameTextEntry" destination="VQo-tb-e8Y" id="EcU-CI-Azz"/>
                         <outlet property="nextInterestedEvent" destination="sD6-kK-dTP" id="aBI-ld-2qg"/>
                         <outlet property="nextSuggestedEvent" destination="Biy-9k-E1r" id="Txt-DS-YJV"/>
                         <outlet property="previousInterestedEvent" destination="4Bp-AO-40S" id="T9b-6L-hUW"/>
                         <outlet property="previousSuggestedEvent" destination="C0M-eX-c0M" id="j1T-RR-AKu"/>
                         <outlet property="rightHandInterestedEvent" destination="07t-W5-DIj" id="zTf-R3-bXS"/>
                         <outlet property="rightHandSuggestedEvent" destination="Wye-tY-YOZ" id="RNB-nT-a28"/>
-                        <outlet property="searchBar" destination="tuY-Dx-wUB" id="gpu-Bm-hO7"/>
                         <outlet property="searchByLocationButton" destination="iMX-xt-yuG" id="BdO-3U-xm1"/>
                         <outlet property="suggestedEventsLabel" destination="eCL-kj-MZh" id="Cgn-aB-Orc"/>
                         <outlet property="suggestedEventsMore" destination="P2k-4F-5Vk" id="KHT-sA-aMS"/>
@@ -445,7 +449,7 @@
         <!--Attending Events-->
         <scene sceneID="jCr-B3-Qca">
             <objects>
-                <tableViewController id="SaA-T7-9kJ" sceneMemberID="viewController">
+                <tableViewController id="SaA-T7-9kJ" customClass="AttendingEventsTableViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jhA-tO-IaY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -559,7 +563,7 @@
         <!--Interested Events-->
         <scene sceneID="xAZ-cj-l1D">
             <objects>
-                <tableViewController id="Ddc-P9-mRe" sceneMemberID="viewController">
+                <tableViewController id="Ddc-P9-mRe" customClass="SavedEventsTableViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xce-6s-qKW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -588,7 +592,7 @@
         <!--Suggested Events-->
         <scene sceneID="lTK-8K-a73">
             <objects>
-                <tableViewController id="VaU-YD-hZd" sceneMemberID="viewController">
+                <tableViewController id="VaU-YD-hZd" customClass="SuggestedEventsTableViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ztT-NG-G7u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
