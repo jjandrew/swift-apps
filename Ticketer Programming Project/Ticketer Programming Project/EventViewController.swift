@@ -18,10 +18,11 @@ class EventViewController: UIViewController {
     @IBOutlet var demographicLabel: UILabel!
     @IBOutlet var purchaseButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+    @IBAction func savedAction(_ sender: Any) {
+    }
 }

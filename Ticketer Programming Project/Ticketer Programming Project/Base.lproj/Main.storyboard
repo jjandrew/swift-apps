@@ -439,6 +439,7 @@
                         <outlet property="suggestedEventsLabel" destination="eCL-kj-MZh" id="Cgn-aB-Orc"/>
                         <outlet property="suggestedEventsMore" destination="P2k-4F-5Vk" id="KHT-sA-aMS"/>
                         <segue destination="wBK-RE-QdD" kind="show" identifier="eventScene1" id="4iY-sH-aub"/>
+                        <segue destination="O8i-LX-SzC" kind="show" identifier="" id="YZc-4b-FmZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -506,12 +507,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilometers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSs-Zv-vih">
-                                <rect key="frame" x="313" y="203" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CF6-rB-uhX">
                                 <rect key="frame" x="163" y="232" width="88" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -542,7 +537,16 @@
                                 <rect key="frame" x="376" y="102" width="18" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" image="bookmark" catalog="system"/>
+                                <connections>
+                                    <action selector="savedAction:" destination="wBK-RE-QdD" eventType="touchUpInside" id="oLz-mE-aOZ"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kilometers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSs-Zv-vih">
+                                <rect key="frame" x="312.5" y="203" width="81.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -616,6 +620,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhJ-Du-faq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1616" y="-425"/>
+        </scene>
+        <!--Search Table View Controller-->
+        <scene sceneID="zzg-kZ-dac">
+            <objects>
+                <tableViewController storyboardIdentifier="searchTableView" id="O8i-LX-SzC" customClass="SearchTableViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zyc-Xk-jis">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dhZ-Wr-ZPn">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="searchCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dhZ-Wr-ZPn" id="vTF-xp-Csd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="O8i-LX-SzC" id="M3k-i4-641"/>
+                            <outlet property="delegate" destination="O8i-LX-SzC" id="auJ-B7-fda"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ukn-xO-VCA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZqE-Rh-Ula" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616" y="-1108"/>
         </scene>
         <!--Suggested Events-->
         <scene sceneID="lTK-8K-a73">

@@ -78,10 +78,12 @@ class HomeScreenViewController: UIViewController {
  
     }
     
-    func searchByName() {
+    func searchByName() -> [Event] {
         let handlingOfSkiddle = HandlingOfSkiddle()
         let url = handlingOfSkiddle.createUrl(term: self.searchEntry)!
         handlingOfSkiddle.createJsonString(urlEntry: url)
+        let events = handlingOfSkiddle.events
+        return events
     }
     
     @IBAction func searchByNameButton(_ sender: Any) {
@@ -89,8 +91,12 @@ class HomeScreenViewController: UIViewController {
             if searchEntry.count > 2 {
                 self.searchEntry = searchEntry
                 view.endEditing(true)
-                searchByName()
-                performSegue(withIdentifier: "eventScene1", sender: self)
+                let events = searchByName()
+                guard let viewController = storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchTableViewController else {
+                    fatalError("Could not load view controller from storyboard")
+                }
+                viewController.events = events
+                navigationController?.pushViewController(viewController, animated: true)
             } else {
                 let alert = UIAlertController(title: "Please Enter more than two characters of text", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

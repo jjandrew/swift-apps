@@ -26,7 +26,9 @@ struct SkiddleEventResponse: Decodable {
         var events: [Event] = []
         if self.error == 0 && Int(self.totalcount) ?? -1 > 0 {
             let i = Int(self.totalcount)!
-                for j in (0...i-1) {
+                for j in (0..<i) {
+                    print(j)
+                    print(self.results[j].eventname)
                     let eventName = self.results[j].eventname
                     let date = self.results[j].date
                     let description = self.results[j].description
