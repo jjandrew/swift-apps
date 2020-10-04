@@ -90,6 +90,7 @@ class HomeScreenViewController: UIViewController {
                 self.searchEntry = searchEntry
                 view.endEditing(true)
                 searchByName()
+                performSegue(withIdentifier: "eventScene1", sender: self)
             } else {
                 let alert = UIAlertController(title: "Please Enter more than two characters of text", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
