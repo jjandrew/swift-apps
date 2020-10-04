@@ -31,34 +31,33 @@ class HandlingOfSkiddle {
     }
     
     
-    func createJsonString(urlEntry: String) {
+    func createJsonString(urlEntry: String, completion: @escaping ([Event]) -> Void) {
         if let url = URL(string: urlEntry) {
-           URLSession.shared.dataTask(with: url) { data, response, error in
-              if let data = data {
-                 if let jsonString = String(data: data, encoding: .utf8) {
-                    self.jsonString = jsonString
-                    let json = JSON(jsonString)
-                    print(json)
-                    if let response = self.parsingJson(json: data) {
-                        self.skiddleEvents = response
-                        if let events = (self.skiddleEvents?.convertToEventClass()) {
-                            self.events = events
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                if let data = data {
+                    if let jsonString = String(data: data, encoding: .utf8) {
+                        self.jsonString = jsonString
+                        let _ = JSON(jsonString)
+                        if let response = self.parsingJson(json: data) {
+                            self.skiddleEvents = response
+                            if let events = (self.skiddleEvents?.convertToEventClass()) {
+                                self.events = events
+                                print("CJS self", self.events.count)
+                            }
                         }
+                    } else {
+                        print("Error creating json string")
                     }
-                 } else {
-                    print("Error creating json string")
-                 }
-               }
-           }.resume()
+                }
+                completion(self.events)
+            }.resume()
         } else {
-            print("Error creating url")
+            print("Error creating URL")
         }
     }
     
-    
-    
     func parsingJson(json: Data) -> SkiddleEventResponse? {
-        if let eventResponse = try? decoder.decode(SkiddleEventResponse.self, from: json) {
+        if let eventResponse = try?decoder.decode(SkiddleEventResponse.self, from: json) {
             return eventResponse
         } else {
             print("Failed to decode to Event Response")

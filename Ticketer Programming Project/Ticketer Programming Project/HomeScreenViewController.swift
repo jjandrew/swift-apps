@@ -29,6 +29,7 @@ class HomeScreenViewController: UIViewController {
     var profile = Profile(userName: "Firstname, Surname", userBirthday: "01/01/2003", userGender: "Male", userLocation: nil, userAge: 17, savedEvents: [], attendingEvents: [])
     
     var searchEntry: String = ""
+    var events: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,19 +72,13 @@ class HomeScreenViewController: UIViewController {
 
     }
     
-    func updateEventsByKeyword() {
-        let handlingOfSkiddle = HandlingOfSkiddle()
-        let url = handlingOfSkiddle.createUrl(term: "vivaldi")
-        handlingOfSkiddle.createJsonString(urlEntry: url!)
- 
-    }
-    
-    func searchByName() -> [Event] {
+    func searchByName() {
         let handlingOfSkiddle = HandlingOfSkiddle()
         let url = handlingOfSkiddle.createUrl(term: self.searchEntry)!
-        handlingOfSkiddle.createJsonString(urlEntry: url)
-        let events = handlingOfSkiddle.events
-        return events
+        handlingOfSkiddle.createJsonString(urlEntry: url) { finalEvents in
+            self.events = finalEvents
+            print("VC Self", self.events.count)
+        }
     }
     
     @IBAction func searchByNameButton(_ sender: Any) {
@@ -91,7 +86,9 @@ class HomeScreenViewController: UIViewController {
             if searchEntry.count > 2 {
                 self.searchEntry = searchEntry
                 view.endEditing(true)
-                let events = searchByName()
+                searchByName()
+                let events = self.events
+                print("finalEvents", events.count)
                 guard let viewController = storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchTableViewController else {
                     fatalError("Could not load view controller from storyboard")
                 }
