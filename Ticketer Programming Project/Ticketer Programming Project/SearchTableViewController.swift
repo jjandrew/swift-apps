@@ -17,8 +17,8 @@ class SearchTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(events.count)
-        print("yay")
+        print("tableView", events.count)
+
         tableView.reloadData()
     }
     

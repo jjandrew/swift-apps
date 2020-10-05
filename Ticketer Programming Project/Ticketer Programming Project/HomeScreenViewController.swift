@@ -96,16 +96,14 @@ class HomeScreenViewController: UIViewController {
                         DispatchQueue.main.async {
                             events = self.events
                             print("SBNB", events.count)
-                            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchTableViewController else {
+                        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchTableViewController else {
                                 fatalError("Could not load view controller from storyboard")
                             }
                             viewController.events = events
-                            self.navigationController?.pushViewController(viewController, animated: true)
-                   
+                        self.navigationController?.pushViewController(viewController, animated: true)
                         }
                     }
                 }
-
             } else {
                 let alert = UIAlertController(title: "Please Enter more than two characters of text", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -117,6 +115,7 @@ class HomeScreenViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
+    
     @IBAction func searchByLocationAction(_ sender: Any) {
     }
     @IBAction func interestedPreviousAction(_ sender: Any) {
