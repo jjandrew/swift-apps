@@ -14,9 +14,14 @@ class SearchTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print(events.count)
+        print("yay")
+        tableView.reloadData()
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 0
     }

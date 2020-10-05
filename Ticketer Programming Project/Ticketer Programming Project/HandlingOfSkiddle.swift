@@ -34,23 +34,28 @@ class HandlingOfSkiddle {
     func createJsonString(urlEntry: String, completion: @escaping ([Event]) -> Void) {
         if let url = URL(string: urlEntry) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let data = data {
-                    if let jsonString = String(data: data, encoding: .utf8) {
-                        self.jsonString = jsonString
-                        let _ = JSON(jsonString)
-                        if let response = self.parsingJson(json: data) {
-                            self.skiddleEvents = response
-                            if let events = (self.skiddleEvents?.convertToEventClass()) {
-                                self.events = events
-                                print("CJS self", self.events.count)
+                if let error = error {
+                    print(error)
+                } else {
+                    if let data = data {
+                            if let jsonString = String(data: data, encoding: .utf8) {
+                                self.jsonString = jsonString
+                                let _ = JSON(jsonString)
+                                if let response = self.parsingJson(json: data) {
+                                    self.skiddleEvents = response
+                                    if let events = (self.skiddleEvents?.convertToEventClass()) {
+                                        self.events = events
+                                        print("CJS", self.events.count)
+                                    }
+                                }
+                            } else {
+                                print("Error creating json string")
                             }
-                        }
-                    } else {
-                        print("Error creating json string")
                     }
                 }
                 completion(self.events)
             }.resume()
+                
         } else {
             print("Error creating URL")
         }

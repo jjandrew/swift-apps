@@ -72,28 +72,40 @@ class HomeScreenViewController: UIViewController {
 
     }
     
-    func searchByName() {
+    func searchByName(completion: @escaping ([Event]) -> Void) {
         let handlingOfSkiddle = HandlingOfSkiddle()
         let url = handlingOfSkiddle.createUrl(term: self.searchEntry)!
         handlingOfSkiddle.createJsonString(urlEntry: url) { finalEvents in
             self.events = finalEvents
-            print("VC Self", self.events.count)
+            print("SBN", self.events.count)
+            completion(self.events)
         }
     }
+    
+    
+
     
     @IBAction func searchByNameButton(_ sender: Any) {
         if let searchEntry = nameTextEntry.text {
             if searchEntry.count > 2 {
                 self.searchEntry = searchEntry
                 view.endEditing(true)
-                searchByName()
-                let events = self.events
-                print("finalEvents", events.count)
-                guard let viewController = storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchTableViewController else {
-                    fatalError("Could not load view controller from storyboard")
+                var events: [Event] = []
+                DispatchQueue.main.async {
+                    self.searchByName() { finalEvents in
+                        DispatchQueue.main.async {
+                            events = self.events
+                            print("SBNB", events.count)
+                            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchTableViewController else {
+                                fatalError("Could not load view controller from storyboard")
+                            }
+                            viewController.events = events
+                            self.navigationController?.pushViewController(viewController, animated: true)
+                   
+                        }
+                    }
                 }
-                viewController.events = events
-                navigationController?.pushViewController(viewController, animated: true)
+
             } else {
                 let alert = UIAlertController(title: "Please Enter more than two characters of text", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
