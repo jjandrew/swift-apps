@@ -20,7 +20,14 @@ class genderEntryViewController: UIViewController {
         performSegue(withIdentifier: "GenderToHome", sender: self)
     }
     
+    @IBAction func maleButton(_ sender: Any) {
+    }
     
+    @IBAction func femaleButton(_ sender: Any) {
+    }
+    
+    @IBAction func otherButton(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 

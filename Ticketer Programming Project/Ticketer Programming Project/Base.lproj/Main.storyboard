@@ -76,8 +76,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKy-fX-hUl">
-                                <rect key="frame" x="358" y="98" width="46" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <rect key="frame" x="344" y="108" width="50" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Enter"/>
                                 <connections>
                                     <action selector="entryButton:" destination="B5G-uP-pmq" eventType="touchUpInside" id="Hgg-TS-dHP"/>
@@ -106,9 +106,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="i8Z-2w-QAS" firstAttribute="top" secondItem="Yo0-N6-d1W" secondAttribute="bottom" constant="50" id="7HZ-2K-mMe"/>
-                            <constraint firstItem="NKy-fX-hUl" firstAttribute="top" secondItem="D7T-Db-ViJ" secondAttribute="top" constant="10" id="G7m-i6-zrD"/>
+                            <constraint firstItem="NKy-fX-hUl" firstAttribute="top" secondItem="D7T-Db-ViJ" secondAttribute="top" constant="20" id="G7m-i6-zrD"/>
                             <constraint firstItem="Yo0-N6-d1W" firstAttribute="top" secondItem="D7T-Db-ViJ" secondAttribute="top" constant="20" id="YbC-7X-g9F"/>
-                            <constraint firstItem="D7T-Db-ViJ" firstAttribute="trailing" secondItem="NKy-fX-hUl" secondAttribute="trailing" constant="10" id="be3-jR-RBt"/>
+                            <constraint firstItem="D7T-Db-ViJ" firstAttribute="trailing" secondItem="NKy-fX-hUl" secondAttribute="trailing" constant="20" id="be3-jR-RBt"/>
                             <constraint firstItem="i8Z-2w-QAS" firstAttribute="centerX" secondItem="D7T-Db-ViJ" secondAttribute="centerX" id="hgT-pq-CNJ"/>
                             <constraint firstItem="Yo0-N6-d1W" firstAttribute="leading" secondItem="D7T-Db-ViJ" secondAttribute="leading" constant="20" id="jtq-y1-KtK"/>
                         </constraints>
@@ -132,22 +132,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLX-MQ-d6F">
-                                <rect key="frame" x="358" y="98" width="46" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Enter"/>
+                                <rect key="frame" x="364" y="108" width="30" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <connections>
                                     <action selector="entryButton:" destination="QyK-Hw-GnI" eventType="touchUpInside" id="2Fh-L8-9pN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMb-W9-I3O">
-                                <rect key="frame" x="20" y="108" width="160.5" height="33"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qMb-W9-I3O">
+                                <rect key="frame" x="20" y="108" width="173" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idf-WE-JIq">
                                 <rect key="frame" x="20" y="201" width="374" height="41"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.80170910650000005" green="1" blue="0.98714693269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Male">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -158,7 +157,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5p-jN-sFu">
                                 <rect key="frame" x="20" y="272" width="374" height="41"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.80170910650000005" green="1" blue="0.98714693269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Female">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -169,7 +168,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qQs-y2-bQp">
                                 <rect key="frame" x="20" y="343" width="374" height="41"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.80170910650000005" green="1" blue="0.98714693269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Other">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -183,15 +182,15 @@
                         <constraints>
                             <constraint firstItem="idf-WE-JIq" firstAttribute="leading" secondItem="qMb-W9-I3O" secondAttribute="leading" id="01s-Ga-1hQ"/>
                             <constraint firstItem="idf-WE-JIq" firstAttribute="top" secondItem="qMb-W9-I3O" secondAttribute="bottom" constant="60" id="4FB-Xi-1gp"/>
-                            <constraint firstItem="idf-WE-JIq" firstAttribute="trailing" secondItem="sLX-MQ-d6F" secondAttribute="trailing" constant="-10" id="Gyx-qk-2iE"/>
+                            <constraint firstItem="idf-WE-JIq" firstAttribute="trailing" secondItem="sLX-MQ-d6F" secondAttribute="trailing" id="Gyx-qk-2iE"/>
                             <constraint firstItem="F5p-jN-sFu" firstAttribute="leading" secondItem="idf-WE-JIq" secondAttribute="leading" id="XAW-iH-P8m"/>
-                            <constraint firstItem="sLX-MQ-d6F" firstAttribute="top" secondItem="4Dr-zx-dzc" secondAttribute="top" constant="10" id="a38-lz-qmJ"/>
+                            <constraint firstItem="sLX-MQ-d6F" firstAttribute="top" secondItem="4Dr-zx-dzc" secondAttribute="top" constant="20" id="a38-lz-qmJ"/>
                             <constraint firstItem="qQs-y2-bQp" firstAttribute="trailing" secondItem="F5p-jN-sFu" secondAttribute="trailing" id="bJV-d8-Yhp"/>
                             <constraint firstItem="F5p-jN-sFu" firstAttribute="centerX" secondItem="idf-WE-JIq" secondAttribute="centerX" id="bfx-Jf-25D"/>
                             <constraint firstItem="F5p-jN-sFu" firstAttribute="trailing" secondItem="idf-WE-JIq" secondAttribute="trailing" id="fQn-HN-JuW"/>
                             <constraint firstItem="qQs-y2-bQp" firstAttribute="leading" secondItem="F5p-jN-sFu" secondAttribute="leading" id="itc-VH-t4O"/>
                             <constraint firstItem="qMb-W9-I3O" firstAttribute="leading" secondItem="4Dr-zx-dzc" secondAttribute="leading" constant="20" id="ozu-sy-xkW"/>
-                            <constraint firstItem="4Dr-zx-dzc" firstAttribute="trailing" secondItem="sLX-MQ-d6F" secondAttribute="trailing" constant="10" id="skv-ll-heQ"/>
+                            <constraint firstItem="4Dr-zx-dzc" firstAttribute="trailing" secondItem="sLX-MQ-d6F" secondAttribute="trailing" constant="20" id="skv-ll-heQ"/>
                             <constraint firstItem="qQs-y2-bQp" firstAttribute="top" secondItem="F5p-jN-sFu" secondAttribute="bottom" constant="30" id="vIZ-2a-IRl"/>
                             <constraint firstItem="qMb-W9-I3O" firstAttribute="top" secondItem="4Dr-zx-dzc" secondAttribute="top" constant="20" id="xos-G1-BhP"/>
                             <constraint firstItem="F5p-jN-sFu" firstAttribute="top" secondItem="idf-WE-JIq" secondAttribute="bottom" constant="30" id="zEd-yQ-5FY"/>
