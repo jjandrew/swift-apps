@@ -1,5 +1,5 @@
 //
-//  genderEntryViewController.swift
+//  confirmationViewController.swift
 //  Ticketer Programming Project
 //
 //  Created by JJ Andrew on 07/10/2020.
@@ -8,26 +8,25 @@
 
 import UIKit
 
-class genderEntryViewController: UIViewController {
+class confirmationViewController: UIViewController {
 
+    @IBOutlet var nameLabel: UILabel!
+    
+    @IBOutlet var dateOfBirthLabel: UILabel!
+    
+    @IBOutlet var genderLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-
     
-    @IBAction func maleButton(_ sender: Any) {
-        performSegue(withIdentifier: "GenderToConfirm", sender: self)
+    @IBAction func confirmButton(_ sender: Any) {
+        performSegue(withIdentifier: "confirmToHome", sender: self)
     }
     
-    @IBAction func femaleButton(_ sender: Any) {
-        performSegue(withIdentifier: "GenderToConfirm", sender: self)
-    }
-    
-    @IBAction func otherButton(_ sender: Any) {
-        performSegue(withIdentifier: "GenderToConfirm", sender: self)
-    }
     /*
     // MARK: - Navigation
 
