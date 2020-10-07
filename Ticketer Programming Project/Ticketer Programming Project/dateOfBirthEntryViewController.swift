@@ -10,6 +10,8 @@ import UIKit
 
 class dateOfBirthEntryViewController: UIViewController {
 
+    @IBOutlet var dateOfBirthPicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,6 +22,8 @@ class dateOfBirthEntryViewController: UIViewController {
         performSegue(withIdentifier: "DOBToGender", sender: self)
     }
 
+    @IBAction func dateOfBirthAction(_ sender: Any) {
+    }
     
     /*
     // MARK: - Navigation

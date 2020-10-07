@@ -10,6 +10,8 @@ import UIKit
 
 class nameEntryViewController: UIViewController {
 
+    @IBOutlet var textEntryField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,7 +19,6 @@ class nameEntryViewController: UIViewController {
     }
     
     @IBAction func entryButtonAction(_ sender: Any) {
-        print("yes")
         performSegue(withIdentifier: "nameToDOB", sender: self)
     }
 
