@@ -18,6 +18,9 @@
 		0D576BE32520AF2100BA7DEE /* SuggestedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */; };
 		0D90D14D2529FF1100F93265 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D14C2529FF1100F93265 /* SearchTableViewController.swift */; };
 		0D90D14F2529FF3000F93265 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D14E2529FF3000F93265 /* EventViewController.swift */; };
+		0D90D151252DE23700F93265 /* nameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D150252DE23700F93265 /* nameEntryViewController.swift */; };
+		0D90D153252DE25400F93265 /* dateOfBirthEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */; };
+		0D90D155252DE26500F93265 /* genderEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D154252DE26500F93265 /* genderEntryViewController.swift */; };
 		0D90FD832521EBE700F2C189 /* SkiddleArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */; };
 		0D90FD882521EC7C00F2C189 /* SkiddleGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */; };
 		0D90FD9E2522284C00F2C189 /* SkiddleOpeningTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */; };
@@ -68,6 +71,9 @@
 		0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D90D14C2529FF1100F93265 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		0D90D14E2529FF3000F93265 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		0D90D150252DE23700F93265 /* nameEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameEntryViewController.swift; sourceTree = "<group>"; };
+		0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateOfBirthEntryViewController.swift; sourceTree = "<group>"; };
+		0D90D154252DE26500F93265 /* genderEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genderEntryViewController.swift; sourceTree = "<group>"; };
 		0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleArtist.swift; sourceTree = "<group>"; };
 		0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleGenres.swift; sourceTree = "<group>"; };
 		0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleOpeningTimes.swift; sourceTree = "<group>"; };
@@ -154,6 +160,9 @@
 			children = (
 				0DF0032E2510C0040059BBDE /* AppDelegate.swift */,
 				0DF003302510C0040059BBDE /* SceneDelegate.swift */,
+				0D90D150252DE23700F93265 /* nameEntryViewController.swift */,
+				0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */,
+				0D90D154252DE26500F93265 /* genderEntryViewController.swift */,
 				0DF0035E2510C0F00059BBDE /* HomeScreenViewController.swift */,
 				0D576BCE2520958A00BA7DEE /* ProfileViewController.swift */,
 				0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */,
@@ -465,9 +474,11 @@
 				0D576BD42520972A00BA7DEE /* Profile.swift in Sources */,
 				0D90D14F2529FF3000F93265 /* EventViewController.swift in Sources */,
 				0D576BE32520AF2100BA7DEE /* SuggestedEventsTableViewController.swift in Sources */,
+				0D90D153252DE25400F93265 /* dateOfBirthEntryViewController.swift in Sources */,
 				0D576BDE2520AF1200BA7DEE /* SavedEventsTableViewController.swift in Sources */,
 				0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */,
 				0D90FD832521EBE700F2C189 /* SkiddleArtist.swift in Sources */,
+				0D90D155252DE26500F93265 /* genderEntryViewController.swift in Sources */,
 				0D90FDA82522294D00F2C189 /* SkiddleRep.swift in Sources */,
 				0D90D14D2529FF1100F93265 /* SearchTableViewController.swift in Sources */,
 				0D90FDA3252228F500F2C189 /* SkiddleVenues.swift in Sources */,
@@ -475,6 +486,7 @@
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,
 				0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */,
 				0D90FD882521EC7C00F2C189 /* SkiddleGenres.swift in Sources */,
+				0D90D151252DE23700F93265 /* nameEntryViewController.swift in Sources */,
 				0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */,
 				0D576BCF2520958A00BA7DEE /* ProfileViewController.swift in Sources */,
 				0DF003612510C1B20059BBDE /* APIs.swift in Sources */,
