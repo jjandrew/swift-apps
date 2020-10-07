@@ -96,11 +96,11 @@ class HomeScreenViewController: UIViewController {
                         DispatchQueue.main.async {
                             events = self.events
                             print("SBNB", events.count)
-                        guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchTableViewController else {
+                            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchViewController else {
                                 fatalError("Could not load view controller from storyboard")
                             }
                             viewController.events = events
-                        self.navigationController?.pushViewController(viewController, animated: true)
+                            self.navigationController?.pushViewController(viewController, animated: true)
                         }
                     }
                 }

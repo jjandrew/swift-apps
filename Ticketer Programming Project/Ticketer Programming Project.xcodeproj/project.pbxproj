@@ -16,12 +16,12 @@
 		0D576BD92520AEF200BA7DEE /* AttendingEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */; };
 		0D576BDE2520AF1200BA7DEE /* SavedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */; };
 		0D576BE32520AF2100BA7DEE /* SuggestedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */; };
-		0D90D14D2529FF1100F93265 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D14C2529FF1100F93265 /* SearchTableViewController.swift */; };
 		0D90D14F2529FF3000F93265 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D14E2529FF3000F93265 /* EventViewController.swift */; };
 		0D90D151252DE23700F93265 /* nameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D150252DE23700F93265 /* nameEntryViewController.swift */; };
 		0D90D153252DE25400F93265 /* dateOfBirthEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */; };
 		0D90D155252DE26500F93265 /* genderEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D154252DE26500F93265 /* genderEntryViewController.swift */; };
 		0D90D157252E3F3C00F93265 /* confirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D156252E3F3C00F93265 /* confirmationViewController.swift */; };
+		0D90D159252E5A7700F93265 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D158252E5A7700F93265 /* SearchViewController.swift */; };
 		0D90FD832521EBE700F2C189 /* SkiddleArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */; };
 		0D90FD882521EC7C00F2C189 /* SkiddleGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */; };
 		0D90FD9E2522284C00F2C189 /* SkiddleOpeningTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */; };
@@ -70,12 +70,12 @@
 		0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendingEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedEventsTableViewController.swift; sourceTree = "<group>"; };
-		0D90D14C2529FF1100F93265 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		0D90D14E2529FF3000F93265 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		0D90D150252DE23700F93265 /* nameEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameEntryViewController.swift; sourceTree = "<group>"; };
 		0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateOfBirthEntryViewController.swift; sourceTree = "<group>"; };
 		0D90D154252DE26500F93265 /* genderEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genderEntryViewController.swift; sourceTree = "<group>"; };
 		0D90D156252E3F3C00F93265 /* confirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmationViewController.swift; sourceTree = "<group>"; };
+		0D90D158252E5A7700F93265 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleArtist.swift; sourceTree = "<group>"; };
 		0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleGenres.swift; sourceTree = "<group>"; };
 		0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleOpeningTimes.swift; sourceTree = "<group>"; };
@@ -171,7 +171,7 @@
 				0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */,
 				0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */,
 				0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */,
-				0D90D14C2529FF1100F93265 /* SearchTableViewController.swift */,
+				0D90D158252E5A7700F93265 /* SearchViewController.swift */,
 				0D90D14E2529FF3000F93265 /* EventViewController.swift */,
 				0DF003342510C0040059BBDE /* Main.storyboard */,
 				0DF003372510C0070059BBDE /* Assets.xcassets */,
@@ -481,9 +481,9 @@
 				0D576BDE2520AF1200BA7DEE /* SavedEventsTableViewController.swift in Sources */,
 				0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */,
 				0D90FD832521EBE700F2C189 /* SkiddleArtist.swift in Sources */,
+				0D90D159252E5A7700F93265 /* SearchViewController.swift in Sources */,
 				0D90D155252DE26500F93265 /* genderEntryViewController.swift in Sources */,
 				0D90FDA82522294D00F2C189 /* SkiddleRep.swift in Sources */,
-				0D90D14D2529FF1100F93265 /* SearchTableViewController.swift in Sources */,
 				0D90FDA3252228F500F2C189 /* SkiddleVenues.swift in Sources */,
 				0D576BD92520AEF200BA7DEE /* AttendingEventsTableViewController.swift in Sources */,
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,

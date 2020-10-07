@@ -40,6 +40,7 @@ class HandlingOfSkiddle {
                     if let data = data {
                             if let jsonString = String(data: data, encoding: .utf8) {
                                 self.jsonString = jsonString
+                                print(jsonString)
                                 let _ = JSON(jsonString)
                                 if let response = self.parsingJson(json: data) {
                                     self.skiddleEvents = response

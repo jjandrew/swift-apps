@@ -18,15 +18,15 @@ class genderEntryViewController: UIViewController {
 
     
     @IBAction func maleButton(_ sender: Any) {
-        performSegue(withIdentifier: "GenderToConfirm", sender: self)
+        performSegue(withIdentifier: "genderToConfirm", sender: self)
     }
     
     @IBAction func femaleButton(_ sender: Any) {
-        performSegue(withIdentifier: "GenderToConfirm", sender: self)
+        performSegue(withIdentifier: "genderToConfirm", sender: self)
     }
     
     @IBAction func otherButton(_ sender: Any) {
-        performSegue(withIdentifier: "GenderToConfirm", sender: self)
+        performSegue(withIdentifier: "genderToConfirm", sender: self)
     }
     /*
     // MARK: - Navigation

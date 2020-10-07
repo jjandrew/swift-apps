@@ -18,7 +18,7 @@ struct SkiddleEvent: Decodable {
     var cancellationType: String
     var cancellationReason: String
     var rescheduledDate: String
-    //var venue: [SkiddleVenues]
+    var venue: SkiddleVenues
     var imageurl: String
     var largeimageurl: String
     var link: String
@@ -26,7 +26,7 @@ struct SkiddleEvent: Decodable {
     var startdate: String
     var enddate: String
     var description: String
-    //var openingtimes: [SkiddleOpeningTimes]
+    var openingtimes: SkiddleOpeningTimes
     var minage: String
     var imgoing: String?
     var goingtos: Int
@@ -34,7 +34,7 @@ struct SkiddleEvent: Decodable {
     var tickets: Bool
     var entryprice: String
     var eventvisibility: String
-    //var rep: [SkiddleRep]
+    var rep: SkiddleRep
     var artists: [SkiddleArtist]
     var genres: [SkiddleGenres]
 

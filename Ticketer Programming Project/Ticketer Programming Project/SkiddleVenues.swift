@@ -17,7 +17,7 @@ struct SkiddleVenues: Codable {
     var postcode: String
     var country: String
     var phone: String
-    var lattitude: Float
+    var latitude: Float
     var longitude: Float
     var type: String
     var rating: Int

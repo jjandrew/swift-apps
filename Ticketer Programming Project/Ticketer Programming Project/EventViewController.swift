@@ -20,9 +20,15 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        savedButton.setImage(UIImage(systemName: "bookmark.fill"), for: .selected)
+        savedButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
     }
 
     @IBAction func savedAction(_ sender: Any) {
+        if savedButton.isSelected == true {
+            savedButton.isSelected = false
+        } else {
+            savedButton.isSelected = true
+        }
     }
 }
