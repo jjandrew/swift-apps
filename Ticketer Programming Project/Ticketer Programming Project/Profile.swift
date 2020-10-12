@@ -9,15 +9,15 @@
 import Foundation
 
 class Profile {
-    var userName: String
-    var userBirthday: String
-    var userGender: String
+    var userName: String?
+    var userBirthday: String?
+    var userGender: String?
     var userLocation: String?
-    var userAge: Int
-    var savedEvents: [Event]
-    var attendingEvents: [Event]
+    var userAge: Int?
+    var savedEvents: [Event] = []
+    var attendingEvents: [Event] = []
     
-    init(userName: String, userBirthday: String, userGender: String, userLocation: String?, userAge: Int, savedEvents: [Event], attendingEvents: [Event]) {
+    init(userName: String?, userBirthday: String?, userGender: String?, userLocation: String?, userAge: Int?, savedEvents: [Event], attendingEvents: [Event]) {
         self.userName = userName
         self.userBirthday = userBirthday
         self.userGender = userGender
