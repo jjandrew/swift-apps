@@ -28,7 +28,9 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         expected = nil
         XCTAssertEqual(result, expected)
     }
-
+/*
+     
+     
     func testEventChange() {
         let skiddleEvent = SkiddleEventResponse(error: 0, totalcount: "2", pagecount: 2, results: [SkiddleEvent(id: "", EventCode: "", eventname: "Event 1", cancelled: "0", cancellationDate: "", cancellationType: "", cancellationReason: "", rescheduledDate: "", imageurl: "url", largeimageurl: "Url", link: "Event1url", date: "25.11.2020", startdate: "", enddate: "", description: "Event 1 description", minage: "", imgoing: nil, goingtos: 0, goingtocount: "", tickets: true, entryprice: "", eventvisibility: "", artists: [], genres: []), SkiddleEvent(id: "", EventCode: "", eventname: "Event 2", cancelled: "0", cancellationDate: "", cancellationType: "", cancellationReason: "", rescheduledDate: "", imageurl: "url", largeimageurl: "Url", link: "Event2url", date: "26.12.2021", startdate: "", enddate: "", description: "Event 2 description", minage: "", imgoing: nil, goingtos: 0, goingtocount: "", tickets: true, entryprice: "", eventvisibility: "", artists: [], genres: [])])
         let events = skiddleEvent.convertToEventClass()
@@ -39,6 +41,31 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
             XCTAssertEqual(skiddleEvent.results[i].description, events[i].description)
             XCTAssertEqual(skiddleEvent.results[i].link, events[i].website[0])
         }
+    }
+    */
+    func testValidateNameWorksForValidValue() {
+        let NameEntryViewController = nameEntryViewController()
+        let name = "Joe Bloggs"
+        let expected = true
+        let actual = NameEntryViewController.validateTextEntry(entry: name)
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func testValidateNameWorksForEmptyValue() {
+        let NameEntryViewController = nameEntryViewController()
+        let name: String? =
+        nil
+        let expected = false
+        let actual = NameEntryViewController.validateTextEntry(entry: name)
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func testValidateNameWorksForShortValue() {
+        let NameEntryViewController = nameEntryViewController()
+        let name = "ab"
+        let expected = false
+        let actual = NameEntryViewController.validateTextEntry(entry: name)
+        XCTAssertEqual(expected, actual)
     }
     
 }
