@@ -68,4 +68,20 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    func testValidateNameReturnsFalseForOneName() {
+        let NameEntryViewController = nameEntryViewController()
+        let name = "abcdefg"
+        let expected = false
+        let actual = NameEntryViewController.validateTextEntry(entry: name)
+        XCTAssertEqual(expected, actual)
+    }
+    
+    func testValidateNameReturnsFalseForFirstNameBeingOneCharacter() {
+        let NameEntryViewController = nameEntryViewController()
+        let name = "j smith"
+        let expected = false
+        let actual = NameEntryViewController.validateTextEntry(entry: name)
+        XCTAssertEqual(expected, actual)
+    }
+    
 }

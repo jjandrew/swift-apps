@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-struct Event: Codable {
+class Event {
     let eventName : String
     let location: String?
     let date: String

@@ -32,9 +32,20 @@ class nameEntryViewController: UIViewController {
     
     func validateTextEntry(entry: String?) -> Bool {
         if entry != nil {
-            if entry!.count > 2 {
-                
-                return true
+            if let nameArray = entry?.split(separator: " ") {
+                if nameArray.count == 2 {
+                    if nameArray[0].count > 1 {
+                        if nameArray[1].count > 2 {
+                            return true
+                        } else {
+                            return false
+                        }
+                    } else {
+                        return false
+                    }
+                } else {
+                    return false
+                }
             } else {
                 return false
             }

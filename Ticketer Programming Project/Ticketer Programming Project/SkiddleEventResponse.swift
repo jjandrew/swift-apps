@@ -32,10 +32,8 @@ struct SkiddleEventResponse: Decodable {
                 let website = self.results[i].link
                 events.append(Event(eventName: eventName, location: nil, date: date, description: description, saved: nil, website: [website]))
             }
-            print("CTEC", events.count)
             return events
         } else {
-            print("CTEC", events.count)
             return []
         }
     }
