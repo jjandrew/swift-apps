@@ -15,8 +15,12 @@ class HandlingOfStudhub {
     let apiKey = "8L7GQ9U3pO2IgGBe0hD5JqHhSTFW"
     let decoder = JSONDecoder()
     var jsonString = ""
-    var ticketMasterEvents: TicketMasterEventResponse? = nil
+    var studhubEvents: StudhubEventResponse? = nil
     var events: [Event] = []
+    let headers: HTTPHeaders = [
+        "Authorization": "Bearer 8L7GQ9U3pO2IgGBe0hD5JqHhSTFW",
+        "Accept": "application/json"
+    ]
 
     
     func createUrl(term: String?) -> String? {
@@ -24,13 +28,29 @@ class HandlingOfStudhub {
             print("No search term provided")
             return nil}
         
-        let path = "&keyword=\(searchTerm)&order=date&description=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let path = "q=\(searchTerm)/".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         let url = baseUrl + apiKey + path
         return url
     }
     
-    
+    func createJsonString2(urlEntry: String, completion: @escaping ([Event]) -> Void) {
+        AF.request(urlEntry, method: .get, headers: headers).validate().responseJSON { response in
+            print("")
+            switch response.result {
+                case .success(let value):
+                    print(value)
+                case .failure(let error):
+                    print("oops")
+                    print(error)
+                }
+        }.cURLDescription { description in
+            print(description)
+        }
+    }
+    /*
+     
+     
     func createJsonString(urlEntry: String, completion: @escaping ([Event]) -> Void) {
         if let url = URL(string: urlEntry) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -43,8 +63,8 @@ class HandlingOfStudhub {
                                 print(jsonString)
                                 let _ = JSON(jsonString)
                                 if let response = self.parsingJson(json: data) {
-                                    self.skiddleEvents = response
-                                    if let events = (self.skiddleEvents?.convertToEventClass()) {
+                                    self.studhubEvents = response
+                                    //if let events = (self.studhubEvents?.convertToEventClass()) {
                                         self.events = events
                                         print("CJS", self.events.count)
                                     }
@@ -61,9 +81,9 @@ class HandlingOfStudhub {
             print("Error creating URL")
         }
     }
-    
-    func parsingJson(json: Data) -> SkiddleEventResponse? {
-        if let eventResponse = try?decoder.decode(SkiddleEventResponse.self, from: json) {
+    */
+    func parsingJson(json: Data) -> StudhubEventResponse? {
+        if let eventResponse = try?decoder.decode(StudhubEventResponse.self, from: json) {
             return eventResponse
         } else {
             print("Failed to decode to Event Response")

@@ -30,7 +30,9 @@ class HandlingOfTicketMaster {
         return url
     }
     
-    
+    /*
+     
+     
     func createJsonString(urlEntry: String, completion: @escaping ([Event]) -> Void) {
         if let url = URL(string: urlEntry) {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -43,8 +45,8 @@ class HandlingOfTicketMaster {
                                 print(jsonString)
                                 let _ = JSON(jsonString)
                                 if let response = self.parsingJson(json: data) {
-                                    self.skiddleEvents = response
-                                    if let events = (self.skiddleEvents?.convertToEventClass()) {
+                                    self.ticketMasterEvents = response
+                                    if let events = (self.ticketMasterEvents?.convertToEventClass()) {
                                         self.events = events
                                         print("CJS", self.events.count)
                                     }
@@ -61,9 +63,10 @@ class HandlingOfTicketMaster {
             print("Error creating URL")
         }
     }
+ */
     
-    func parsingJson(json: Data) -> SkiddleEventResponse? {
-        if let eventResponse = try?decoder.decode(SkiddleEventResponse.self, from: json) {
+    func parsingJson(json: Data) -> TicketMasterEventResponse? {
+        if let eventResponse = try?decoder.decode(TicketMasterEventResponse.self, from: json) {
             return eventResponse
         } else {
             print("Failed to decode to Event Response")
