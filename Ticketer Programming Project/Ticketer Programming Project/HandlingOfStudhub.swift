@@ -11,7 +11,7 @@ import SwiftyJSON
 import Alamofire
 
 class HandlingOfStudhub {
-    let baseUrl = "https://api.stubhub.com/sellers/search/events/v3"
+    let baseUrl = "https://api.stubhub.com/sellers/search/events/v3?"
     let apiKey = "8L7GQ9U3pO2IgGBe0hD5JqHhSTFW"
     let decoder = JSONDecoder()
     var jsonString = ""
@@ -40,11 +40,27 @@ class HandlingOfStudhub {
             switch response.result {
                 case .success(let value):
                     print(value)
+                                        print("""
+
+
+                    end
+
+
+                    """)
+                    let json = JSON(value)
+                    print(json)
+
                 case .failure(let error):
                     print("oops")
                     print(error)
                 }
         }.cURLDescription { description in
+            print("""
+
+
+
+
+""")
             print(description)
         }
     }
