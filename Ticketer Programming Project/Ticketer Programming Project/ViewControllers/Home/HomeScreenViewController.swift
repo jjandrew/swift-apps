@@ -75,7 +75,8 @@ class HomeScreenViewController: UIViewController {
     func searchByName(completion: @escaping ([Event]) -> Void) {
         let handlingOfStudhub = HandlingOfStudhub()
         let url = handlingOfStudhub.createUrl(term: self.searchEntry)!
-        handlingOfStudhub.createJsonString2(urlEntry: url) { finalEvents in
+        print(url)
+        handlingOfStudhub.createJsonString(urlEntry: url) { finalEvents in
             self.events = finalEvents
             print("SBN", self.events.count)
             completion(self.events)

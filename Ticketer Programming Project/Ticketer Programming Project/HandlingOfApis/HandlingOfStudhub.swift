@@ -28,40 +28,35 @@ class HandlingOfStudhub {
             print("No search term provided")
             return nil}
         
-        let path = "q=\(searchTerm)/".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let path = "name=\(searchTerm)/".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
-        let url = baseUrl + apiKey + path
+        let url = baseUrl + path
         return url
     }
     
-    func createJsonString2(urlEntry: String, completion: @escaping ([Event]) -> Void) {
-        AF.request(urlEntry, method: .get, headers: headers).validate().responseJSON { response in
-            print("")
-            switch response.result {
-                case .success(let value):
-                    print(value)
-                                        print("""
+    func createJsonString(urlEntry: String, completion: @escaping ([Event]) -> Void) {
+        if let url = URL(string: urlEntry) {
+            AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
+                print("")
+                switch response.result {
+                    case .success(let value):
+                        let json = JSON(value)
+                        print(json)
+                        if let response = self.parsingJson(json: json) {
+                            self.studhubEvents = response
+                            if let events = (self.studhubEvents?.convertToEventClass()) {
+                                self.events = events
+                                print("CJS", self.events.count)
+                            }
+                        }
 
-
-                    end
-
-
-                    """)
-                    let json = JSON(value)
-                    print(json)
-
-                case .failure(let error):
-                    print("oops")
-                    print(error)
-                }
-        }.cURLDescription { description in
-            print("""
-
-
-
-
-""")
-            print(description)
+                    case .failure(let error):
+                        print("oops")
+                        print(error)
+                    }
+            }
+        } else {
+            print("Error creating URL")
         }
     }
     /*
