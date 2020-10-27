@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct StudhubEvent: Decodable {
+    let description: String
+    let eventDateUTC: String
+    let webURI: String
+    let name: String
+    let eventDateLocal: String
+    let venue: StudhubEventVenue
+    
+}

@@ -16,10 +16,10 @@ struct StudhubEventResponse: Decodable {
         var events: [Event] = []
         if self.events.count > 0 {
             for i in (0 ..< self.events.count) {
-                let eventName = self.events[i].eventname
-                let date = self.events[i].date
+                let eventName = self.events[i].name
+                let date = self.events[i].eventDateUTC
                 let description = self.events[i].description
-                let website = self.events[i].link
+                let website = "https://www.stubhub.co.uk/\(self.events[i].webURI)"
                 events.append(Event(eventName: eventName, location: nil, date: date, description: description, saved: nil, website: [website]))
             }
             return events

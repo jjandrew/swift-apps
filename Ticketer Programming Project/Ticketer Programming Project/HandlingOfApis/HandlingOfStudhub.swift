@@ -41,8 +41,12 @@ class HandlingOfStudhub {
                 switch response.result {
                     case .success(let value):
                         let json = JSON(value)
-                        print(json)
-                        if let response = self.parsingJson(json: json) {
+                        let jsonData = try! json.rawData()
+                        //print(jsonData)
+                        //print(json)
+                        self.jsonString = json.description
+                         
+                        if let response = self.parsingJson(json: jsonData) {
                             self.studhubEvents = response
                             if let events = (self.studhubEvents?.convertToEventClass()) {
                                 self.events = events
@@ -53,11 +57,14 @@ class HandlingOfStudhub {
                     case .failure(let error):
                         print("oops")
                         print(error)
+                        self.events = []
                     }
             }
         } else {
             print("Error creating URL")
+            self.events = []
         }
+        completion(self.events)
     }
     /*
      

@@ -16,6 +16,7 @@
 		0D576BD92520AEF200BA7DEE /* AttendingEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */; };
 		0D576BDE2520AF1200BA7DEE /* SavedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */; };
 		0D576BE32520AF2100BA7DEE /* SuggestedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */; };
+		0D5E4E7C254876E20056CA90 /* StudhubEventVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E4E7B254876E20056CA90 /* StudhubEventVenue.swift */; };
 		0D90D14F2529FF3000F93265 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D14E2529FF3000F93265 /* EventViewController.swift */; };
 		0D90D151252DE23700F93265 /* nameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D150252DE23700F93265 /* nameEntryViewController.swift */; };
 		0D90D153252DE25400F93265 /* dateOfBirthEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */; };
@@ -76,6 +77,7 @@
 		0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendingEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedEventsTableViewController.swift; sourceTree = "<group>"; };
+		0D5E4E7B254876E20056CA90 /* StudhubEventVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudhubEventVenue.swift; sourceTree = "<group>"; };
 		0D90D14E2529FF3000F93265 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		0D90D150252DE23700F93265 /* nameEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameEntryViewController.swift; sourceTree = "<group>"; };
 		0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateOfBirthEntryViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				0DE4FC7B254032F5003FCF25 /* StudhubEventResponse.swift */,
 				0DE4FC7F25449138003FCF25 /* StudhubEvent.swift */,
+				0D5E4E7B254876E20056CA90 /* StudhubEventVenue.swift */,
 			);
 			path = StudhubEvent;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				0D90D151252DE23700F93265 /* nameEntryViewController.swift in Sources */,
 				0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */,
 				0D576BCF2520958A00BA7DEE /* ProfileViewController.swift in Sources */,
+				0D5E4E7C254876E20056CA90 /* StudhubEventVenue.swift in Sources */,
 				0DF003612510C1B20059BBDE /* APIs.swift in Sources */,
 				0DE4FC7A2540286E003FCF25 /* HandlingOfTicketMaster.swift in Sources */,
 				0D50F9922517692D00ADEBCF /* Event.swift in Sources */,
