@@ -42,8 +42,6 @@ class HandlingOfStudhub {
                     case .success(let value):
                         let json = JSON(value)
                         let jsonData = try! json.rawData()
-                        //print(jsonData)
-                        //print(json)
                         self.jsonString = json.description
                          
                         if let response = self.parsingJson(json: jsonData) {
@@ -66,40 +64,7 @@ class HandlingOfStudhub {
         }
         completion(self.events)
     }
-    /*
-     
-     
-    func createJsonString(urlEntry: String, completion: @escaping ([Event]) -> Void) {
-        if let url = URL(string: urlEntry) {
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                if let error = error {
-                    print(error)
-                } else {
-                    if let data = data {
-                            if let jsonString = String(data: data, encoding: .utf8) {
-                                self.jsonString = jsonString
-                                print(jsonString)
-                                let _ = JSON(jsonString)
-                                if let response = self.parsingJson(json: data) {
-                                    self.studhubEvents = response
-                                    //if let events = (self.studhubEvents?.convertToEventClass()) {
-                                        self.events = events
-                                        print("CJS", self.events.count)
-                                    }
-                                }
-                            } else {
-                                print("Error creating json string")
-                            }
-                    }
-                }
-                completion(self.events)
-            }.resume()
-                
-        } else {
-            print("Error creating URL")
-        }
-    }
-    */
+    
     func parsingJson(json: Data) -> StudhubEventResponse? {
         if let eventResponse = try?decoder.decode(StudhubEventResponse.self, from: json) {
             return eventResponse
