@@ -13,14 +13,6 @@ struct SkiddleEventResponse: Decodable {
     var totalcount: String = ""
     var pagecount: Int
     var results: [SkiddleEvent]
-    
-    /*private enum CodingKeys: String, CodingKey {
-        case count = "totalcount"
-        case results
-    }
- */
-    
-     
      
     func convertToEventClass() -> [Event] {
         var events: [Event] = []

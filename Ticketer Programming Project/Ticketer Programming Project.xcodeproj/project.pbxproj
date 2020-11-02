@@ -17,17 +17,15 @@
 		0D576BDE2520AF1200BA7DEE /* SavedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */; };
 		0D576BE32520AF2100BA7DEE /* SuggestedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */; };
 		0D5E4E7C254876E20056CA90 /* StudhubEventVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E4E7B254876E20056CA90 /* StudhubEventVenue.swift */; };
+		0D5E4E7E2550170B0056CA90 /* SortAndSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E4E7D2550170B0056CA90 /* SortAndSearch.swift */; };
 		0D90D14F2529FF3000F93265 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D14E2529FF3000F93265 /* EventViewController.swift */; };
 		0D90D151252DE23700F93265 /* nameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D150252DE23700F93265 /* nameEntryViewController.swift */; };
 		0D90D153252DE25400F93265 /* dateOfBirthEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */; };
 		0D90D155252DE26500F93265 /* genderEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D154252DE26500F93265 /* genderEntryViewController.swift */; };
 		0D90D157252E3F3C00F93265 /* confirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D156252E3F3C00F93265 /* confirmationViewController.swift */; };
 		0D90D159252E5A7700F93265 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D158252E5A7700F93265 /* SearchViewController.swift */; };
-		0D90FD832521EBE700F2C189 /* SkiddleArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */; };
-		0D90FD882521EC7C00F2C189 /* SkiddleGenres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */; };
 		0D90FD9E2522284C00F2C189 /* SkiddleOpeningTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */; };
 		0D90FDA3252228F500F2C189 /* SkiddleVenues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FDA2252228F500F2C189 /* SkiddleVenues.swift */; };
-		0D90FDA82522294D00F2C189 /* SkiddleRep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FDA72522294D00F2C189 /* SkiddleRep.swift */; };
 		0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */; };
 		0DE4FC7625402697003FCF25 /* TicketMasterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4FC7525402697003FCF25 /* TicketMasterEvent.swift */; };
 		0DE4FC782540285B003FCF25 /* TickerMasterEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4FC772540285B003FCF25 /* TickerMasterEventResponse.swift */; };
@@ -78,17 +76,15 @@
 		0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D5E4E7B254876E20056CA90 /* StudhubEventVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudhubEventVenue.swift; sourceTree = "<group>"; };
+		0D5E4E7D2550170B0056CA90 /* SortAndSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortAndSearch.swift; sourceTree = "<group>"; };
 		0D90D14E2529FF3000F93265 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		0D90D150252DE23700F93265 /* nameEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameEntryViewController.swift; sourceTree = "<group>"; };
 		0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateOfBirthEntryViewController.swift; sourceTree = "<group>"; };
 		0D90D154252DE26500F93265 /* genderEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = genderEntryViewController.swift; sourceTree = "<group>"; };
 		0D90D156252E3F3C00F93265 /* confirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = confirmationViewController.swift; sourceTree = "<group>"; };
 		0D90D158252E5A7700F93265 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleArtist.swift; sourceTree = "<group>"; };
-		0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleGenres.swift; sourceTree = "<group>"; };
 		0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleOpeningTimes.swift; sourceTree = "<group>"; };
 		0D90FDA2252228F500F2C189 /* SkiddleVenues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleVenues.swift; sourceTree = "<group>"; };
-		0D90FDA72522294D00F2C189 /* SkiddleRep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleRep.swift; sourceTree = "<group>"; };
 		0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEvent.swift; sourceTree = "<group>"; };
 		0DE4FC7525402697003FCF25 /* TicketMasterEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketMasterEvent.swift; sourceTree = "<group>"; };
 		0DE4FC772540285B003FCF25 /* TickerMasterEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerMasterEventResponse.swift; sourceTree = "<group>"; };
@@ -154,11 +150,8 @@
 			children = (
 				0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */,
 				0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */,
-				0D90FDA72522294D00F2C189 /* SkiddleRep.swift */,
 				0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */,
 				0D90FDA2252228F500F2C189 /* SkiddleVenues.swift */,
-				0D90FD872521EC7C00F2C189 /* SkiddleGenres.swift */,
-				0D90FD822521EBE700F2C189 /* SkiddleArtist.swift */,
 			);
 			path = SkiddleEvent;
 			sourceTree = "<group>";
@@ -234,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				0D90D158252E5A7700F93265 /* SearchViewController.swift */,
+				0D5E4E7D2550170B0056CA90 /* SortAndSearch.swift */,
 				0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */,
 				0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */,
 				0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */,
@@ -574,18 +568,16 @@
 				0D90D153252DE25400F93265 /* dateOfBirthEntryViewController.swift in Sources */,
 				0D576BDE2520AF1200BA7DEE /* SavedEventsTableViewController.swift in Sources */,
 				0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */,
-				0D90FD832521EBE700F2C189 /* SkiddleArtist.swift in Sources */,
 				0DE4FC8025449138003FCF25 /* StudhubEvent.swift in Sources */,
 				0D90D159252E5A7700F93265 /* SearchViewController.swift in Sources */,
 				0D90D155252DE26500F93265 /* genderEntryViewController.swift in Sources */,
-				0D90FDA82522294D00F2C189 /* SkiddleRep.swift in Sources */,
 				0D90FDA3252228F500F2C189 /* SkiddleVenues.swift in Sources */,
 				0D576BD92520AEF200BA7DEE /* AttendingEventsTableViewController.swift in Sources */,
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,
 				0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */,
-				0D90FD882521EC7C00F2C189 /* SkiddleGenres.swift in Sources */,
 				0DE4FC7C254032F5003FCF25 /* StudhubEventResponse.swift in Sources */,
 				0D90D151252DE23700F93265 /* nameEntryViewController.swift in Sources */,
+				0D5E4E7E2550170B0056CA90 /* SortAndSearch.swift in Sources */,
 				0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */,
 				0D576BCF2520958A00BA7DEE /* ProfileViewController.swift in Sources */,
 				0D5E4E7C254876E20056CA90 /* StudhubEventVenue.swift in Sources */,

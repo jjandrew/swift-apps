@@ -13,3 +13,5 @@ struct SkiddleOpeningTimes: Decodable {
     var doorsclose: String
     var lastentry: String
 }
+
+

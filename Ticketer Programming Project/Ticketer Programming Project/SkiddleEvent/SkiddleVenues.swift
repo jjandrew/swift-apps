@@ -9,7 +9,6 @@
 import Foundation
 
 struct SkiddleVenues: Codable {
-    var id: Int
     var name: String
     var address: String
     var town: String
@@ -19,6 +18,4 @@ struct SkiddleVenues: Codable {
     var phone: String
     var latitude: Float
     var longitude: Float
-    var type: String
-    var rating: Int
 }

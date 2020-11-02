@@ -84,4 +84,54 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         XCTAssertEqual(expected, actual)
     }
     
+    func testQuickSort() {
+        let sortAndSearch = SortAndSearch()
+        let test1Data = [Event(eventName: "event1", location: nil, date: "", description: "", saved: nil, website: [])]
+        let test1Actual = sortAndSearch.quickSortByName(array: test1Data)
+        let test1Expected = [Event(eventName: "event1", location: nil, date: "", description: "", saved: nil, website: [])]
+        for event in test1Actual {
+            print(event.eventName)
+        }
+        print("expected1")
+        for event in test1Expected {
+            print(event.eventName)
+        }
+        print("")
+        
+        let test2Data = [Event(eventName: "bba", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bbb", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abc", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "", description: "", saved: nil, website: [])]
+        let test2Actual = sortAndSearch.quickSortByName(array: test2Data)
+        let test2Expected = [Event(eventName: "abc", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bba", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bbb", location: nil, date: "", description: "", saved: nil, website: [])]
+        for event in test2Actual {
+            print(event.eventName)
+        }
+        print("expected2")
+        for event in test2Expected {
+            print(event.eventName)
+        }
+        print("")
+        
+        let test3Data = [Event(eventName: "bbc", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bba", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "aad", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "aaa", location: nil, date: "", description: "", saved: nil, website: [])]
+        let test3Actual = sortAndSearch.quickSortByName(array: test3Data)
+        let test3Expected = [Event(eventName: "aaa", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "aad", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bba", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bbc", location: nil, date: "", description: "", saved: nil, website: [])]
+        for event in test3Actual {
+            print(event.eventName)
+        }
+        print("expected3")
+        for event in test3Expected {
+            print(event.eventName)
+        }
+        print("")
+        
+        let test4Data = [Event(eventName: "bbf", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abc", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "dfa", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bbf", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "", description: "", saved: nil, website: [])]
+        let test4Actual = sortAndSearch.quickSortByName(array: test4Data)
+        let test4Expected = [Event(eventName: "abc", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bbf", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bbf", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "dfa", location: nil, date: "", description: "", saved: nil, website: [])]
+        for event in test4Actual {
+            print(event.eventName)
+        }
+        print("expected4")
+        for event in test4Expected {
+            print(event.eventName)
+        }
+    }
+    
 }
