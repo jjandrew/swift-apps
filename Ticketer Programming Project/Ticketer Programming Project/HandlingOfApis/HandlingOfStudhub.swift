@@ -50,7 +50,9 @@ class HandlingOfStudhub {
                                 self.events = events
                                 print("CJS", self.events.count)
                             }
+                            
                         }
+                        completion(self.events)
 
                     case .failure(let error):
                         print("oops")
@@ -58,11 +60,12 @@ class HandlingOfStudhub {
                         self.events = []
                     }
             }
+            
         } else {
             print("Error creating URL")
             self.events = []
         }
-        completion(self.events)
+
     }
     
     func parsingJson(json: Data) -> StudhubEventResponse? {

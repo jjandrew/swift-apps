@@ -18,6 +18,8 @@
 		0D576BE32520AF2100BA7DEE /* SuggestedEventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */; };
 		0D5E4E7C254876E20056CA90 /* StudhubEventVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E4E7B254876E20056CA90 /* StudhubEventVenue.swift */; };
 		0D5E4E7E2550170B0056CA90 /* SortAndSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E4E7D2550170B0056CA90 /* SortAndSearch.swift */; };
+		0D5E4E8225508CF80056CA90 /* searchSortingChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E4E8125508CF80056CA90 /* searchSortingChoiceViewController.swift */; };
+		0D5E4E8625508E790056CA90 /* EventSearchStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5E4E8525508E790056CA90 /* EventSearchStruct.swift */; };
 		0D90D14F2529FF3000F93265 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D14E2529FF3000F93265 /* EventViewController.swift */; };
 		0D90D151252DE23700F93265 /* nameEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D150252DE23700F93265 /* nameEntryViewController.swift */; };
 		0D90D153252DE25400F93265 /* dateOfBirthEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */; };
@@ -77,6 +79,8 @@
 		0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedEventsTableViewController.swift; sourceTree = "<group>"; };
 		0D5E4E7B254876E20056CA90 /* StudhubEventVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudhubEventVenue.swift; sourceTree = "<group>"; };
 		0D5E4E7D2550170B0056CA90 /* SortAndSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortAndSearch.swift; sourceTree = "<group>"; };
+		0D5E4E8125508CF80056CA90 /* searchSortingChoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchSortingChoiceViewController.swift; sourceTree = "<group>"; };
+		0D5E4E8525508E790056CA90 /* EventSearchStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventSearchStruct.swift; sourceTree = "<group>"; };
 		0D90D14E2529FF3000F93265 /* EventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
 		0D90D150252DE23700F93265 /* nameEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nameEntryViewController.swift; sourceTree = "<group>"; };
 		0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateOfBirthEntryViewController.swift; sourceTree = "<group>"; };
@@ -232,6 +236,7 @@
 				0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */,
 				0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */,
 				0D90D14E2529FF3000F93265 /* EventViewController.swift */,
+				0D5E4E8125508CF80056CA90 /* searchSortingChoiceViewController.swift */,
 			);
 			path = EventDisplays;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				0DE4FC84254491C0003FCF25 /* TicketMasterEvent */,
 				0D50F99325176FE800ADEBCF /* Demographic.swift */,
 				0D576BD32520972A00BA7DEE /* Profile.swift */,
+				0D5E4E8525508E790056CA90 /* EventSearchStruct.swift */,
 				0DF0033C2510C0070059BBDE /* Info.plist */,
 			);
 			path = "Ticketer Programming Project";
@@ -575,6 +581,7 @@
 				0D576BD92520AEF200BA7DEE /* AttendingEventsTableViewController.swift in Sources */,
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,
 				0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */,
+				0D5E4E8625508E790056CA90 /* EventSearchStruct.swift in Sources */,
 				0DE4FC7C254032F5003FCF25 /* StudhubEventResponse.swift in Sources */,
 				0D90D151252DE23700F93265 /* nameEntryViewController.swift in Sources */,
 				0D5E4E7E2550170B0056CA90 /* SortAndSearch.swift in Sources */,
@@ -584,6 +591,7 @@
 				0DF003612510C1B20059BBDE /* APIs.swift in Sources */,
 				0DE4FC7A2540286E003FCF25 /* HandlingOfTicketMaster.swift in Sources */,
 				0D50F9922517692D00ADEBCF /* Event.swift in Sources */,
+				0D5E4E8225508CF80056CA90 /* searchSortingChoiceViewController.swift in Sources */,
 				0D90D157252E3F3C00F93265 /* confirmationViewController.swift in Sources */,
 				0DE4FC7625402697003FCF25 /* TicketMasterEvent.swift in Sources */,
 				0DF003312510C0040059BBDE /* SceneDelegate.swift in Sources */,

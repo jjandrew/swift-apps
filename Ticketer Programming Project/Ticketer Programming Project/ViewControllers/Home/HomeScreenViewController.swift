@@ -73,25 +73,26 @@ class HomeScreenViewController: UIViewController {
     }
     
     func searchByName(completion: @escaping ([Event]) -> Void) {
-        /*
-         
 
         let handlingOfStudhub = HandlingOfStudhub()
-        let url = handlingOfStudhub.createUrl(term: self.searchEntry)!
-        print(url)
-        handlingOfStudhub.createJsonString(urlEntry: url) { finalEvents in
-            self.events = finalEvents
-            print("SBN", self.events.count)
-            completion(self.events)
+        self.events = []
+        var completions = 0
+        let urlStudhub = handlingOfStudhub.createUrl(term: self.searchEntry)!
+        handlingOfStudhub.createJsonString(urlEntry: urlStudhub) { finalEvents in
+            self.events += finalEvents
+            print("SBNStud", self.events.count)
+            completions += 1
+            let handlingOfSkiddle = HandlingOfSkiddle()
+           let urlSkiddle = handlingOfSkiddle.createUrl(term: self.searchEntry)!
+           handlingOfSkiddle.createJsonString(urlEntry: urlSkiddle) { finalEvents in
+               self.events += finalEvents
+               print("SBNSkid", self.events.count)
+               completions += 1
+                completion(self.events)
+           }
         }
-                 */
-        let handlingOfSkiddle = HandlingOfSkiddle()
-        let url = handlingOfSkiddle.createUrl(term: self.searchEntry)!
-        handlingOfSkiddle.createJsonString(urlEntry: url) { finalEvents in
-            self.events = finalEvents
-            print("SBN", self.events.count)
-            completion(self.events)
-        }
+       
+        
     }
     
     

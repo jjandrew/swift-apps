@@ -14,6 +14,7 @@ class SearchViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,5 +30,8 @@ class SearchViewController: UITableViewController {
         cell.textLabel?.text = events[indexPath.row].eventName
         return cell
     }
-
+    @IBAction func sortButton(_ sender: Any) {
+        eventSearchStruct(events: events)
+    }
+    
 }

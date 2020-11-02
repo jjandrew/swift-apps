@@ -918,11 +918,67 @@
                             <outlet property="delegate" destination="O8i-LX-SzC" id="auJ-B7-fda"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Ukn-xO-VCA"/>
+                    <navigationItem key="navigationItem" id="Ukn-xO-VCA">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" style="plain" id="x3b-Fm-sDG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="df4-dG-bAE">
+                                <rect key="frame" x="319" y="5" width="75" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sort">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                            </button>
+                            <connections>
+                                <action selector="sortButton:" destination="O8i-LX-SzC" id="c1y-Vu-YdB"/>
+                                <segue destination="Jj5-HC-mXD" kind="presentation" id="0sj-oa-AcF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqE-Rh-Ula" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2526" y="-1150"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Bw7-WD-5G5">
+            <objects>
+                <viewController id="Jj5-HC-mXD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H2L-XB-Q8K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose how to order the events:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOk-AD-zTh">
+                                <rect key="frame" x="20" y="56" width="249" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AK-nF-eKg">
+                                <rect key="frame" x="36" y="178" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="By Name"/>
+                                <connections>
+                                    <action selector="sortByName:" destination="3c1-2H-Rnh" eventType="touchUpInside" id="DWg-ps-vV5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxI-AO-ReI">
+                                <rect key="frame" x="32" y="240" width="54" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="By Date"/>
+                                <connections>
+                                    <action selector="sortByDate:" destination="3c1-2H-Rnh" eventType="touchUpInside" id="7Vk-i4-XKq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="bvD-cN-IIJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="J4w-Y8-gD7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zb7-dD-v5j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3c1-2H-Rnh" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3275.36231884058" y="-1155.1339285714284"/>
         </scene>
         <!--Suggested Events-->
         <scene sceneID="lTK-8K-a73">
