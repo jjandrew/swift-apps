@@ -30,8 +30,13 @@ class SearchViewController: UITableViewController {
         cell.textLabel?.text = events[indexPath.row].eventName
         return cell
     }
+    
     @IBAction func sortButton(_ sender: Any) {
-        eventSearchStruct(events: events)
+        let sortAndSearch = SortAndSearch()
+        self.events = sortAndSearch.quickSortByName(array: self.events)
+        tableView.reloadData()
+        eventSearchStruct.events = self.events
     }
+    
     
 }

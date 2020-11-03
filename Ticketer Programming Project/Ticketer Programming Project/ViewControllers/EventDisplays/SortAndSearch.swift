@@ -11,18 +11,6 @@ import Foundation
 class SortAndSearch {
     
     let events: [Event] = []
-    /*
-     
-    func mergeSortByName(events: [Event]) {
-        if events.count > 1 {
-            var mid = events.count/2
-            var leftHalf = events[0..<mid]
-            var rightHalf = events[mid...events.count-1]
-            sortByName(events: leftHalf)
-            sortByName(events: rightHalf)
-        }
-    }
-         */
     
     func quickSortByName(array: [Event]) -> [Event] {
       var left = [Event]()
@@ -46,4 +34,51 @@ class SortAndSearch {
       return newData
       }
     }
+    
+    func mergeSort(array: [Event]) -> [Event] {
+        if array.count > 1 {
+            let mid = array.count / 2
+            var left: [Event] = []
+            var right: [Event] = []
+            for i in 0..<mid {
+                left.append(array[i])
+            }
+            for i in mid..<array.count {
+                right.append(array[i])
+            }
+            let leftArray = mergeSort(array: left)
+            let rightArray = mergeSort(array: right)
+            return merge(left: leftArray, right: rightArray)
+        } else {
+            return array
+        }
+    }
+
+    func merge(left: [Event], right: [Event]) -> [Event] {
+        var leftArray = left
+        var rightArray = right
+        var mergedArray: [Event] = []
+        while leftArray.count > 0 && rightArray.count > 0 {
+            if leftArray[0].eventName < rightArray[0].eventName {
+                mergedArray.append(leftArray[0])
+                leftArray.removeFirst()
+            } else {
+                mergedArray.append(rightArray[0])
+                rightArray.removeFirst()
+            }
+        }
+        
+        while leftArray.count > 0 {
+            mergedArray.append(leftArray[0])
+            leftArray.removeFirst()
+        }
+        
+        while rightArray.count > 0 {
+            mergedArray.append(rightArray[0])
+            rightArray.removeFirst()
+        }
+        
+        return mergedArray
+    }
+
 }

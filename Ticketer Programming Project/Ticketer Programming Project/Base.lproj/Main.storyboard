@@ -920,17 +920,17 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Ukn-xO-VCA">
                         <barButtonItem key="rightBarButtonItem" title="Sort" style="plain" id="x3b-Fm-sDG">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="df4-dG-bAE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="df4-dG-bAE">
                                 <rect key="frame" x="319" y="5" width="75" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sort">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="sortButton:" destination="O8i-LX-SzC" eventType="touchUpInside" id="su9-L4-Mbk"/>
+                                    <segue destination="Jj5-HC-mXD" kind="presentation" id="SQb-lG-1I4"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="sortButton:" destination="O8i-LX-SzC" id="c1y-Vu-YdB"/>
-                                <segue destination="Jj5-HC-mXD" kind="presentation" id="0sj-oa-AcF"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>

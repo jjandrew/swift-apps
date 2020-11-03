@@ -9,5 +9,5 @@
 import Foundation
 
 struct eventSearchStruct {
-    var events: [Event] = []
+    static var events: [Event] = []
 }

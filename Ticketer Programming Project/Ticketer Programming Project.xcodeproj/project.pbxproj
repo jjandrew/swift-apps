@@ -230,8 +230,8 @@
 		0DE4FC892544925C003FCF25 /* EventDisplays */ = {
 			isa = PBXGroup;
 			children = (
-				0D90D158252E5A7700F93265 /* SearchViewController.swift */,
 				0D5E4E7D2550170B0056CA90 /* SortAndSearch.swift */,
+				0D90D158252E5A7700F93265 /* SearchViewController.swift */,
 				0D576BDD2520AF1200BA7DEE /* SavedEventsTableViewController.swift */,
 				0D576BE22520AF2100BA7DEE /* SuggestedEventsTableViewController.swift */,
 				0D576BD82520AEF200BA7DEE /* AttendingEventsTableViewController.swift */,
