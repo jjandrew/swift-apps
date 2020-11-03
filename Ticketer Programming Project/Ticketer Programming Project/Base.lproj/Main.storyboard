@@ -743,7 +743,18 @@
                             <outlet property="delegate" destination="SaA-T7-9kJ" id="9K2-5R-u4t"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Attending Events" id="SjM-GO-7fx"/>
+                    <navigationItem key="navigationItem" title="Attending Events" id="SjM-GO-7fx">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ane-0f-JPt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XLG-Q6-7m7">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sort"/>
+                                <connections>
+                                    <segue destination="Jj5-HC-mXD" kind="presentation" id="Fl7-oS-UqZ"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdY-gz-VIr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -889,7 +900,18 @@
                             <outlet property="delegate" destination="Ddc-P9-mRe" id="HnA-iT-DKg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Interested Events" id="0oI-9a-RaM"/>
+                    <navigationItem key="navigationItem" title="Interested Events" id="0oI-9a-RaM">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="1c9-F8-Ofo">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RAa-53-vvT">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sort"/>
+                                <connections>
+                                    <segue destination="Jj5-HC-mXD" kind="presentation" id="Xuh-BH-R2y"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhJ-Du-faq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -946,24 +968,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose how to order the events:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOk-AD-zTh">
-                                <rect key="frame" x="20" y="56" width="249" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose how to order the events:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOk-AD-zTh">
+                                <rect key="frame" x="19.5" y="56" width="375" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AK-nF-eKg">
-                                <rect key="frame" x="36" y="178" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AK-nF-eKg">
+                                <rect key="frame" x="19.5" y="174" width="117" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="By Name"/>
                                 <connections>
                                     <action selector="sortByName:" destination="3c1-2H-Rnh" eventType="touchUpInside" id="DWg-ps-vV5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxI-AO-ReI">
-                                <rect key="frame" x="32" y="240" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxI-AO-ReI">
+                                <rect key="frame" x="19.5" y="272" width="101" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="By Date"/>
                                 <connections>
                                     <action selector="sortByDate:" destination="3c1-2H-Rnh" eventType="touchUpInside" id="7Vk-i4-XKq"/>
@@ -971,6 +992,15 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.5"/>
+                        <constraints>
+                            <constraint firstItem="cxI-AO-ReI" firstAttribute="leading" secondItem="8AK-nF-eKg" secondAttribute="leading" id="PZl-2D-kz5"/>
+                            <constraint firstItem="8AK-nF-eKg" firstAttribute="leading" secondItem="zOk-AD-zTh" secondAttribute="leading" id="YZA-go-Ad1"/>
+                            <constraint firstItem="8AK-nF-eKg" firstAttribute="top" secondItem="zOk-AD-zTh" secondAttribute="bottom" constant="85" id="df0-PT-9zV"/>
+                            <constraint firstItem="cxI-AO-ReI" firstAttribute="top" secondItem="8AK-nF-eKg" secondAttribute="bottom" constant="50" id="iQO-QY-83P"/>
+                            <constraint firstItem="zOk-AD-zTh" firstAttribute="centerX" secondItem="bvD-cN-IIJ" secondAttribute="centerX" id="r2Y-nz-6Er"/>
+                            <constraint firstItem="zOk-AD-zTh" firstAttribute="top" secondItem="bvD-cN-IIJ" secondAttribute="top" constant="56" id="yx9-JA-QBK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bvD-cN-IIJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="J4w-Y8-gD7"/>
@@ -978,7 +1008,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zb7-dD-v5j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="3c1-2H-Rnh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3275.36231884058" y="-1155.1339285714284"/>
+            <point key="canvasLocation" x="3535" y="-465"/>
         </scene>
         <!--Suggested Events-->
         <scene sceneID="lTK-8K-a73">
@@ -1003,7 +1033,18 @@
                             <outlet property="delegate" destination="VaU-YD-hZd" id="jsj-Oo-RWo"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Suggested Events" id="9if-kM-qUh"/>
+                    <navigationItem key="navigationItem" title="Suggested Events" id="9if-kM-qUh">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Br7-TG-JFQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wZP-hL-hyP">
+                                <rect key="frame" x="302" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sort"/>
+                                <connections>
+                                    <segue destination="Jj5-HC-mXD" kind="presentation" id="ePr-w9-MWo"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xy-XA-UrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1072,6 +1113,7 @@
         <image name="person" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Fl7-oS-UqZ"/>
         <segue reference="ffG-Po-hV3"/>
         <segue reference="01V-d0-pgp"/>
     </inferredMetricsTieBreakers>

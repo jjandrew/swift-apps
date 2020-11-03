@@ -24,7 +24,7 @@ class nameEntryViewController: UIViewController {
             print(profile.userAge)
             performSegue(withIdentifier: "nameToDOB", sender: self)
         } else {
-            let alert = UIAlertController(title: "Please Enter more than two characters of text", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Please Enter more than two characters of text in each part of your name", message: "", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
