@@ -9,23 +9,15 @@
 import Foundation
 
 class profile {
-    static var userName: String?
-    static var userBirthday: String?
-    static var userGender: String?
-    static var userLocation: String?
-    static var userAge: Int?
+    static var userName: String = ""
+    static var userBirthday: String = ""
+    static var userGender: String = ""
+    static var userLocation: String? = nil
+    static var userAge: Int? = nil
     static var savedEvents: [Event] = []
     static var attendingEvents: [Event] = []
     
-    init(userName: String?, userBirthday: String?, userGender: String?, userLocation: String?, userAge: Int?, savedEvents: [Event], attendingEvents: [Event]) {
-        profile.self.userName = userName
-        profile.self.userBirthday = userBirthday
-        profile.self.userGender = userGender
-        profile.self.userLocation = userLocation
-        profile.self.userAge = userAge
-        profile.self.savedEvents = savedEvents
-        profile.self.attendingEvents = attendingEvents
-    }
+
     
     func changeName(newName: String) {
     }

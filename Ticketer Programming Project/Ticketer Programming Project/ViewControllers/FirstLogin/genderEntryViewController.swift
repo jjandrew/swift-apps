@@ -16,14 +16,17 @@ class genderEntryViewController: UIViewController {
 
     
     @IBAction func maleButton(_ sender: Any) {
+        profile.userGender = "Male"
         performSegue(withIdentifier: "genderToConfirm", sender: self)
     }
     
     @IBAction func femaleButton(_ sender: Any) {
+        profile.userGender = "Female"
         performSegue(withIdentifier: "genderToConfirm", sender: self)
     }
     
     @IBAction func otherButton(_ sender: Any) {
+        profile.userGender = "Other"
         performSegue(withIdentifier: "genderToConfirm", sender: self)
     }
 

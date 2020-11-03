@@ -19,6 +19,7 @@ class dateOfBirthEntryViewController: UIViewController {
     
     @IBAction func entryButton(_ sender: Any) {
         var dOfB = dateOfBirthPicker.date
+        profile.userBirthday = "01/01/2001"
         
         performSegue(withIdentifier: "DOBToGender", sender: self)
     }

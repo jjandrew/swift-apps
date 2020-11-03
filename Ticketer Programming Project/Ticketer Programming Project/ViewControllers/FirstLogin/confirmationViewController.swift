@@ -10,6 +10,7 @@ import UIKit
 
 class confirmationViewController: UIViewController {
 
+
     @IBOutlet var nameLabel: UILabel!
     
     @IBOutlet var dateOfBirthLabel: UILabel!
@@ -19,6 +20,9 @@ class confirmationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = profile.userName
+        dateOfBirthLabel.text = profile.userBirthday
+        genderLabel.text = profile.userGender
     }
     
     @IBAction func confirmButton(_ sender: Any) {

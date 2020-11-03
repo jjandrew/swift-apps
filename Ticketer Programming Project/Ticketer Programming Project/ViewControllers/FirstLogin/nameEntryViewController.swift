@@ -19,9 +19,8 @@ class nameEntryViewController: UIViewController {
     @IBAction func entryButtonAction(_ sender: Any) {
         let validationResult = validateTextEntry(entry: textEntryField.text)
         if validationResult == true {
-            profile(userName: textEntryField.text, userBirthday: nil, userGender: nil, userLocation: nil, userAge: nil, savedEvents: [], attendingEvents: [])
+            profile.userName = textEntryField.text!
             profile.userAge = 1
-            print(profile.userAge)
             performSegue(withIdentifier: "nameToDOB", sender: self)
         } else {
             let alert = UIAlertController(title: "Please Enter more than two characters of text in each part of your name", message: "", preferredStyle: .alert)
