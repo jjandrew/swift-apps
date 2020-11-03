@@ -35,7 +35,7 @@ class SortAndSearch {
       }
     }
     
-    func mergeSort(array: [Event]) -> [Event] {
+    func mergeSortByName(array: [Event]) -> [Event] {
         if array.count > 1 {
             let mid = array.count / 2
             var left: [Event] = []
@@ -46,8 +46,8 @@ class SortAndSearch {
             for i in mid..<array.count {
                 right.append(array[i])
             }
-            let leftArray = mergeSort(array: left)
-            let rightArray = mergeSort(array: right)
+            let leftArray = mergeSortByName(array: left)
+            let rightArray = mergeSortByName(array: right)
             return merge(left: leftArray, right: rightArray)
         } else {
             return array
@@ -77,7 +77,6 @@ class SortAndSearch {
             mergedArray.append(rightArray[0])
             rightArray.removeFirst()
         }
-        
         return mergedArray
     }
 
