@@ -184,4 +184,37 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         }
     }
     
+    func testNameEntryValidationWorksCorrectly() {
+        let NameEntryViewController = nameEntryViewController()
+        let entry1 = ""
+        let test1Result = NameEntryViewController.validateTextEntry(entry: entry1)
+        let expected1 = false
+        XCTAssertEqual(test1Result, expected1)
+        
+        let entry2 = "abcdef"
+        let test2Result = NameEntryViewController.validateTextEntry(entry: entry2)
+        let expected2 = false
+        XCTAssertEqual(test2Result, expected2)
+        
+        let entry3 = "a defg"
+        let test3Result = NameEntryViewController.validateTextEntry(entry: entry3)
+        let expected3 = false
+        XCTAssertEqual(test3Result, expected3)
+        
+        let entry4 = "abcd ef"
+        let test4Result = NameEntryViewController.validateTextEntry(entry: entry4)
+        let expected4 = false
+        XCTAssertEqual(test4Result, expected4)
+        
+        let entry5 = "abcd efgh"
+        let test5Result = NameEntryViewController.validateTextEntry(entry: entry5)
+        let expected5 = true
+        XCTAssertEqual(test5Result, expected5)
+        
+        let entry6 = "ab cde"
+        let test6Result = NameEntryViewController.validateTextEntry(entry: entry6)
+        let expected6 = true
+        XCTAssertEqual(test6Result, expected6)
+    }
+    
 }

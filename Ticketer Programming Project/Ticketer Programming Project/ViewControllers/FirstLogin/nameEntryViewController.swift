@@ -36,21 +36,12 @@ class nameEntryViewController: UIViewController {
                     if nameArray[0].count > 1 {
                         if nameArray[1].count > 2 {
                             return true
-                        } else {
-                            return false
                         }
-                    } else {
-                        return false
                     }
-                } else {
-                    return false
                 }
-            } else {
-                return false
             }
-        } else {
-            return false
         }
+        return false
     }
     
 }
