@@ -33,6 +33,14 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // something here
+        /*
+         
+         
+        self.navController.dismiss(animated: true) {
+             self.navController = nil
+        }
+ */
         leftHandInterestedEvent.text = """
         Event Title
         

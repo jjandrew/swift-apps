@@ -8,7 +8,7 @@
 
 import Foundation
 
-class profile {
+struct profile {
     static var userName: String = ""
     static var userBirthday: String = ""
     static var userGender: String = ""
@@ -16,8 +16,7 @@ class profile {
     static var userAge: Int? = nil
     static var savedEvents: [Event] = []
     static var attendingEvents: [Event] = []
-    
-
+    static var loggedIn: Bool = false
     
     func changeName(newName: String) {
     }
@@ -29,3 +28,6 @@ class profile {
     }
     
 }
+
+
+

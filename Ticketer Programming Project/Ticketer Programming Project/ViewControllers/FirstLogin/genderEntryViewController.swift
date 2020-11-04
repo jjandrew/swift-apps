@@ -13,7 +13,6 @@ class genderEntryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
     
     @IBAction func maleButton(_ sender: Any) {
         profile.userGender = "Male"

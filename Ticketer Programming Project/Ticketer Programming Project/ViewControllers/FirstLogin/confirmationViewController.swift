@@ -10,13 +10,9 @@ import UIKit
 
 class confirmationViewController: UIViewController {
 
-
     @IBOutlet var nameLabel: UILabel!
-    
     @IBOutlet var dateOfBirthLabel: UILabel!
-    
     @IBOutlet var genderLabel: UILabel!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +22,11 @@ class confirmationViewController: UIViewController {
     }
     
     @IBAction func confirmButton(_ sender: Any) {
+        profile.loggedIn = true
         performSegue(withIdentifier: "confirmToHome", sender: self)
     }
 
 }
+
+
+

@@ -1102,10 +1102,10 @@
             </objects>
             <point key="canvasLocation" x="728.98550724637687" y="566.51785714285711"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--firstLoginNav-->
         <scene sceneID="vr4-kb-KLT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3KI-Ft-V6Q" sceneMemberID="viewController">
+                <navigationController title="firstLoginNav" automaticallyAdjustsScrollViewInsets="NO" id="3KI-Ft-V6Q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="CJ4-WD-BZv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1118,7 +1118,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ekp-KV-mQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3600" y="315"/>
+            <point key="canvasLocation" x="-3917" y="289"/>
         </scene>
     </scenes>
     <resources>
