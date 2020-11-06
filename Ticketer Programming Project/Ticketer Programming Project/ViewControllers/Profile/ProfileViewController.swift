@@ -59,7 +59,7 @@ class ProfileViewController: UIViewController {
         Availability
         """
         nameLabel.text = "Name: \(profile.userName)"
-        birthdayLabel.text = "Birthday: \(profile.userBirthday)"
+        birthdayLabel.text = "Birthday: \(profile.userBirthdayString)"
         genderLabel.text = "Gender: \(profile.userGender)"
         // Do any additional setup after loading the view.
     }

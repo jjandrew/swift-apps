@@ -26,8 +26,6 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet var previousSuggestedEvent: UIButton!
     @IBOutlet var nextSuggestedEvent: UIButton!
     
-    //var profile = Profile(userName: "Firstname, Surname", userBirthday: "01/01/2003", userGender: "Male", userLocation: nil, userAge: 17, savedEvents: [], attendingEvents: [])
-    
     var searchEntry: String = ""
     var events: [Event] = []
     

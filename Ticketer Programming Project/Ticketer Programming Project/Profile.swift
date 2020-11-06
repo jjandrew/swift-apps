@@ -10,7 +10,8 @@ import Foundation
 
 struct profile {
     static var userName: String = ""
-    static var userBirthday: String = ""
+    static var userBirthdayDate = Date()
+    static var userBirthdayString: String = ""
     static var userGender: String = ""
     static var userLocation: String? = nil
     static var userAge: Int? = nil

@@ -17,7 +17,7 @@ class confirmationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         nameLabel.text = profile.userName
-        dateOfBirthLabel.text = profile.userBirthday
+        dateOfBirthLabel.text = profile.userBirthdayString
         genderLabel.text = profile.userGender
     }
     
