@@ -91,8 +91,8 @@
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="i8Z-2w-QAS">
                                 <rect key="frame" x="47" y="191" width="320" height="216"/>
-                                <date key="minimumDate" timeIntervalSinceReferenceDate="-3187292400">
-                                    <!--1900-01-01 01:00:00 +0000-->
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-4133977200">
+                                    <!--1870-01-01 01:00:00 +0000-->
                                 </date>
                                 <date key="maximumDate" timeIntervalSinceReferenceDate="631191600">
                                     <!--2021-01-01 11:00:00 +0000-->

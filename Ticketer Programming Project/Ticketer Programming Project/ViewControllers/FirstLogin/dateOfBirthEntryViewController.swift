@@ -24,33 +24,6 @@ class dateOfBirthEntryViewController: UIViewController {
         if userAge > 4 && userAge < 126 {
             profile.userBirthdayDate = dOfB
             profile.userAge = userAge
-            let dOfBDay = calendar.component(.day, from: dOfB)
-            let dOfBMonth = calendar.component(.month, from: dOfB)
-            let dOfBYear = calendar.component(.year, from: dOfB)
-            profile.userBirthdayString = "\(dOfBDay)/\(dOfBMonth)/\(dOfBYear)"
-            print(profile.userBirthdayString)
-            performSegue(withIdentifier: "DOBToGender", sender: self)
-        } else {
-            let alert = UIAlertController(title: "I'm sorry your age means you are not elligable for using our application", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
-        }
-    }
-
-    func calculateAge(dOfB: Date) -> Int {
-        return Calendar.current.dateComponents([.year], from: dOfB, to: currentDate).year ?? 0
-    }
-    
-    
-    
-    
-    /*
-    @IBAction func entryButton(_ sender: Any) {
-        let dOfB = dateOfBirthPicker.date
-        let userAge = calculateAge(dOfB: dOfB)
-        if userAge > 4 && userAge < 126 {
-            profile.userBirthdayDate = dOfB
-            profile.userAge = userAge
             let dOfBDayInt = calendar.component(.day, from: dOfB)
             var dOfBDayString = ""
             if dOfBDayInt < 10 {
@@ -60,8 +33,8 @@ class dateOfBirthEntryViewController: UIViewController {
             }
             let dOfBMonthInt = calendar.component(.month, from: dOfB)
             var dOfBMonthString = ""
-            if dOfBDayInt < 10 {
-                dOfBDayString = "0\(dOfBMonthInt)"
+            if dOfBMonthInt < 10 {
+                dOfBMonthString = "0\(dOfBMonthInt)"
             } else {
                 dOfBMonthString = String(dOfBDayInt)
             }
@@ -75,6 +48,9 @@ class dateOfBirthEntryViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
-      */
+
+    func calculateAge(dOfB: Date) -> Int {
+        return Calendar.current.dateComponents([.year], from: dOfB, to: currentDate).year ?? 0
+    }
 
 }
