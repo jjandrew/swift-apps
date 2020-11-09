@@ -24,22 +24,10 @@ class dateOfBirthEntryViewController: UIViewController {
         if userAge > 4 && userAge < 126 {
             profile.userBirthdayDate = dOfB
             profile.userAge = userAge
-            let dOfBDayInt = calendar.component(.day, from: dOfB)
-            var dOfBDayString = ""
-            if dOfBDayInt < 10 {
-                dOfBDayString = "0\(dOfBDayInt)"
-            } else {
-                dOfBDayString = String(dOfBDayInt)
-            }
-            let dOfBMonthInt = calendar.component(.month, from: dOfB)
-            var dOfBMonthString = ""
-            if dOfBDayInt < 10 {
-                dOfBDayString = "0\(dOfBMonthInt)"
-            } else {
-                dOfBMonthString = String(dOfBDayInt)
-            }
+            let dOfBDay = calendar.component(.day, from: dOfB)
+            let dOfBMonth = calendar.component(.month, from: dOfB)
             let dOfBYear = calendar.component(.year, from: dOfB)
-            profile.userBirthdayString = "\(dOfBDayString)/\(dOfBMonthString)/\(dOfBYear)"
+            profile.userBirthdayString = "\(dOfBDay)/\(dOfBMonth)/\(dOfBYear)"
             print(profile.userBirthdayString)
             performSegue(withIdentifier: "DOBToGender", sender: self)
         } else {
@@ -52,6 +40,9 @@ class dateOfBirthEntryViewController: UIViewController {
     func calculateAge(dOfB: Date) -> Int {
         return Calendar.current.dateComponents([.year], from: dOfB, to: currentDate).year ?? 0
     }
+    
+    
+    
     
     /*
     @IBAction func entryButton(_ sender: Any) {

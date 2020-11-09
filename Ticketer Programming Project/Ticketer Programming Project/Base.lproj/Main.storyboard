@@ -97,9 +97,6 @@
                                 <date key="maximumDate" timeIntervalSinceReferenceDate="631191600">
                                     <!--2021-01-01 11:00:00 +0000-->
                                 </date>
-                                <connections>
-                                    <action selector="dateOfBirthAction:" destination="B5G-uP-pmq" eventType="valueChanged" id="sQ6-NI-0EU"/>
-                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1118,7 +1115,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ekp-KV-mQr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3917" y="289"/>
+            <point key="canvasLocation" x="-3764" y="315"/>
         </scene>
     </scenes>
     <resources>
