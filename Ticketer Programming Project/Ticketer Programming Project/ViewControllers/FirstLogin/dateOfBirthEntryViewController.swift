@@ -40,7 +40,6 @@ class dateOfBirthEntryViewController: UIViewController {
             }
             let dOfBYear = calendar.component(.year, from: dOfB)
             profile.userBirthdayString = "\(dOfBDayString)/\(dOfBMonthString)/\(dOfBYear)"
-            print(profile.userBirthdayString)
             performSegue(withIdentifier: "DOBToGender", sender: self)
         } else {
             let alert = UIAlertController(title: "I'm sorry your age means you are not elligable for using our application", message: "", preferredStyle: .alert)

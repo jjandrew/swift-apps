@@ -37,18 +37,15 @@ class HandlingOfStudhub {
     func createJsonString(urlEntry: String, completion: @escaping ([Event]) -> Void) {
         if let url = URL(string: urlEntry) {
             AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
-                print("")
                 switch response.result {
                     case .success(let value):
                         let json = JSON(value)
                         let jsonData = try! json.rawData()
                         self.jsonString = json.description
-                         
                         if let response = self.parsingJson(json: jsonData) {
                             self.studhubEvents = response
                             if let events = (self.studhubEvents?.convertToEventClass()) {
                                 self.events = events
-                                print("CJS", self.events.count)
                             }
                             
                         }

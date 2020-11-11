@@ -31,6 +31,7 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //if profile.savedEvents = []
         // something here
         /*
          
@@ -86,13 +87,11 @@ class HomeScreenViewController: UIViewController {
         let urlStudhub = handlingOfStudhub.createUrl(term: self.searchEntry)!
         handlingOfStudhub.createJsonString(urlEntry: urlStudhub) { finalEvents in
             self.events += finalEvents
-            print("SBNStud", self.events.count)
             completions += 1
             let handlingOfSkiddle = HandlingOfSkiddle()
            let urlSkiddle = handlingOfSkiddle.createUrl(term: self.searchEntry)!
            handlingOfSkiddle.createJsonString(urlEntry: urlSkiddle) { finalEvents in
                self.events += finalEvents
-               print("SBNSkid", self.events.count)
                completions += 1
                 completion(self.events)
            }
@@ -114,7 +113,6 @@ class HomeScreenViewController: UIViewController {
                     self.searchByName() { finalEvents in
                         DispatchQueue.main.async {
                             events = self.events
-                            print("SBNB", events.count)
                             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchViewController else {
                                 fatalError("Could not load view controller from storyboard")
                             }

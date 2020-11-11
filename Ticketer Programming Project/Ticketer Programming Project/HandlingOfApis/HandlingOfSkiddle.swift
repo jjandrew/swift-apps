@@ -45,7 +45,6 @@ class HandlingOfSkiddle {
                                     self.skiddleEvents = response
                                     if let events = (self.skiddleEvents?.convertToEventClass()) {
                                         self.events = events
-                                        print("CJS", self.events.count)
                                     }
                                 }
                             } else {
