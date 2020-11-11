@@ -24,7 +24,6 @@ struct StudhubEventResponse: Decodable {
                 let dayAndTime = dateArrayStudhub[2].split(separator: "T")
                 let day = dayAndTime[0]
                 let date = "\(day)/\(month)/\(year)"
-                print(date)
                 let description = self.events[i].description
                 let website = "https://www.stubhub.co.uk/\(self.events[i].webURI)"
                 events.append(Event(eventName: eventName, location: nil, date: date, description: description, saved: nil, website: [website]))
