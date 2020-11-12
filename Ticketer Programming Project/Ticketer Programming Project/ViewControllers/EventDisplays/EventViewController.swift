@@ -18,10 +18,16 @@ class EventViewController: UIViewController {
     @IBOutlet var demographicLabel: UILabel!
     @IBOutlet var purchaseButton: UIButton!
     
+    var event: Event!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         savedButton.setImage(UIImage(systemName: "bookmark.fill"), for: .selected)
         savedButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        navigationItem.title = event.eventName
+        dateLabel.text = event.date
+        descriptionLabel.text = event.description
+        
     }
 
     @IBAction func savedAction(_ sender: Any) {

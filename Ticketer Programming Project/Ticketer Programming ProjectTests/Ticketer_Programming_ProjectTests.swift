@@ -267,10 +267,55 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
             }
     }
     
-    func testQuickSortDoesStuff() {
+    func testEventLinearSearchReturnsFalseOnEmptyArray() {
         let sortAndSearch = SortAndSearch()
-        let test1Data = [Event(eventName: "event1", location: nil, date: "28/03/2021", description: "", saved: nil, website: [])]
-        sortAndSearch.quickSortByDate(array: test1Data)
+        let events: [Event] = []
+        let searchEvent = Event(eventName: "Event Search", location: nil, date: "01/01/2000", description: "", saved: nil, website: [])
+        XCTAssertFalse(sortAndSearch.eventLinearSearch(events: events, searchEvent: searchEvent))
+    }
+    
+    func testEventLinearSearchReturnFalseWhenEventNotInArray() {
+        let sortAndSearch = SortAndSearch()
+        let events: [Event] = [
+            Event(eventName: "Event1", location: nil, date: "01/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event2", location: nil, date: "02/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event3", location: nil, date: "03/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event4", location: nil, date: "04/01/2000", description: "", saved: nil, website: [])]
+        let searchEvent = Event(eventName: "Event Search", location: nil, date: "05/01/2000", description: "", saved: nil, website: [])
+        XCTAssertFalse(sortAndSearch.eventLinearSearch(events: events, searchEvent: searchEvent))
+    }
+    
+    func testLinearSearchReturnsFalseWhenNameIsSameButDateIsnt() {
+        let sortAndSearch = SortAndSearch()
+        let events: [Event] = [
+            Event(eventName: "Event1", location: nil, date: "01/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event2", location: nil, date: "02/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event3", location: nil, date: "03/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event4", location: nil, date: "04/01/2000", description: "", saved: nil, website: [])]
+        let searchEvent = Event(eventName: "Event4", location: nil, date: "05/01/2000", description: "", saved: nil, website: [])
+        XCTAssertFalse(sortAndSearch.eventLinearSearch(events: events, searchEvent: searchEvent))
+    }
+    
+    func testLinearSearchReturnsFalseWhenDateIsSameButNameIsnt() {
+        let sortAndSearch = SortAndSearch()
+        let events: [Event] = [
+            Event(eventName: "Event1", location: nil, date: "01/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event2", location: nil, date: "02/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event3", location: nil, date: "03/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event4", location: nil, date: "04/01/2000", description: "", saved: nil, website: [])]
+        let searchEvent = Event(eventName: "Search Event", location: nil, date: "04/01/2000", description: "", saved: nil, website: [])
+        XCTAssertFalse(sortAndSearch.eventLinearSearch(events: events, searchEvent: searchEvent))
+    }
+    
+    func testLinearSearchReturnsTrueWhenNameIsInArray() {
+        let sortAndSearch = SortAndSearch()
+        let events: [Event] = [
+            Event(eventName: "Event1", location: nil, date: "01/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event2", location: nil, date: "02/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event3", location: nil, date: "03/01/2000", description: "", saved: nil, website: []),
+            Event(eventName: "Event4", location: nil, date: "04/01/2000", description: "", saved: nil, website: [])]
+        let searchEvent = Event(eventName: "Event4", location: nil, date: "04/01/2000", description: "", saved: nil, website: [])
+        XCTAssertTrue(sortAndSearch.eventLinearSearch(events: events, searchEvent: searchEvent))
     }
     
 }

@@ -80,38 +80,51 @@ class SortAndSearch {
         return mergedArray
     }
 
+    func eventLinearSearch(events: [Event], searchEvent: Event) -> Bool {
+        if events.count > 0 {
+            for event in events {
+                if event.eventName == searchEvent.eventName {
+                    if event.date == searchEvent.date {
+                        return true
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    
+    //big error ici
     func quickSortByDate(array: [Event]) -> [Event] {
       var left = [Event]()
       var right = [Event]()
       var newData = [Event]()
-        print(array.count)
       if array.count < 2 {
         return array
       } else {
         let pivot = array[0]
         let pivotDateArray = pivot.date.split(separator: "/")
-        print(pivotDateArray)
         let pivotDateInt = Int(pivotDateArray[2]+pivotDateArray[1]+pivotDateArray[0])!
         print("pivot \(pivotDateInt)")
         for i in 1..<array.count {
             let item = array[i]
             let itemDateArray = item.date.split(separator: "/")
-            print(itemDateArray)
             let itemDateInt = Int(itemDateArray[2]+itemDateArray[1]+itemDateArray[0])!
             print("item \(itemDateInt)")
             if itemDateInt < pivotDateInt {
                 left.append(item)
-                print("left")
+                print("left", itemDateInt)
              } else {
-               right.append(item)
-                print("right")
+                right.append(item)
+                print("right", itemDateInt)
              }
        }
-      newData.append(contentsOf: (quickSortByName(array: left)))
-      newData.append(pivot)
-      newData.append(contentsOf: (quickSortByName(array: right)))
-      return newData
-      }
+        print(left.count)
+        newData.append(contentsOf: quickSortByName(array: left))
+        newData.append(pivot)
+        newData.append(contentsOf: quickSortByName(array: right))
+        return newData
+        }
     }
     
     func mergeSortByDate(array: [Event]) -> [Event] {
