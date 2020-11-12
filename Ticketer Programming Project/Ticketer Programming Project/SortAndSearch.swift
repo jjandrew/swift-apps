@@ -89,12 +89,11 @@ class SortAndSearch {
       } else {
         let pivot = array[0]
         let pivotDateArray = pivot.date.split(separator: "/")
-        let pivotDateInt = Int(pivotDateArray[2])!+Int(pivotDateArray[1])!+Int(pivotDateArray[0])!
+        let pivotDateInt = Int(pivotDateArray[2]+pivotDateArray[1]+pivotDateArray[0])!
         for i in 1..<array.count {
             let item = array[i]
             let itemDateArray = item.date.split(separator: "/")
-            let itemDateInt = Int(itemDateArray[2])!+Int(itemDateArray[1])!+Int(itemDateArray[0])!
-            //error is going to be should've kept as string
+            let itemDateInt = Int(itemDateArray[2]+itemDateArray[1]+itemDateArray[0])!
             if itemDateInt < pivotDateInt {
                 left.append(item)
              } else {
