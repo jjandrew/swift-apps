@@ -79,25 +79,32 @@ class SortAndSearch {
         }
         return mergedArray
     }
-    
+
     func quickSortByDate(array: [Event]) -> [Event] {
       var left = [Event]()
       var right = [Event]()
       var newData = [Event]()
+        print(array.count)
       if array.count < 2 {
         return array
       } else {
         let pivot = array[0]
         let pivotDateArray = pivot.date.split(separator: "/")
+        print(pivotDateArray)
         let pivotDateInt = Int(pivotDateArray[2]+pivotDateArray[1]+pivotDateArray[0])!
+        print("pivot \(pivotDateInt)")
         for i in 1..<array.count {
             let item = array[i]
             let itemDateArray = item.date.split(separator: "/")
+            print(itemDateArray)
             let itemDateInt = Int(itemDateArray[2]+itemDateArray[1]+itemDateArray[0])!
+            print("item \(itemDateInt)")
             if itemDateInt < pivotDateInt {
                 left.append(item)
+                print("left")
              } else {
                right.append(item)
+                print("right")
              }
        }
       newData.append(contentsOf: (quickSortByName(array: left)))

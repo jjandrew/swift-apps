@@ -233,7 +233,7 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
             
             let test2Data = [Event(eventName: "bba", location: nil, date: "30/01/2000", description: "", saved: nil, website: []), Event(eventName: "bbb", location: nil, date: "01/03/2001", description: "", saved: nil, website: []), Event(eventName: "abc", location: nil, date: "15/11/1990", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "20/04/1995", description: "", saved: nil, website: [])]
             let test2Actual = sortAndSearch.quickSortByDate(array: test2Data)
-            let test2Expected = [Event(eventName: "abc", location: nil, date: "20/04/1995", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "20/04/1995", description: "", saved: nil, website: []), Event(eventName: "bba", location: nil, date: "30/01/2000", description: "", saved: nil, website: []), Event(eventName: "bbb", location: nil, date: "01/03/2001", description: "", saved: nil, website: [])]
+            let test2Expected = [Event(eventName: "abc", location: nil, date: "15/11/1990", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "20/04/1995", description: "", saved: nil, website: []), Event(eventName: "bba", location: nil, date: "30/01/2000", description: "", saved: nil, website: []), Event(eventName: "bbb", location: nil, date: "01/03/2001", description: "", saved: nil, website: [])]
             for event in test2Actual {
                 print(event.date)
             }
@@ -265,6 +265,12 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
             for event in test4Expected {
                 print(event.date)
             }
+    }
+    
+    func testQuickSortDoesStuff() {
+        let sortAndSearch = SortAndSearch()
+        let test1Data = [Event(eventName: "event1", location: nil, date: "28/03/2021", description: "", saved: nil, website: [])]
+        sortAndSearch.quickSortByDate(array: test1Data)
     }
     
 }
