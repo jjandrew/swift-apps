@@ -80,17 +80,17 @@ class SortAndSearch {
         return mergedArray
     }
 
-    func eventLinearSearch(events: [Event], searchEvent: Event) -> Bool {
+    func eventLinearSearch(events: [Event], searchEvent: Event) -> (Int?,Bool) {
         if events.count > 0 {
-            for event in events {
-                if event.eventName == searchEvent.eventName {
-                    if event.date == searchEvent.date {
-                        return true
+            for i in (0...events.count - 1) {
+                if events[i].eventName == searchEvent.eventName {
+                    if events[i].date == searchEvent.date {
+                        return (i, true)
                     }
                 }
             }
         }
-        return false
+        return (nil, false)
     }
     
     

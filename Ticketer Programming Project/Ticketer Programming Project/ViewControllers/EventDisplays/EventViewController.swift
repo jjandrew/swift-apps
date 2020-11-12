@@ -19,6 +19,7 @@ class EventViewController: UIViewController {
     @IBOutlet var purchaseButton: UIButton!
     
     var event: Event!
+    let sortAndSearch = SortAndSearch()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +28,20 @@ class EventViewController: UIViewController {
         navigationItem.title = event.eventName
         dateLabel.text = event.date
         descriptionLabel.text = event.description
+        if sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).1 == true {
+            savedButton.isSelected = true
+        }
+            
         
     }
 
     @IBAction func savedAction(_ sender: Any) {
         if savedButton.isSelected == true {
+            profile.savedEvents.remove(at: sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).0!)
             savedButton.isSelected = false
         } else {
             savedButton.isSelected = true
+            profile.savedEvents.append(event)
         }
     }
 }
