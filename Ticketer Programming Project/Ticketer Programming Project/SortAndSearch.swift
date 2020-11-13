@@ -115,32 +115,6 @@ class SortAndSearch {
         return events
     }
     
-    
-    //big error ici
-    func quickSortByDate(array: [Event]) -> [Event] {
-        var left = [Event]()
-        var right = [Event]()
-        var newData = [Event]()
-        if array.count < 2 {
-            return array
-        } else {
-            let pivot = array[0]
-            for i in 1..<array.count {
-                let item = array[i]
-                if item.dateInt < pivot.dateInt {
-                    left.append(item)
-                } else {
-                    right.append(item)
-                }
-            }
-            newData.append(contentsOf: (quickSortByName(array: left)))
-            newData.append(pivot)
-            newData.append(contentsOf: (quickSortByName(array: right)))
-            return newData
-            
-        }
-    }
-    
     func mergeSortByDate(array: [Event]) -> [Event] {
         if array.count > 1 {
             let mid = array.count / 2
