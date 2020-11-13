@@ -13,26 +13,28 @@ class SortAndSearch {
     let events: [Event] = []
     
     func quickSortByName(array: [Event]) -> [Event] {
-      var left = [Event]()
-      var right = [Event]()
-      var newData = [Event]()
-      if array.count < 2 {
-        return array
-      } else {
-        let pivot = array[0]
-        for i in 1..<array.count {
-            let item = array[i]
-            if item.eventName < pivot.eventName {
-                left.append(item)
-             } else {
-               right.append(item)
-             }
-       }
-      newData.append(contentsOf: (quickSortByName(array: left)))
-      newData.append(pivot)
-      newData.append(contentsOf: (quickSortByName(array: right)))
-      return newData
-      }
+        var left = [Event]()
+        var right = [Event]()
+        var newData = [Event]()
+        if array.count < 2 {
+            return array
+            
+        } else {
+            let pivot = array[0]
+            for i in 1..<array.count {
+                let item = array[i]
+                if item.eventName < pivot.eventName {
+                    left.append(item)
+                } else {
+                    right.append(item)
+                }
+            }
+            newData.append(contentsOf: (quickSortByName(array: left)))
+            newData.append(pivot)
+            newData.append(contentsOf: (quickSortByName(array: right)))
+            return newData
+            
+        }
     }
     
     func mergeSortByName(array: [Event]) -> [Event] {
@@ -93,37 +95,49 @@ class SortAndSearch {
         return (nil, false)
     }
     
+    func eventBubbleSortByDate(array: [Event]) -> [Event] {
+        var events = array
+        var i = 0
+        let numOfItems = events.count
+        var swap = true
+        while (i < numOfItems - 1) && swap == true {
+            swap = false
+            for j in (0 ..< numOfItems - i - 1) {
+                if events[j].dateInt > events[j+1].dateInt {
+                    let temp = events[j]
+                    events[j] = events[j+1]
+                    events[j+1] = temp
+                    swap = true
+                }
+            }
+            i += 1
+        }
+        return events
+    }
+    
     
     //big error ici
     func quickSortByDate(array: [Event]) -> [Event] {
-      var left = [Event]()
-      var right = [Event]()
-      var newData = [Event]()
-      if array.count < 2 {
-        return array
-      } else {
-        let pivot = array[0]
-        let pivotDateArray = pivot.date.split(separator: "/")
-        let pivotDateInt = Int(pivotDateArray[2]+pivotDateArray[1]+pivotDateArray[0])!
-        print("pivot \(pivotDateInt)")
-        for i in 1..<array.count {
-            let item = array[i]
-            let itemDateArray = item.date.split(separator: "/")
-            let itemDateInt = Int(itemDateArray[2]+itemDateArray[1]+itemDateArray[0])!
-            print("item \(itemDateInt)")
-            if itemDateInt < pivotDateInt {
-                left.append(item)
-                print("left", itemDateInt)
-             } else {
-                right.append(item)
-                print("right", itemDateInt)
-             }
-       }
-        print(left.count)
-        newData.append(contentsOf: quickSortByName(array: left))
-        newData.append(pivot)
-        newData.append(contentsOf: quickSortByName(array: right))
-        return newData
+        var left = [Event]()
+        var right = [Event]()
+        var newData = [Event]()
+        if array.count < 2 {
+            return array
+        } else {
+            let pivot = array[0]
+            for i in 1..<array.count {
+                let item = array[i]
+                if item.dateInt < pivot.dateInt {
+                    left.append(item)
+                } else {
+                    right.append(item)
+                }
+            }
+            newData.append(contentsOf: (quickSortByName(array: left)))
+            newData.append(pivot)
+            newData.append(contentsOf: (quickSortByName(array: right)))
+            return newData
+            
         }
     }
     

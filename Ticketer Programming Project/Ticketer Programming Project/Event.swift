@@ -13,6 +13,7 @@ class Event {
     let eventName : String
     let location: String?
     let date: String
+    var dateInt: Int
     var description: String
 //    var image: UIImage?
 //    var demographic: Demographic?
@@ -28,6 +29,13 @@ class Event {
 //        self.demographic = demographic
         self.saved = saved
         self.website = website
+        self.dateInt = 0
+        dateIntConversion()
+    }
+    
+    func dateIntConversion() {
+        let dateArray = self.date.split(separator: "/")
+        self.dateInt = Int(dateArray[2]+dateArray[1]+dateArray[0])!
     }
 
 }
