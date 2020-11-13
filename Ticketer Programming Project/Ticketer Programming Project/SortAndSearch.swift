@@ -115,6 +115,8 @@ class SortAndSearch {
         return events
     }
     
+   var random = 0
+    
     func mergeSortByDate(array: [Event]) -> [Event] {
         if array.count > 1 {
             let mid = array.count / 2
