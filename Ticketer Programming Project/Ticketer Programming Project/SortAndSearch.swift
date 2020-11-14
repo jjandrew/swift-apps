@@ -95,27 +95,30 @@ class SortAndSearch {
         return (nil, false)
     }
     
-    func eventBubbleSortByDate(array: [Event]) -> [Event] {
-        var events = array
-        var i = 0
-        let numOfItems = events.count
-        var swap = true
-        while (i < numOfItems - 1) && swap == true {
-            swap = false
-            for j in (0 ..< numOfItems - i - 1) {
-                if events[j].dateInt > events[j+1].dateInt {
-                    let temp = events[j]
-                    events[j] = events[j+1]
-                    events[j+1] = temp
-                    swap = true
+    func quickSortByDate(array: [Event]) -> [Event] {
+        var left = [Event]()
+        var right = [Event]()
+        var newData = [Event]()
+        if array.count < 2 {
+            return array
+            
+        } else {
+            let pivot = array[0]
+            for i in 1..<array.count {
+                let item = array[i]
+                if item.dateInt < pivot.dateInt {
+                    left.append(item)
+                } else {
+                    right.append(item)
                 }
             }
-            i += 1
+            newData.append(contentsOf: (quickSortByDate(array: left)))
+            newData.append(pivot)
+            newData.append(contentsOf: (quickSortByDate(array: right)))
+            return newData
+            
         }
-        return events
     }
-    
-   var random = 0
     
     func mergeSortByDate(array: [Event]) -> [Event] {
         if array.count > 1 {
@@ -141,7 +144,7 @@ class SortAndSearch {
         var rightArray = right
         var mergedArray: [Event] = []
         while leftArray.count > 0 && rightArray.count > 0 {
-            if leftArray[0].eventName < rightArray[0].eventName {
+            if leftArray[0].dateInt < rightArray[0].dateInt {
                 mergedArray.append(leftArray[0])
                 leftArray.removeFirst()
             } else {
