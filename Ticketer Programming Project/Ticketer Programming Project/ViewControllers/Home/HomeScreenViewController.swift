@@ -23,8 +23,8 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet var suggestedEventsMore: UIButton!
     @IBOutlet var leftHandAttendingEvent: UILabel!
     @IBOutlet var rightHandAttendingEvent: UILabel!
-    @IBOutlet var previousSuggestedEvent: UIButton!
-    @IBOutlet var nextSuggestedEvent: UIButton!
+    @IBOutlet var previousAttendingEvent: UIButton!
+    @IBOutlet var nextAttendingEvent: UIButton!
     
     var searchEntry: String = ""
     var events: [Event] = []
@@ -106,8 +106,12 @@ class HomeScreenViewController: UIViewController {
         displaySavedEvents(index: savedIndex)
     }
     @IBAction func attendingPreviousAction(_ sender: Any) {
+        attendingIndex += 1
+        displayAttendingEvents(index: attendingIndex)
     }
     @IBAction func attendingNextAction(_ sender: Any) {
+        attendingIndex += 1
+        displayAttendingEvents(index: attendingIndex)
     }
     
     func displaySavedEvents(index: Int) {
@@ -221,6 +225,16 @@ class HomeScreenViewController: UIViewController {
             
             Date
             """
+        }
+        if index == 0 {
+            previousAttendingEvent.isEnabled = false
+        } else {
+            previousAttendingEvent.isEnabled = true
+        }
+        if profile.attendingEvents.count <= index+2 {
+            nextAttendingEvent.isEnabled = false
+        } else {
+            nextAttendingEvent.isEnabled = true
         }
     }
     

@@ -360,7 +360,7 @@
                                 <rect key="frame" x="358" y="262.5" width="36" height="30"/>
                                 <state key="normal" title="More"/>
                                 <connections>
-                                    <action selector="interestedMoreButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="g3H-pv-7Vh"/>
+                                    <action selector="interestedMoreButtonAction:" destination="LE7-aP-nYg" eventType="touchUpInside" id="l6y-38-vzb"/>
                                     <segue destination="Ddc-P9-mRe" kind="show" id="z3K-To-mKj"/>
                                 </connections>
                             </button>
@@ -395,8 +395,8 @@
                                 <rect key="frame" x="358" y="384" width="36" height="30"/>
                                 <state key="normal" title="More"/>
                                 <connections>
-                                    <action selector="attendingMoreButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="1mT-RF-4j3"/>
-                                    <segue destination="SaA-T7-9kJ" kind="show" id="8Ko-EW-uN2"/>
+                                    <action selector="attendingMoreButtonAction:" destination="LE7-aP-nYg" eventType="touchUpInside" id="fk1-8U-PvF"/>
+                                    <segue destination="SaA-T7-9kJ" kind="show" id="2or-VD-v4h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa7-fS-yEN">
@@ -504,11 +504,17 @@
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="q6W-1c-zhV"/>
                     <connections>
+                        <outlet property="attendingMoreButton" destination="8Rs-0t-sLD" id="ipA-ef-Dee"/>
                         <outlet property="birthdayLabel" destination="fSe-A1-lud" id="Hal-2k-gDj"/>
                         <outlet property="genderLabel" destination="dCm-Lr-fEe" id="ouz-AR-N4E"/>
+                        <outlet property="interestedMoreButton" destination="iZJ-H3-evP" id="6j8-iR-iZt"/>
                         <outlet property="leftHandAttendingEvent" destination="xIx-MJ-uRE" id="PSf-nv-G89"/>
                         <outlet property="leftHandInterestedEvent" destination="Qwz-OI-LGd" id="jGz-Ze-Bql"/>
                         <outlet property="nameLabel" destination="1QN-vS-Qrp" id="Q1C-Pz-ebG"/>
+                        <outlet property="nextAttendingEvent" destination="SQf-DZ-Chh" id="tqM-1q-aKG"/>
+                        <outlet property="nextInterestedEvent" destination="YJx-hD-jIj" id="EBF-Lk-wPt"/>
+                        <outlet property="previousAttendingEvent" destination="cg7-mL-cLN" id="vbW-li-lZ1"/>
+                        <outlet property="previousInterestedEvent" destination="Ydu-iZ-Oo8" id="DVn-X6-x4c"/>
                         <outlet property="rightHandAttendingEvent" destination="Fa7-fS-yEN" id="s8L-AF-i8H"/>
                         <outlet property="rightHandInterestedEvent" destination="TJF-Hx-Yp3" id="5hc-h1-uT9"/>
                     </connections>
@@ -602,7 +608,7 @@
                                 <rect key="frame" x="358" y="342" width="36" height="30"/>
                                 <state key="normal" title="More"/>
                                 <connections>
-                                    <segue destination="VaU-YD-hZd" kind="show" id="JTg-6L-7GD"/>
+                                    <segue destination="SaA-T7-9kJ" kind="show" id="4OY-wg-85P"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wye-tY-YOZ">
@@ -714,10 +720,10 @@
                         <outlet property="leftHandAttendingEvent" destination="lUs-Uu-xKV" id="2DW-gr-OzH"/>
                         <outlet property="leftHandInterestedEvent" destination="LCM-hJ-40K" id="DzO-mS-VCE"/>
                         <outlet property="nameTextEntry" destination="VQo-tb-e8Y" id="EcU-CI-Azz"/>
+                        <outlet property="nextAttendingEvent" destination="Biy-9k-E1r" id="Txt-DS-YJV"/>
                         <outlet property="nextInterestedEvent" destination="sD6-kK-dTP" id="aBI-ld-2qg"/>
-                        <outlet property="nextSuggestedEvent" destination="Biy-9k-E1r" id="Txt-DS-YJV"/>
+                        <outlet property="previousAttendingEvent" destination="C0M-eX-c0M" id="j1T-RR-AKu"/>
                         <outlet property="previousInterestedEvent" destination="4Bp-AO-40S" id="T9b-6L-hUW"/>
-                        <outlet property="previousSuggestedEvent" destination="C0M-eX-c0M" id="j1T-RR-AKu"/>
                         <outlet property="rightHandAttendingEvent" destination="Wye-tY-YOZ" id="RNB-nT-a28"/>
                         <outlet property="rightHandInterestedEvent" destination="07t-W5-DIj" id="zTf-R3-bXS"/>
                         <outlet property="searchByLocationButton" destination="iMX-xt-yuG" id="BdO-3U-xm1"/>
@@ -768,7 +774,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdY-gz-VIr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2526.0869565217395" y="902.67857142857133"/>
+            <point key="canvasLocation" x="2525" y="552"/>
         </scene>
         <!--Event-->
         <scene sceneID="dCb-E4-9Xh">
@@ -1025,46 +1031,6 @@
             </objects>
             <point key="canvasLocation" x="3535" y="-465"/>
         </scene>
-        <!--Suggested Events-->
-        <scene sceneID="lTK-8K-a73">
-            <objects>
-                <tableViewController id="VaU-YD-hZd" customClass="SuggestedEventsTableViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ztT-NG-G7u">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vVv-eJ-ePT">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vVv-eJ-ePT" id="C95-a8-tjg">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="VaU-YD-hZd" id="qFD-h6-2kO"/>
-                            <outlet property="delegate" destination="VaU-YD-hZd" id="jsj-Oo-RWo"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Suggested Events" id="9if-kM-qUh">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Br7-TG-JFQ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wZP-hL-hyP">
-                                <rect key="frame" x="302" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Sort"/>
-                                <connections>
-                                    <segue destination="Jj5-HC-mXD" kind="presentation" id="ePr-w9-MWo"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8xy-XA-UrS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2526.0869565217395" y="240.40178571428569"/>
-        </scene>
         <!--Home-->
         <scene sceneID="RAs-by-AMB">
             <objects>
@@ -1131,6 +1097,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Fl7-oS-UqZ"/>
         <segue reference="z3K-To-mKj"/>
+        <segue reference="2or-VD-v4h"/>
         <segue reference="oML-Wp-7Ta"/>
     </inferredMetricsTieBreakers>
 </document>

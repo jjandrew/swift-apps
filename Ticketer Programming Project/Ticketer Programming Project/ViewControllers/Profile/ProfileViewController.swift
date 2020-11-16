@@ -18,6 +18,16 @@ class ProfileViewController: UIViewController {
     @IBOutlet var rightHandInterestedEvent: UILabel!
     @IBOutlet var leftHandAttendingEvent: UILabel!
     @IBOutlet var rightHandAttendingEvent: UILabel!
+    @IBOutlet var interestedMoreButton: UIButton!
+    @IBOutlet var previousInterestedEvent: UIButton!
+    @IBOutlet var nextInterestedEvent: UIButton!
+    @IBOutlet var attendingMoreButton: UIButton!
+    @IBOutlet var previousAttendingEvent: UIButton!
+    @IBOutlet var nextAttendingEvent: UIButton!
+    
+    
+    var savedIndex = 0
+    var attendingIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,24 +38,35 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        displaySavedEvents(index: 0)
-        displayAttendingEvents(index: 0)
+        savedIndex = 0
+        attendingIndex = 0
+        displaySavedEvents(index: savedIndex)
+        displayAttendingEvents(index: attendingIndex)
     }
     
     
     @IBAction func editProfileButton(_ sender: Any) {
     }
-    @IBAction func interestedMoreButton(_ sender: Any) {
+    @IBAction func interestedMoreButtonAction(_ sender: Any) {
     }
     @IBAction func interestedPrevButton(_ sender: Any) {
+        savedIndex -= 1
+        displaySavedEvents(index: savedIndex)
     }
     @IBAction func interestedNextButton(_ sender: Any) {
+        savedIndex += 1
+        displaySavedEvents(index: savedIndex)
     }
-    @IBAction func attendingMoreButton(_ sender: Any) {
+    @IBAction func attendingMoreButtonAction(_ sender: Any) {
     }
+    
     @IBAction func attendingPrevButton(_ sender: Any) {
+        attendingIndex -= 1
+        displayAttendingEvents(index: attendingIndex)
     }
     @IBAction func attendingNextButton(_ sender: Any) {
+        attendingIndex += 1
+        displayAttendingEvents(index: attendingIndex)
     }
     
     func displaySavedEvents(index: Int) {
@@ -98,7 +119,16 @@ class ProfileViewController: UIViewController {
             Date
             """
         }
-        
+        if index == 0 {
+            previousInterestedEvent.isEnabled = false
+        } else {
+            previousInterestedEvent.isEnabled = true
+        }
+        if profile.savedEvents.count <= index+2 {
+            nextInterestedEvent.isEnabled = false
+        } else {
+            nextInterestedEvent.isEnabled = true
+        }
     }
     
     func displayAttendingEvents(index: Int) {
@@ -150,6 +180,16 @@ class ProfileViewController: UIViewController {
             
             Date
             """
+        }
+        if index == 0 {
+            previousAttendingEvent.isEnabled = false
+        } else {
+            previousAttendingEvent.isEnabled = true
+        }
+        if profile.attendingEvents.count <= index+2 {
+            nextAttendingEvent.isEnabled = false
+        } else {
+            nextAttendingEvent.isEnabled = true
         }
     }
 }
