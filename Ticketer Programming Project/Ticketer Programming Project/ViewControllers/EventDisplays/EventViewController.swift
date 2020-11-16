@@ -44,4 +44,10 @@ class EventViewController: UIViewController {
             profile.savedEvents.append(event)
         }
     }
+    
+    @IBAction func purchaseAction(_ sender: Any) {
+        if sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: event).1 == false {
+            profile.attendingEvents.append(event)
+        }
+    }
 }
