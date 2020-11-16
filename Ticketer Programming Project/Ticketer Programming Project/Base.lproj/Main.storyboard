@@ -804,6 +804,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1r-Bb-LJL">
                                 <rect key="frame" x="339" y="192" width="55" height="30"/>
                                 <state key="normal" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmNameEntryButton:" destination="Tgb-oB-eNn" eventType="touchUpInside" id="Icr-Op-h7n"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Of Birth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITw-5I-us3">
                                 <rect key="frame" x="20" y="254" width="105" height="21"/>
@@ -827,6 +830,9 @@
                                 <state key="normal" title="Male">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="maleButton:" destination="Tgb-oB-eNn" eventType="touchUpInside" id="dll-XK-UAj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuc-P2-J07">
                                 <rect key="frame" x="20" y="604" width="374" height="36"/>
@@ -835,6 +841,9 @@
                                 <state key="normal" title="Female">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="femaleButton:" destination="Tgb-oB-eNn" eventType="touchUpInside" id="vJu-Pp-gHe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWz-TI-rWM">
                                 <rect key="frame" x="20" y="660" width="374" height="36"/>
@@ -843,6 +852,9 @@
                                 <state key="normal" title="Other">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="otherButton:" destination="Tgb-oB-eNn" eventType="touchUpInside" id="aZ4-vC-o5m"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -873,6 +885,10 @@
                         <viewLayoutGuide key="safeArea" id="mmv-sB-jy2"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="58c-Yt-So0"/>
+                    <connections>
+                        <outlet property="dateOfBirthPicker" destination="wPm-50-Xda" id="m5Z-v3-aGR"/>
+                        <outlet property="nameEntryTextField" destination="PoX-oS-yhB" id="FcI-rb-oIh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t7x-4r-SIq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
