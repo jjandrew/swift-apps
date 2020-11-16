@@ -67,15 +67,6 @@ class HomeScreenViewController: UIViewController {
                 
         Availability
         """
-
-        /*
-
-        let homeNavController = self.navigationController
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.tabBarController?.remove
- 
- */
-
         
     }
     
