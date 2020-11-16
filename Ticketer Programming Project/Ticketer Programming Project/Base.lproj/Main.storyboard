@@ -791,40 +791,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rg-uv-Wi1">
-                                <rect key="frame" x="20" y="161" width="50" height="21"/>
+                                <rect key="frame" x="20" y="138" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoX-oS-yhB">
-                                <rect key="frame" x="20" y="190" width="311" height="34"/>
+                                <rect key="frame" x="20" y="167" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1r-Bb-LJL">
-                                <rect key="frame" x="339" y="192" width="55" height="30"/>
-                                <state key="normal" title="Confirm"/>
-                                <connections>
-                                    <action selector="confirmNameEntryButton:" destination="Tgb-oB-eNn" eventType="touchUpInside" id="Icr-Op-h7n"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Of Birth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITw-5I-us3">
-                                <rect key="frame" x="20" y="254" width="105" height="21"/>
+                                <rect key="frame" x="20" y="231" width="105" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="wPm-50-Xda">
-                                <rect key="frame" x="47" y="283" width="320" height="216"/>
+                                <rect key="frame" x="47" y="260" width="320" height="216"/>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-4133937600">
+                                    <!--1870-01-01 12:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="631191600">
+                                    <!--2021-01-01 11:00:00 +0000-->
+                                </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzE-t9-Pvz">
-                                <rect key="frame" x="20" y="507" width="62" height="21"/>
+                                <rect key="frame" x="20" y="484" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4BE-42-4TL">
-                                <rect key="frame" x="20" y="548" width="374" height="36"/>
+                                <rect key="frame" x="20" y="525" width="374" height="36"/>
                                 <color key="backgroundColor" red="0.80170910650000005" green="1" blue="0.98714693269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Male">
@@ -835,7 +834,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yuc-P2-J07">
-                                <rect key="frame" x="20" y="604" width="374" height="36"/>
+                                <rect key="frame" x="20" y="581" width="374" height="36"/>
                                 <color key="backgroundColor" red="0.80170910650000005" green="1" blue="0.98714693269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Female">
@@ -846,7 +845,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DWz-TI-rWM">
-                                <rect key="frame" x="20" y="660" width="374" height="36"/>
+                                <rect key="frame" x="20" y="637" width="374" height="36"/>
                                 <color key="backgroundColor" red="0.80170910650000005" green="1" blue="0.98714693269999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Other">
@@ -856,6 +855,17 @@
                                     <action selector="otherButton:" destination="Tgb-oB-eNn" eventType="touchUpInside" id="aZ4-vC-o5m"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sd0-Sf-UHs">
+                                <rect key="frame" x="0.0" y="777" width="414" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Confirm All">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirmButton:" destination="Tgb-oB-eNn" eventType="touchUpInside" id="vxa-mR-nzv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -863,20 +873,21 @@
                             <constraint firstItem="0Rg-uv-Wi1" firstAttribute="leading" secondItem="mmv-sB-jy2" secondAttribute="leading" constant="20" id="62X-W2-vSD"/>
                             <constraint firstItem="lzE-t9-Pvz" firstAttribute="leading" secondItem="mmv-sB-jy2" secondAttribute="leading" constant="20" id="BaD-oz-vDe"/>
                             <constraint firstItem="4BE-42-4TL" firstAttribute="leading" secondItem="mmv-sB-jy2" secondAttribute="leading" constant="20" id="CJz-J8-3Aj"/>
+                            <constraint firstItem="Sd0-Sf-UHs" firstAttribute="leading" secondItem="mmv-sB-jy2" secondAttribute="leading" id="DRU-FC-rWZ"/>
                             <constraint firstItem="Yuc-P2-J07" firstAttribute="top" secondItem="4BE-42-4TL" secondAttribute="bottom" constant="20" id="IYf-IZ-dLy"/>
                             <constraint firstItem="lzE-t9-Pvz" firstAttribute="top" secondItem="wPm-50-Xda" secondAttribute="bottom" constant="8" id="JNa-7n-4ee"/>
-                            <constraint firstItem="z1r-Bb-LJL" firstAttribute="centerY" secondItem="PoX-oS-yhB" secondAttribute="centerY" id="JOI-Yl-mq8"/>
-                            <constraint firstItem="z1r-Bb-LJL" firstAttribute="leading" secondItem="PoX-oS-yhB" secondAttribute="trailing" constant="8" id="S1m-8r-9Aw"/>
+                            <constraint firstItem="mmv-sB-jy2" firstAttribute="trailing" secondItem="Sd0-Sf-UHs" secondAttribute="trailing" id="O0f-gw-oz2"/>
+                            <constraint firstItem="mmv-sB-jy2" firstAttribute="bottom" secondItem="Sd0-Sf-UHs" secondAttribute="bottom" id="OHB-eO-qlq"/>
                             <constraint firstItem="ITw-5I-us3" firstAttribute="leading" secondItem="mmv-sB-jy2" secondAttribute="leading" constant="20" id="Slb-Dh-QaT"/>
                             <constraint firstItem="DWz-TI-rWM" firstAttribute="top" secondItem="Yuc-P2-J07" secondAttribute="bottom" constant="20" id="Y8d-07-O28"/>
-                            <constraint firstItem="mmv-sB-jy2" firstAttribute="trailing" secondItem="z1r-Bb-LJL" secondAttribute="trailing" constant="20" id="YoJ-xX-UuB"/>
                             <constraint firstItem="PoX-oS-yhB" firstAttribute="top" secondItem="0Rg-uv-Wi1" secondAttribute="bottom" constant="8" id="Z30-cR-6un"/>
                             <constraint firstItem="mmv-sB-jy2" firstAttribute="trailing" secondItem="4BE-42-4TL" secondAttribute="trailing" constant="20" id="ZBk-l9-5Dh"/>
                             <constraint firstItem="wPm-50-Xda" firstAttribute="top" secondItem="ITw-5I-us3" secondAttribute="bottom" constant="8" id="ZRs-02-efp"/>
                             <constraint firstItem="mmv-sB-jy2" firstAttribute="trailing" secondItem="DWz-TI-rWM" secondAttribute="trailing" constant="20" id="ZYS-gH-H1C"/>
                             <constraint firstItem="mmv-sB-jy2" firstAttribute="trailing" secondItem="Yuc-P2-J07" secondAttribute="trailing" constant="20" id="etp-G9-5PK"/>
-                            <constraint firstItem="0Rg-uv-Wi1" firstAttribute="top" secondItem="mmv-sB-jy2" secondAttribute="top" constant="73" id="fjA-Rh-l50"/>
+                            <constraint firstItem="0Rg-uv-Wi1" firstAttribute="top" secondItem="mmv-sB-jy2" secondAttribute="top" constant="50" id="fjA-Rh-l50"/>
                             <constraint firstItem="DWz-TI-rWM" firstAttribute="leading" secondItem="mmv-sB-jy2" secondAttribute="leading" constant="20" id="haV-5C-J2j"/>
+                            <constraint firstItem="mmv-sB-jy2" firstAttribute="trailing" secondItem="PoX-oS-yhB" secondAttribute="trailing" constant="20" id="l9p-8M-EqE"/>
                             <constraint firstItem="4BE-42-4TL" firstAttribute="top" secondItem="lzE-t9-Pvz" secondAttribute="bottom" constant="20" id="qxS-sD-GqP"/>
                             <constraint firstItem="PoX-oS-yhB" firstAttribute="leading" secondItem="mmv-sB-jy2" secondAttribute="leading" constant="20" id="tbX-Pt-oqZ"/>
                             <constraint firstItem="wPm-50-Xda" firstAttribute="centerX" secondItem="mmv-sB-jy2" secondAttribute="centerX" id="v0H-Ym-0es"/>

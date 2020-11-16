@@ -16,10 +16,12 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameEntryTextField.placeholder = profile.userName
+        dateOfBirthPicker.date = profile.userBirthdayDate
 
     }
-
-    @IBAction func confirmNameEntryButton(_ sender: Any) {
+    
+    @IBAction func confirmButton(_ sender: Any) {
     }
     
     @IBAction func maleButton(_ sender: Any) {
