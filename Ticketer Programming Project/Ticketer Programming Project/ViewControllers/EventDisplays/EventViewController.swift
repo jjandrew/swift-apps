@@ -31,8 +31,6 @@ class EventViewController: UIViewController {
         if sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).1 == true {
             savedButton.isSelected = true
         }
-            
-        
     }
 
     @IBAction func savedAction(_ sender: Any) {

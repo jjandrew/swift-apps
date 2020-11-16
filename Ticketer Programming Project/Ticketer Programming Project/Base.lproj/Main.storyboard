@@ -544,8 +544,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Events:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-kj-MZh">
-                                <rect key="frame" x="20" y="346.5" width="143" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attending Events:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCL-kj-MZh">
+                                <rect key="frame" x="20" y="346.5" width="135" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -711,15 +711,15 @@
                         <outlet property="currentLocationLabel" destination="rIn-Xp-PBk" id="cj8-kU-0Ru"/>
                         <outlet property="eventsYouAreInterestedInLabel" destination="VYv-F0-Mf6" id="L2T-P2-Hug"/>
                         <outlet property="interestedEventsMore" destination="Zr1-CB-MXh" id="HlA-iv-U6F"/>
+                        <outlet property="leftHandAttendingEvent" destination="lUs-Uu-xKV" id="2DW-gr-OzH"/>
                         <outlet property="leftHandInterestedEvent" destination="LCM-hJ-40K" id="DzO-mS-VCE"/>
-                        <outlet property="leftHandSuggestedEvent" destination="lUs-Uu-xKV" id="2DW-gr-OzH"/>
                         <outlet property="nameTextEntry" destination="VQo-tb-e8Y" id="EcU-CI-Azz"/>
                         <outlet property="nextInterestedEvent" destination="sD6-kK-dTP" id="aBI-ld-2qg"/>
                         <outlet property="nextSuggestedEvent" destination="Biy-9k-E1r" id="Txt-DS-YJV"/>
                         <outlet property="previousInterestedEvent" destination="4Bp-AO-40S" id="T9b-6L-hUW"/>
                         <outlet property="previousSuggestedEvent" destination="C0M-eX-c0M" id="j1T-RR-AKu"/>
+                        <outlet property="rightHandAttendingEvent" destination="Wye-tY-YOZ" id="RNB-nT-a28"/>
                         <outlet property="rightHandInterestedEvent" destination="07t-W5-DIj" id="zTf-R3-bXS"/>
-                        <outlet property="rightHandSuggestedEvent" destination="Wye-tY-YOZ" id="RNB-nT-a28"/>
                         <outlet property="searchByLocationButton" destination="iMX-xt-yuG" id="BdO-3U-xm1"/>
                         <outlet property="suggestedEventsLabel" destination="eCL-kj-MZh" id="Cgn-aB-Orc"/>
                         <outlet property="suggestedEventsMore" destination="P2k-4F-5Vk" id="KHT-sA-aMS"/>
@@ -1130,7 +1130,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Fl7-oS-UqZ"/>
-        <segue reference="ffG-Po-hV3"/>
+        <segue reference="z3K-To-mKj"/>
         <segue reference="oML-Wp-7Ta"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -21,8 +21,8 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet var nextInterestedEvent: UIButton!
     @IBOutlet var suggestedEventsLabel: UILabel!
     @IBOutlet var suggestedEventsMore: UIButton!
-    @IBOutlet var leftHandSuggestedEvent: UILabel!
-    @IBOutlet var rightHandSuggestedEvent: UILabel!
+    @IBOutlet var leftHandAttendingEvent: UILabel!
+    @IBOutlet var rightHandAttendingEvent: UILabel!
     @IBOutlet var previousSuggestedEvent: UIButton!
     @IBOutlet var nextSuggestedEvent: UIButton!
     
@@ -31,43 +31,8 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        leftHandInterestedEvent.text = """
-        Event Title
-        
-        Location
-        
-        Date
-        
-        Availability
-        """
-        rightHandInterestedEvent.text = """
-        Event Title
-                
-        Location
-                
-        Date
-                
-        Availability
-        """
-        leftHandSuggestedEvent.text = """
-        Event Title
-                
-        Location
-                
-        Date
-                
-        Availability
-        """
-        rightHandSuggestedEvent.text = """
-        Event Title
-                
-        Location
-                
-        Date
-                
-        Availability
-        """
-        
+        displaySavedEvents(index: 0)
+        displayAttendingEvents(index: 0)
     }
     
     func searchByName(completion: @escaping ([Event]) -> Void) {
@@ -135,6 +100,109 @@ class HomeScreenViewController: UIViewController {
     @IBAction func suggestedNextAction(_ sender: Any) {
     }
     
+    func displaySavedEvents(index: Int) {
+        if profile.savedEvents.count > index+2 {
+            leftHandInterestedEvent.text = """
+            \(profile.savedEvents[index].eventName)
+            
+            Venue
+            
+            \(profile.savedEvents[index].date)
+            """
+            
+            rightHandInterestedEvent.text = """
+            \(profile.savedEvents[index+1].eventName)
+            
+            Venue
+            
+            \(profile.savedEvents[index+1].date)
+            """
+        } else if profile.savedEvents.count > index+1 {
+            leftHandInterestedEvent.text = """
+            \(profile.savedEvents[index].eventName)
+            
+            Venue
+            
+            \(profile.savedEvents[index].date)
+            """
+            
+            rightHandInterestedEvent.text = """
+            Event Name
+            
+            Venue
+            
+            Date
+            """
+        } else {
+            leftHandInterestedEvent.text = """
+            Event Name
+            
+            Venue
+            
+            Date
+            """
+            
+            rightHandInterestedEvent.text = """
+            Event Name
+            
+            Venue
+            
+            Date
+            """
+        }
+    }
+    
+    func displayAttendingEvents(index: Int) {
+        if profile.attendingEvents.count > index+2 {
+            leftHandAttendingEvent.text = """
+            \(profile.attendingEvents[index].eventName)
+            
+            Venue
+            
+            \(profile.attendingEvents[index].date)
+            """
+            
+            rightHandAttendingEvent.text = """
+            \(profile.attendingEvents[index+1].eventName)
+            
+            Venue
+            
+            \(profile.attendingEvents[index+1].date)
+            """
+        } else if profile.attendingEvents.count > index+1 {
+            leftHandAttendingEvent.text = """
+            \(profile.attendingEvents[index].eventName)
+            
+            Venue
+            
+            \(profile.attendingEvents[index].date)
+            """
+            
+            rightHandAttendingEvent.text = """
+            Event Name
+            
+            Venue
+            
+            Date
+            """
+        } else {
+            leftHandAttendingEvent.text = """
+            Event Name
+            
+            Venue
+            
+            Date
+            """
+            
+            rightHandAttendingEvent.text = """
+            Event Name
+            
+            Venue
+            
+            Date
+            """
+        }
+    }
     
     /*
      
