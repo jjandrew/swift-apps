@@ -31,10 +31,6 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = "Name: \(profile.userName)"
-        birthdayLabel.text = "Birthday: \(profile.userBirthdayString)"
-        genderLabel.text = "Gender: \(profile.userGender)"
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -42,6 +38,9 @@ class ProfileViewController: UIViewController {
         attendingIndex = 0
         displaySavedEvents(index: savedIndex)
         displayAttendingEvents(index: attendingIndex)
+        nameLabel.text = "Name: \(profile.userName)"
+        birthdayLabel.text = "Birthday: \(profile.userBirthdayString)"
+        genderLabel.text = "Gender: \(profile.userGender)"
     }
     
     

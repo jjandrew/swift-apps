@@ -28,6 +28,7 @@
 		0D90D159252E5A7700F93265 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90D158252E5A7700F93265 /* SearchViewController.swift */; };
 		0D90FD9E2522284C00F2C189 /* SkiddleOpeningTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */; };
 		0D90FDA3252228F500F2C189 /* SkiddleVenues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D90FDA2252228F500F2C189 /* SkiddleVenues.swift */; };
+		0DB26CAE256322B000A8ADA3 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DB26CAD256322B000A8ADA3 /* EditProfileViewController.swift */; };
 		0DD4C9B52518B1FF00D91647 /* SkiddleEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */; };
 		0DE4FC7625402697003FCF25 /* TicketMasterEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4FC7525402697003FCF25 /* TicketMasterEvent.swift */; };
 		0DE4FC782540285B003FCF25 /* TickerMasterEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DE4FC772540285B003FCF25 /* TickerMasterEventResponse.swift */; };
@@ -89,6 +90,7 @@
 		0D90D158252E5A7700F93265 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		0D90FD9D2522284C00F2C189 /* SkiddleOpeningTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleOpeningTimes.swift; sourceTree = "<group>"; };
 		0D90FDA2252228F500F2C189 /* SkiddleVenues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleVenues.swift; sourceTree = "<group>"; };
+		0DB26CAD256322B000A8ADA3 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		0DD4C9B42518B1FF00D91647 /* SkiddleEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEvent.swift; sourceTree = "<group>"; };
 		0DE4FC7525402697003FCF25 /* TicketMasterEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketMasterEvent.swift; sourceTree = "<group>"; };
 		0DE4FC772540285B003FCF25 /* TickerMasterEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerMasterEventResponse.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				0D576BCE2520958A00BA7DEE /* ProfileViewController.swift */,
+				0DB26CAD256322B000A8ADA3 /* EditProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				0DE4FC8025449138003FCF25 /* StudhubEvent.swift in Sources */,
 				0D90D159252E5A7700F93265 /* SearchViewController.swift in Sources */,
 				0D90D155252DE26500F93265 /* genderEntryViewController.swift in Sources */,
+				0DB26CAE256322B000A8ADA3 /* EditProfileViewController.swift in Sources */,
 				0D90FDA3252228F500F2C189 /* SkiddleVenues.swift in Sources */,
 				0D576BD92520AEF200BA7DEE /* AttendingEventsTableViewController.swift in Sources */,
 				0DF0032F2510C0040059BBDE /* AppDelegate.swift in Sources */,
