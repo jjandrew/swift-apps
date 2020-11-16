@@ -113,6 +113,7 @@ class HomeScreenViewController: UIViewController {
         attendingIndex += 1
         displayAttendingEvents(index: attendingIndex)
     }
+    
     @IBAction func interestedMoreAction(_ sender: Any) {
         if profile.savedEvents.count > 0 {
             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "interestedTableView") as? SavedEventsTableViewController else {

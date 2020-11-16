@@ -37,6 +37,7 @@ class AttendingEventsTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let viewController = storyboard?.instantiateViewController(identifier: "eventScene") as? EventViewController else {
             fatalError("Couldn't load event view controller")

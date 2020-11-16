@@ -771,6 +771,9 @@
                                     <segue destination="Jj5-HC-mXD" kind="presentation" id="Fl7-oS-UqZ"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <action selector="sortButton:" destination="SaA-T7-9kJ" id="P8H-dJ-c9X"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
@@ -933,6 +936,9 @@
                                     <segue destination="Jj5-HC-mXD" kind="presentation" id="Xuh-BH-R2y"/>
                                 </connections>
                             </button>
+                            <connections>
+                                <action selector="sortButton:" destination="Ddc-P9-mRe" id="VNC-z7-dOW"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
