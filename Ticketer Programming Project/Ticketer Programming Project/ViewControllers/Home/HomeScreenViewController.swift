@@ -31,15 +31,6 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //if profile.savedEvents = []
-        // something here
-        /*
-         
-         
-        self.navController.dismiss(animated: true) {
-             self.navController = nil
-        }
- */
         leftHandInterestedEvent.text = """
         Event Title
         
@@ -77,6 +68,15 @@ class HomeScreenViewController: UIViewController {
         Availability
         """
 
+        /*
+
+        let homeNavController = self.navigationController
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.tabBarController?.remove
+ 
+ */
+
+        
     }
     
     func searchByName(completion: @escaping ([Event]) -> Void) {

@@ -23,7 +23,9 @@ class confirmationViewController: UIViewController {
     
     @IBAction func confirmButton(_ sender: Any) {
         profile.loggedIn = true
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         performSegue(withIdentifier: "confirmToHome", sender: self)
+        //save profile to local storage
     }
 
 }

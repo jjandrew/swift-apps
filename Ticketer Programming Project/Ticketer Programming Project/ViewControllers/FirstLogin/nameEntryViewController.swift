@@ -14,14 +14,11 @@ class nameEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        let sortAndSearch = SortAndSearch()
-        let test1Data = [Event(eventName: "bbf", location: nil, date: "20/01/2022", description: "", saved: nil, website: []), Event(eventName: "abc", location: nil, date: "01/05/2020", description: "", saved: nil, website: []), Event(eventName: "dfa", location: nil, date: "08/02/2020", description: "", saved: nil, website: []), Event(eventName: "bbf", location: nil, date: "01/01/2020", description: "", saved: nil, website: [])]
-        let i = sortAndSearch.quickSortByDate(array: test1Data)
-        for s in i {
-            print(s.date)
+        //see if profile can be loaded up
+        if profile.loggedIn == true {
+            self.navigationController?.setNavigationBarHidden(true, animated: false)
+            performSegue(withIdentifier: "nameToHome", sender: self)
         }
- */
     }
     
     @IBAction func entryButtonAction(_ sender: Any) {

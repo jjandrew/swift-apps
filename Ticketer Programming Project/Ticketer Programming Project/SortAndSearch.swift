@@ -115,8 +115,7 @@ class SortAndSearch {
             newData.append(contentsOf: (quickSortByDate(array: left)))
             newData.append(pivot)
             newData.append(contentsOf: (quickSortByDate(array: right)))
-            return newData
-            
+            return newData   
         }
     }
     
