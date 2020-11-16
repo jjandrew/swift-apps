@@ -360,7 +360,7 @@
                                 <rect key="frame" x="358" y="262.5" width="36" height="30"/>
                                 <state key="normal" title="More"/>
                                 <connections>
-                                    <action selector="suggestedMoreButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="g3H-pv-7Vh"/>
+                                    <action selector="interestedMoreButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="g3H-pv-7Vh"/>
                                     <segue destination="Ddc-P9-mRe" kind="show" id="z3K-To-mKj"/>
                                 </connections>
                             </button>
@@ -445,8 +445,8 @@
                                 <rect key="frame" x="291" y="338.5" width="41" height="30"/>
                                 <state key="normal" title="&lt;Prev"/>
                                 <connections>
+                                    <action selector="interestedPrevButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="r7J-Gf-2cW"/>
                                     <action selector="interestedPreviousAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dwo-p5-tyt"/>
-                                    <action selector="suggestedPrevButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="r7J-Gf-2cW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJx-hD-jIj">
@@ -454,7 +454,7 @@
                                 <state key="normal" title="Next&gt;"/>
                                 <connections>
                                     <action selector="interestedNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kdj-5I-aaj"/>
-                                    <action selector="suggestedNextButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="VGL-dW-Tsa"/>
+                                    <action selector="interestedNextButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="VGL-dW-Tsa"/>
                                 </connections>
                             </button>
                         </subviews>

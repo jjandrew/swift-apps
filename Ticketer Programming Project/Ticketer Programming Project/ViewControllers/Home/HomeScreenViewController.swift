@@ -35,8 +35,12 @@ class HomeScreenViewController: UIViewController {
         displayAttendingEvents(index: 0)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        displaySavedEvents(index: 0)
+        displayAttendingEvents(index: 0)
+    }
+    
     func searchByName(completion: @escaping ([Event]) -> Void) {
-
         let handlingOfStudhub = HandlingOfStudhub()
         self.events = []
         var completions = 0
