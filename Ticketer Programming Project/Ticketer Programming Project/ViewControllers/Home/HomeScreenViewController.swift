@@ -29,15 +29,22 @@ class HomeScreenViewController: UIViewController {
     var searchEntry: String = ""
     var events: [Event] = []
     
+    var savedIndex = 0
+    var attendingIndex = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        displaySavedEvents(index: 0)
-        displayAttendingEvents(index: 0)
+        savedIndex = 0
+        attendingIndex = 0
+        displaySavedEvents(index: savedIndex)
+        displayAttendingEvents(index: attendingIndex)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        displaySavedEvents(index: 0)
-        displayAttendingEvents(index: 0)
+        savedIndex = 0
+        attendingIndex = 0
+        displaySavedEvents(index: savedIndex)
+        displayAttendingEvents(index: attendingIndex)
     }
     
     func searchByName(completion: @escaping ([Event]) -> Void) {
@@ -91,12 +98,16 @@ class HomeScreenViewController: UIViewController {
     @IBAction func searchByLocationAction(_ sender: Any) {
     }
     @IBAction func interestedPreviousAction(_ sender: Any) {
+        savedIndex -= 1
+        displaySavedEvents(index: savedIndex)
     }
     @IBAction func interestedNextAction(_ sender: Any) {
+        savedIndex += 1
+        displaySavedEvents(index: savedIndex)
     }
-    @IBAction func suggestedPreviousAction(_ sender: Any) {
+    @IBAction func attendingPreviousAction(_ sender: Any) {
     }
-    @IBAction func suggestedNextAction(_ sender: Any) {
+    @IBAction func attendingNextAction(_ sender: Any) {
     }
     
     func displaySavedEvents(index: Int) {
@@ -148,6 +159,16 @@ class HomeScreenViewController: UIViewController {
             
             Date
             """
+        }
+        if index == 0 {
+            previousInterestedEvent.isEnabled = false
+        } else {
+            previousInterestedEvent.isEnabled = true
+        }
+        if profile.savedEvents.count <= index+2 {
+            nextInterestedEvent.isEnabled = false
+        } else {
+            nextInterestedEvent.isEnabled = true
         }
     }
     

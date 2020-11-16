@@ -98,6 +98,7 @@ class ProfileViewController: UIViewController {
             Date
             """
         }
+        
     }
     
     func displayAttendingEvents(index: Int) {

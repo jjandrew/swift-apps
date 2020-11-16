@@ -416,8 +416,8 @@
                                 <rect key="frame" x="352" y="460" width="42" height="30"/>
                                 <state key="normal" title="Next&gt;"/>
                                 <connections>
+                                    <action selector="attendingNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahe-Ij-BFN"/>
                                     <action selector="attendingNextButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="QxC-Ec-EIT"/>
-                                    <action selector="suggestedNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ahe-Ij-BFN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cg7-mL-cLN">
@@ -425,7 +425,7 @@
                                 <state key="normal" title="&lt;Prev"/>
                                 <connections>
                                     <action selector="attendingPrevButton:" destination="LE7-aP-nYg" eventType="touchUpInside" id="W7f-Bf-g9J"/>
-                                    <action selector="suggestedPreviousAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m7W-kc-Lvk"/>
+                                    <action selector="attendingPreviousAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m7W-kc-Lvk"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIx-MJ-uRE">
@@ -622,14 +622,14 @@
                                 <rect key="frame" x="352" y="418" width="42" height="30"/>
                                 <state key="normal" title="Next&gt;"/>
                                 <connections>
-                                    <action selector="suggestedNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EjB-qx-GMk"/>
+                                    <action selector="attendingNextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EjB-qx-GMk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0M-eX-c0M">
                                 <rect key="frame" x="291" y="418" width="41" height="30"/>
                                 <state key="normal" title="&lt;Prev"/>
                                 <connections>
-                                    <action selector="suggestedPreviousAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fdi-ov-jNw"/>
+                                    <action selector="attendingPreviousAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fdi-ov-jNw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lUs-Uu-xKV">
