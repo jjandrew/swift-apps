@@ -106,7 +106,7 @@ class HomeScreenViewController: UIViewController {
         displaySavedEvents(index: savedIndex)
     }
     @IBAction func attendingPreviousAction(_ sender: Any) {
-        attendingIndex += 1
+        attendingIndex -= 1
         displayAttendingEvents(index: attendingIndex)
     }
     @IBAction func attendingNextAction(_ sender: Any) {
