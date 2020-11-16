@@ -14,7 +14,6 @@ class SavedEventsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -26,7 +25,7 @@ class SavedEventsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "interestedCell", for: indexPath)
         cell.textLabel?.text = events[indexPath.row].eventName
         return cell
     }
@@ -35,7 +34,6 @@ class SavedEventsTableViewController: UITableViewController {
         let sortAndSearch = SortAndSearch()
         self.events = sortAndSearch.quickSortByName(array: self.events)
         tableView.reloadData()
-        eventSearchStruct.events = self.events
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

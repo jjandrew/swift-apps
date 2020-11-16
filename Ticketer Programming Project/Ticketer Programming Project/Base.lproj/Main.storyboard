@@ -361,7 +361,6 @@
                                 <state key="normal" title="More"/>
                                 <connections>
                                     <action selector="interestedMoreButtonAction:" destination="LE7-aP-nYg" eventType="touchUpInside" id="l6y-38-vzb"/>
-                                    <segue destination="Ddc-P9-mRe" kind="show" id="z3K-To-mKj"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJF-Hx-Yp3">
@@ -396,7 +395,6 @@
                                 <state key="normal" title="More"/>
                                 <connections>
                                     <action selector="attendingMoreButtonAction:" destination="LE7-aP-nYg" eventType="touchUpInside" id="fk1-8U-PvF"/>
-                                    <segue destination="SaA-T7-9kJ" kind="show" id="2or-VD-v4h"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa7-fS-yEN">
@@ -517,6 +515,8 @@
                         <outlet property="previousInterestedEvent" destination="Ydu-iZ-Oo8" id="DVn-X6-x4c"/>
                         <outlet property="rightHandAttendingEvent" destination="Fa7-fS-yEN" id="s8L-AF-i8H"/>
                         <outlet property="rightHandInterestedEvent" destination="TJF-Hx-Yp3" id="5hc-h1-uT9"/>
+                        <segue destination="SaA-T7-9kJ" kind="show" id="yh7-wn-keQ"/>
+                        <segue destination="Ddc-P9-mRe" kind="show" id="S4L-tx-wym"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tyk-Z7-vyO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -560,7 +560,7 @@
                                 <rect key="frame" x="353" y="220.5" width="40" height="30"/>
                                 <state key="normal" title="More"/>
                                 <connections>
-                                    <segue destination="Ddc-P9-mRe" kind="show" id="ffG-Po-hV3"/>
+                                    <action selector="interestedMoreAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3dE-Sf-Exv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07t-W5-DIj">
@@ -608,7 +608,7 @@
                                 <rect key="frame" x="358" y="342" width="36" height="30"/>
                                 <state key="normal" title="More"/>
                                 <connections>
-                                    <segue destination="SaA-T7-9kJ" kind="show" id="4OY-wg-85P"/>
+                                    <action selector="attendingMoreAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QIn-ua-vFr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wye-tY-YOZ">
@@ -730,6 +730,8 @@
                         <outlet property="suggestedEventsLabel" destination="eCL-kj-MZh" id="Cgn-aB-Orc"/>
                         <outlet property="suggestedEventsMore" destination="P2k-4F-5Vk" id="KHT-sA-aMS"/>
                         <segue destination="O8i-LX-SzC" kind="show" identifier="" id="YZc-4b-FmZ"/>
+                        <segue destination="Ddc-P9-mRe" kind="show" id="qKj-Xv-Xz6"/>
+                        <segue destination="SaA-T7-9kJ" kind="show" id="KSw-S3-b6Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -739,13 +741,13 @@
         <!--Attending Events-->
         <scene sceneID="jCr-B3-Qca">
             <objects>
-                <tableViewController id="SaA-T7-9kJ" customClass="AttendingEventsTableViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="attendingTableView" id="SaA-T7-9kJ" customClass="AttendingEventsTableViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="jhA-tO-IaY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="azc-KE-Jct">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="attendingCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="attendingCell" id="azc-KE-Jct">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="azc-KE-Jct" id="Vr1-ts-s9U">
@@ -774,7 +776,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YdY-gz-VIr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2525" y="552"/>
+            <point key="canvasLocation" x="2525" y="903"/>
         </scene>
         <!--Event-->
         <scene sceneID="dCb-E4-9Xh">
@@ -901,13 +903,13 @@
         <!--Interested Events-->
         <scene sceneID="xAZ-cj-l1D">
             <objects>
-                <tableViewController id="Ddc-P9-mRe" customClass="SavedEventsTableViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="interestedTableView" id="Ddc-P9-mRe" customClass="SavedEventsTableViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="xce-6s-qKW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="L8R-ut-p6q">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="interestedCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="interestedCell" id="L8R-ut-p6q">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="L8R-ut-p6q" id="bIh-aS-QhK">
@@ -936,7 +938,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhJ-Du-faq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2525" y="-435"/>
+            <point key="canvasLocation" x="2525" y="165"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="zzg-kZ-dac">
@@ -979,7 +981,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqE-Rh-Ula" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2526" y="-1150"/>
+            <point key="canvasLocation" x="2551" y="-526"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Bw7-WD-5G5">
@@ -1096,8 +1098,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Fl7-oS-UqZ"/>
-        <segue reference="z3K-To-mKj"/>
-        <segue reference="2or-VD-v4h"/>
+        <segue reference="qKj-Xv-Xz6"/>
+        <segue reference="KSw-S3-b6Y"/>
         <segue reference="oML-Wp-7Ta"/>
     </inferredMetricsTieBreakers>
 </document>

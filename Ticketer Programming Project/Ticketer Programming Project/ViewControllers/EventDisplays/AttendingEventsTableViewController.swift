@@ -26,7 +26,7 @@ class AttendingEventsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "attendingCell", for: indexPath)
         cell.textLabel?.text = events[indexPath.row].eventName
         return cell
     }
@@ -35,7 +35,6 @@ class AttendingEventsTableViewController: UITableViewController {
         let sortAndSearch = SortAndSearch()
         self.events = sortAndSearch.quickSortByName(array: self.events)
         tableView.reloadData()
-        eventSearchStruct.events = self.events
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
