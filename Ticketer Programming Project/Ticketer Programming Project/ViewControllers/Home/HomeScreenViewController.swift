@@ -51,13 +51,8 @@ class HomeScreenViewController: UIViewController {
                completions += 1
                 completion(self.events)
            }
-        }
-       
-        
+        }  
     }
-    
-    
-
     
     @IBAction func searchByNameButton(_ sender: Any) {
         if let searchEntry = nameTextEntry.text {
@@ -101,7 +96,7 @@ class HomeScreenViewController: UIViewController {
     }
     
     func displaySavedEvents(index: Int) {
-        if profile.savedEvents.count > index+2 {
+        if profile.savedEvents.count > index+1 {
             leftHandInterestedEvent.text = """
             \(profile.savedEvents[index].eventName)
             
@@ -117,7 +112,7 @@ class HomeScreenViewController: UIViewController {
             
             \(profile.savedEvents[index+1].date)
             """
-        } else if profile.savedEvents.count > index+1 {
+        } else if profile.savedEvents.count > index {
             leftHandInterestedEvent.text = """
             \(profile.savedEvents[index].eventName)
             
@@ -153,7 +148,7 @@ class HomeScreenViewController: UIViewController {
     }
     
     func displayAttendingEvents(index: Int) {
-        if profile.attendingEvents.count > index+2 {
+        if profile.attendingEvents.count > index+1 {
             leftHandAttendingEvent.text = """
             \(profile.attendingEvents[index].eventName)
             
@@ -169,7 +164,7 @@ class HomeScreenViewController: UIViewController {
             
             \(profile.attendingEvents[index+1].date)
             """
-        } else if profile.attendingEvents.count > index+1 {
+        } else if profile.attendingEvents.count > index {
             leftHandAttendingEvent.text = """
             \(profile.attendingEvents[index].eventName)
             

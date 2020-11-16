@@ -41,6 +41,9 @@ class EventViewController: UIViewController {
             savedButton.isSelected = true
             profile.savedEvents.append(event)
         }
+        //add into docu
+        self.HomeScreenViewController.displaySavedEvents(index: 0)
+        self.HomeScreenViewController.displayAttendingEvents(index: 0)
     }
     
     @IBAction func purchaseAction(_ sender: Any) {
