@@ -22,6 +22,7 @@ class EditProfileViewController: UIViewController {
         dateOfBirthPicker.date = profile.userBirthdayDate
     }
     
+    
     @IBAction func confirmButton(_ sender: Any) {
         var validate = 0
         
@@ -70,6 +71,26 @@ class EditProfileViewController: UIViewController {
         }
     }
     
+    func calculateAge(dOfB: Date) -> Int {
+        return Calendar.current.dateComponents([.year], from: dOfB, to: currentDate).year ?? 0
+    }
+    
+    func validateNameEntry(entry: String?) -> Bool {
+        if entry != nil {
+            if let nameArray = entry?.split(separator: " ") {
+                if nameArray.count == 2 {
+                    if nameArray[0].count > 1 {
+                        if nameArray[1].count > 2 {
+                            return true
+                        }
+                    }
+                }
+            }
+        }
+        return false
+    }
+    
+    
     @IBAction func maleButton(_ sender: Any) {
         profile.userGender = "Male"
         let alert = UIAlertController(title: "Gender changed to Male", message: "", preferredStyle: .alert)
@@ -89,26 +110,6 @@ class EditProfileViewController: UIViewController {
         let alert = UIAlertController(title: "Gender changed to Other", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
-    }
-    
-    
-    func calculateAge(dOfB: Date) -> Int {
-        return Calendar.current.dateComponents([.year], from: dOfB, to: currentDate).year ?? 0
-    }
-    
-    func validateNameEntry(entry: String?) -> Bool {
-        if entry != nil {
-            if let nameArray = entry?.split(separator: " ") {
-                if nameArray.count == 2 {
-                    if nameArray[0].count > 1 {
-                        if nameArray[1].count > 2 {
-                            return true
-                        }
-                    }
-                }
-            }
-        }
-        return false
     }
     
 }

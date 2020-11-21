@@ -11,22 +11,18 @@ import UIKit
 
 class Event {
     let eventName : String
-    let location: String?
+    let venue: EventVenue
     let date: String
     var dateInt: Int
     var description: String
-//    var image: UIImage?
-//    var demographic: Demographic?
     var saved: Bool?
     var website: [String]
     
-    init(eventName: String, location: String?, date: String, description: String, saved: Bool?, website: [String]) {
+    init(eventName: String, venue: EventVenue, date: String, description: String, saved: Bool?, website: [String]) {
         self.eventName = eventName
-        self.location = location
+        self.venue = venue
         self.date = date
         self.description = description
-//        self.image = image
-//        self.demographic = demographic
         self.saved = saved
         self.website = website
         self.dateInt = 0
@@ -39,3 +35,6 @@ class Event {
     }
 
 }
+
+//    var image: UIImage?
+//    var demographic: Demographic?

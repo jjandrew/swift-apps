@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */; };
+		0D45C718256953C0006DADAA /* EventVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C717256953C0006DADAA /* EventVenue.swift */; };
 		0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */; };
 		0D50F9922517692D00ADEBCF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F9912517692D00ADEBCF /* Event.swift */; };
 		0D50F99425176FE800ADEBCF /* Demographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F99325176FE800ADEBCF /* Demographic.swift */; };
@@ -70,6 +71,7 @@
 /* Begin PBXFileReference section */
 		0C80A258D6A5B234903C7B30 /* Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEventResponse.swift; sourceTree = "<group>"; };
+		0D45C717256953C0006DADAA /* EventVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVenue.swift; sourceTree = "<group>"; };
 		0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingOfSkiddle.swift; sourceTree = "<group>"; };
 		0D50F9912517692D00ADEBCF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0D50F99325176FE800ADEBCF /* Demographic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demographic.swift; sourceTree = "<group>"; };
@@ -151,6 +153,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D45C71525695396006DADAA /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				0D50F9912517692D00ADEBCF /* Event.swift */,
+				0D45C717256953C0006DADAA /* EventVenue.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		0DE4FC8125449140003FCF25 /* SkiddleEvent */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,7 +287,7 @@
 				0DF003392510C0070059BBDE /* LaunchScreen.storyboard */,
 				0DF003602510C1B20059BBDE /* APIs.swift */,
 				0D5E4E7D2550170B0056CA90 /* SortAndSearch.swift */,
-				0D50F9912517692D00ADEBCF /* Event.swift */,
+				0D45C71525695396006DADAA /* Event */,
 				0DE4FC83254491A5003FCF25 /* HandlingOfApis */,
 				0DE4FC822544917D003FCF25 /* StudhubEvent */,
 				0DE4FC8125449140003FCF25 /* SkiddleEvent */,
@@ -599,6 +610,7 @@
 				0D90D157252E3F3C00F93265 /* confirmationViewController.swift in Sources */,
 				0DE4FC7625402697003FCF25 /* TicketMasterEvent.swift in Sources */,
 				0DF003312510C0040059BBDE /* SceneDelegate.swift in Sources */,
+				0D45C718256953C0006DADAA /* EventVenue.swift in Sources */,
 				0DE4FC7E25403307003FCF25 /* HandlingOfStudhub.swift in Sources */,
 				0D90FD9E2522284C00F2C189 /* SkiddleOpeningTimes.swift in Sources */,
 				0D50F99425176FE800ADEBCF /* Demographic.swift in Sources */,
