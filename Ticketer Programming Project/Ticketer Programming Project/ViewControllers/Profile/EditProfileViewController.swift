@@ -25,12 +25,15 @@ class EditProfileViewController: UIViewController {
     
     @IBAction func confirmButton(_ sender: Any) {
         var validate = 0
+        var birthdayDate: Date? = nil
+        var age = 0
+        var name = ""
         
         let dOfB = dateOfBirthPicker.date
         let userAge = calculateAge(dOfB: dOfB)
         if userAge > 4 && userAge < 126 {
-            profile.userBirthdayDate = dOfB
-            profile.userAge = userAge
+            birthdayDate = dOfB
+            age = userAge
             let dOfBDayInt = calendar.component(.day, from: dOfB)
             var dOfBDayString = ""
             if dOfBDayInt < 10 {
@@ -47,28 +50,41 @@ class EditProfileViewController: UIViewController {
             }
             let dOfBYear = calendar.component(.year, from: dOfB)
             profile.userBirthdayString = "\(dOfBDayString)/\(dOfBMonthString)/\(dOfBYear)"
-            validate += 1
+            
         } else {
-            let alert = UIAlertController(title: "I'm sorry your age means you are not elligable for using our application", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            validate += 1
         }
         
         let validationResult = validateNameEntry(entry: nameEntryTextField.text)
         if validationResult == true {
             let nameArray = nameEntryTextField.text!.split(separator: " ")
-            profile.userName = "\(nameArray[0]) \(nameArray[1])"
-            validate += 1
+            name = "\(nameArray[0]) \(nameArray[1])"
         } else {
-            let alert = UIAlertController(title: "Please Enter more than two characters of text in each part of your name", message: "", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-            self.present(alert, animated: true)
+            validate += 2
         }
-        if validate == 2 {
+        
+        if validate == 0 {
             let alert = UIAlertController(title: "Profile successfully updated", message: "", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
+            profile.userBirthdayDate = birthdayDate!
+            profile.userAge = age
+            profile.userName = name
+            
+        } else if validate == 1 {
+            let alert = UIAlertController(title: "I'm sorry your age means you are not elligable for using our application", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else if validate == 2 {
+            let alert = UIAlertController(title: "Please Enter more than two characters of text in each part of your name", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Please Enter valid inputs for both name and age", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
         }
+        
     }
     
     func calculateAge(dOfB: Date) -> Int {
