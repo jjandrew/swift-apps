@@ -19,6 +19,7 @@ struct SkiddleEventResponse: Decodable {
         if self.error == 0 && self.results.count > 0 {
             for i in (0 ..< self.results.count) {
                 let eventName = self.results[i].eventname
+                let venue = EventVenue(name: self.results[i].venue.name, town: self.results[i].venue.town, country: self.results[i].venue.country, postCode: self.results[i].venue.postcode)
                 let dateSkiddle = self.results[i].date
                 let dateArraySkiddle = dateSkiddle.split(separator: "-")
                 let year = dateArraySkiddle[0]
@@ -27,7 +28,7 @@ struct SkiddleEventResponse: Decodable {
                 let date = "\(day)/\(month)/\(year)"
                 let description = self.results[i].description
                 let website = self.results[i].link
-                events.append(Event(eventName: eventName, location: nil, date: date, description: description, saved: nil, website: [website]))
+                events.append(Event(eventName: eventName, venue: venue, date: date, description: description, saved: nil, website: [website]))
             }
             return events
         } else {

@@ -17,6 +17,7 @@ struct StudhubEventResponse: Decodable {
         if self.events.count > 0 {
             for i in (0 ..< self.events.count) {
                 let eventName = self.events[i].name
+                let venue = EventVenue(name: self.events[i].venue.name, town: self.events[i].venue.city, country: self.events[i].venue.country, postCode: self.events[i].venue.postalCode)
                 let dateStudhub = self.events[i].eventDateUTC
                 let dateArrayStudhub = dateStudhub.split(separator: "-")
                 let year = dateArrayStudhub[0]
@@ -26,7 +27,7 @@ struct StudhubEventResponse: Decodable {
                 let date = "\(day)/\(month)/\(year)"
                 let description = self.events[i].description
                 let website = "https://www.stubhub.co.uk/\(self.events[i].webURI)"
-                events.append(Event(eventName: eventName, location: nil, date: date, description: description, saved: nil, website: [website]))
+                events.append(Event(eventName: eventName, venue: venue, date: date, description: description, saved: nil, website: [website]))
             }
             return events
         } else {

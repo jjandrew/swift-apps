@@ -19,30 +19,4 @@ struct SkiddleVenues: Codable {
     var latitude: Float
     var longitude: Float
     
-    /*
-    let city: String
-    let venueConfigName: String
-    let state: String
-    let name: String
-    let longitude: Float
-    let latitude: Float
-    let postalCode: String
-    let country:String
-     
-     "venueConfigName" : "Parking Lots - Dynamic",
-     "city" : "Cincinnati",
-     "postalCode" : "45202",
-     "state" : "OH",
-     "latitude" : 39.098002000000001,
-     "name" : "Heritage Bank Center Parking Lots",
-     "venueConfigId" : 1228705,
-     "id" : 440477,
-     "longitude" : -84.504502000000002,
-     "country" : "US"
-     
-     name, city, country, postalCode
-     
-     name, town, country, postcode
-     
-      */
 }
