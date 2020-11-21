@@ -27,6 +27,7 @@ class EditProfileViewController: UIViewController {
         var validate = 0
         var birthdayDate: Date? = nil
         var age = 0
+        var birthdayString = ""
         var name = ""
         
         let dOfB = dateOfBirthPicker.date
@@ -49,7 +50,7 @@ class EditProfileViewController: UIViewController {
                 dOfBMonthString = String(dOfBDayInt)
             }
             let dOfBYear = calendar.component(.year, from: dOfB)
-            profile.userBirthdayString = "\(dOfBDayString)/\(dOfBMonthString)/\(dOfBYear)"
+            birthdayString = "\(dOfBDayString)/\(dOfBMonthString)/\(dOfBYear)"
             
         } else {
             validate += 1
@@ -70,6 +71,7 @@ class EditProfileViewController: UIViewController {
             profile.userBirthdayDate = birthdayDate!
             profile.userAge = age
             profile.userName = name
+            profile.userBirthdayString = birthdayString
             
         } else if validate == 1 {
             let alert = UIAlertController(title: "I'm sorry your age means you are not elligable for using our application", message: "", preferredStyle: .alert)
@@ -84,7 +86,6 @@ class EditProfileViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
-        
     }
     
     func calculateAge(dOfB: Date) -> Int {
