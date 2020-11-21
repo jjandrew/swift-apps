@@ -10,11 +10,10 @@ import Foundation
 
 struct StudhubEventVenue: Decodable {
     let city: String
-    let venueConfigName: String
-    let state: String
     let name: String
     let longitude: Float
     let latitude: Float
     let postalCode: String
     let country:String
 }
+
