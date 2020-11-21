@@ -28,6 +28,12 @@ class EventViewController: UIViewController {
         navigationItem.title = event.eventName
         dateLabel.text = event.date
         descriptionLabel.text = event.description
+        venueLabel.text = """
+        \(event.venue.name)
+        \(event.venue.town)
+        \(event.venue.country)
+        \(event.venue.postCode)
+        """
         if sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).1 == true {
             savedButton.isSelected = true
         }
@@ -47,5 +53,7 @@ class EventViewController: UIViewController {
         if sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: event).1 == false {
             profile.attendingEvents.append(event)
         }
+        let website = self.event.website[0]
+        UIApplication.shared.open(URL(string: website)!)
     }
 }
