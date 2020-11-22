@@ -194,16 +194,16 @@ class SortAndSearch {
                     //demographic = events[i[.description
                     websites.append(events[i].website[0])
                     swappedPrevious = true
-                } else {
                     if description == "" {
                         description = events[i+1].description
                     }
+                } else {
                     /*
                     if image == nil {
                         image = events[i+1].image
                     }
                     */
-                    websites.append(events[i+1].website[0])
+                    websites.append(events[i].website[0])
                 }
             } else if swappedPrevious == false {
                 newEventArray.append(events[i])
@@ -224,6 +224,7 @@ class SortAndSearch {
             i += 1
         }
         if name != "" {
+            websites.append(events[i].website[0])
             newEventArray.append(Event(eventName: name, venue: location!, date: date, description: description, saved: saved, website: websites))
         } else {
             newEventArray.append(events[i])

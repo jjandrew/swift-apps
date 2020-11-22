@@ -11,10 +11,12 @@ import UIKit
 class SearchViewController: UITableViewController {
     
     var events: [Event] = []
-
+    let sortAndSearch = SortAndSearch()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.events = sortAndSearch.checkEventsAreDifferent(events: events)
+        tableView.reloadData()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -32,7 +34,6 @@ class SearchViewController: UITableViewController {
     }
     
     @IBAction func sortButton(_ sender: Any) {
-        let sortAndSearch = SortAndSearch()
         self.events = sortAndSearch.quickSortByName(array: self.events)
         tableView.reloadData()
         eventSearchStruct.events = self.events
