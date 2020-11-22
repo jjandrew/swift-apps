@@ -164,6 +164,7 @@ class SortAndSearch {
         return mergedArray
     }
     
+    
     func checkEventsAreDifferent(events: [Event]) -> [Event] {
         var i = 0
         var swappedPrevious = false
@@ -177,7 +178,6 @@ class SortAndSearch {
         //demographic = nil
         var websites: [String] = []
         var saved = false
-        var attending = false
 
         while i < events.count - 2 {
             if (events[i].eventName == events[i+1].eventName) && (events[i].date == events[i+1].date) {
@@ -191,7 +191,7 @@ class SortAndSearch {
                     websites.append(events[i].website[0])
                     swappedPrevious = true
                 } else {
-                    if description == nil {
+                    if description == "" {
                         description = events[i+1].description
                     }
                     /*
@@ -208,7 +208,6 @@ class SortAndSearch {
             } else {
                 //demographic = checkDemographic(event)
                 saved = eventLinearSearch(events: profile.savedEvents, searchEvent: events[i]).1
-                attending = eventLinearSearch(events: profile.attendingEvents, searchEvent: events[i]).1
                 newEventArray.append(Event(eventName: name, venue: location!, date: date, description: description, saved: saved, website: websites))
                 
                 name = ""
@@ -225,3 +224,6 @@ class SortAndSearch {
         return newEventArray
     }
 }
+
+
+

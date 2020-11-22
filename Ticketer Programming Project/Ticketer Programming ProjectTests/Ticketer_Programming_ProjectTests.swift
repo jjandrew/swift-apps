@@ -11,6 +11,8 @@ import XCTest
 
 class Ticketer_Programming_ProjectTests: XCTestCase {
 
+    let website: [String] = []
+    
     func testUrlCreatorReturnsCorrectStringWhenSearchTermIsProvided() {
         let handlingOfSkiddle = HandlingOfSkiddle()
         let search = "vivaldi"
@@ -83,12 +85,12 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         let actual = NameEntryViewController.validateTextEntry(entry: name)
         XCTAssertEqual(expected, actual)
     }
-    
+    /*
     func testQuickSort() {
         let sortAndSearch = SortAndSearch()
-        let test1Data = [Event(eventName: "event1", location: nil, date: "", description: "", saved: nil, website: [])]
+        let test1Data: [Event] = [Event(eventName: "event1", venue: nil, date: "", description: "", saved: nil, website: website)]
         let test1Actual = sortAndSearch.quickSortByName(array: test1Data)
-        let test1Expected = [Event(eventName: "event1", location: nil, date: "", description: "", saved: nil, website: [])]
+        let test1Expected = [Event(eventName: "event1", venue: nil, date: "", description: "", saved: nil, website: website)]
         for event in test1Actual {
             print(event.eventName)
         }
@@ -98,9 +100,9 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         }
         print("")
         
-        let test2Data = [Event(eventName: "bba", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bbb", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abc", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "", description: "", saved: nil, website: [])]
+        let test2Data = [Event(eventName: "bba", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bbb", location: nil, date: "", description: "", saved: nil, website: website), Event(eventName: "abc", location: nil, date: "", description: "", saved: nil, website: website), Event(eventName: "abd", location: nil, date: "", description: "", saved: nil, website: website)]
         let test2Actual = sortAndSearch.quickSortByName(array: test2Data)
-        let test2Expected = [Event(eventName: "abc", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bba", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "bbb", location: nil, date: "", description: "", saved: nil, website: [])]
+        let test2Expected = [Event(eventName: "abc", location: nil, date: "", description: "", saved: nil, website: []), Event(eventName: "abd", location: nil, date: "", description: "", saved: nil, website: website), Event(eventName: "bba", location: nil, date: "", description: "", saved: nil, website: website), Event(eventName: "bbb", location: nil, date: "", description: "", saved: nil, website: website)]
         for event in test2Actual {
             print(event.eventName)
         }
@@ -323,6 +325,7 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
  */
     func testmergeSortByDateWorks() {
         let sortAndSearch = SortAndSearch()
+        
             let test1Data = [Event(eventName: "event1", location: nil, date: "28/03/2021", description: "", saved: nil, website: [])]
         let test1Actual = sortAndSearch.mergeSortByDate(array: test1Data)
             let test1Expected = [Event(eventName: "event1", location: nil, date: "28/03/2021", description: "", saved: nil, website: [])]
@@ -370,5 +373,97 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
                 print(event.date)
             }
     }
+    */
     
+    func testCheckEventsAreEqualForOneEvent() {
+        let sortAndSearch = SortAndSearch()
+        
+        let enteredEvents = [Event(eventName: "testVenue1", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "01/01/2001", description: "description1", saved: false, website: ["www.test.com"])]
+        
+        let actual = sortAndSearch.checkEventsAreDifferent(events: enteredEvents)
+        
+        print("""
+            Test 1
+            \(actual[0].eventName)
+            \(actual[0].date)
+            \(actual[0].venue.name)
+            \(String(describing: actual[0].saved))
+            \(actual[0].description)
+            \(actual[0].website)
+        """)
+    }
+    
+    func testCheckEventsAreEqualWhen3EventsInARowAreEqualAndTheFirstIsDifferent() {
+        let sortAndSearch = SortAndSearch()
+        
+        let enteredEvents = [Event(eventName: "testVenue1", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "01/01/2001", description: "description1", saved: false, website: ["www.test1.com"]),
+            Event(eventName: "testVenue2", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "02/01/2001", description: "description2", saved: false, website: ["www.test2.com"]),
+            Event(eventName: "testVenue2", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "02/01/2001", description: "description2", saved: false, website: ["www.test3.com"]),
+            Event(eventName: "testVenue2", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "02/01/2001", description: "description2", saved: false, website: ["www.test4.com"])]
+        
+        let actual = sortAndSearch.checkEventsAreDifferent(events: enteredEvents)
+        
+        print("Test 2")
+        for i in (0...actual.count - 1) {
+            print("""
+            event \(i)
+            \(actual[i].eventName)
+            \(actual[i].date)
+            \(actual[i].venue.name)
+            \(String(describing: actual[i].saved))
+            \(actual[i].description)
+            \(actual[i].website)
+            """)
+        }
+    }
+    
+    func testCheckEventsAreEqualWhenAllEventAreDifferent() {
+        let sortAndSearch = SortAndSearch()
+        
+        let enteredEvents = [Event(eventName: "testVenue1", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "01/01/2001", description: "description1", saved: false, website: ["www.test1.com"]),
+            Event(eventName: "testVenue2", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "02/01/2001", description: "description2", saved: false, website: ["www.test2.com"]),
+            Event(eventName: "testVenue3", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "03/01/2001", description: "description3", saved: false, website: ["www.test3.com"]),
+            Event(eventName: "testVenue4", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "04/01/2001", description: "description4", saved: false, website: ["www.test4.com"])]
+        
+        let actual = sortAndSearch.checkEventsAreDifferent(events: enteredEvents)
+        
+        print("Test 3")
+        for i in (0...actual.count - 1) {
+            print("""
+            event \(i)
+            \(actual[i].eventName)
+            \(actual[i].date)
+            \(actual[i].venue.name)
+            \(String(describing: actual[i].saved))
+            \(actual[i].description)
+            \(actual[i].website)
+            """)
+        }
+    }
+    
+    func testCheckEventsAreEqualWhenAllEventAreTheSameAndOnlyOneHasADescription() {
+        let sortAndSearch = SortAndSearch()
+        
+        let enteredEvents = [Event(eventName: "testVenue1", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "01/01/2001", description: "", saved: false, website: ["www.test1.com"]),
+            Event(eventName: "testVenue1", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "01/01/2001", description: "description1", saved: false, website: ["www.test2.com"]),
+            Event(eventName: "testVenue1", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "01/01/2001", description: "", saved: false, website: ["www.test3.com"]),
+            Event(eventName: "testVenue1", venue: EventVenue(name: "venueName", town: "venueTown", country: "venueCounty", postCode: "venuePostcode"), date: "01/01/2001", description: "", saved: false, website: ["www.test4.com"])]
+        
+        let actual = sortAndSearch.checkEventsAreDifferent(events: enteredEvents)
+        
+        print("Test 3")
+        var i  = 0
+        for event in actual {
+            print("""
+            \(i)
+            \(event.eventName)
+            \(event.date)
+            \(event.venue.name)
+            \(String(describing: event.saved))
+            \(event.description)
+            \(event.website)
+            """)
+            i += 1
+        }
+    }
 }
