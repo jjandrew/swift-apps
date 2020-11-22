@@ -30,6 +30,9 @@ struct SkiddleEventResponse: Decodable {
                 let website = self.results[i].link
                 events.append(Event(eventName: eventName, venue: venue, date: date, description: description, saved: nil, website: [website]))
             }
+            for event in events {
+                event.dateIntConversion()
+            }
             return events
         } else {
             return []

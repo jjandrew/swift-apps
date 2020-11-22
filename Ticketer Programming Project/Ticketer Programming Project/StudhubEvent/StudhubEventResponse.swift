@@ -29,6 +29,9 @@ struct StudhubEventResponse: Decodable {
                 let website = "https://www.stubhub.co.uk/\(self.events[i].webURI)"
                 events.append(Event(eventName: eventName, venue: venue, date: date, description: description, saved: nil, website: [website]))
             }
+            for event in events {
+                event.dateIntConversion()
+            }
             return events
         } else {
             return []

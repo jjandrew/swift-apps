@@ -8,7 +8,22 @@
 
 import Foundation
 
-class EventVenue {
+class EventVenue: NSObject, NSCoding {
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(name, forKey: "name")
+        coder.encode(town, forKey: "town")
+        coder.encode(country, forKey: "country")
+        coder.encode(postCode, forKey: "postCode")
+    }
+    
+    required init?(coder: NSCoder) {
+        name = coder.decodeObject(forKey: "name") as? String ?? ""
+        town = coder.decodeObject(forKey: "town") as? String ?? ""
+        country = coder.decodeObject(forKey: "country") as? String ?? ""
+        postCode = coder.decodeObject(forKey: "postCode") as? String ?? ""
+    }
+    
     let name: String
     let town: String
     let country: String

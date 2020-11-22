@@ -388,7 +388,7 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
             \(actual[0].date)
             \(actual[0].venue.name)
             \(String(describing: actual[0].saved))
-            \(actual[0].description)
+            \(actual[0].summary)
             \(actual[0].website)
         """)
     }
@@ -412,7 +412,7 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
             \(actual[i].date)
             \(actual[i].venue.name)
             \(String(describing: actual[i].saved))
-            \(actual[i].description)
+            \(actual[i].summary)
             \(actual[i].website)
             """)
         }
@@ -437,7 +437,7 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
             \(actual[i].date)
             \(actual[i].venue.name)
             \(String(describing: actual[i].saved))
-            \(actual[i].description)
+            \(actual[i].summary)
             \(actual[i].website)
             """)
         }
@@ -463,7 +463,7 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
             \(event.date)
             \(event.venue.name)
             \(String(describing: event.saved))
-            \(event.description)
+            \(event.summary)
             \(event.website)
             """)
             i += 1

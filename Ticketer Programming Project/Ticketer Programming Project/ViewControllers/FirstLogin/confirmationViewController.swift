@@ -23,9 +23,12 @@ class confirmationViewController: UIViewController {
     
     @IBAction func confirmButton(_ sender: Any) {
         profile.loggedIn = true
+        let defaults = UserDefaults.standard
+        if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+            defaults.set(convertedProfile, forKey: "savedProfile")
+        }
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         performSegue(withIdentifier: "confirmToHome", sender: self)
-        //save profile to local storage
     }
     
 }

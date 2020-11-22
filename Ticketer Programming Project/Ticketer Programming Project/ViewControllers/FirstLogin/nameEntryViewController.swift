@@ -7,6 +7,7 @@
 //
 
 import UIKit
+var profile: Profile = Profile()
 
 class nameEntryViewController: UIViewController {
 
@@ -14,9 +15,10 @@ class nameEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //see if profile can be loaded up
-        if profile.loggedIn == true {
-            self.navigationController?.setNavigationBarHidden(true, animated: false)
+        let defaults = UserDefaults.standard
+        if let savedProfile = defaults.object(forKey: "savedProfile") {
+            profile = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedProfile as! Data) as! Profile
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
             performSegue(withIdentifier: "nameToHome", sender: self)
         }
     }

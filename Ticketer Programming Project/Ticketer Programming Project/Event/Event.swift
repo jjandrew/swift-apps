@@ -9,12 +9,33 @@
 import Foundation
 import UIKit
 
-class Event {
+class Event: NSObject, NSCoding {
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(eventName, forKey: "eventName")
+        coder.encode(venue, forKey: "venue")
+        coder.encode(date, forKey: "date")
+        coder.encode(dateInt, forKey: "dateInt")
+        coder.encode(summary, forKey: "summary")
+        coder.encode(saved, forKey: "saved")
+        coder.encode(website, forKey: "website")
+    }
+    
+    required init?(coder: NSCoder) {
+        eventName = coder.decodeObject(forKey: "eventName") as? String ?? ""
+        venue = coder.decodeObject(forKey: "venue") as! EventVenue
+        date = coder.decodeObject(forKey: "date") as? String ?? ""
+        dateInt = coder.decodeObject(forKey: "dateInt") as? Int ?? 0
+        summary = coder.decodeObject(forKey: "summary") as? String ?? ""
+        saved = coder.decodeObject(forKey: "saved") as? Bool? ?? false
+        website = coder.decodeObject(forKey: "website") as? [String] ?? []
+    }
+    
     let eventName : String
     let venue: EventVenue
     let date: String
     var dateInt: Int
-    var description: String
+    var summary: String
     var saved: Bool?
     var website: [String]
     
@@ -22,19 +43,14 @@ class Event {
         self.eventName = eventName
         self.venue = venue
         self.date = date
-        self.description = description
+        self.summary = description
         self.saved = saved
         self.website = website
         self.dateInt = 0
-        dateIntConversion()
     }
     
     func dateIntConversion() {
         let dateArray = self.date.split(separator: "/")
         self.dateInt = Int(dateArray[2]+dateArray[1]+dateArray[0])!
     }
-
 }
-
-//    var image: UIImage?
-//    var demographic: Demographic?

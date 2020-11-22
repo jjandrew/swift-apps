@@ -8,25 +8,45 @@
 
 import Foundation
 
-struct profile {
-    static var userName: String = ""
-    static var userBirthdayDate = Date()
-    static var userBirthdayString: String = ""
-    static var userGender: String = ""
-    static var userLocation: String? = nil
-    static var userAge: Int? = nil
-    static var savedEvents: [Event] = []
-    static var attendingEvents: [Event] = []
-    static var loggedIn: Bool = false
+class Profile: NSObject, NSCoding {
+    // Initialise in first login
     
-    func changeName(newName: String) {
+    func encode(with coder: NSCoder) {
+        coder.encode(userName, forKey: "userName")
+        coder.encode(userBirthdayDate, forKey: "userBirthdayDate")
+        coder.encode(userBirthdayString, forKey: "userBirthdayString")
+        coder.encode(userGender, forKey: "userGender")
+        coder.encode(userLocation, forKey: "userLocation")
+        coder.encode(userAge, forKey: "userAge")
+        coder.encode(savedEvents, forKey: "savedEvents")
+        coder.encode(attendingEvents, forKey: "attendingEvents")
+        coder.encode(loggedIn, forKey: "loggedIn")
     }
-    func changeBirthday(newBirthday: String) {
+    
+    required init?(coder: NSCoder) {
+        userName = coder.decodeObject(forKey: "userName") as? String ?? ""
+        userBirthdayDate = coder.decodeObject(forKey: "userBirthdayDate") as? Date ?? Date()
+        userBirthdayString = coder.decodeObject(forKey: "userBirthdayString") as? String ?? ""
+        userGender = coder.decodeObject(forKey: "userGender") as? String ?? ""
+        userLocation = coder.decodeObject(forKey: "userLocation") as? String? ?? ""
+        userAge = coder.decodeObject(forKey: "userAge") as? Int? ?? 0
+        savedEvents = coder.decodeObject(forKey: "savedEvents") as? [Event] ?? []
+        attendingEvents = coder.decodeObject(forKey: "attendingEvents") as? [Event] ?? []
+        loggedIn = coder.decodeObject(forKey: "loggedIn") as? Bool ?? false
     }
-    func changeGender(newGender: String) {
+    
+    override init() {
     }
-    func changeAge() {
-    }
+    
+    var userName: String = ""
+    var userBirthdayDate = Date()
+    var userBirthdayString: String = ""
+    var userGender: String = ""
+    var userLocation: String? = nil
+    var userAge: Int? = nil
+    var savedEvents: [Event] = []
+    var attendingEvents: [Event] = []
+    var loggedIn: Bool = false
     
 }
 
