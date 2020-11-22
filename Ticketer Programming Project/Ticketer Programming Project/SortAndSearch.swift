@@ -163,5 +163,65 @@ class SortAndSearch {
         }
         return mergedArray
     }
+    
+    func checkEventsAreDifferent(events: [Event]) -> [Event] {
+        var i = 0
+        var swappedPrevious = false
+        var newEventArray: [Event] = []
+        
+        var name = ""
+        var date = ""
+        var location: EventVenue? = nil
+        var description = ""
+        //image = nil
+        //demographic = nil
+        var websites: [String] = []
+        var saved = false
+        var attending = false
 
+        while i < events.count - 2 {
+            if (events[i].eventName == events[i+1].eventName) && (events[i].date == events[i+1].date) {
+                if swappedPrevious == false {
+                    name = events[i].eventName
+                    date = events[i].date
+                    location = events[i].venue
+                    description = events[i].description
+                    //image = events[i].image
+                    //demographic = events[i[.description
+                    websites.append(events[i].website[0])
+                    swappedPrevious = true
+                } else {
+                    if description == nil {
+                        description = events[i+1].description
+                    }
+                    /*
+                    if image == nil {
+                        image = events[i+1].image
+                    }
+                    */
+                    websites.append(events[i+1].website[0])
+                }
+            } else if i == 0 {
+                newEventArray.append(events[i])
+            } else if (events[i].eventName != events[i+1].eventName) && (events[i].eventName != events[i-1].eventName) {
+                newEventArray.append(events[i])
+            } else {
+                //demographic = checkDemographic(event)
+                saved = eventLinearSearch(events: profile.savedEvents, searchEvent: events[i]).1
+                attending = eventLinearSearch(events: profile.attendingEvents, searchEvent: events[i]).1
+                newEventArray.append(Event(eventName: name, venue: location!, date: date, description: description, saved: saved, website: websites))
+                
+                name = ""
+                date = ""
+                location = nil
+                description = ""
+                //image = nil
+                //demographic = nil
+                websites = []
+                swappedPrevious = false
+            }
+            i += 1
+        }
+        return newEventArray
+    }
 }
