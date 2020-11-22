@@ -406,6 +406,7 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         print("Test 2")
         for i in (0...actual.count - 1) {
             print("""
+                
             event \(i)
             \(actual[i].eventName)
             \(actual[i].date)
@@ -430,6 +431,7 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         print("Test 3")
         for i in (0...actual.count - 1) {
             print("""
+                
             event \(i)
             \(actual[i].eventName)
             \(actual[i].date)
@@ -451,10 +453,11 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         
         let actual = sortAndSearch.checkEventsAreDifferent(events: enteredEvents)
         
-        print("Test 3")
+        print("Test 4")
         var i  = 0
         for event in actual {
             print("""
+                
             \(i)
             \(event.eventName)
             \(event.date)

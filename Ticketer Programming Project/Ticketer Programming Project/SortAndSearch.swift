@@ -179,7 +179,11 @@ class SortAndSearch {
         var websites: [String] = []
         var saved = false
 
-        while i < events.count - 2 {
+        if events.count == 1 {
+            return events
+        }
+        
+        while i != events.count - 1 {
             if (events[i].eventName == events[i+1].eventName) && (events[i].date == events[i+1].date) {
                 if swappedPrevious == false {
                     name = events[i].eventName
@@ -201,9 +205,7 @@ class SortAndSearch {
                     */
                     websites.append(events[i+1].website[0])
                 }
-            } else if i == 0 {
-                newEventArray.append(events[i])
-            } else if (events[i].eventName != events[i+1].eventName) && (events[i].eventName != events[i-1].eventName) {
+            } else if swappedPrevious == false {
                 newEventArray.append(events[i])
             } else {
                 //demographic = checkDemographic(event)
@@ -220,6 +222,11 @@ class SortAndSearch {
                 swappedPrevious = false
             }
             i += 1
+        }
+        if name != "" {
+            newEventArray.append(Event(eventName: name, venue: location!, date: date, description: description, saved: saved, website: websites))
+        } else {
+            newEventArray.append(events[i])
         }
         return newEventArray
     }
