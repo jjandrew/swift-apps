@@ -47,11 +47,19 @@ class EventViewController: UIViewController {
             savedButton.isSelected = true
             profile.savedEvents.append(event)
         }
+        let defaults = UserDefaults.standard
+        if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+            defaults.set(convertedProfile, forKey: "savedProfile")
+        }
     }
     
     @IBAction func purchaseAction(_ sender: Any) {
         if sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: event).1 == false {
             profile.attendingEvents.append(event)
+        }
+        let defaults = UserDefaults.standard
+        if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+            defaults.set(convertedProfile, forKey: "savedProfile")
         }
         let website = self.event.website[0]
         UIApplication.shared.open(URL(string: website)!)
