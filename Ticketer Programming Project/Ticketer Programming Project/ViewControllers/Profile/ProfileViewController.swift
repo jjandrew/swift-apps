@@ -73,7 +73,7 @@ class ProfileViewController: UIViewController {
             leftHandInterestedEvent.text = """
             \(profile.savedEvents[index].eventName)
             
-            Venue
+            \(profile.savedEvents[index].venue.name)
             
             \(profile.savedEvents[index].date)
             """
@@ -81,7 +81,7 @@ class ProfileViewController: UIViewController {
             rightHandInterestedEvent.text = """
             \(profile.savedEvents[index+1].eventName)
             
-            Venue
+            \(profile.savedEvents[index+1].venue.name)
             
             \(profile.savedEvents[index+1].date)
             """
@@ -89,7 +89,7 @@ class ProfileViewController: UIViewController {
             leftHandInterestedEvent.text = """
             \(profile.savedEvents[index].eventName)
             
-            Venue
+            \(profile.savedEvents[index].venue.name)
             
             \(profile.savedEvents[index].date)
             """
@@ -135,7 +135,7 @@ class ProfileViewController: UIViewController {
             leftHandAttendingEvent.text = """
             \(profile.attendingEvents[index].eventName)
             
-            Venue
+            \(profile.attendingEvents[index].venue.name)
             
             \(profile.attendingEvents[index].date)
             """
@@ -143,7 +143,7 @@ class ProfileViewController: UIViewController {
             rightHandAttendingEvent.text = """
             \(profile.attendingEvents[index+1].eventName)
             
-            Venue
+            \(profile.attendingEvents[index+1].venue.name)
             
             \(profile.attendingEvents[index+1].date)
             """
@@ -151,7 +151,7 @@ class ProfileViewController: UIViewController {
             leftHandAttendingEvent.text = """
             \(profile.attendingEvents[index].eventName)
             
-            Venue
+            \(profile.attendingEvents[index].venue.name)
             
             \(profile.attendingEvents[index].date)
             """
