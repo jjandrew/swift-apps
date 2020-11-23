@@ -34,6 +34,7 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkEventDates()
         savedIndex = 0
         attendingIndex = 0
         displaySavedEvents(index: savedIndex)
@@ -264,6 +265,51 @@ class HomeScreenViewController: UIViewController {
             nextAttendingEvent.isEnabled = false
         } else {
             nextAttendingEvent.isEnabled = true
+        }
+        
+        func checkEventDates() {
+            let currentDate = Date()
+            let calendar = Calendar.current
+            let currentDayInt = calendar.component(.day, from: currentDate)
+            let currentMonthInt = calendar.component(.month, from: currentDate)
+            let currentYearInt = calendar.component(.year, from: currentDate)
+            
+            var currentDayString = ""
+            if currentDayInt < 10 {
+                currentDayString = "0\(currentDayInt)"
+            } else {
+                currentBDayString = String(currentDayInt)
+            }
+            
+            var currentMonthString = ""
+            if currentMonthInt < 10 {
+                currentMonthString = "0\(currentMonthInt)"
+            } else {
+                currentMonthString = String(currentDayInt)
+            }
+            
+            let currentDateString = "\(currentDayString)/\(currentMonthString)/\(currentYearInt)"
+            let currentDateInt = Int(currentDateString)
+            
+            for i in (0..<profile.savedEvents.count) {
+                if currentDayInt > profile.savedEvents[i].dateInt {
+                    profile.savedEvents.remove(at: i)
+                    let defaults = UserDefaults.standard
+                    if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+                        defaults.set(convertedProfile, forKey: "savedProfile")
+                    }
+                }
+            }
+            for i in (0..<profile.attendingEvents.count) {
+                if currentDayInt > profile.attendingEvents[i].dateInt {
+                    profile.attendingEvents.remove(at: i)
+                    let defaults = UserDefaults.standard
+                    if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+                        defaults.set(convertedProfile, forKey: "savedProfile")
+                    }
+                }
+            }
+            
         }
     }
     
