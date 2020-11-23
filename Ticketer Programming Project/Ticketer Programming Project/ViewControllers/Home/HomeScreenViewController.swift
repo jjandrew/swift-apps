@@ -34,6 +34,23 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        profile.savedEvents = []
+        profile.attendingEvents = []
+        profile.savedEvents.append(Event(eventName: "Test Event 1", venue: EventVenue(name: "Test Venue 1", town: "", country: "", postCode: ""), date: "22/10/2021", description: "", saved: true, website: []))
+        profile.savedEvents.append(Event(eventName: "Test Event 2", venue: EventVenue(name: "Test Venue 2", town: "", country: "", postCode: ""), date: "22/10/2020", description: "", saved: true, website: []))
+        profile.savedEvents.append(Event(eventName: "Test Event 3", venue: EventVenue(name: "Test Venue 3", town: "", country: "", postCode: ""), date: "22/10/2021", description: "", saved: true, website: []))
+        for event in profile.savedEvents {
+            event.dateIntConversion()
+        }
+        
+        profile.attendingEvents.append(Event(eventName: "Test Event 4", venue: EventVenue(name: "Test Venue 4", town: "", country: "", postCode: ""), date: "22/10/2020", description: "", saved: false, website: []))
+        profile.attendingEvents.append(Event(eventName: "Test Event 5", venue: EventVenue(name: "Test Venue 5", town: "", country: "", postCode: ""), date: "23/11/2021", description: "", saved: false, website: []))
+        profile.attendingEvents.append(Event(eventName: "Test Event 6", venue: EventVenue(name: "Test Venue 6", town: "", country: "", postCode: ""), date: "22/10/2020", description: "", saved: false, website: []))
+        for event in profile.attendingEvents {
+            event.dateIntConversion()
+        }
+        
+        
         checkEventDates()
         savedIndex = 0
         attendingIndex = 0
@@ -293,25 +310,36 @@ class HomeScreenViewController: UIViewController {
         let currentDateInt = Int(currentDateString)
         
         if profile.savedEvents.count > 0 {
+            var removeAt: [Int] = []
             for i in (0..<profile.savedEvents.count) {
                 if currentDateInt! > profile.savedEvents[i].dateInt {
-                    profile.savedEvents.remove(at: i)
-                    let defaults = UserDefaults.standard
-                    if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
-                        defaults.set(convertedProfile, forKey: "savedProfile")
-                    }
+                    removeAt.append(i)
                 }
             }
+            removeAt.reverse()
+            for i in removeAt {
+                profile.savedEvents.remove(at: i)
+                let defaults = UserDefaults.standard
+                if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+                    defaults.set(convertedProfile, forKey: "savedProfile")
+                }
+            }
+
         }
         
         if profile.attendingEvents.count > 0 {
+            var removeAt: [Int] = []
             for i in (0..<profile.attendingEvents.count) {
                 if currentDateInt! > profile.attendingEvents[i].dateInt {
-                    profile.attendingEvents.remove(at: i)
-                    let defaults = UserDefaults.standard
-                    if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
-                        defaults.set(convertedProfile, forKey: "savedProfile")
-                    }
+                    removeAt.append(i)
+                }
+            }
+            removeAt.reverse()
+            for i in removeAt {
+                profile.attendingEvents.remove(at: i)
+                let defaults = UserDefaults.standard
+                if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+                    defaults.set(convertedProfile, forKey: "savedProfile")
                 }
             }
         }
