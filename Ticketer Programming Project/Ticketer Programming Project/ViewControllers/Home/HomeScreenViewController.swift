@@ -34,23 +34,6 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profile.savedEvents = []
-        profile.attendingEvents = []
-        profile.savedEvents.append(Event(eventName: "Test Event 1", venue: EventVenue(name: "Test Venue 1", town: "", country: "", postCode: ""), date: "22/10/2021", description: "", saved: true, website: []))
-        profile.savedEvents.append(Event(eventName: "Test Event 2", venue: EventVenue(name: "Test Venue 2", town: "", country: "", postCode: ""), date: "22/10/2020", description: "", saved: true, website: []))
-        profile.savedEvents.append(Event(eventName: "Test Event 3", venue: EventVenue(name: "Test Venue 3", town: "", country: "", postCode: ""), date: "22/10/2021", description: "", saved: true, website: []))
-        for event in profile.savedEvents {
-            event.dateIntConversion()
-        }
-        
-        profile.attendingEvents.append(Event(eventName: "Test Event 4", venue: EventVenue(name: "Test Venue 4", town: "", country: "", postCode: ""), date: "22/10/2020", description: "", saved: false, website: []))
-        profile.attendingEvents.append(Event(eventName: "Test Event 5", venue: EventVenue(name: "Test Venue 5", town: "", country: "", postCode: ""), date: "23/11/2021", description: "", saved: false, website: []))
-        profile.attendingEvents.append(Event(eventName: "Test Event 6", venue: EventVenue(name: "Test Venue 6", town: "", country: "", postCode: ""), date: "22/10/2020", description: "", saved: false, website: []))
-        for event in profile.attendingEvents {
-            event.dateIntConversion()
-        }
-        
-        
         checkEventDates()
         savedIndex = 0
         attendingIndex = 0
