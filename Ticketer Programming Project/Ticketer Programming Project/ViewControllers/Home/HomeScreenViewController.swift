@@ -266,51 +266,51 @@ class HomeScreenViewController: UIViewController {
         } else {
             nextAttendingEvent.isEnabled = true
         }
+    }
         
-        func checkEventDates() {
-            let currentDate = Date()
-            let calendar = Calendar.current
-            let currentDayInt = calendar.component(.day, from: currentDate)
-            let currentMonthInt = calendar.component(.month, from: currentDate)
-            let currentYearInt = calendar.component(.year, from: currentDate)
-            
-            var currentDayString = ""
-            if currentDayInt < 10 {
-                currentDayString = "0\(currentDayInt)"
-            } else {
-                currentDayString = String(currentDayInt)
-            }
-            
-            var currentMonthString = ""
-            if currentMonthInt < 10 {
-                currentMonthString = "0\(currentMonthInt)"
-            } else {
-                currentMonthString = String(currentDayInt)
-            }
-            
-            let currentDateString = String(currentYearInt) + currentMonthString + currentDayString
-            let currentDateInt = Int(currentDateString)
-            
-            if profile.savedEvents.count > 0 {
-                for i in (0..<profile.savedEvents.count) {
-                    if currentDateInt > profile.savedEvents[i].dateInt {
-                        profile.savedEvents.remove(at: i)
-                        let defaults = UserDefaults.standard
-                        if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
-                            defaults.set(convertedProfile, forKey: "savedProfile")
-                        }
+    func checkEventDates() {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let currentDayInt = calendar.component(.day, from: currentDate)
+        let currentMonthInt = calendar.component(.month, from: currentDate)
+        let currentYearInt = calendar.component(.year, from: currentDate)
+        
+        var currentDayString = ""
+        if currentDayInt < 10 {
+            currentDayString = "0\(currentDayInt)"
+        } else {
+            currentDayString = String(currentDayInt)
+        }
+        
+        var currentMonthString = ""
+        if currentMonthInt < 10 {
+            currentMonthString = "0\(currentMonthInt)"
+        } else {
+            currentMonthString = String(currentDayInt)
+        }
+        
+        let currentDateString = String(currentYearInt) + currentMonthString + currentDayString
+        let currentDateInt = Int(currentDateString)
+        
+        if profile.savedEvents.count > 0 {
+            for i in (0..<profile.savedEvents.count) {
+                if currentDateInt! > profile.savedEvents[i].dateInt {
+                    profile.savedEvents.remove(at: i)
+                    let defaults = UserDefaults.standard
+                    if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+                        defaults.set(convertedProfile, forKey: "savedProfile")
                     }
                 }
             }
-            
-            if profile.attendingEvents.count > 0 {
-                for i in (0..<profile.attendingEvents.count) {
-                    if currentDateInt > profile.attendingEvents[i].dateInt {
-                        profile.attendingEvents.remove(at: i)
-                        let defaults = UserDefaults.standard
-                        if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
-                            defaults.set(convertedProfile, forKey: "savedProfile")
-                        }
+        }
+        
+        if profile.attendingEvents.count > 0 {
+            for i in (0..<profile.attendingEvents.count) {
+                if currentDateInt! > profile.attendingEvents[i].dateInt {
+                    profile.attendingEvents.remove(at: i)
+                    let defaults = UserDefaults.standard
+                    if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+                        defaults.set(convertedProfile, forKey: "savedProfile")
                     }
                 }
             }
