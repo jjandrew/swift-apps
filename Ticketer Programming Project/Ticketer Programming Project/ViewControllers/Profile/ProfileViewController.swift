@@ -43,10 +43,18 @@ class ProfileViewController: UIViewController {
         genderLabel.text = "Gender: \(profile.userGender)"
     }
     
-    
-    @IBAction func editProfileButton(_ sender: Any) {
-    }
     @IBAction func interestedMoreButtonAction(_ sender: Any) {
+        if profile.savedEvents.count > 0 {
+            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "interestedTableView") as? SavedEventsTableViewController else {
+                fatalError("Could not load view controller from storyboard")
+            }
+            viewController.events = profile.savedEvents
+            self.navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            let alert = UIAlertController(title: "You have not added any saved events", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
     @IBAction func interestedPrevButton(_ sender: Any) {
         savedIndex -= 1
@@ -57,6 +65,17 @@ class ProfileViewController: UIViewController {
         displaySavedEvents(index: savedIndex)
     }
     @IBAction func attendingMoreButtonAction(_ sender: Any) {
+        if profile.attendingEvents.count > 0 {
+            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "attendingTableView") as? AttendingEventsTableViewController else {
+            fatalError("Could not load view controller from storyboard")
+            }
+            viewController.events = profile.attendingEvents
+            self.navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            let alert = UIAlertController(title: "You do not have any attending events", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
     }
     
     @IBAction func attendingPrevButton(_ sender: Any) {
