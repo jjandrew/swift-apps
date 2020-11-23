@@ -44,5 +44,19 @@ class SavedEventsTableViewController: UITableViewController {
         viewController.event = events[indexPath.row]
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let sortAndSearch = SortAndSearch()
+            profile.savedEvents.remove(at: sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: events[indexPath.row]).0!)
+            self.events = profile.savedEvents
+            tableView.reloadData()
+            
+            let defaults = UserDefaults.standard
+            if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+                defaults.set(convertedProfile, forKey: "savedProfile")
+            }
+        }
+    }
 
 }

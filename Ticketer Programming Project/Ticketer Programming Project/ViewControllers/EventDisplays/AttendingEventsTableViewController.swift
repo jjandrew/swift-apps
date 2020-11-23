@@ -45,4 +45,18 @@ class AttendingEventsTableViewController: UITableViewController {
         viewController.event = events[indexPath.row]
         self.navigationController?.pushViewController(viewController, animated: true)
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let sortAndSearch = SortAndSearch()
+            profile.attendingEvents.remove(at: sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: events[indexPath.row]).0!)
+            self.events = profile.attendingEvents
+            tableView.reloadData()
+            
+            let defaults = UserDefaults.standard
+            if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
+                defaults.set(convertedProfile, forKey: "savedProfile")
+            }
+        }
+    }
 }
