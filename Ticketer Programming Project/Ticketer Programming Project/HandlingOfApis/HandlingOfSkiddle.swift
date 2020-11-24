@@ -30,9 +30,9 @@ class HandlingOfSkiddle {
         return url
     }
     
-    func createUrlForLocation(term: String?) -> String? {
+    func createUrlForLocation() -> String? {
         if profile.userLatitude != nil {
-            let path = "&latitude=\(String(describing: profile.userLatitude))&longitude=\(String(describing: profile.userLongitude))&radius=20&order=date&description=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let path = "&latitude=\(profile.userLatitude!)&longitude=\( profile.userLongitude!)&radius=20&order=date&description=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             
             let url = baseUrl + apiKey + path
             return url

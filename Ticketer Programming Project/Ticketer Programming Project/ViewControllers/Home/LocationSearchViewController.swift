@@ -23,6 +23,8 @@ class LocationSearchViewController: UIViewController {
     }
     
     @IBAction func searchByTextEntry(_ sender: Any) {
+        let handlingOfSkiddle = HandlingOfSkiddle()
+        print(handlingOfSkiddle.createUrlForLocation()!)
     }
     
     @IBAction func searchByCurrentLocation(_ sender: Any) {
