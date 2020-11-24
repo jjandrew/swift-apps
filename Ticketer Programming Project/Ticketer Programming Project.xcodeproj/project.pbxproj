@@ -10,6 +10,7 @@
 		0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */; };
 		0D45C718256953C0006DADAA /* EventVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C717256953C0006DADAA /* EventVenue.swift */; };
 		0D45C71A256D78A5006DADAA /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C719256D78A5006DADAA /* LocationManagerDelegate.swift */; };
+		0D45C71C256D9672006DADAA /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C71B256D9672006DADAA /* LocationSearchViewController.swift */; };
 		0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */; };
 		0D50F9922517692D00ADEBCF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F9912517692D00ADEBCF /* Event.swift */; };
 		0D50F99425176FE800ADEBCF /* Demographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F99325176FE800ADEBCF /* Demographic.swift */; };
@@ -74,6 +75,7 @@
 		0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEventResponse.swift; sourceTree = "<group>"; };
 		0D45C717256953C0006DADAA /* EventVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVenue.swift; sourceTree = "<group>"; };
 		0D45C719256D78A5006DADAA /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
+		0D45C71B256D9672006DADAA /* LocationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
 		0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingOfSkiddle.swift; sourceTree = "<group>"; };
 		0D50F9912517692D00ADEBCF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0D50F99325176FE800ADEBCF /* Demographic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demographic.swift; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				0DF0035E2510C0F00059BBDE /* HomeScreenViewController.swift */,
+				0D45C71B256D9672006DADAA /* LocationSearchViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				0D576BE32520AF2100BA7DEE /* SuggestedEventsTableViewController.swift in Sources */,
 				0D90D153252DE25400F93265 /* dateOfBirthEntryViewController.swift in Sources */,
 				0D576BDE2520AF1200BA7DEE /* SavedEventsTableViewController.swift in Sources */,
+				0D45C71C256D9672006DADAA /* LocationSearchViewController.swift in Sources */,
 				0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */,
 				0DE4FC8025449138003FCF25 /* StudhubEvent.swift in Sources */,
 				0D90D159252E5A7700F93265 /* SearchViewController.swift in Sources */,
