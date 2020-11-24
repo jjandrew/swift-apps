@@ -31,14 +31,14 @@ class HandlingOfSkiddle {
     }
     
     func createUrlForLocation(term: String?) -> String? {
-        guard let searchTerm = term else {
-            print("No search term provided")
-            return nil}
-        
-        let path = "&keyword=\(searchTerm)&order=date&description=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        
-        let url = baseUrl + apiKey + path
-        return url
+        if profile.userLatitude != nil {
+            let path = "&latitude=\(String(describing: profile.userLatitude))&longitude=\(String(describing: profile.userLongitude))&radius=20&order=date&description=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            
+            let url = baseUrl + apiKey + path
+            return url
+        }
+        print("Error creating URL")
+        return nil
     }
     
     
