@@ -13,6 +13,9 @@ class LocationSearchViewController: UIViewController {
     @IBOutlet var locationTextEntry: UITextField!
     @IBOutlet var currentLocationLabel: UILabel!
     
+    var searchEntry = ""
+    var events: [Event] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if profile.userLocation != nil {
@@ -23,10 +26,62 @@ class LocationSearchViewController: UIViewController {
     }
     
     @IBAction func searchByTextEntry(_ sender: Any) {
-        let handlingOfSkiddle = HandlingOfSkiddle()
-        print(handlingOfSkiddle.createUrlForLocation()!)
+        /*
+        if let searchEntry = locationTextEntry.text {
+            if searchEntry.count > 2 {
+                self.searchEntry = searchEntry
+                view.endEditing(true)
+                var events: [Event] = []
+                DispatchQueue.main.async {
+                    self.searchByLocation() { finalEvents in
+                        DispatchQueue.main.async {
+                            events = self.events
+                            guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchViewController else {
+                                fatalError("Could not load view controller from storyboard")
+                            }
+                            viewController.events = events
+                            self.navigationController?.pushViewController(viewController, animated: true)
+                        }
+                    }
+                }
+            } else {
+                let alert = UIAlertController(title: "Please Enter more than two characters of text", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+        } else {
+            let alert = UIAlertController(title: "Please enter a value to search", message: "", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert, animated: true)
+        }
+ */
     }
     
     @IBAction func searchByCurrentLocation(_ sender: Any) {
+        view.endEditing(true)
+        var events: [Event] = []
+        DispatchQueue.main.async {
+            self.searchByCurrentLocationResults() { finalEvents in
+                DispatchQueue.main.async {
+                    events = self.events
+                    guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchViewController else {
+                        fatalError("Could not load view controller from storyboard")
+                    }
+                    viewController.events = events
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                }
+            }
+        }
+    }
+    
+    func searchByCurrentLocationResults(completion: @escaping ([Event]) -> Void) {
+        let handlingOfSkiddle = HandlingOfSkiddle()
+        self.events = []
+        var completions = 0
+        let urlSkiddle = handlingOfSkiddle.createUrlForLocation()!
+        handlingOfSkiddle.createJsonString(urlEntry: urlSkiddle) { finalEvents in
+            self.events += finalEvents
+            completions += 1
+        }
     }
 }
