@@ -48,11 +48,6 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = locationManagerDelegate
         locationManagerDelegate.vc = self
         locationManager.requestLocation()
-        if profile.userLocation != nil {
-            currentLocationLabel.text = profile.userLocation
-        } else {
-            currentLocationLabel.text = "Unable to access location"
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,13 +55,6 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
         attendingIndex = 0
         displaySavedEvents(index: savedIndex)
         displayAttendingEvents(index: attendingIndex)
-        
-        
-        if profile.userLocation != nil {
-            currentLocationLabel.text = profile.userLocation
-        } else {
-            currentLocationLabel.text = "Unable to access location"
-        }
     }
     
     func searchByName(completion: @escaping ([Event]) -> Void) {
