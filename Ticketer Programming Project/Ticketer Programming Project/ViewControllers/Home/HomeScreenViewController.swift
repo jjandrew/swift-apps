@@ -66,7 +66,7 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
             self.events += finalEvents
             completions += 1
             let handlingOfSkiddle = HandlingOfSkiddle()
-           let urlSkiddle = handlingOfSkiddle.createUrl(term: self.searchEntry)!
+           let urlSkiddle = handlingOfSkiddle.createUrlForName(term: self.searchEntry)!
            handlingOfSkiddle.createJsonString(urlEntry: urlSkiddle) { finalEvents in
                self.events += finalEvents
                completions += 1

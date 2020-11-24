@@ -19,6 +19,8 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let firstLocation = locations.first {
+            profile.userLongitude = String(firstLocation.coordinate.longitude)
+            profile.userLatitude = String(firstLocation.coordinate.latitude)
             geocoder.reverseGeocodeLocation(firstLocation, completionHandler: { (placemarks, error) in
                 if error != nil {
                     self.vc?.currentLocationLabel.text = "Unable to access location"

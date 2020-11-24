@@ -543,6 +543,7 @@
                                 <state key="normal" title="Search by Location"/>
                                 <connections>
                                     <action selector="searchByLocationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="clU-Pb-fi8"/>
+                                    <segue destination="dXd-Ir-gkY" kind="show" id="fwl-Zq-kQi"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events you are interested in:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYv-F0-Mf6">
@@ -1070,7 +1071,7 @@
             </objects>
             <point key="canvasLocation" x="3058" y="165"/>
         </scene>
-        <!--Location Search View Controller-->
+        <!--Search By Location-->
         <scene sceneID="eEO-CE-b68">
             <objects>
                 <viewController id="dXd-Ir-gkY" customClass="LocationSearchViewController" customModule="Ticketer_Programming_Project" customModuleProvider="target" sceneMemberID="viewController">
@@ -1078,37 +1079,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search For Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrX-lS-GpS">
-                                <rect key="frame" x="159" y="112" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search For Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hrX-lS-GpS">
+                                <rect key="frame" x="22" y="107" width="189.5" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWR-WB-J96">
-                                <rect key="frame" x="311" y="114" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Search"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mi0-A6-T75">
-                                <rect key="frame" x="57" y="221" width="123" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mi0-A6-T75">
+                                <rect key="frame" x="20" y="191" width="159" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7v-Wi-sNZ">
-                                <rect key="frame" x="200" y="221" width="139" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7v-Wi-sNZ">
+                                <rect key="frame" x="219" y="187" width="175" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Use current location"/>
+                                <connections>
+                                    <action selector="searchByCurrentLocation:" destination="dXd-Ir-gkY" eventType="touchUpInside" id="45L-Ix-LuR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWR-WB-J96">
+                                <rect key="frame" x="333" y="106" width="61" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <action selector="searchByTextEntry:" destination="dXd-Ir-gkY" eventType="touchUpInside" id="S7p-hD-zbu"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hrX-lS-GpS" firstAttribute="top" secondItem="4Sn-45-Sv6" secondAttribute="top" constant="19" id="CrN-JE-1PE"/>
+                            <constraint firstItem="mi0-A6-T75" firstAttribute="top" secondItem="hrX-lS-GpS" secondAttribute="bottom" constant="50" id="EuI-1A-kVX"/>
+                            <constraint firstItem="wWR-WB-J96" firstAttribute="centerY" secondItem="hrX-lS-GpS" secondAttribute="centerY" id="Ltr-Nc-Yh6"/>
+                            <constraint firstItem="hrX-lS-GpS" firstAttribute="leading" secondItem="4Sn-45-Sv6" secondAttribute="leading" constant="22" id="Vox-Fz-FS8"/>
+                            <constraint firstItem="mi0-A6-T75" firstAttribute="leading" secondItem="4Sn-45-Sv6" secondAttribute="leading" constant="20" id="ePg-14-VXy"/>
+                            <constraint firstItem="wWR-WB-J96" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hrX-lS-GpS" secondAttribute="trailing" constant="20" id="fah-jj-Iyk"/>
+                            <constraint firstItem="4Sn-45-Sv6" firstAttribute="trailing" secondItem="wWR-WB-J96" secondAttribute="trailing" constant="20" id="lPs-Qy-hqj"/>
+                            <constraint firstItem="q7v-Wi-sNZ" firstAttribute="centerY" secondItem="mi0-A6-T75" secondAttribute="centerY" id="ljq-OJ-wyO"/>
+                            <constraint firstItem="4Sn-45-Sv6" firstAttribute="trailing" secondItem="q7v-Wi-sNZ" secondAttribute="trailing" constant="20" id="xOs-lv-4T7"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Sn-45-Sv6"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Search By Location" id="hqo-GD-3Cf"/>
+                    <connections>
+                        <outlet property="currentLocationLabel" destination="mi0-A6-T75" id="wGf-fl-rgS"/>
+                        <outlet property="locationTextEntry" destination="hrX-lS-GpS" id="VTB-De-Owz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j51-10-7x0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2299" y="-526"/>
+            <point key="canvasLocation" x="1923" y="-573"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="zzg-kZ-dac">
@@ -1309,9 +1330,9 @@
         <image name="square.and.arrow.up.fill" catalog="system" width="56" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SQb-lG-1I4"/>
-        <segue reference="S4L-tx-wym"/>
-        <segue reference="yh7-wn-keQ"/>
+        <segue reference="Xuh-BH-R2y"/>
+        <segue reference="qKj-Xv-Xz6"/>
+        <segue reference="KSw-S3-b6Y"/>
         <segue reference="DML-IO-9tr"/>
     </inferredMetricsTieBreakers>
 </document>

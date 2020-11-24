@@ -9,7 +9,6 @@
 import Foundation
 
 class Profile: NSObject, NSCoding {
-    // Initialise in first login
     
     func encode(with coder: NSCoder) {
         coder.encode(userName, forKey: "userName")
@@ -17,6 +16,8 @@ class Profile: NSObject, NSCoding {
         coder.encode(userBirthdayString, forKey: "userBirthdayString")
         coder.encode(userGender, forKey: "userGender")
         coder.encode(userLocation, forKey: "userLocation")
+        coder.encode(userLongitude, forKey: "userLongitude")
+        coder.encode(userLatitude, forKey: "userLatitude")
         coder.encode(userAge, forKey: "userAge")
         coder.encode(savedEvents, forKey: "savedEvents")
         coder.encode(attendingEvents, forKey: "attendingEvents")
@@ -29,6 +30,8 @@ class Profile: NSObject, NSCoding {
         userBirthdayString = coder.decodeObject(forKey: "userBirthdayString") as? String ?? ""
         userGender = coder.decodeObject(forKey: "userGender") as? String ?? ""
         userLocation = coder.decodeObject(forKey: "userLocation") as? String? ?? ""
+        userLongitude = coder.decodeObject(forKey: "userLongitude") as? String? ?? ""
+        userLatitude = coder.decodeObject(forKey: "userLatitude") as? String? ?? ""
         userAge = coder.decodeObject(forKey: "userAge") as? Int? ?? 0
         savedEvents = coder.decodeObject(forKey: "savedEvents") as? [Event] ?? []
         attendingEvents = coder.decodeObject(forKey: "attendingEvents") as? [Event] ?? []
@@ -43,6 +46,8 @@ class Profile: NSObject, NSCoding {
     var userBirthdayString: String = ""
     var userGender: String = ""
     var userLocation: String? = nil
+    var userLongitude: String? = nil
+    var userLatitude: String? = nil
     var userAge: Int? = nil
     var savedEvents: [Event] = []
     var attendingEvents: [Event] = []

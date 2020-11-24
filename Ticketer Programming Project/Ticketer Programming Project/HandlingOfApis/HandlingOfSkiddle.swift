@@ -19,7 +19,18 @@ class HandlingOfSkiddle {
     var events: [Event] = []
 
     
-    func createUrl(term: String?) -> String? {
+    func createUrlForName(term: String?) -> String? {
+        guard let searchTerm = term else {
+            print("No search term provided")
+            return nil}
+        
+        let path = "&keyword=\(searchTerm)&order=date&description=1".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        let url = baseUrl + apiKey + path
+        return url
+    }
+    
+    func createUrlForLocation(term: String?) -> String? {
         guard let searchTerm = term else {
             print("No search term provided")
             return nil}
