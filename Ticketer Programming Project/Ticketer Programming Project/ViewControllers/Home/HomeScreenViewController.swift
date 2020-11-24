@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var nameTextEntry: UITextField!
     @IBOutlet var currentLocationLabel: UILabel!
@@ -32,6 +33,9 @@ class HomeScreenViewController: UIViewController {
     var savedIndex = 0
     var attendingIndex = 0
     
+    let locationManager = CLLocationManager()
+    let locationManagerDelegate = LocationManagerDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkEventDates()
@@ -39,6 +43,16 @@ class HomeScreenViewController: UIViewController {
         attendingIndex = 0
         displaySavedEvents(index: savedIndex)
         displayAttendingEvents(index: attendingIndex)
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = locationManagerDelegate
+        locationManagerDelegate.vc = self
+        locationManager.requestLocation()
+        if profile.userLocation != nil {
+            currentLocationLabel.text = profile.userLocation
+        } else {
+            currentLocationLabel.text = "Unable to access location"
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -46,6 +60,13 @@ class HomeScreenViewController: UIViewController {
         attendingIndex = 0
         displaySavedEvents(index: savedIndex)
         displayAttendingEvents(index: attendingIndex)
+        
+        
+        if profile.userLocation != nil {
+            currentLocationLabel.text = profile.userLocation
+        } else {
+            currentLocationLabel.text = "Unable to access location"
+        }
     }
     
     func searchByName(completion: @escaping ([Event]) -> Void) {

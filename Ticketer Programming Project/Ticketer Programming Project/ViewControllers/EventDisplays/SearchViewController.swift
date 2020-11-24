@@ -12,9 +12,13 @@ class SearchViewController: UITableViewController {
     
     var events: [Event] = []
     let sortAndSearch = SortAndSearch()
+    @IBOutlet var sortTypeOutlet: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.events = sortAndSearch.quickSortByName(array: self.events)
+        tableView.reloadData()
+        eventSearchStruct.events = self.events
         self.events = sortAndSearch.checkEventsAreDifferent(events: events)
         tableView.reloadData()
     }
@@ -34,7 +38,7 @@ class SearchViewController: UITableViewController {
     }
     
     @IBAction func sortButton(_ sender: Any) {
-        self.events = sortAndSearch.quickSortByName(array: self.events)
+        self.events = sortAndSearch.quickSortByDate(array: self.events)
         tableView.reloadData()
         eventSearchStruct.events = self.events
     }
