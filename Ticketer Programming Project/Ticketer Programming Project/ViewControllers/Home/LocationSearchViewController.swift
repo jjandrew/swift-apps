@@ -26,14 +26,13 @@ class LocationSearchViewController: UIViewController {
     }
     
     @IBAction func searchByTextEntry(_ sender: Any) {
-        /*
         if let searchEntry = locationTextEntry.text {
             if searchEntry.count > 2 {
                 self.searchEntry = searchEntry
                 view.endEditing(true)
                 var events: [Event] = []
                 DispatchQueue.main.async {
-                    self.searchByLocation() { finalEvents in
+                    self.searchByLocationEntryResults() { finalEvents in
                         DispatchQueue.main.async {
                             events = self.events
                             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchViewController else {
@@ -54,7 +53,6 @@ class LocationSearchViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true)
         }
- */
     }
     
     @IBAction func searchByCurrentLocation(_ sender: Any) {
@@ -71,6 +69,16 @@ class LocationSearchViewController: UIViewController {
                     self.navigationController?.pushViewController(viewController, animated: true)
                 }
             }
+        }
+    }
+    
+    func searchByLocationEntryResults(completion: @escaping ([Event]) -> Void) {
+        let handlingOfStudhub = HandlingOfStudhub()
+        self.events = []
+        let urlStudhub = handlingOfStudhub.createUrlForLocation(term: self.searchEntry)!
+        handlingOfStudhub.createJsonString(urlEntry: urlStudhub) { finalEvents in
+            self.events += finalEvents
+            completion(self.events)
         }
     }
     

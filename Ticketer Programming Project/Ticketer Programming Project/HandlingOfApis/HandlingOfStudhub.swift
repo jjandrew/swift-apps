@@ -23,12 +23,23 @@ class HandlingOfStudhub {
     ]
 
     
-    func createUrl(term: String?) -> String? {
+    func createUrlForName(term: String?) -> String? {
         guard let searchTerm = term else {
             print("No search term provided")
             return nil}
         
         let path = "name=\(searchTerm)/".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
+        let url = baseUrl + path
+        return url
+    }
+    
+    func createUrlForLocation(term: String?) -> String? {
+        guard let searchTerm = term else {
+            print("No search term provided")
+            return nil}
+        
+        let path = "city=\(searchTerm)/".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         let url = baseUrl + path
         return url

@@ -61,7 +61,7 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
         let handlingOfStudhub = HandlingOfStudhub()
         self.events = []
         var completions = 0
-        let urlStudhub = handlingOfStudhub.createUrl(term: self.searchEntry)!
+        let urlStudhub = handlingOfStudhub.createUrlForName(term: self.searchEntry)!
         handlingOfStudhub.createJsonString(urlEntry: urlStudhub) { finalEvents in
             self.events += finalEvents
             completions += 1
