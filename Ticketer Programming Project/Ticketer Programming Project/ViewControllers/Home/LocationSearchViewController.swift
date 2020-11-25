@@ -77,11 +77,10 @@ class LocationSearchViewController: UIViewController {
     func searchByCurrentLocationResults(completion: @escaping ([Event]) -> Void) {
         let handlingOfSkiddle = HandlingOfSkiddle()
         self.events = []
-        var completions = 0
         let urlSkiddle = handlingOfSkiddle.createUrlForLocation()!
         handlingOfSkiddle.createJsonString(urlEntry: urlSkiddle) { finalEvents in
             self.events += finalEvents
-            completions += 1
+            completion(self.events)
         }
     }
 }
