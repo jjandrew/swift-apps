@@ -179,6 +179,9 @@ class SortAndSearch {
         var websites: [String] = []
         var saved = false
 
+        if events.count == 0 {
+            return events
+        }
         if events.count == 1 {
             return events
         }

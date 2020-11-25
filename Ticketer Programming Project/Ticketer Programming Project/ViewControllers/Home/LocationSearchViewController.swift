@@ -76,6 +76,7 @@ class LocationSearchViewController: UIViewController {
         let handlingOfStudhub = HandlingOfStudhub()
         self.events = []
         let urlStudhub = handlingOfStudhub.createUrlForLocation(term: self.searchEntry)!
+        print(urlStudhub)
         handlingOfStudhub.createJsonString(urlEntry: urlStudhub) { finalEvents in
             self.events += finalEvents
             completion(self.events)
