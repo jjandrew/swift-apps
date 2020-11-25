@@ -192,13 +192,13 @@ class SortAndSearch {
                     name = events[i].eventName
                     date = events[i].date
                     location = events[i].venue
-                    description = events[i].description
+                    description = events[i].summary
                     //image = events[i].image
-                    //demographic = events[i[.description
+                    //demographic = events[i].demographic
                     websites.append(events[i].website[0])
                     swappedPrevious = true
                     if description == "" {
-                        description = events[i+1].description
+                        description = events[i+1].summary
                     }
                 } else {
                     /*
