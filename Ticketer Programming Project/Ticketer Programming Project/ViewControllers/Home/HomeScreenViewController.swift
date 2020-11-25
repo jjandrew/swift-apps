@@ -39,11 +39,13 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkEventDates()
+        //loads event to home screen
         savedIndex = 0
         attendingIndex = 0
         displaySavedEvents(index: savedIndex)
         displayAttendingEvents(index: attendingIndex)
         
+        //requests and displays location
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = locationManagerDelegate
         locationManagerDelegate.vc = self
@@ -51,6 +53,7 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //resets events on home screen
         savedIndex = 0
         attendingIndex = 0
         displaySavedEvents(index: savedIndex)
@@ -58,6 +61,7 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func searchByName(completion: @escaping ([Event]) -> Void) {
+        //searches for events using Studhub API
         let handlingOfStudhub = HandlingOfStudhub()
         self.events = []
         var completions = 0
@@ -65,25 +69,30 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
         handlingOfStudhub.createJsonString(urlEntry: urlStudhub) { finalEvents in
             self.events += finalEvents
             completions += 1
+            //searchs for events using Skiddle API
             let handlingOfSkiddle = HandlingOfSkiddle()
-           let urlSkiddle = handlingOfSkiddle.createUrlForName(term: self.searchEntry)!
-           handlingOfSkiddle.createJsonString(urlEntry: urlSkiddle) { finalEvents in
+            let urlSkiddle = handlingOfSkiddle.createUrlForName(term: self.searchEntry)!
+            handlingOfSkiddle.createJsonString(urlEntry: urlSkiddle) { finalEvents in
                self.events += finalEvents
                completions += 1
+                //completes completion handler
                 completion(self.events)
            }
         }  
     }
     
     @IBAction func searchByNameButton(_ sender: Any) {
+        //performs validation on text entry
         if let searchEntry = nameTextEntry.text {
             if searchEntry.count > 2 {
                 self.searchEntry = searchEntry
                 view.endEditing(true)
                 var events: [Event] = []
+                //syncs completions onto main queue
                 DispatchQueue.main.async {
                     self.searchByName() { finalEvents in
                         DispatchQueue.main.async {
+                            //opens table vc
                             events = self.events
                             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchViewController else {
                                 fatalError("Could not load view controller from storyboard")
@@ -125,6 +134,7 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func interestedMoreAction(_ sender: Any) {
+        //opens table vc and checks user has saved events
         if profile.savedEvents.count > 0 {
             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "interestedTableView") as? SavedEventsTableViewController else {
                 fatalError("Could not load view controller from storyboard")
@@ -137,7 +147,9 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
             self.present(alert, animated: true)
         }
     }
+    
     @IBAction func attendingMoreAction(_ sender: Any) {
+        //checks user has attending events and opens up table vc
         if profile.attendingEvents.count > 0 {
             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "attendingTableView") as? AttendingEventsTableViewController else {
             fatalError("Could not load view controller from storyboard")
@@ -278,12 +290,14 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
     }
         
     func checkEventDates() {
+        //stores current date and stores each part of it
         let currentDate = Date()
         let calendar = Calendar.current
         let currentDayInt = calendar.component(.day, from: currentDate)
         let currentMonthInt = calendar.component(.month, from: currentDate)
         let currentYearInt = calendar.component(.year, from: currentDate)
         
+        //creates constant format of digits for months and day
         var currentDayString = ""
         if currentDayInt < 10 {
             currentDayString = "0\(currentDayInt)"
@@ -298,6 +312,7 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
             currentMonthString = String(currentDayInt)
         }
         
+        //creates an integer to distinguish between age of events
         let currentDateString = String(currentYearInt) + currentMonthString + currentDayString
         let currentDateInt = Int(currentDateString)
         
@@ -308,6 +323,7 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
                     removeAt.append(i)
                 }
             }
+            //works through array to remove all locations where event is repeated
             removeAt.reverse()
             for i in removeAt {
                 profile.savedEvents.remove(at: i)

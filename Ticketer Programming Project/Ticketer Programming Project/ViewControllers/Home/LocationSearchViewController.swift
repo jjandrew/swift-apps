@@ -18,6 +18,7 @@ class LocationSearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //sets default values of location
         if profile.userLocation != nil {
             currentLocationLabel.text = profile.userLocation
         } else {
@@ -26,14 +27,17 @@ class LocationSearchViewController: UIViewController {
     }
     
     @IBAction func searchByTextEntry(_ sender: Any) {
+        //validates text entry
         if let searchEntry = locationTextEntry.text {
             if searchEntry.count > 2 {
                 self.searchEntry = searchEntry
                 view.endEditing(true)
                 var events: [Event] = []
+                //syncs closure to main queue
                 DispatchQueue.main.async {
                     self.searchByLocationEntryResults() { finalEvents in
                         DispatchQueue.main.async {
+                            //opens event table view with events returned
                             events = self.events
                             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchViewController else {
                                 fatalError("Could not load view controller from storyboard")
@@ -61,6 +65,7 @@ class LocationSearchViewController: UIViewController {
         DispatchQueue.main.async {
             self.searchByCurrentLocationResults() { finalEvents in
                 DispatchQueue.main.async {
+                    //opens up table vc with events
                     events = self.events
                     guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "searchTableView") as? SearchViewController else {
                         fatalError("Could not load view controller from storyboard")
@@ -73,6 +78,7 @@ class LocationSearchViewController: UIViewController {
     }
     
     func searchByLocationEntryResults(completion: @escaping ([Event]) -> Void) {
+        //retrieves events for location entry
         let handlingOfStudhub = HandlingOfStudhub()
         self.events = []
         let urlStudhub = handlingOfStudhub.createUrlForLocation(term: self.searchEntry)!
@@ -84,6 +90,7 @@ class LocationSearchViewController: UIViewController {
     }
     
     func searchByCurrentLocationResults(completion: @escaping ([Event]) -> Void) {
+        //retrieves events for current location
         let handlingOfSkiddle = HandlingOfSkiddle()
         self.events = []
         let urlSkiddle = handlingOfSkiddle.createUrlForLocation()!

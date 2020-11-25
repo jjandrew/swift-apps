@@ -34,6 +34,7 @@ class ProfileViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        //sets default values for view controller labels
         savedIndex = 0
         attendingIndex = 0
         displaySavedEvents(index: savedIndex)
@@ -44,6 +45,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func interestedMoreButtonAction(_ sender: Any) {
+        //performs validation on saved events and opens up table vc if they succeed
         if profile.savedEvents.count > 0 {
             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "interestedTableView") as? SavedEventsTableViewController else {
                 fatalError("Could not load view controller from storyboard")
@@ -65,6 +67,7 @@ class ProfileViewController: UIViewController {
         displaySavedEvents(index: savedIndex)
     }
     @IBAction func attendingMoreButtonAction(_ sender: Any) {
+        //performs validation on attending events and opens up table vc if they succeed
         if profile.attendingEvents.count > 0 {
             guard let viewController = self.storyboard?.instantiateViewController(withIdentifier: "attendingTableView") as? AttendingEventsTableViewController else {
             fatalError("Could not load view controller from storyboard")
@@ -88,6 +91,7 @@ class ProfileViewController: UIViewController {
     }
     
     func displaySavedEvents(index: Int) {
+        //sets values of events display on vc
         if profile.savedEvents.count > index+1 {
             leftHandInterestedEvent.text = """
             \(profile.savedEvents[index].eventName)
@@ -137,6 +141,7 @@ class ProfileViewController: UIViewController {
             Date
             """
         }
+        //possibility handling of number of events
         if index == 0 {
             previousInterestedEvent.isEnabled = false
         } else {
@@ -199,6 +204,7 @@ class ProfileViewController: UIViewController {
             Date
             """
         }
+        //possibility handiling of number of events
         if index == 0 {
             previousAttendingEvent.isEnabled = false
         } else {

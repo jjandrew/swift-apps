@@ -23,11 +23,12 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //sets default values for opening view
         savedButton.setImage(UIImage(systemName: "bookmark.fill"), for: .selected)
         savedButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
         navigationItem.title = event.eventName
         dateLabel.text = event.date
-        descriptionLabel.text = event.description
+        descriptionLabel.text = event.summary
         venueLabel.text = """
         \(event.venue.name)
         \(event.venue.town)
@@ -40,13 +41,16 @@ class EventViewController: UIViewController {
     }
 
     @IBAction func savedAction(_ sender: Any) {
+        //saves and unsaves the event
         if savedButton.isSelected == true {
+            //checks location of event in savedEvents
             profile.savedEvents.remove(at: sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).0!)
             savedButton.isSelected = false
         } else {
             savedButton.isSelected = true
             profile.savedEvents.append(event)
         }
+        //saves event to local storage
         let defaults = UserDefaults.standard
         if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
             defaults.set(convertedProfile, forKey: "savedProfile")
@@ -54,13 +58,16 @@ class EventViewController: UIViewController {
     }
     
     @IBAction func purchaseAction(_ sender: Any) {
+        //checks event is present in attending events
         if sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: event).1 == false {
             profile.attendingEvents.append(event)
         }
+        //stores profile in local storage
         let defaults = UserDefaults.standard
         if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
             defaults.set(convertedProfile, forKey: "savedProfile")
         }
+        //opens website in safari
         let website = self.event.website[0]
         UIApplication.shared.open(URL(string: website)!)
     }

@@ -26,6 +26,7 @@ class AttendingEventsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //sets text for cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "attendingCell", for: indexPath)
         cell.textLabel?.text = events[indexPath.row].eventName
         return cell
@@ -39,6 +40,7 @@ class AttendingEventsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //loads event view
         guard let viewController = storyboard?.instantiateViewController(identifier: "eventScene") as? EventViewController else {
             fatalError("Couldn't load event view controller")
         }
@@ -47,6 +49,7 @@ class AttendingEventsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //deletes cell for swipe action
         if editingStyle == .delete {
             let sortAndSearch = SortAndSearch()
             profile.attendingEvents.remove(at: sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: events[indexPath.row]).0!)

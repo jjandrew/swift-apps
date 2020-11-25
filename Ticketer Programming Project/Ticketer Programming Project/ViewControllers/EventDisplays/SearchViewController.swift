@@ -16,6 +16,7 @@ class SearchViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //sorts events by name when view loads
         self.events = sortAndSearch.quickSortByName(array: self.events)
         tableView.reloadData()
         eventSearchStruct.events = self.events
@@ -44,6 +45,7 @@ class SearchViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //opens event vc
         guard let viewController = storyboard?.instantiateViewController(identifier: "eventScene") as? EventViewController else {
             fatalError("Couldn't load event view controller")
         }
