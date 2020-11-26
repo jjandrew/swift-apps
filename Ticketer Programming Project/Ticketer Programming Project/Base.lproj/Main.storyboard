@@ -769,9 +769,6 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sort"/>
-                                <connections>
-                                    <segue destination="Jj5-HC-mXD" kind="presentation" id="Fl7-oS-UqZ"/>
-                                </connections>
                             </button>
                             <connections>
                                 <action selector="sortButton:" destination="SaA-T7-9kJ" id="P8H-dJ-c9X"/>
@@ -1057,9 +1054,6 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sort"/>
-                                <connections>
-                                    <segue destination="Jj5-HC-mXD" kind="presentation" id="Xuh-BH-R2y"/>
-                                </connections>
                             </button>
                             <connections>
                                 <action selector="sortButton:" destination="Ddc-P9-mRe" id="VNC-z7-dOW"/>
@@ -1156,22 +1150,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Ukn-xO-VCA">
-                        <barButtonItem key="rightBarButtonItem" title="Sort" style="plain" id="x3b-Fm-sDG">
+                        <barButtonItem key="rightBarButtonItem" title="Sort" springLoaded="YES" style="plain" id="x3b-Fm-sDG">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="df4-dG-bAE">
-                                <rect key="frame" x="319" y="5" width="75" height="34"/>
+                                <rect key="frame" x="282" y="5" width="112" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sort">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="sortButton:" destination="O8i-LX-SzC" eventType="touchUpInside" id="su9-L4-Mbk"/>
-                                    <segue destination="Jj5-HC-mXD" kind="presentation" id="SQb-lG-1I4"/>
+                                    <action selector="sortAction:" destination="O8i-LX-SzC" eventType="touchUpInside" id="su9-L4-Mbk"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="sortTypeOutlet" destination="x3b-Fm-sDG" id="2xW-RG-IEc"/>
+                        <outlet property="sortOutlet" destination="df4-dG-bAE" id="3u4-D1-jSF"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqE-Rh-Ula" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1183,17 +1176,17 @@
             <objects>
                 <viewController id="Jj5-HC-mXD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H2L-XB-Q8K">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose how to order the events:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOk-AD-zTh">
-                                <rect key="frame" x="19.5" y="56" width="375" height="33"/>
+                                <rect key="frame" x="19.5" y="100" width="375" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AK-nF-eKg">
-                                <rect key="frame" x="19.5" y="174" width="117" height="48"/>
+                                <rect key="frame" x="19.5" y="218" width="117" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="By Name"/>
                                 <connections>
@@ -1201,7 +1194,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxI-AO-ReI">
-                                <rect key="frame" x="19.5" y="272" width="101" height="48"/>
+                                <rect key="frame" x="19.5" y="316" width="101" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="By Date"/>
                                 <connections>
@@ -1331,7 +1324,6 @@
         <image name="square.and.arrow.up.fill" catalog="system" width="56" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xuh-BH-R2y"/>
         <segue reference="qKj-Xv-Xz6"/>
         <segue reference="KSw-S3-b6Y"/>
         <segue reference="DML-IO-9tr"/>

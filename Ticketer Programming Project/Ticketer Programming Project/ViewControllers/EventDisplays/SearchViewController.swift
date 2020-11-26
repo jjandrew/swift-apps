@@ -12,7 +12,8 @@ class SearchViewController: UITableViewController {
     
     var events: [Event] = []
     let sortAndSearch = SortAndSearch()
-    @IBOutlet var sortTypeOutlet: UIBarButtonItem!
+    @IBOutlet var sortOutlet: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class SearchViewController: UITableViewController {
         eventSearchStruct.events = self.events
         self.events = sortAndSearch.checkEventsAreDifferent(events: events)
         tableView.reloadData()
+        sortOutlet.setTitle("Sort By Date", for: .normal)
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,11 +40,18 @@ class SearchViewController: UITableViewController {
         return cell
     }
     
-    @IBAction func sortButton(_ sender: Any) {
-        self.events = sortAndSearch.quickSortByDate(array: self.events)
+    @IBAction func sortAction(_ sender: Any) {
+        if sortOutlet.currentTitle == "Sort By Date" {
+            self.events = sortAndSearch.quickSortByDate(array: self.events)
+            sortOutlet.setTitle("Sort By Name", for: .normal)
+        } else {
+            self.events = sortAndSearch.quickSortByName(array: self.events)
+            sortOutlet.setTitle("Sort By Date", for: .normal)
+        }
         tableView.reloadData()
         eventSearchStruct.events = self.events
     }
+    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //opens event vc
