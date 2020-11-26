@@ -11,9 +11,17 @@ import UIKit
 class AttendingEventsTableViewController: UITableViewController {
 
     var events: [Event] = []
-
+    let sortAndSearch = SortAndSearch()
+    @IBOutlet var sortOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //sorts events by name when view loads
+        self.events = sortAndSearch.quickSortByName(array: self.events)
+        eventSearchStruct.events = self.events
+        self.events = sortAndSearch.checkEventsAreDifferent(events: events)
+        tableView.reloadData()
+        sortOutlet.setTitle("Sort By Date", for: .normal)
 
     }
 
@@ -33,9 +41,15 @@ class AttendingEventsTableViewController: UITableViewController {
     }
     
     @IBAction func sortButton(_ sender: Any) {
-        let sortAndSearch = SortAndSearch()
-        self.events = sortAndSearch.quickSortByName(array: self.events)
+        if sortOutlet.currentTitle == "Sort By Date" {
+            self.events = sortAndSearch.quickSortByDate(array: self.events)
+            sortOutlet.setTitle("Sort By Name", for: .normal)
+        } else {
+            self.events = sortAndSearch.quickSortByName(array: self.events)
+            sortOutlet.setTitle("Sort By Date", for: .normal)
+        }
         tableView.reloadData()
+        eventSearchStruct.events = self.events
     }
     
     
