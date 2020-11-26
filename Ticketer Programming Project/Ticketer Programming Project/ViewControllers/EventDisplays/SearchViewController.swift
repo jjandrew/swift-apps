@@ -14,12 +14,10 @@ class SearchViewController: UITableViewController {
     let sortAndSearch = SortAndSearch()
     @IBOutlet var sortOutlet: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         //sorts events by name when view loads
         self.events = sortAndSearch.quickSortByName(array: self.events)
-        tableView.reloadData()
         eventSearchStruct.events = self.events
         self.events = sortAndSearch.checkEventsAreDifferent(events: events)
         tableView.reloadData()
@@ -36,7 +34,9 @@ class SearchViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
-        cell.textLabel?.text = events[indexPath.row].eventName
+        //cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = "\(events[indexPath.row].eventName)"
+        //+ \n\(events[indexPath.row].date)"
         return cell
     }
     
