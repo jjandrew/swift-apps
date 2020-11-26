@@ -12,6 +12,7 @@ class LocationSearchViewController: UIViewController {
 
     @IBOutlet var locationTextEntry: UITextField!
     @IBOutlet var currentLocationLabel: UILabel!
+    @IBOutlet var currentLoctionButtonOutlet: UIButton!
     
     var searchEntry = ""
     var events: [Event] = []
@@ -23,6 +24,7 @@ class LocationSearchViewController: UIViewController {
             currentLocationLabel.text = profile.userLocation
         } else {
             currentLocationLabel.text = "Unable to access location"
+            currentLoctionButtonOutlet.isEnabled = false
         }
     }
     
@@ -82,7 +84,6 @@ class LocationSearchViewController: UIViewController {
         let handlingOfStudhub = HandlingOfStudhub()
         self.events = []
         let urlStudhub = handlingOfStudhub.createUrlForLocation(term: self.searchEntry)!
-        print(urlStudhub)
         handlingOfStudhub.createJsonString(urlEntry: urlStudhub) { finalEvents in
             self.events += finalEvents
             completion(self.events)
@@ -90,13 +91,19 @@ class LocationSearchViewController: UIViewController {
     }
     
     func searchByCurrentLocationResults(completion: @escaping ([Event]) -> Void) {
-        //retrieves events for current location
+        //retrieves events for current location using Skiddle API
         let handlingOfSkiddle = HandlingOfSkiddle()
         self.events = []
         let urlSkiddle = handlingOfSkiddle.createUrlForLocation()!
         handlingOfSkiddle.createJsonString(urlEntry: urlSkiddle) { finalEvents in
             self.events += finalEvents
-            completion(self.events)
+            //retrieving events using StudHub API
+            let handlingOfStudhub = HandlingOfStudhub()
+            let urlStudhub = handlingOfStudhub.createUrlForLocation(term: profile.userLocation!)
+            handlingOfStudhub.createJsonString(urlEntry: urlStudhub!) { finalEvents in
+                self.events += finalEvents
+                completion(self.events)
+            }
         }
     }
 }

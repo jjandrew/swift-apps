@@ -10,6 +10,7 @@ import Foundation
 
 class Profile: NSObject, NSCoding {
     
+    //encodes event so that it can be sotred in local storage
     func encode(with coder: NSCoder) {
         coder.encode(userName, forKey: "userName")
         coder.encode(userBirthdayDate, forKey: "userBirthdayDate")

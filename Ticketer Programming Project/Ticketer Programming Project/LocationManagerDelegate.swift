@@ -13,12 +13,14 @@ class LocationManagerDelegate: NSObject, CLLocationManagerDelegate {
     let geocoder = CLGeocoder()
     weak var vc: HomeScreenViewController?
 
+    //checks that there is no error accessing location
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         vc?.currentLocationLabel.text = "Unable to access location"
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let firstLocation = locations.first {
+            //stores the parts of a user's location into the profile class
             profile.userLongitude = String(firstLocation.coordinate.longitude)
             profile.userLatitude = String(firstLocation.coordinate.latitude)
             geocoder.reverseGeocodeLocation(firstLocation, completionHandler: { (placemarks, error) in

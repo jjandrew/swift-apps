@@ -1124,6 +1124,7 @@
                     <navigationItem key="navigationItem" title="Search By Location" id="hqo-GD-3Cf"/>
                     <connections>
                         <outlet property="currentLocationLabel" destination="mi0-A6-T75" id="wGf-fl-rgS"/>
+                        <outlet property="currentLoctionButtonOutlet" destination="q7v-Wi-sNZ" id="ZXK-5Z-8Yt"/>
                         <outlet property="locationTextEntry" destination="hrX-lS-GpS" id="VTB-De-Owz"/>
                     </connections>
                 </viewController>

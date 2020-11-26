@@ -41,7 +41,7 @@ class HandlingOfStudhub {
             print("No search term provided")
             return nil}
         
-        let path = "city=\(searchTerm)/".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let path = "city=\(searchTerm)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         
         let url = baseUrl + path
         return url
@@ -63,6 +63,7 @@ class HandlingOfStudhub {
                             //converts StudHub events to a common class
                             if let events = (self.studhubEvents?.convertToEventClass()) {
                                 self.events = events
+                                print(self.events.count)
                             }
                             
                         }
