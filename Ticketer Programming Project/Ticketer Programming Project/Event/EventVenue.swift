@@ -10,6 +10,7 @@ import Foundation
 
 class EventVenue: NSObject, NSCoding {
     
+    //enables event venue to be saved to local storage
     func encode(with coder: NSCoder) {
         coder.encode(name, forKey: "name")
         coder.encode(town, forKey: "town")

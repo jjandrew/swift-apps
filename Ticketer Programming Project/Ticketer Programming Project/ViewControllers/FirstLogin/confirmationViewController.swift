@@ -16,6 +16,7 @@ class confirmationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //sets up default values of UI
         nameLabel.text = profile.userName
         dateOfBirthLabel.text = profile.userBirthdayString
         genderLabel.text = profile.userGender
@@ -23,6 +24,7 @@ class confirmationViewController: UIViewController {
     
     @IBAction func confirmButton(_ sender: Any) {
         profile.loggedIn = true
+        //saves profile to local storage
         let defaults = UserDefaults.standard
         if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
             defaults.set(convertedProfile, forKey: "savedProfile")

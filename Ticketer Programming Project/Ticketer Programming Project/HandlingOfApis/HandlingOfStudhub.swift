@@ -24,6 +24,7 @@ class HandlingOfStudhub {
 
     
     func createUrlForName(term: String?) -> String? {
+        //checks that a search term is present
         guard let searchTerm = term else {
             print("No search term provided")
             return nil}
@@ -35,6 +36,7 @@ class HandlingOfStudhub {
     }
     
     func createUrlForLocation(term: String?) -> String? {
+        //checks that a search term is provided
         guard let searchTerm = term else {
             print("No search term provided")
             return nil}
@@ -47,14 +49,18 @@ class HandlingOfStudhub {
     
     func createJsonString(urlEntry: String, completion: @escaping ([Event]) -> Void) {
         if let url = URL(string: urlEntry) {
+            //uses Alamofire to make an HTTP GET request
             AF.request(url, method: .get, headers: headers).validate().responseJSON { response in
                 switch response.result {
+                    //checks there are no errors and stores json as a string
                     case .success(let value):
                         let json = JSON(value)
                         let jsonData = try! json.rawData()
                         self.jsonString = json.description
+                        //decodes event to class
                         if let response = self.parsingJson(json: jsonData) {
                             self.studhubEvents = response
+                            //converts StudHub events to a common class
                             if let events = (self.studhubEvents?.convertToEventClass()) {
                                 self.events = events
                             }
@@ -68,7 +74,6 @@ class HandlingOfStudhub {
                         self.events = []
                     }
             }
-            
         } else {
             print("Error creating URL")
             self.events = []
@@ -77,6 +82,7 @@ class HandlingOfStudhub {
     }
     
     func parsingJson(json: Data) -> StudhubEventResponse? {
+        //decodes event to class
         if let eventResponse = try?decoder.decode(StudhubEventResponse.self, from: json) {
             return eventResponse
         } else {

@@ -17,6 +17,7 @@ struct SkiddleEventResponse: Decodable {
     func convertToEventClass() -> [Event] {
         var events: [Event] = []
         if self.error == 0 && self.results.count > 0 {
+            //for each event returned adds the relvant parts to the event class
             for i in (0 ..< self.results.count) {
                 let eventName = self.results[i].eventname
                 let venue = EventVenue(name: self.results[i].venue.name, town: self.results[i].venue.town, country: self.results[i].venue.country, postCode: self.results[i].venue.postcode)
@@ -30,6 +31,7 @@ struct SkiddleEventResponse: Decodable {
                 let website = self.results[i].link
                 events.append(Event(eventName: eventName, venue: venue, date: date, description: description, saved: nil, website: [website]))
             }
+            //adds a date integer to each of the events
             for event in events {
                 event.dateIntConversion()
             }

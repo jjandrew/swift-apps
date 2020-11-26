@@ -11,6 +11,7 @@ import UIKit
 
 class Event: NSObject, NSCoding {
     
+    //codes event for saving to local storage
     func encode(with coder: NSCoder) {
         coder.encode(eventName, forKey: "eventName")
         coder.encode(venue, forKey: "venue")

@@ -87,6 +87,7 @@ class SortAndSearch {
             for i in (0...events.count - 1) {
                 if events[i].eventName == searchEvent.eventName {
                     if events[i].date == searchEvent.date {
+                        //returns position and whether it was found or not
                         return (i, true)
                     }
                 }
@@ -170,6 +171,7 @@ class SortAndSearch {
         var swappedPrevious = false
         var newEventArray: [Event] = []
         
+        //sets placeholders for checking events are different
         var name = ""
         var date = ""
         var location: EventVenue? = nil
@@ -179,6 +181,7 @@ class SortAndSearch {
         var websites: [String] = []
         var saved = false
 
+        //checks enough events have been entered
         if events.count == 0 {
             return events
         }
@@ -187,7 +190,10 @@ class SortAndSearch {
         }
         
         while i != events.count - 1 {
+            //if two events in a row have the same name and date
+            //must be sorted by name first
             if (events[i].eventName == events[i+1].eventName) && (events[i].date == events[i+1].date) {
+                //checks if there is already an event that has been found to be the same
                 if swappedPrevious == false {
                     name = events[i].eventName
                     date = events[i].date
@@ -212,6 +218,7 @@ class SortAndSearch {
                 newEventArray.append(events[i])
             } else {
                 //demographic = checkDemographic(event)
+                //resets the values and adds the event to the array
                 saved = eventLinearSearch(events: profile.savedEvents, searchEvent: events[i]).1
                 newEventArray.append(Event(eventName: name, venue: location!, date: date, description: description, saved: saved, website: websites))
                 
@@ -226,6 +233,7 @@ class SortAndSearch {
             }
             i += 1
         }
+        //adds the last event to the array
         if name != "" {
             websites.append(events[i].website[0])
             newEventArray.append(Event(eventName: name, venue: location!, date: date, description: description, saved: saved, website: websites))

@@ -18,6 +18,7 @@ class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //sets up UI
         nameEntryTextField.placeholder = profile.userName
         dateOfBirthPicker.date = profile.userBirthdayDate
     }
@@ -32,7 +33,9 @@ class EditProfileViewController: UIViewController {
         
         let dOfB = dateOfBirthPicker.date
         let userAge = calculateAge(dOfB: dOfB)
+        //performs validation on age
         if userAge > 4 && userAge < 126 {
+            //puts date into constant format
             birthdayDate = dOfB
             age = userAge
             let dOfBDayInt = calendar.component(.day, from: dOfB)
@@ -64,6 +67,7 @@ class EditProfileViewController: UIViewController {
             validate += 2
         }
         
+        //checks what message to display to a user
         if validate == 0 {
             let alert = UIAlertController(title: "Profile successfully updated", message: "", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

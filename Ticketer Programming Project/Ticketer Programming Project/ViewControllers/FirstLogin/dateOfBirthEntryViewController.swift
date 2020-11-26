@@ -21,7 +21,9 @@ class dateOfBirthEntryViewController: UIViewController {
     @IBAction func entryButton(_ sender: Any) {
         let dOfB = dateOfBirthPicker.date
         let userAge = calculateAge(dOfB: dOfB)
+        //validates age
         if userAge > 4 && userAge < 126 {
+            //plaves age into constant date format
             profile.userBirthdayDate = dOfB
             profile.userAge = userAge
             let dOfBDayInt = calendar.component(.day, from: dOfB)

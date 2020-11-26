@@ -15,6 +15,7 @@ class nameEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //loads up profile from local storage
         let defaults = UserDefaults.standard
         if let savedProfile = defaults.object(forKey: "savedProfile") {
             profile = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedProfile as! Data) as! Profile
