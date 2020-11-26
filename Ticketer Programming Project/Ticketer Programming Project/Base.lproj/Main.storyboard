@@ -769,10 +769,10 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sort"/>
+                                <connections>
+                                    <action selector="sortAction:" destination="SaA-T7-9kJ" eventType="touchUpInside" id="5ZF-gg-jWc"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="sortButton:" destination="SaA-T7-9kJ" id="P8H-dJ-c9X"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -1057,10 +1057,10 @@
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sort"/>
+                                <connections>
+                                    <action selector="sortAction:" destination="Ddc-P9-mRe" eventType="touchUpInside" id="ACZ-aF-rSe"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="sortButton:" destination="Ddc-P9-mRe" id="VNC-z7-dOW"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

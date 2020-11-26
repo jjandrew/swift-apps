@@ -39,7 +39,7 @@ class SavedEventsTableViewController: UITableViewController {
         return cell
     }
     
-    @IBAction func sortButton(_ sender: Any) {
+    @IBAction func sortAction(_ sender: Any) {
         if sortOutlet.currentTitle == "Sort By Date" {
             self.events = sortAndSearch.quickSortByDate(array: self.events)
             sortOutlet.setTitle("Sort By Name", for: .normal)
