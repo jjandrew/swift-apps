@@ -34,14 +34,16 @@ class SearchViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "searchCell", for: indexPath)
-        //cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = "\(events[indexPath.row].eventName)"
-        //+ \n\(events[indexPath.row].date)"
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = "\(events[indexPath.row].eventName) \n\(events[indexPath.row].date)"
         return cell
     }
     
     @IBAction func sortAction(_ sender: Any) {
         if sortOutlet.currentTitle == "Sort By Date" {
+            for event in events {
+                event.dateIntConversion()
+            }
             self.events = sortAndSearch.quickSortByDate(array: self.events)
             sortOutlet.setTitle("Sort By Name", for: .normal)
         } else {

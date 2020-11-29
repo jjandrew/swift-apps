@@ -36,7 +36,8 @@ class AttendingEventsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //sets text for cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "attendingCell", for: indexPath)
-        cell.textLabel?.text = events[indexPath.row].eventName
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.text = "\(events[indexPath.row].eventName) \n\(events[indexPath.row].date)"
         return cell
     }
     
