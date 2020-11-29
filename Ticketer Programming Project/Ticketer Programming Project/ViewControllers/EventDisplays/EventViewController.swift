@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EventViewController: UIViewController {
 
@@ -38,6 +39,10 @@ class EventViewController: UIViewController {
         if sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).1 == true {
             savedButton.isSelected = true
         }
+        
+        FirebaseApp.configure()
+        let db = Firestore.firestore()
+        print(db)
     }
 
     @IBAction func savedAction(_ sender: Any) {

@@ -1274,7 +1274,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50P-i9-j1D">
-                                <rect key="frame" x="166" y="592" width="82" height="145"/>
+                                <rect key="frame" x="166" y="571" width="82" height="166"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Log In"/>
                                 <connections>
@@ -1282,13 +1282,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to MyTickets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-Tj-fa4">
-                                <rect key="frame" x="64.5" y="142" width="285" height="25"/>
+                                <rect key="frame" x="64.5" y="141" width="285" height="25"/>
                                 <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="aZb-2v-LmK">
-                                <rect key="frame" x="70" y="380" width="274" height="187"/>
+                                <rect key="frame" x="70" y="359" width="274" height="187"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="187" id="MRo-iV-617"/>
                                     <constraint firstAttribute="width" constant="274" id="hFa-QO-ciY"/>
@@ -1298,10 +1298,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="50P-i9-j1D" firstAttribute="centerX" secondItem="xW5-dB-1Su" secondAttribute="centerX" id="DtY-LE-ORX"/>
-                            <constraint firstItem="Rcg-Tj-fa4" firstAttribute="top" secondItem="xW5-dB-1Su" secondAttribute="top" constant="98" id="PpL-FB-3qz"/>
+                            <constraint firstItem="Rcg-Tj-fa4" firstAttribute="top" secondItem="xW5-dB-1Su" secondAttribute="top" constant="97" id="PpL-FB-3qz"/>
                             <constraint firstItem="xW5-dB-1Su" firstAttribute="bottom" secondItem="50P-i9-j1D" secondAttribute="bottom" constant="125" id="V5r-eB-MLq"/>
                             <constraint firstItem="Rcg-Tj-fa4" firstAttribute="centerX" secondItem="xW5-dB-1Su" secondAttribute="centerX" id="fcB-pn-f9E"/>
-                            <constraint firstItem="aZb-2v-LmK" firstAttribute="top" secondItem="Rcg-Tj-fa4" secondAttribute="bottom" constant="213" id="l90-f9-mb6"/>
+                            <constraint firstItem="aZb-2v-LmK" firstAttribute="top" secondItem="Rcg-Tj-fa4" secondAttribute="bottom" constant="193" id="l90-f9-mb6"/>
                             <constraint firstItem="50P-i9-j1D" firstAttribute="top" secondItem="aZb-2v-LmK" secondAttribute="bottom" constant="25" id="sNv-6V-X1B"/>
                             <constraint firstItem="aZb-2v-LmK" firstAttribute="centerX" secondItem="xW5-dB-1Su" secondAttribute="centerX" id="tz2-fV-ldp"/>
                         </constraints>
@@ -1311,7 +1311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVJ-38-vbK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3733" y="1213"/>
+            <point key="canvasLocation" x="-3733.3333333333335" y="1212.7232142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="idN-TV-YKk">
