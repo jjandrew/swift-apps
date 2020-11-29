@@ -63,7 +63,6 @@ class HandlingOfStudhub {
                             //converts StudHub events to a common class
                             if let events = (self.studhubEvents?.convertToEventClass()) {
                                 self.events = events
-                                print(self.events.count)
                             }
                             
                         }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D06EC782517B3ED00BEE2F2 /* SkiddleEventResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */; };
+		0D171F3F2574222D008C4D51 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0D171F3E2574222D008C4D51 /* GoogleService-Info.plist */; };
 		0D45C718256953C0006DADAA /* EventVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C717256953C0006DADAA /* EventVenue.swift */; };
 		0D45C71A256D78A5006DADAA /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C719256D78A5006DADAA /* LocationManagerDelegate.swift */; };
 		0D45C71C256D9672006DADAA /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C71B256D9672006DADAA /* LocationSearchViewController.swift */; };
@@ -74,6 +75,7 @@
 /* Begin PBXFileReference section */
 		0C80A258D6A5B234903C7B30 /* Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Ticketer_Programming_Project_Ticketer_Programming_ProjectUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D06EC772517B3ED00BEE2F2 /* SkiddleEventResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkiddleEventResponse.swift; sourceTree = "<group>"; };
+		0D171F3E2574222D008C4D51 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0D45C717256953C0006DADAA /* EventVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVenue.swift; sourceTree = "<group>"; };
 		0D45C719256D78A5006DADAA /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		0D45C71B256D9672006DADAA /* LocationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				0D5E4E8525508E790056CA90 /* EventSearchStruct.swift */,
 				0D45C719256D78A5006DADAA /* LocationManagerDelegate.swift */,
 				0DF0033C2510C0070059BBDE /* Info.plist */,
+				0D171F3E2574222D008C4D51 /* GoogleService-Info.plist */,
 			);
 			path = "Ticketer Programming Project";
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DF0033B2510C0070059BBDE /* LaunchScreen.storyboard in Resources */,
+				0D171F3F2574222D008C4D51 /* GoogleService-Info.plist in Resources */,
 				0DF003382510C0070059BBDE /* Assets.xcassets in Resources */,
 				0DF003362510C0040059BBDE /* Main.storyboard in Resources */,
 			);

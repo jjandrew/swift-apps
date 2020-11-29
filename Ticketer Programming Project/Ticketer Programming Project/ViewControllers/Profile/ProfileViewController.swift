@@ -13,7 +13,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var birthdayLabel: UILabel!
     @IBOutlet var genderLabel: UILabel!
-
+    @IBOutlet var editProfileButton: UIButton!
+    
     @IBOutlet var leftHandInterestedEvent: UILabel!
     @IBOutlet var rightHandInterestedEvent: UILabel!
     @IBOutlet var leftHandAttendingEvent: UILabel!
@@ -42,6 +43,9 @@ class ProfileViewController: UIViewController {
         nameLabel.text = "Name: \(profile.userName)"
         birthdayLabel.text = "Birthday: \(profile.userBirthdayString)"
         genderLabel.text = "Gender: \(profile.userGender)"
+    }
+    
+    @IBAction func editProfileAction(_ sender: Any) {
     }
     
     @IBAction func interestedMoreButtonAction(_ sender: Any) {

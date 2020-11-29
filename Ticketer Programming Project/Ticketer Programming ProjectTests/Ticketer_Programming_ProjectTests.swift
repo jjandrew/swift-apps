@@ -12,7 +12,7 @@ import XCTest
 class Ticketer_Programming_ProjectTests: XCTestCase {
 
     let website: [String] = []
-    
+    /*
     func testUrlCreatorReturnsCorrectStringWhenSearchTermIsProvided() {
         let handlingOfSkiddle = HandlingOfSkiddle()
         let search = "vivaldi"
@@ -30,7 +30,6 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         expected = nil
         XCTAssertEqual(result, expected)
     }
-/*
      
      
     func testEventChange() {

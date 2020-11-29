@@ -74,6 +74,9 @@ class AttendingEventsTableViewController: UITableViewController {
             if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
                 defaults.set(convertedProfile, forKey: "savedProfile")
             }
+            if let convertedEvents = try? NSKeyedArchiver.archivedData(withRootObject: profile.attendingEvents, requiringSecureCoding: false) {
+                defaults.set(convertedEvents, forKey: "attendingEvents")
+            }
         }
     }
 }

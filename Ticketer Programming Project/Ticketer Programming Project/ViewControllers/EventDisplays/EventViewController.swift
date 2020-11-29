@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 
 class EventViewController: UIViewController {
 
@@ -40,9 +39,6 @@ class EventViewController: UIViewController {
             savedButton.isSelected = true
         }
         
-        FirebaseApp.configure()
-        let db = Firestore.firestore()
-        print(db)
     }
 
     @IBAction func savedAction(_ sender: Any) {
@@ -74,6 +70,9 @@ class EventViewController: UIViewController {
         let defaults = UserDefaults.standard
         if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
             defaults.set(convertedProfile, forKey: "savedProfile")
+        }
+        if let convertedEvents = try? NSKeyedArchiver.archivedData(withRootObject: profile.attendingEvents, requiringSecureCoding: false) {
+            defaults.set(convertedEvents, forKey: "attendingEvents")
         }
         //opens website in safari
         let website = self.event.website[0]

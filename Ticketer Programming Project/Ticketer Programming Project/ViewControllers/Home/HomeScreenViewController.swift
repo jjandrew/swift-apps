@@ -58,6 +58,10 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
             let events = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedEvents as! Data) as! [Event]
             profile.savedEvents = events
         }
+        if let attendingEvents = defaults.object(forKey: "attendingEvents") {
+            let events = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(attendingEvents as! Data) as! [Event]
+            profile.attendingEvents = events
+        }
         //resets events on home screen
         savedIndex = 0
         attendingIndex = 0
