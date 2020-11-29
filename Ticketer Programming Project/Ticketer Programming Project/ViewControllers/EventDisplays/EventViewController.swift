@@ -55,6 +55,9 @@ class EventViewController: UIViewController {
         if let convertedProfile = try? NSKeyedArchiver.archivedData(withRootObject: profile, requiringSecureCoding: false) {
             defaults.set(convertedProfile, forKey: "savedProfile")
         }
+        if let convertedEvents = try? NSKeyedArchiver.archivedData(withRootObject: profile.savedEvents, requiringSecureCoding: false) {
+            defaults.set(convertedEvents, forKey: "savedEvents")
+        }
     }
     
     @IBAction func purchaseAction(_ sender: Any) {

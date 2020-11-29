@@ -28,7 +28,7 @@ class Event: NSObject, NSCoding {
         date = coder.decodeObject(forKey: "date") as? String ?? ""
         dateInt = coder.decodeObject(forKey: "dateInt") as? Int ?? 0
         summary = coder.decodeObject(forKey: "summary") as? String ?? ""
-        saved = coder.decodeObject(forKey: "saved") as? Bool? ?? false
+        saved = coder.decodeObject(forKey: "saved") as? Bool ?? false
         website = coder.decodeObject(forKey: "website") as? [String] ?? []
     }
     
@@ -37,10 +37,10 @@ class Event: NSObject, NSCoding {
     let date: String
     var dateInt: Int
     var summary: String
-    var saved: Bool?
+    var saved: Bool
     var website: [String]
     
-    init(eventName: String, venue: EventVenue, date: String, description: String, saved: Bool?, website: [String]) {
+    init(eventName: String, venue: EventVenue, date: String, description: String, saved: Bool, website: [String]) {
         self.eventName = eventName
         self.venue = venue
         self.date = date

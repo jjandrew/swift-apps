@@ -29,7 +29,7 @@ struct SkiddleEventResponse: Decodable {
                 let date = "\(day)/\(month)/\(year)"
                 let description = self.results[i].description
                 let website = self.results[i].link
-                events.append(Event(eventName: eventName, venue: venue, date: date, description: description, saved: nil, website: [website]))
+                events.append(Event(eventName: eventName, venue: venue, date: date, description: description, saved: false, website: [website]))
             }
             //adds a date integer to each of the events
             for event in events {

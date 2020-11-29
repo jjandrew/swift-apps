@@ -11,6 +11,7 @@
 		0D45C718256953C0006DADAA /* EventVenue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C717256953C0006DADAA /* EventVenue.swift */; };
 		0D45C71A256D78A5006DADAA /* LocationManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C719256D78A5006DADAA /* LocationManagerDelegate.swift */; };
 		0D45C71C256D9672006DADAA /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C71B256D9672006DADAA /* LocationSearchViewController.swift */; };
+		0D45C71E2573C878006DADAA /* OpenLoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D45C71D2573C878006DADAA /* OpenLoginScreenViewController.swift */; };
 		0D50F990251750F700ADEBCF /* HandlingOfSkiddle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */; };
 		0D50F9922517692D00ADEBCF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F9912517692D00ADEBCF /* Event.swift */; };
 		0D50F99425176FE800ADEBCF /* Demographic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D50F99325176FE800ADEBCF /* Demographic.swift */; };
@@ -76,6 +77,7 @@
 		0D45C717256953C0006DADAA /* EventVenue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventVenue.swift; sourceTree = "<group>"; };
 		0D45C719256D78A5006DADAA /* LocationManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerDelegate.swift; sourceTree = "<group>"; };
 		0D45C71B256D9672006DADAA /* LocationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
+		0D45C71D2573C878006DADAA /* OpenLoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenLoginScreenViewController.swift; sourceTree = "<group>"; };
 		0D50F98F251750F700ADEBCF /* HandlingOfSkiddle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlingOfSkiddle.swift; sourceTree = "<group>"; };
 		0D50F9912517692D00ADEBCF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0D50F99325176FE800ADEBCF /* Demographic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demographic.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		0DE4FC86254491FB003FCF25 /* FirstLogin */ = {
 			isa = PBXGroup;
 			children = (
+				0D45C71D2573C878006DADAA /* OpenLoginScreenViewController.swift */,
 				0D90D150252DE23700F93265 /* nameEntryViewController.swift */,
 				0D90D152252DE25400F93265 /* dateOfBirthEntryViewController.swift */,
 				0D90D154252DE26500F93265 /* genderEntryViewController.swift */,
@@ -622,6 +625,7 @@
 				0DE4FC7E25403307003FCF25 /* HandlingOfStudhub.swift in Sources */,
 				0D90FD9E2522284C00F2C189 /* SkiddleOpeningTimes.swift in Sources */,
 				0D50F99425176FE800ADEBCF /* Demographic.swift in Sources */,
+				0D45C71E2573C878006DADAA /* OpenLoginScreenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

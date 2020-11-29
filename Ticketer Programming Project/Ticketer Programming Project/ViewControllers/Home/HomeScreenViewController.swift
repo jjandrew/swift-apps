@@ -53,6 +53,11 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        let defaults = UserDefaults.standard
+        if let savedEvents = defaults.object(forKey: "savedEvents") {
+            let events = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedEvents as! Data) as! [Event]
+            profile.savedEvents = events
+        }
         //resets events on home screen
         savedIndex = 0
         attendingIndex = 0
