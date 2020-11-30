@@ -75,9 +75,6 @@ class Demographic {
         return percentageArray
     }
     
-    
-    
-    
     func checkDocumentPresent() {
         var ref: DocumentReference!
         let db = Firestore.firestore()
@@ -229,6 +226,102 @@ class Demographic {
                     print("Document added with ID: \(ref!.documentID)")
                 }
             }
+        }
+    }
+    
+    func updateDocumentForSaved() {
+        if profile.userGender == "Male" {
+            db.document("events/\(self.event.identifier)").updateData([
+                "numberMaleInterested": self.numberMaleInterested += 1,
+                "totalAgeInterested": self.totalAgeInterested + profile.userAge!,
+                "totalInterested": self.totalInterested += 1
+            ])
+        } else if profile.userGender == "Female" {
+            db.document("events/\(self.event.identifier)").updateData([
+                "numberFemaleInterested": self.numberFemaleInterested += 1,
+                "totalAgeInterested": self.totalAgeInterested + profile.userAge!,
+                "totalInterested": self.totalInterested += 1
+            ])
+        } else {
+            db.document("events/\(self.event.identifier)").updateData([
+                "numberOterInterested": self.numberOtherInterested += 1,
+                "totalAgeInterested": self.totalAgeInterested + profile.userAge!,
+                "totalInterested": self.totalInterested += 1
+            ])
+        }
+    }
+    
+    func updateDocumentForUnsaved() {
+        if self.totalInterested > 0 {
+            if profile.userGender == "Male" {
+                    db.document("events/\(self.event.identifier)").updateData([
+                        "numberMaleInterested": self.numberMaleInterested -= 1,
+                        "totalAgeInterested": self.totalAgeInterested - profile.userAge!,
+                        "totalInterested": self.totalInterested -= 1
+                    ])
+            } else if profile.userGender == "Female" {
+                db.document("events/\(self.event.identifier)").updateData([
+                    "numberFemaleInterested": self.numberFemaleInterested -= 1,
+                    "totalAgeInterested": self.totalAgeInterested + profile.userAge!,
+                    "totalInterested": self.totalInterested -= 1
+                ])
+            } else {
+                db.document("events/\(self.event.identifier)").updateData([
+                    "numberOterInterested": self.numberOtherInterested,
+                    "totalAgeInterested": self.totalAgeInterested + profile.userAge!,
+                    "totalInterested": self.totalInterested -= 1
+                ])
+            }
+        } else {
+            print("Error removing event")
+        }
+    }
+    
+    func updateDocumentForAttendingAdded() {
+        if profile.userGender == "Male" {
+            db.document("events/\(self.event.identifier)").updateData([
+                "numberMaleAttending": self.numberMaleAttending += 1,
+                "totalAgeAttending": self.totalAgeAttending + profile.userAge!,
+                "totalAttending": self.totalAttending += 1
+            ])
+        } else if profile.userGender == "Female" {
+            db.document("events/\(self.event.identifier)").updateData([
+                "numberFemaleAttending": self.numberFemaleAttending += 1,
+                "totalAgeAttending": self.totalAgeAttending + profile.userAge!,
+                "totalAttending": self.totalAttending += 1
+            ])
+        } else {
+            db.document("events/\(self.event.identifier)").updateData([
+                "numberOterAttending": self.numberOtherAttending += 1,
+                "totalAgeAttending": self.totalAgeAttending + profile.userAge!,
+                "totalAttending": self.totalAttending += 1
+            ])
+        }
+    }
+    
+    func updateDocumentForAttendingRemoved() {
+        if self.totalAttending > 0 {
+            if profile.userGender == "Male" {
+                    db.document("events/\(self.event.identifier)").updateData([
+                        "numberMaleAttending": self.numberMaleAttending -= 1,
+                        "totalAgeAttending": self.totalAgeAttending - profile.userAge!,
+                        "totalAttending": self.totalAttending -= 1
+                    ])
+            } else if profile.userGender == "Female" {
+                db.document("events/\(self.event.identifier)").updateData([
+                    "numberFemaleAttending": self.numberFemaleAttending -= 1,
+                    "totalAgeAttending": self.totalAgeAttending + profile.userAge!,
+                    "totalAttending": self.totalAttending -= 1
+                ])
+            } else {
+                db.document("events/\(self.event.identifier)").updateData([
+                    "numberOterAttending": self.numberOtherAttending,
+                    "totalAgeAttending": self.totalAgeAttending + profile.userAge!,
+                    "totalAttending": self.totalAttending -= 1
+                ])
+            }
+        } else {
+            print("Error removing event")
         }
     }
 }
