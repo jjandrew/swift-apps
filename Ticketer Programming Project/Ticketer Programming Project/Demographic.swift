@@ -91,51 +91,64 @@ class Demographic {
     }
     
     func createDocumentInterested() {
-        var ref: DocumentReference? = nil
+        var ref: DocumentReference!
+        ref = Firestore.firestore().document("events/\(self.event.identifier)")
         if profile.userGender == "Male" {
-            ref = db.collection("events").addDocument(data: [
-                "numberFemale": 0,
-                "numberMale": 1,
-                "numberOther": 0,
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 1,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 0,
                 "totalAgeAttending": 0,
                 "totalAgeInterested": profile.userAge!,
                 "totalAttending": 0,
                 "totalInterested": 1
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
                 } else {
                     print("Document added with ID: \(ref!.documentID)")
                 }
             }
         } else if profile.userGender == "Female" {
-            ref = db.collection("events").addDocument(data: [
-                "numberFemale": 1,
-                "numberMale": 0,
-                "numberOther": 0,
+            let data: [String: Any] = [
+                "numberFemaleInterested": 1,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 0,
                 "totalAgeAttending": 0,
                 "totalAgeInterested": profile.userAge!,
                 "totalAttending": 0,
                 "totalInterested": 1
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
                 } else {
                     print("Document added with ID: \(ref!.documentID)")
                 }
             }
         } else {
-            ref = db.collection("events").addDocument(data: [
-                "numberFemale": 0,
-                "numberMale": 0,
-                "numberOther": 1,
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 1,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 0,
                 "totalAgeAttending": 0,
                 "totalAgeInterested": profile.userAge!,
                 "totalAttending": 0,
                 "totalInterested": 1
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
                 } else {
                     print("Document added with ID: \(ref!.documentID)")
                 }
@@ -145,51 +158,64 @@ class Demographic {
     }
     
     func createDocumentAttending() {
-        var ref: DocumentReference? = nil
+        var ref: DocumentReference!
+        ref = Firestore.firestore().document("events/\(self.event.identifier)")
         if profile.userGender == "Male" {
-            ref = db.collection("events").addDocument(data: [
-                "numberFemale": 0,
-                "numberMale": 1,
-                "numberOther": 0,
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 1,
+                "numberOtherAttending": 0,
                 "totalAgeAttending": profile.userAge!,
                 "totalAgeInterested": 0,
                 "totalAttending": 1,
                 "totalInterested": 0
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
                 } else {
                     print("Document added with ID: \(ref!.documentID)")
                 }
             }
         } else if profile.userGender == "Female" {
-            ref = db.collection("events").addDocument(data: [
-                "numberFemale": 1,
-                "numberMale": 0,
-                "numberOther": 0,
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 1,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 0,
                 "totalAgeAttending": profile.userAge!,
                 "totalAgeInterested": 0,
                 "totalAttending": 1,
                 "totalInterested": 0
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
                 } else {
                     print("Document added with ID: \(ref!.documentID)")
                 }
             }
         } else {
-            ref = db.collection("events").addDocument(data: [
-                "numberFemale": 0,
-                "numberMale": 0,
-                "numberOther": 1,
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 1,
                 "totalAgeAttending": profile.userAge!,
                 "totalAgeInterested": 0,
                 "totalAttending": 1,
                 "totalInterested": 0
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
                 } else {
                     print("Document added with ID: \(ref!.documentID)")
                 }
