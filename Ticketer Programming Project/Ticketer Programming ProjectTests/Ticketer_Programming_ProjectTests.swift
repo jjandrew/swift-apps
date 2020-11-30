@@ -468,4 +468,11 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
             i += 1
         }
     }
+    
+    func testCreateIdentifierWorks() {
+        let event = Event(eventName: "The Four Seasons Vivaldi", venue: EventVenue(name: "", town: "", country: "", postCode: ""), date: "11/12/2020", description: "", saved: false, website: [])
+        event.createIdentifier()
+        let expected = "TheFourSeasonsVivaldi20201211"
+        XCTAssertEqual(expected, event.identifier)
+    }
 }

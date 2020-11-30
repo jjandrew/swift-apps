@@ -39,6 +39,7 @@ class Event: NSObject, NSCoding {
     var summary: String
     var saved: Bool
     var website: [String]
+    var identifier = ""
     
     init(eventName: String, venue: EventVenue, date: String, description: String, saved: Bool, website: [String]) {
         self.eventName = eventName
@@ -53,5 +54,15 @@ class Event: NSObject, NSCoding {
     func dateIntConversion() {
         let dateArray = self.date.split(separator: "/")
         self.dateInt = Int(dateArray[2]+dateArray[1]+dateArray[0])!
+    }
+    
+    func createIdentifier() {
+        identifier = ""
+        self.dateIntConversion()
+        let nameArray = self.eventName.split(separator: " ")
+        for name in nameArray {
+            identifier += name
+        }
+        identifier += String(self.dateInt)
     }
 }
