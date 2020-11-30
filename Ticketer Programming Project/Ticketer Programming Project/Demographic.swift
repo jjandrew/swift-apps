@@ -79,12 +79,21 @@ class Demographic {
     
     
     func checkDocumentPresent() {
-        db.collection("events").getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
+        var ref: DocumentReference!
+        let db = Firestore.firestore()
+        //this will be changed to the identifier of the event
+        ref = db.document("events/testEvent")
+        ref.getDocument() { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
             } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
+                if querySnapshot?.data() == nil {
+                    print("Event not present")
+                    //create new event
+                } else {
+                    print("Event present")
+                    //create demographic instance
+                    //prepare to update demographic
                 }
             }
         }
