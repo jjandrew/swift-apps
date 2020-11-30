@@ -37,6 +37,8 @@ class Demographic {
         self.totalInterested = totalInterested
     }
     
+    
+    
     func calculateAverageAgeInterested() -> String {
         let average = totalAgeInterested/totalInterested
         return String(format: "%.2f", average)
@@ -72,6 +74,9 @@ class Demographic {
         //will return array in format [malePercentage, femalePercentage, otherPercentage]
         return percentageArray
     }
+    
+    
+    
     
     func checkDocumentPresent() {
         db.collection("events").getDocuments() { (querySnapshot, err) in

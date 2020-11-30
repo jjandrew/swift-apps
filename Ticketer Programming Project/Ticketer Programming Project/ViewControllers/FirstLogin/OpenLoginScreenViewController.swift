@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class OpenLoginScreenViewController: UIViewController {
 

@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import Ticketer_Programming_Project
+import Firebase
 
 class Ticketer_Programming_ProjectTests: XCTestCase {
 
@@ -474,5 +475,19 @@ class Ticketer_Programming_ProjectTests: XCTestCase {
         event.createIdentifier()
         let expected = "TheFourSeasonsVivaldi20201211"
         XCTAssertEqual(expected, event.identifier)
+    }
+    
+    func testCanAccessDB() {
+        print("start")
+        let db = Firestore.firestore()
+        db.collection("events").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                }
+            }
+        }
     }
 }
