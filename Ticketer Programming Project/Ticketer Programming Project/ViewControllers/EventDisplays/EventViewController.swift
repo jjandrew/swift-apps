@@ -18,9 +18,20 @@ class EventViewController: UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var demographicLabel: UILabel!
     @IBOutlet var purchaseButton: UIButton!
+    @IBOutlet var totalInterestedLabel: UILabel!
+    @IBOutlet var totalAttendingLabel: UILabel!
+    @IBOutlet var averageAttendingLabel: UILabel!
+    @IBOutlet var averageInterestedLabel: UILabel!
+    @IBOutlet var maleInterestedLabel: UILabel!
+    @IBOutlet var femaleInterestedLabel: UILabel!
+    @IBOutlet var otherInterestedLabel: UILabel!
+    @IBOutlet var maleAttendingLabel: UILabel!
+    @IBOutlet var femaleAttendingLabel: UILabel!
+    @IBOutlet var otherAttendingLabel: UILabel!
     
     var event: Event!
     let sortAndSearch = SortAndSearch()
+    var demographic: Demographic? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,22 +61,47 @@ class EventViewController: UIViewController {
             } else {
                 if querySnapshot?.data() == nil {
                     print("Event not present")
-                    self.demographicLabel.text = "No Demographic Available"
                     //create new event
                     //output no events present to screen
                 } else {
                     let data = querySnapshot?.data()
                     print("Event present")
                     //create demographic instance
-                    var demographic = Demographic(event: self.event, numberFemaleInterested: data!["numberFemaleInterested"] as! Int, numberMaleInterested: data!["numberMaleInterested"] as! Int, numberOtherInterested: data!["numberOtherInterested"] as! Int, numberFemaleAttending: data!["numberFemaleAttending"] as! Int, numberMaleAttending: data!["numberMaleAttending"] as! Int, numberOtherAttending: data!["numberOtherAttending"] as! Int, totalAgeAttending: data!["totalAgeAttending"] as! Int, totalAgeInterested: data!["totalAgeInterested"] as! Int, totalAttending: data!["totalAttending"] as! Int, totalInterested: data!["totalInterested"] as! Int)
-                    self.event.demographic = demographic
-                    print(demographic.totalAgeInterested)
-                    //output values to screen
-                    //prepare to update demographic
+                    self.demographic = Demographic(event: self.event, numberFemaleInterested: data!["numberFemaleInterested"] as! Int, numberMaleInterested: data!["numberMaleInterested"] as! Int, numberOtherInterested: data!["numberOtherInterested"] as! Int, numberFemaleAttending: data!["numberFemaleAttending"] as! Int, numberMaleAttending: data!["numberMaleAttending"] as! Int, numberOtherAttending: data!["numberOtherAttending"] as! Int, totalAgeAttending: data!["totalAgeAttending"] as! Int, totalAgeInterested: data!["totalAgeInterested"] as! Int, totalAttending: data!["totalAttending"] as! Int, totalInterested: data!["totalInterested"] as! Int)
+                    self.event.demographic = self.demographic
                 }
             }
         }
         
+    }
+    
+    func updateDemographicLabels() {
+        if self.demographic == nil {
+            self.demographicLabel.text = "No Demographic available"
+            self.totalInterestedLabel.isHidden = true
+            self.totalAttendingLabel.isHidden = true
+            self.averageAttendingLabel.isHidden = true
+            self.averageInterestedLabel.isHidden = true
+        }
+        self.totalInterestedLabel.text = String(self.demographic!.totalInterested)
+
+        self.totalAttendingLabel.text = String(self.demographic!.totalAttending)
+        
+        self.averageAttendingLabel.text = String(self.demographic!.calculateAverageAgeAttending())
+        
+        self.averageInterestedLabel.text = String(self.demographic!.calculateAverageAgeInterested())
+        
+        let gendersInterested = self.demographic!.calculateInterestedPercentages()
+        self.maleInterestedLabel.text = gendersInterested[0]
+        self.femaleInterestedLabel.text = gendersInterested[1]
+        self.otherInterestedLabel.text = gendersInterested[2]
+        
+        let gendersAttending = self.demographic!.calculateAttendingPercentages()
+        self.maleAttendingLabel.text = gendersAttending[0]
+        self.femaleAttendingLabel.text = gendersAttending[1]
+        self.otherAttendingLabel.text = gendersAttending[2]
+        //output values to screen
+        //prepare to update demographic
     }
 
     @IBAction func savedAction(_ sender: Any) {

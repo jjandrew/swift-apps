@@ -989,12 +989,22 @@
                     <navigationItem key="navigationItem" title="Event" id="kR2-E3-yxP"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="averageAttendingLabel" destination="v7g-Sx-r2k" id="vxD-rw-qY0"/>
+                        <outlet property="averageInterestedLabel" destination="qx1-Aa-UsC" id="tQj-tj-Ma0"/>
                         <outlet property="dateLabel" destination="wLQ-MY-h4l" id="I0F-bq-GTw"/>
                         <outlet property="demographicLabel" destination="Bws-KE-kmw" id="89s-9c-fLr"/>
                         <outlet property="descriptionLabel" destination="CF6-rB-uhX" id="uYj-0j-EGg"/>
                         <outlet property="distanceLabel" destination="bSs-Zv-vih" id="jsU-6U-v6r"/>
+                        <outlet property="femaleAttendingLabel" destination="mVq-VF-8Z8" id="aAK-J0-773"/>
+                        <outlet property="femaleInterestedLabel" destination="jP3-I9-Ucc" id="Y3b-Xu-mja"/>
+                        <outlet property="maleAttendingLabel" destination="I02-rn-nxw" id="LUJ-vp-3yi"/>
+                        <outlet property="maleInterestedLabel" destination="FDW-It-eT7" id="gVH-K5-GFs"/>
+                        <outlet property="otherAttendingLabel" destination="Had-Wp-jrV" id="Oe7-Xv-rfD"/>
+                        <outlet property="otherInterestedLabel" destination="3vq-ob-ey4" id="suH-MJ-4An"/>
                         <outlet property="purchaseButton" destination="yRo-eZ-1De" id="cel-tb-It7"/>
                         <outlet property="savedButton" destination="EXA-j6-7yg" id="ntR-zg-8FK"/>
+                        <outlet property="totalAttendingLabel" destination="Gja-wt-TSv" id="5go-T3-PXM"/>
+                        <outlet property="totalInterestedLabel" destination="n7Y-ua-KFJ" id="C5S-eJ-d8V"/>
                         <outlet property="venueLabel" destination="zka-Dn-irH" id="aYa-0e-yYc"/>
                     </connections>
                 </viewController>
