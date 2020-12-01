@@ -109,157 +109,30 @@ class Demographic {
         }
     }
     
-    func createDocumentInterested() {
-        var ref: DocumentReference!
-        ref = Firestore.firestore().document("events/\(self.event.identifier)")
-        if profile.userGender == "Male" {
-            let data: [String: Any] = [
-                "numberFemaleInterested": 0,
-                "numberMaleInterested": 1,
-                "numberOtherInterested": 0,
-                "numberFemaleAttending": 0,
-                "numberMaleAttending": 0,
-                "numberOtherAttending": 0,
-                "totalAgeAttending": 0,
-                "totalAgeInterested": profile.userAge!,
-                "totalAttending": 0,
-                "totalInterested": 1
-            ]
-            ref.setData(data) { error in
-                if let error = error {
-                    print("Error adding document: \(error)")
-                } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                }
-            }
-        } else if profile.userGender == "Female" {
-            let data: [String: Any] = [
-                "numberFemaleInterested": 1,
-                "numberMaleInterested": 0,
-                "numberOtherInterested": 0,
-                "numberFemaleAttending": 0,
-                "numberMaleAttending": 0,
-                "numberOtherAttending": 0,
-                "totalAgeAttending": 0,
-                "totalAgeInterested": profile.userAge!,
-                "totalAttending": 0,
-                "totalInterested": 1
-            ]
-            ref.setData(data) { error in
-                if let error = error {
-                    print("Error adding document: \(error)")
-                } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                }
-            }
-        } else {
-            let data: [String: Any] = [
-                "numberFemaleInterested": 0,
-                "numberMaleInterested": 0,
-                "numberOtherInterested": 1,
-                "numberFemaleAttending": 0,
-                "numberMaleAttending": 0,
-                "numberOtherAttending": 0,
-                "totalAgeAttending": 0,
-                "totalAgeInterested": profile.userAge!,
-                "totalAttending": 0,
-                "totalInterested": 1
-            ]
-            ref.setData(data) { error in
-                if let error = error {
-                    print("Error adding document: \(error)")
-                } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                }
-            }
-        }
-        
-    }
-    
-    func createDocumentAttending() {
-        var ref: DocumentReference!
-        ref = Firestore.firestore().document("events/\(self.event.identifier)")
-        if profile.userGender == "Male" {
-            let data: [String: Any] = [
-                "numberFemaleInterested": 0,
-                "numberMaleInterested": 0,
-                "numberOtherInterested": 0,
-                "numberFemaleAttending": 0,
-                "numberMaleAttending": 1,
-                "numberOtherAttending": 0,
-                "totalAgeAttending": profile.userAge!,
-                "totalAgeInterested": 0,
-                "totalAttending": 1,
-                "totalInterested": 0
-            ]
-            ref.setData(data) { error in
-                if let error = error {
-                    print("Error adding document: \(error)")
-                } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                }
-            }
-        } else if profile.userGender == "Female" {
-            let data: [String: Any] = [
-                "numberFemaleInterested": 0,
-                "numberMaleInterested": 0,
-                "numberOtherInterested": 0,
-                "numberFemaleAttending": 1,
-                "numberMaleAttending": 0,
-                "numberOtherAttending": 0,
-                "totalAgeAttending": profile.userAge!,
-                "totalAgeInterested": 0,
-                "totalAttending": 1,
-                "totalInterested": 0
-            ]
-            ref.setData(data) { error in
-                if let error = error {
-                    print("Error adding document: \(error)")
-                } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                }
-            }
-        } else {
-            let data: [String: Any] = [
-                "numberFemaleInterested": 0,
-                "numberMaleInterested": 0,
-                "numberOtherInterested": 0,
-                "numberFemaleAttending": 0,
-                "numberMaleAttending": 0,
-                "numberOtherAttending": 1,
-                "totalAgeAttending": profile.userAge!,
-                "totalAgeInterested": 0,
-                "totalAttending": 1,
-                "totalInterested": 0
-            ]
-            ref.setData(data) { error in
-                if let error = error {
-                    print("Error adding document: \(error)")
-                } else {
-                    print("Document added with ID: \(ref!.documentID)")
-                }
-            }
-        }
-    }
-    
     func updateDocumentForSaved() {
+        let newTotalAgeInterested = totalAgeInterested + profile.userAge!
+        let newTotalInterested = totalInterested + 1
         if profile.userGender == "Male" {
+            let newMaleInterested = numberMaleInterested + 1
             db.document("events/\(self.event.identifier)").updateData([
-                "numberMaleInterested": self.numberMaleInterested += 1,
-                "totalAgeInterested": self.totalAgeInterested + profile.userAge!,
-                "totalInterested": self.totalInterested += 1
+                "numberMaleInterested": newMaleInterested,
+                "totalAgeInterested": newTotalAgeInterested,
+                "totalInterested": newTotalInterested
+
             ])
         } else if profile.userGender == "Female" {
+            let newFemaleInterested = numberFemaleInterested + 1
             db.document("events/\(self.event.identifier)").updateData([
-                "numberFemaleInterested": self.numberFemaleInterested += 1,
-                "totalAgeInterested": self.totalAgeInterested + profile.userAge!,
-                "totalInterested": self.totalInterested += 1
+                "numberFemaleInterested": newFemaleInterested,
+                "totalAgeInterested": newTotalAgeInterested,
+                "totalInterested": newTotalInterested
             ])
         } else {
+            let newOtherInterested = numberOtherInterested + 1
             db.document("events/\(self.event.identifier)").updateData([
-                "numberOterInterested": self.numberOtherInterested += 1,
-                "totalAgeInterested": self.totalAgeInterested + profile.userAge!,
-                "totalInterested": self.totalInterested += 1
+                "numberOterInterested": newOtherInterested,
+                "totalAgeInterested": newTotalAgeInterested,
+                "totalInterested": newTotalInterested
             ])
         }
     }

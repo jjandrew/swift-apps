@@ -52,11 +52,15 @@ class EventViewController: UIViewController {
         if sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).1 == true {
             savedButton.isSelected = true
         }
-        
+        readFirestore()
+    }
+    
+    func readFirestore() {
         var ref: DocumentReference!
         let db = Firestore.firestore()
-        //this will be changed to the identifier of the event
-        ref = db.document("events/testevent20201129")
+        //creation of identifier of event to be used for reference
+        self.event.createIdentifier()
+        ref = db.document("events/\(event.identifier)")
         ref.getDocument() { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")
@@ -64,9 +68,9 @@ class EventViewController: UIViewController {
                 if querySnapshot?.data() == nil {
                     print("Event not present")
                     self.demographic = nil
+                    //outputs no demographics present to screen
                     self.updateDemographicLabels()
                     //create new event
-                    //output no events present to screen
                 } else {
                     let data = querySnapshot?.data()
                     print("Event present")
@@ -76,7 +80,7 @@ class EventViewController: UIViewController {
                     self.updateDemographicLabels()
                 }
             }
-        } 
+        }
     }
     
     func updateDemographicLabels() {
@@ -140,6 +144,13 @@ class EventViewController: UIViewController {
         } else {
             savedButton.isSelected = true
             profile.savedEvents.append(event)
+            if event.demographic == nil {
+                createDocumentInterested()
+                readFirestore()
+            } else {
+                demographic?.updateDocumentForSaved()
+                updateDemographicLabels()
+            }
         }
         //saves event to local storage
         let defaults = UserDefaults.standard
@@ -167,5 +178,140 @@ class EventViewController: UIViewController {
         //opens website in safari
         let website = self.event.website[0]
         UIApplication.shared.open(URL(string: website)!)
+    }
+    
+    
+    func createDocumentInterested() {
+        var ref: DocumentReference!
+        ref = Firestore.firestore().document("events/\(self.event.identifier)")
+        if profile.userGender == "Male" {
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 1,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 0,
+                "totalAgeAttending": 0,
+                "totalAgeInterested": profile.userAge!,
+                "totalAttending": 0,
+                "totalInterested": 1
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                    self.updateDemographicLabels()
+                }
+            }
+        } else if profile.userGender == "Female" {
+            let data: [String: Any] = [
+                "numberFemaleInterested": 1,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 0,
+                "totalAgeAttending": 0,
+                "totalAgeInterested": profile.userAge!,
+                "totalAttending": 0,
+                "totalInterested": 1
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+        } else {
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 1,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 0,
+                "totalAgeAttending": 0,
+                "totalAgeInterested": profile.userAge!,
+                "totalAttending": 0,
+                "totalInterested": 1
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+        }
+        
+    }
+    
+    func createDocumentAttending() {
+        var ref: DocumentReference!
+        ref = Firestore.firestore().document("events/\(self.event.identifier)")
+        if profile.userGender == "Male" {
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 1,
+                "numberOtherAttending": 0,
+                "totalAgeAttending": profile.userAge!,
+                "totalAgeInterested": 0,
+                "totalAttending": 1,
+                "totalInterested": 0
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+        } else if profile.userGender == "Female" {
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 1,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 0,
+                "totalAgeAttending": profile.userAge!,
+                "totalAgeInterested": 0,
+                "totalAttending": 1,
+                "totalInterested": 0
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+        } else {
+            let data: [String: Any] = [
+                "numberFemaleInterested": 0,
+                "numberMaleInterested": 0,
+                "numberOtherInterested": 0,
+                "numberFemaleAttending": 0,
+                "numberMaleAttending": 0,
+                "numberOtherAttending": 1,
+                "totalAgeAttending": profile.userAge!,
+                "totalAgeInterested": 0,
+                "totalAttending": 1,
+                "totalInterested": 0
+            ]
+            ref.setData(data) { error in
+                if let error = error {
+                    print("Error adding document: \(error)")
+                } else {
+                    print("Document added with ID: \(ref!.documentID)")
+                }
+            }
+        }
     }
 }
