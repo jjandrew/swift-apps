@@ -1001,6 +1001,8 @@
                         <outlet property="maleInterestedLabel" destination="FDW-It-eT7" id="gVH-K5-GFs"/>
                         <outlet property="otherAttendingLabel" destination="Had-Wp-jrV" id="Oe7-Xv-rfD"/>
                         <outlet property="otherInterestedLabel" destination="3vq-ob-ey4" id="suH-MJ-4An"/>
+                        <outlet property="percentagesAttendingLabel" destination="W0h-ly-cRP" id="xp8-0t-512"/>
+                        <outlet property="percentagesInterestedLabel" destination="FK9-uE-cIM" id="PUW-8N-bnI"/>
                         <outlet property="purchaseButton" destination="yRo-eZ-1De" id="cel-tb-It7"/>
                         <outlet property="savedButton" destination="EXA-j6-7yg" id="ntR-zg-8FK"/>
                         <outlet property="totalAttendingLabel" destination="Gja-wt-TSv" id="5go-T3-PXM"/>
