@@ -40,23 +40,23 @@ class Demographic {
     
     
     func calculateAverageAgeInterested() -> String {
-        let average = totalAgeInterested/totalInterested
+        let average = Float(totalAgeInterested)/Float(totalInterested)
         return String(format: "%.2f", average)
     }
     
     func calculateAverageAgeAttending() -> String {
-        let average = totalAgeAttending/totalAttending
+        let average = Float(totalAgeAttending)/Float(totalAttending)
         return String(format: "%.2f", average)
     }
     
     func calculateInterestedPercentages() -> [String] {
         var percentageArray: [String] = []
         //will calculate percentage for each and make to 0 decimal places
-        let malePercentage = (numberMaleInterested/totalInterested)*100
+        let malePercentage = (Float(numberMaleInterested)/Float(totalInterested))*100
         percentageArray.append(String(format: "%.0f", malePercentage))
-        let femalePercentage = (numberFemaleInterested/totalInterested)*100
+        let femalePercentage = (Float(numberFemaleInterested)/Float(totalInterested))*100
         percentageArray.append(String(format: "%.0f", femalePercentage))
-        let otherPercentage = (numberOtherInterested/totalInterested)*100
+        let otherPercentage = (Float(numberOtherInterested)/Float(totalInterested))*100
         percentageArray.append(String(format: "%.0f", otherPercentage))
         //will return array in format [malePercentage, femalePercentage, otherPercentage]
         return percentageArray
@@ -65,15 +65,16 @@ class Demographic {
     func calculateAttendingPercentages() -> [String] {
         var percentageArray: [String] = []
         //will calculate percentage for each and make to 0 decimal places
-        let malePercentage = (numberMaleAttending/totalAttending)*100
+        let malePercentage = (Float(numberMaleAttending)/Float(totalAttending))*100
         percentageArray.append(String(format: "%.0f", malePercentage))
-        let femalePercentage = (numberFemaleAttending/totalAttending)*100
+        let femalePercentage = (Float(numberFemaleAttending)/Float(totalAttending))*100
         percentageArray.append(String(format: "%.0f", femalePercentage))
-        let otherPercentage = (numberOtherAttending/totalAttending)*100
+        let otherPercentage = (Float(numberOtherAttending)/Float(totalAttending))*100
         percentageArray.append(String(format: "%.0f", otherPercentage))
         //will return array in format [malePercentage, femalePercentage, otherPercentage]
         return percentageArray
     }
+    
     
     func checkDocumentPresent() {
         var ref: DocumentReference!
