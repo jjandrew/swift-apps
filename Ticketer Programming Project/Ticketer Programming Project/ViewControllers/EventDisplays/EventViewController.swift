@@ -64,6 +64,7 @@ class EventViewController: UIViewController {
                 if querySnapshot?.data() == nil {
                     print("Event not present")
                     self.demographic = nil
+                    self.updateDemographicLabels()
                     //create new event
                     //output no events present to screen
                 } else {
@@ -72,10 +73,10 @@ class EventViewController: UIViewController {
                     //create demographic instance
                     self.demographic = Demographic(event: self.event, numberFemaleInterested: data!["numberFemaleInterested"] as! Int, numberMaleInterested: data!["numberMaleInterested"] as! Int, numberOtherInterested: data!["numberOtherInterested"] as! Int, numberFemaleAttending: data!["numberFemaleAttending"] as! Int, numberMaleAttending: data!["numberMaleAttending"] as! Int, numberOtherAttending: data!["numberOtherAttending"] as! Int, totalAgeAttending: data!["totalAgeAttending"] as! Int, totalAgeInterested: data!["totalAgeInterested"] as! Int, totalAttending: data!["totalAttending"] as! Int, totalInterested: data!["totalInterested"] as! Int)
                     self.event.demographic = self.demographic
+                    self.updateDemographicLabels()
                 }
             }
-        }
-        
+        } 
     }
     
     func updateDemographicLabels() {
@@ -108,24 +109,24 @@ class EventViewController: UIViewController {
             self.maleAttendingLabel.isHidden = false
             self.femaleAttendingLabel.isHidden = false
             self.otherAttendingLabel.isHidden = false
-            self.totalInterestedLabel.text = String(self.demographic!.totalInterested)
+            self.totalInterestedLabel.text = "Total Users Interested: \(String(self.demographic!.totalInterested))"
 
-            self.totalAttendingLabel.text = String(self.demographic!.totalAttending)
+            self.totalAttendingLabel.text = "Total Users Attending: \(String(self.demographic!.totalAttending))"
             
-            self.averageAttendingLabel.text = String(self.demographic!.calculateAverageAgeAttending())
+            self.averageAttendingLabel.text = "Average Age Attending: \(String(self.demographic!.calculateAverageAgeAttending()))"
             
-            self.averageInterestedLabel.text = String(self.demographic!.calculateAverageAgeInterested())
+            self.averageInterestedLabel.text = "Average Age Interested: \(String(self.demographic!.calculateAverageAgeInterested()))"
             
             //order of demographic percentages is [malePercentage, femalePercentage, otherPercentage]
             let gendersInterested = self.demographic!.calculateInterestedPercentages()
-            self.maleInterestedLabel.text = gendersInterested[0]
-            self.femaleInterestedLabel.text = gendersInterested[1]
-            self.otherInterestedLabel.text = gendersInterested[2]
+            self.maleInterestedLabel.text = "Male: \(gendersInterested[0])"
+            self.femaleInterestedLabel.text = "Female: \(gendersInterested[1])"
+            self.otherInterestedLabel.text = "Other: \(gendersInterested[2])"
             
             let gendersAttending = self.demographic!.calculateAttendingPercentages()
-            self.maleAttendingLabel.text = gendersAttending[0]
-            self.femaleAttendingLabel.text = gendersAttending[1]
-            self.otherAttendingLabel.text = gendersAttending[2]
+            self.maleAttendingLabel.text = "Male: \(gendersAttending[0])"
+            self.femaleAttendingLabel.text = "Female: \(gendersAttending[1])"
+            self.otherAttendingLabel.text = "Other: \(gendersAttending[2])"
             //prepare to update demographic
         }
     }

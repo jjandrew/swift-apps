@@ -40,16 +40,25 @@ class Demographic {
     
     
     func calculateAverageAgeInterested() -> String {
+        if totalInterested == 0 {
+            return "N/A"
+        }
         let average = Float(totalAgeInterested)/Float(totalInterested)
         return String(format: "%.2f", average)
     }
     
     func calculateAverageAgeAttending() -> String {
+        if totalAttending == 0 {
+            return "N/A"
+        }
         let average = Float(totalAgeAttending)/Float(totalAttending)
         return String(format: "%.2f", average)
     }
     
     func calculateInterestedPercentages() -> [String] {
+        if totalInterested == 0 {
+            return ["N/A","N/A","N/A"]
+        }
         var percentageArray: [String] = []
         //will calculate percentage for each and make to 0 decimal places
         let malePercentage = (Float(numberMaleInterested)/Float(totalInterested))*100
@@ -63,6 +72,9 @@ class Demographic {
     }
     
     func calculateAttendingPercentages() -> [String] {
+        if totalAttending == 0 {
+            return ["N/A","N/A","N/A"]
+        }
         var percentageArray: [String] = []
         //will calculate percentage for each and make to 0 decimal places
         let malePercentage = (Float(numberMaleAttending)/Float(totalAttending))*100
