@@ -40,6 +40,7 @@ class Event: NSObject, NSCoding {
     var saved: Bool
     var website: [String]
     var identifier = ""
+    var demographic: Demographic? = nil
     
     init(eventName: String, venue: EventVenue, date: String, description: String, saved: Bool, website: [String]) {
         self.eventName = eventName

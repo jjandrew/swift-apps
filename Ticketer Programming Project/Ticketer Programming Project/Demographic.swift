@@ -79,7 +79,7 @@ class Demographic {
         var ref: DocumentReference!
         let db = Firestore.firestore()
         //this will be changed to the identifier of the event
-        ref = db.document("events/testEvent")
+        ref = db.document("events/\(self.event.identifier)")
         ref.getDocument() { (querySnapshot, error) in
             if let error = error {
                 print("Error getting documents: \(error)")

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EventViewController: UIViewController {
 
@@ -37,6 +38,30 @@ class EventViewController: UIViewController {
         """
         if sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).1 == true {
             savedButton.isSelected = true
+        }
+        
+        var ref: DocumentReference!
+        let db = Firestore.firestore()
+        //this will be changed to the identifier of the event
+        ref = db.document("events/testevent20201129")
+        ref.getDocument() { (querySnapshot, error) in
+            if let error = error {
+                print("Error getting documents: \(error)")
+            } else {
+                if querySnapshot?.data() == nil {
+                    print("Event not present")
+                    //create new event
+                    //output no events present to screen
+                } else {
+                    let data = querySnapshot?.data()
+                    print("Event present")
+                    //create demographic instance
+                    var demographic = Demographic(event: self.event, numberFemaleInterested: data!["numberFemaleInterested"] as! Int, numberMaleInterested: data!["numberNaleInterested"] as! Int, numberOtherInterested: data!["numberOtherInterested"] as! Int, numberFemaleAttending: data!["numberFemaleAttending"] as! Int, numberMaleAttending: data!["numberMaleAttending"] as! Int, numberOtherAttending: data!["numberOtherAttending"] as! Int, totalAgeAttending: data!["totalAgeAttending"] as! Int, totalAgeInterested: data!["totalAgeInterested"] as! Int, totalAttending: data!["totalAttending"] as! Int, totalInterested: data!["totalInterested"] as! Int)
+                    self.event.demographic = demographic
+                    //output values to screen
+                    //prepare to update demographic
+                }
+            }
         }
         
     }
