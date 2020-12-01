@@ -116,7 +116,7 @@ class EventViewController: UIViewController {
             
             self.averageInterestedLabel.text = String(self.demographic!.calculateAverageAgeInterested())
             
-            //order of demographic.percentages is [malePercentage, femalePercentage, otherPercentage]
+            //order of demographic percentages is [malePercentage, femalePercentage, otherPercentage]
             let gendersInterested = self.demographic!.calculateInterestedPercentages()
             self.maleInterestedLabel.text = gendersInterested[0]
             self.femaleInterestedLabel.text = gendersInterested[1]
