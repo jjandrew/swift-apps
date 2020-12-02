@@ -110,7 +110,7 @@ class Demographic {
     }
     
     func updateDocumentForSaved() {
-        //updates demographics and stores constand value to be updated
+        //updates demographics and stores constant value to be updated
         let newTotalAgeInterested = totalAgeInterested + profile.userAge!
         let newTotalInterested = totalInterested + 1
         self.totalAgeInterested += profile.userAge!
@@ -136,7 +136,7 @@ class Demographic {
             let newOtherInterested = numberOtherInterested + 1
             self.numberOtherInterested += 1
             db.document("events/\(self.event.identifier)").updateData([
-                "numberOterInterested": newOtherInterested,
+                "numberOtherInterested": newOtherInterested,
                 "totalAgeInterested": newTotalAgeInterested,
                 "totalInterested": newTotalInterested
             ])
@@ -159,7 +159,7 @@ class Demographic {
                 ])
             } else {
                 db.document("events/\(self.event.identifier)").updateData([
-                    "numberOterInterested": self.numberOtherInterested,
+                    "numberOtherInterested": self.numberOtherInterested,
                     "totalAgeInterested": self.totalAgeInterested + profile.userAge!,
                     "totalInterested": self.totalInterested -= 1
                 ])
@@ -170,23 +170,34 @@ class Demographic {
     }
     
     func updateDocumentForAttendingAdded() {
+        //updates demographics and stores constant value to be updated
+        let newTotalAgeAttending = totalAgeAttending + profile.userAge!
+        let newTotalAttending = totalAttending + 1
+        self.totalAgeAttending += profile.userAge!
+        self.totalAttending += 1
         if profile.userGender == "Male" {
+            let newMaleAttending = numberMaleAttending + 1
+            self.numberMaleAttending += 1
             db.document("events/\(self.event.identifier)").updateData([
-                "numberMaleAttending": self.numberMaleAttending += 1,
-                "totalAgeAttending": self.totalAgeAttending + profile.userAge!,
-                "totalAttending": self.totalAttending += 1
+                "numberMaleAttending": newMaleAttending,
+                "totalAgeAttending": newTotalAgeAttending,
+                "totalAttending": newTotalAttending
             ])
         } else if profile.userGender == "Female" {
+            let newFemaleAttending = numberFemaleAttending + 1
+            self.numberFemaleAttending += 1
             db.document("events/\(self.event.identifier)").updateData([
-                "numberFemaleAttending": self.numberFemaleAttending += 1,
-                "totalAgeAttending": self.totalAgeAttending + profile.userAge!,
-                "totalAttending": self.totalAttending += 1
+                "numberFemaleAttending": newFemaleAttending,
+                "totalAgeAttending": newTotalAgeAttending,
+                "totalAttending": newTotalAttending
             ])
         } else {
+            let newOtherAttending = numberOtherAttending + 1
+            self.numberOtherAttending += 1
             db.document("events/\(self.event.identifier)").updateData([
-                "numberOterAttending": self.numberOtherAttending += 1,
-                "totalAgeAttending": self.totalAgeAttending + profile.userAge!,
-                "totalAttending": self.totalAttending += 1
+                "numberOtherAttending": newOtherAttending,
+                "totalAgeAttending": newTotalAgeAttending,
+                "totalAttending": newTotalAttending
             ])
         }
     }
@@ -207,7 +218,7 @@ class Demographic {
                 ])
             } else {
                 db.document("events/\(self.event.identifier)").updateData([
-                    "numberOterAttending": self.numberOtherAttending,
+                    "numberOtherAttending": self.numberOtherAttending,
                     "totalAgeAttending": self.totalAgeAttending + profile.userAge!,
                     "totalAttending": self.totalAttending -= 1
                 ])

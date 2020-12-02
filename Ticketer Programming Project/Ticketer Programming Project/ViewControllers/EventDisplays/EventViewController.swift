@@ -166,6 +166,13 @@ class EventViewController: UIViewController {
         //checks event is present in attending events
         if sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: event).1 == false {
             profile.attendingEvents.append(event)
+            if event.demographic == nil {
+                createDocumentAttending()
+                readFirestore()
+            } else {
+                demographic?.updateDocumentForAttendingAdded()
+                updateDemographicLabels()
+            }
         }
         //stores profile in local storage
         let defaults = UserDefaults.standard
