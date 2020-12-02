@@ -110,18 +110,23 @@ class Demographic {
     }
     
     func updateDocumentForSaved() {
+        //updates demographics and stores constand value to be updated
         let newTotalAgeInterested = totalAgeInterested + profile.userAge!
         let newTotalInterested = totalInterested + 1
+        self.totalAgeInterested += profile.userAge!
+        self.totalInterested += 1
+        //checks user gender in order to make sure correct values are updated
         if profile.userGender == "Male" {
             let newMaleInterested = numberMaleInterested + 1
+            self.numberMaleInterested += 1
             db.document("events/\(self.event.identifier)").updateData([
                 "numberMaleInterested": newMaleInterested,
                 "totalAgeInterested": newTotalAgeInterested,
                 "totalInterested": newTotalInterested
-
             ])
         } else if profile.userGender == "Female" {
             let newFemaleInterested = numberFemaleInterested + 1
+            self.numberFemaleInterested += 1
             db.document("events/\(self.event.identifier)").updateData([
                 "numberFemaleInterested": newFemaleInterested,
                 "totalAgeInterested": newTotalAgeInterested,
@@ -129,6 +134,7 @@ class Demographic {
             ])
         } else {
             let newOtherInterested = numberOtherInterested + 1
+            self.numberOtherInterested += 1
             db.document("events/\(self.event.identifier)").updateData([
                 "numberOterInterested": newOtherInterested,
                 "totalAgeInterested": newTotalAgeInterested,
