@@ -166,6 +166,7 @@ class EventViewController: UIViewController {
         //checks event is present in attending events
         if sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: event).1 == false {
             profile.attendingEvents.append(event)
+            //adds event to demographic
             if event.demographic == nil {
                 createDocumentAttending()
                 readFirestore()
