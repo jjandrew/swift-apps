@@ -98,6 +98,20 @@ class EventViewController: UIViewController {
             self.maleAttendingLabel.isHidden = true
             self.femaleAttendingLabel.isHidden = true
             self.otherAttendingLabel.isHidden = true
+        } else if (self.demographic?.totalInterested == 0) && (self.demographic?.totalAttending == 0) {
+            self.demographicLabel.text = "No Demographic available"
+            self.totalInterestedLabel.isHidden = true
+            self.totalAttendingLabel.isHidden = true
+            self.averageAttendingLabel.isHidden = true
+            self.averageInterestedLabel.isHidden = true
+            self.percentagesInterestedLabel.isHidden = true
+            self.maleInterestedLabel.isHidden = true
+            self.femaleInterestedLabel.isHidden = true
+            self.otherInterestedLabel.isHidden = true
+            self.percentagesAttendingLabel.isHidden = true
+            self.maleAttendingLabel.isHidden = true
+            self.femaleAttendingLabel.isHidden = true
+            self.otherAttendingLabel.isHidden = true
         } else {
             //output values to screen
             self.demographicLabel.text = "Demographics:"
@@ -141,6 +155,8 @@ class EventViewController: UIViewController {
             //checks location of event in savedEvents
             profile.savedEvents.remove(at: sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).0!)
             savedButton.isSelected = false
+            demographic?.updateDocumentForUnsaved()
+            updateDemographicLabels()
         } else {
             savedButton.isSelected = true
             profile.savedEvents.append(event)

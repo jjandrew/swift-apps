@@ -60,8 +60,16 @@ class Event: NSObject, NSCoding {
     func createIdentifier() {
         identifier = ""
         self.dateIntConversion()
+        //splits array around space in name
         let nameArray = self.eventName.split(separator: " ")
         for name in nameArray {
+            identifier += name
+        }
+        //removes any / from string which would cause an error in firestore
+        let tempIdentifier = identifier
+        identifier = ""
+        let secondNameArray = tempIdentifier.split(separator: "/")
+        for name in secondNameArray {
             identifier += name
         }
         identifier += String(self.dateInt)
