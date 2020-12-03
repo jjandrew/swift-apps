@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AttendingEventsTableViewController: UITableViewController {
 
@@ -66,6 +67,34 @@ class AttendingEventsTableViewController: UITableViewController {
         //deletes cell for swipe action
         if editingStyle == .delete {
             let sortAndSearch = SortAndSearch()
+            //delete from demographics
+            var ref: DocumentReference!
+            let db = Firestore.firestore()
+            var demographic: Demographic? = nil
+            //creation of identifier of event to be used for reference
+            let position = sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: events[indexPath.row]).0!
+            profile.attendingEvents[position].createIdentifier()
+            let event = profile.attendingEvents[position]
+            //reads demographic from firestore
+            ref = db.document("events/\(event.identifier)")
+            ref.getDocument() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    if querySnapshot?.data() == nil {
+                        print("Event not present so cant be removed")
+                        demographic = nil
+                    } else {
+                        let data = querySnapshot?.data()
+                        print("Event present")
+                        //create demographic instance
+                        demographic = Demographic(event: event, numberFemaleInterested: data!["numberFemaleInterested"] as! Int, numberMaleInterested: data!["numberMaleInterested"] as! Int, numberOtherInterested: data!["numberOtherInterested"] as! Int, numberFemaleAttending: data!["numberFemaleAttending"] as! Int, numberMaleAttending: data!["numberMaleAttending"] as! Int, numberOtherAttending: data!["numberOtherAttending"] as! Int, totalAgeAttending: data!["totalAgeAttending"] as! Int, totalAgeInterested: data!["totalAgeInterested"] as! Int, totalAttending: data!["totalAttending"] as! Int, totalInterested: data!["totalInterested"] as! Int)
+                        event.demographic = demographic
+                        //unsaves document
+                        event.demographic?.updateDocumentForAttendingRemoved()
+                    }
+                }
+            }
             profile.attendingEvents.remove(at: sortAndSearch.eventLinearSearch(events: profile.attendingEvents, searchEvent: events[indexPath.row]).0!)
             self.events = profile.attendingEvents
             tableView.reloadData()
