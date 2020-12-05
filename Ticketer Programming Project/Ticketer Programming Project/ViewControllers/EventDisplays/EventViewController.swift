@@ -30,6 +30,7 @@ class EventViewController: UIViewController {
     @IBOutlet var maleAttendingLabel: UILabel!
     @IBOutlet var femaleAttendingLabel: UILabel!
     @IBOutlet var otherAttendingLabel: UILabel!
+    @IBOutlet var eventNameLabel: UILabel!
     
     var event: Event!
     let sortAndSearch = SortAndSearch()
@@ -41,6 +42,7 @@ class EventViewController: UIViewController {
         savedButton.setImage(UIImage(systemName: "bookmark.fill"), for: .selected)
         savedButton.setImage(UIImage(systemName: "bookmark"), for: .normal)
         navigationItem.title = event.eventName
+        eventNameLabel.text = event.eventName
         dateLabel.text = event.date
         descriptionLabel.text = event.summary
         venueLabel.text = """
