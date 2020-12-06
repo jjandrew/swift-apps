@@ -922,8 +922,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXA-j6-7yg">
-                                <rect key="frame" x="376" y="58" width="18" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <rect key="frame" x="376" y="58" width="18" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" image="bookmark" catalog="system"/>
                                 <connections>
                                     <action selector="savedAction:" destination="wBK-RE-QdD" eventType="touchUpInside" id="oLz-mE-aOZ"/>
@@ -943,6 +943,12 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Attending: Integer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gja-wt-TSv">
                                 <rect key="frame" x="20" y="329.5" width="178" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Age Attending: Float" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7g-Sx-r2k">
+                                <rect key="frame" x="20" y="391.5" width="221" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1013,18 +1019,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Average Age Attending: Float" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v7g-Sx-r2k">
-                                <rect key="frame" x="20" y="391.5" width="221" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fbq-bW-O9H">
+                                <rect key="frame" x="375" y="92" width="19" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
+                                <connections>
+                                    <action selector="shareAction:" destination="wBK-RE-QdD" eventType="touchUpInside" id="T5n-wv-3Jd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="c9G-Rs-RrT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fbq-bW-O9H" firstAttribute="centerY" secondItem="wLQ-MY-h4l" secondAttribute="centerY" id="2lJ-S8-Bji"/>
                             <constraint firstItem="c9G-Rs-RrT" firstAttribute="bottom" secondItem="yRo-eZ-1De" secondAttribute="bottom" id="4Uk-I8-Dfv"/>
                             <constraint firstItem="d4p-YD-sBZ" firstAttribute="leading" secondItem="c9G-Rs-RrT" secondAttribute="leading" constant="20" id="6WV-LX-gQ7"/>
+                            <constraint firstItem="c9G-Rs-RrT" firstAttribute="trailing" secondItem="fbq-bW-O9H" secondAttribute="trailing" constant="20" id="6Zv-qI-eEQ"/>
                             <constraint firstItem="FDW-It-eT7" firstAttribute="top" secondItem="FK9-uE-cIM" secondAttribute="bottom" constant="5" id="6jU-j9-7oM"/>
                             <constraint firstItem="EXA-j6-7yg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="MpO-LB-ZQC" secondAttribute="trailing" constant="15" id="9bq-DP-u5D"/>
                             <constraint firstItem="FK9-uE-cIM" firstAttribute="top" secondItem="v7g-Sx-r2k" secondAttribute="bottom" constant="15" id="AXJ-aL-6Lf"/>
@@ -1044,6 +1054,7 @@
                             <constraint firstItem="d4p-YD-sBZ" firstAttribute="top" secondItem="JZ2-sy-D2x" secondAttribute="bottom" constant="15" id="ONA-yA-AcW"/>
                             <constraint firstItem="wLQ-MY-h4l" firstAttribute="centerY" secondItem="JZ2-sy-D2x" secondAttribute="centerY" id="QFX-9v-Ore"/>
                             <constraint firstItem="Gja-wt-TSv" firstAttribute="leading" secondItem="c9G-Rs-RrT" secondAttribute="leading" constant="20" id="QpF-Ac-iAT"/>
+                            <constraint firstItem="fbq-bW-O9H" firstAttribute="top" secondItem="EXA-j6-7yg" secondAttribute="bottom" constant="-2" id="Spt-CE-OKB"/>
                             <constraint firstItem="n7Y-ua-KFJ" firstAttribute="top" secondItem="Bws-KE-kmw" secondAttribute="bottom" constant="15" id="Vvq-bs-PSk"/>
                             <constraint firstItem="Bws-KE-kmw" firstAttribute="top" secondItem="CF6-rB-uhX" secondAttribute="bottom" constant="34" id="WaU-xn-Kgf"/>
                             <constraint firstItem="zka-Dn-irH" firstAttribute="leading" secondItem="d4p-YD-sBZ" secondAttribute="trailing" constant="23" id="Ws5-fy-qtE"/>
@@ -1497,6 +1508,7 @@
         <image name="bookmark" catalog="system" width="112" height="128"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="linkColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

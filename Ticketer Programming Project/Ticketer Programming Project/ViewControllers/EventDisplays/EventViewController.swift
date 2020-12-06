@@ -343,4 +343,11 @@ class EventViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func shareAction(_ sender: Any) {
+        let items = [URL(string: event.website[0])!]
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
+    }
+    
 }
