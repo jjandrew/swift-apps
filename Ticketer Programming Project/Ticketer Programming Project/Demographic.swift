@@ -147,8 +147,8 @@ class Demographic {
         let newTotalAgeInterested = totalAgeInterested - profile.userAge!
         let newTotalInterested = totalInterested - 1
         self.totalAgeInterested -= profile.userAge!
-        self.totalInterested -= 1
         if self.totalInterested > 0 {
+            self.totalInterested -= 1
             if profile.userGender == "Male" {
                 let newMaleInterested = numberMaleInterested - 1
                 self.numberMaleInterested -= 1
@@ -220,11 +220,11 @@ class Demographic {
     
     func updateDocumentForAttendingRemoved() {
         //updates demographics and stores constant value to be updated
-        let newTotalAgeAttending = totalAgeAttending + profile.userAge!
-        let newTotalAttending = totalAttending + 1
-        self.totalAgeAttending += profile.userAge!
-        self.totalAttending += 1
+        let newTotalAgeAttending = totalAgeAttending - profile.userAge!
+        let newTotalAttending = totalAttending - 1
+        self.totalAgeAttending -= profile.userAge!
         if self.totalAttending > 0 {
+            self.totalAttending -= 1
             if profile.userGender == "Male" {
                 let newMaleAttending = numberMaleAttending - 1
                 self.numberMaleAttending -= 1

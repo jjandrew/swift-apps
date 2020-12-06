@@ -54,6 +54,9 @@ class EventViewController: UIViewController {
         if sortAndSearch.eventLinearSearch(events: profile.savedEvents, searchEvent: event).1 == true {
             savedButton.isSelected = true
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         readFirestore()
     }
     

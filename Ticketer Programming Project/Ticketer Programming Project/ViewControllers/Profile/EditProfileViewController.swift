@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EditProfileViewController: UIViewController {
 
@@ -113,10 +114,80 @@ class EditProfileViewController: UIViewController {
     
     
     @IBAction func maleButton(_ sender: Any) {
+        /*
+        //stores the original value of the user's gender
+        let originalGender = profile.userGender
+        for event in profile.savedEvents {
+            var ref: DocumentReference!
+            let db = Firestore.firestore()
+            var demographic: Demographic? = nil
+            //creation of identifier of event to be used for reference
+            event.createIdentifier()
+            //reads demographic from firestore
+            ref = db.document("events/\(event.identifier)")
+            ref.getDocument() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    if querySnapshot?.data() == nil {
+                        print("Event not present so cant be removed")
+                        demographic = nil
+                    } else {
+                        let data = querySnapshot?.data()
+                        print("Event present")
+                        //create demographic instance
+                        demographic = Demographic(event: event, numberFemaleInterested: data!["numberFemaleInterested"] as! Int, numberMaleInterested: data!["numberMaleInterested"] as! Int, numberOtherInterested: data!["numberOtherInterested"] as! Int, numberFemaleAttending: data!["numberFemaleAttending"] as! Int, numberMaleAttending: data!["numberMaleAttending"] as! Int, numberOtherAttending: data!["numberOtherAttending"] as! Int, totalAgeAttending: data!["totalAgeAttending"] as! Int, totalAgeInterested: data!["totalAgeInterested"] as! Int, totalAttending: data!["totalAttending"] as! Int, totalInterested: data!["totalInterested"] as! Int)
+                        event.demographic = demographic
+                        //unsaves document
+                        event.demographic?.updateDocumentForUnsaved()
+                        //updates gender and adds document
+                        profile.userGender = "Male"
+                        event.demographic?.updateDocumentForSaved()
+                        //reverts user gender back to original value
+                        profile.userGender = originalGender
+                    }
+                }
+            }
+        }
+        for event in profile.attendingEvents {
+            var ref: DocumentReference!
+            let db = Firestore.firestore()
+            var demographic: Demographic? = nil
+            //creation of identifier of event to be used for reference
+            event.createIdentifier()
+            //reads demographic from firestore
+            ref = db.document("events/\(event.identifier)")
+            ref.getDocument() { (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                } else {
+                    if querySnapshot?.data() == nil {
+                        print("Event not present so cant be removed")
+                        demographic = nil
+                    } else {
+                        let data = querySnapshot?.data()
+                        print("Event present")
+                        //create demographic instance
+                        demographic = Demographic(event: event, numberFemaleInterested: data!["numberFemaleInterested"] as! Int, numberMaleInterested: data!["numberMaleInterested"] as! Int, numberOtherInterested: data!["numberOtherInterested"] as! Int, numberFemaleAttending: data!["numberFemaleAttending"] as! Int, numberMaleAttending: data!["numberMaleAttending"] as! Int, numberOtherAttending: data!["numberOtherAttending"] as! Int, totalAgeAttending: data!["totalAgeAttending"] as! Int, totalAgeInterested: data!["totalAgeInterested"] as! Int, totalAttending: data!["totalAttending"] as! Int, totalInterested: data!["totalInterested"] as! Int)
+                        event.demographic = demographic
+                        //unsaves document
+                        event.demographic?.updateDocumentForAttendingRemoved()
+                        //changes gender and adds event
+                        profile.userGender = "Male"
+                        event.demographic?.updateDocumentForAttendingAdded()
+                        //changes gender back to original
+                        profile.userGender = originalGender
+                    }
+                }
+            }
+        }
+ */
         profile.userGender = "Male"
         let alert = UIAlertController(title: "Gender changed to Male", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
+        //cycles through all events in saved and attending events
+        
     }
     
     @IBAction func femaleButton(_ sender: Any) {
