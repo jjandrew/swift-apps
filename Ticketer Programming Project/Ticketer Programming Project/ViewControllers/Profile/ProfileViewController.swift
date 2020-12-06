@@ -24,6 +24,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet var attendingMoreButton: UIButton!
     @IBOutlet var previousAttendingEvent: UIButton!
     @IBOutlet var nextAttendingEvent: UIButton!
+    @IBOutlet var singleEventInterestedLabel: UILabel!
+    @IBOutlet var singleEventAttendingLabel: UILabel!
     
     
     var savedIndex = 0
@@ -92,7 +94,11 @@ class ProfileViewController: UIViewController {
     
     func displaySavedEvents(index: Int) {
         //sets values of events display on vc
+        //Two or more events present
         if profile.savedEvents.count > index+1 {
+            singleEventInterestedLabel.isHidden = true
+            leftHandInterestedEvent.isHidden = false
+            rightHandInterestedEvent.isHidden = false
             leftHandInterestedEvent.text = """
             \(profile.savedEvents[index].eventName)
             
@@ -108,37 +114,25 @@ class ProfileViewController: UIViewController {
             
             \(profile.savedEvents[index+1].date)
             """
+        //One event present
         } else if profile.savedEvents.count > index {
-            leftHandInterestedEvent.text = """
+            singleEventInterestedLabel.isHidden = false
+            leftHandInterestedEvent.isHidden = true
+            rightHandInterestedEvent.isHidden = true
+            singleEventInterestedLabel.text = """
             \(profile.savedEvents[index].eventName)
             
             \(profile.savedEvents[index].venue.name)
             
             \(profile.savedEvents[index].date)
             """
-            
-            rightHandInterestedEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
-            """
+        //No events present
         } else {
-            leftHandInterestedEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
-            """
-            
-            rightHandInterestedEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
+            singleEventInterestedLabel.isHidden = false
+            leftHandInterestedEvent.isHidden = true
+            rightHandInterestedEvent.isHidden = true
+            singleEventInterestedLabel.text = """
+            Save events to display them here!
             """
         }
         //possibility handling of number of events
@@ -155,7 +149,11 @@ class ProfileViewController: UIViewController {
     }
     
     func displayAttendingEvents(index: Int) {
+        //Two or more events present
         if profile.attendingEvents.count > index+1 {
+            singleEventAttendingLabel.isHidden = true
+            leftHandAttendingEvent.isHidden = false
+            rightHandAttendingEvent.isHidden = false
             leftHandAttendingEvent.text = """
             \(profile.attendingEvents[index].eventName)
             
@@ -171,37 +169,26 @@ class ProfileViewController: UIViewController {
             
             \(profile.attendingEvents[index+1].date)
             """
+        //One event present
         } else if profile.attendingEvents.count > index {
-            leftHandAttendingEvent.text = """
+            singleEventAttendingLabel.isHidden = false
+            leftHandAttendingEvent.isHidden = true
+            rightHandAttendingEvent.isHidden = true
+            singleEventAttendingLabel.text = """
             \(profile.attendingEvents[index].eventName)
             
             \(profile.attendingEvents[index].venue.name)
             
             \(profile.attendingEvents[index].date)
             """
-            
-            rightHandAttendingEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
-            """
+        
+        //No event present
         } else {
-            leftHandAttendingEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
-            """
-            
-            rightHandAttendingEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
+            singleEventAttendingLabel.isHidden = false
+            leftHandAttendingEvent.isHidden = true
+            rightHandAttendingEvent.isHidden = true
+            singleEventAttendingLabel.text = """
+            Purchase events to display them here!
             """
         }
         //possibility handiling of number of events

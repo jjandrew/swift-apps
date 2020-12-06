@@ -26,6 +26,9 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var rightHandAttendingEvent: UILabel!
     @IBOutlet var previousAttendingEvent: UIButton!
     @IBOutlet var nextAttendingEvent: UIButton!
+    @IBOutlet var singleEventInterestedLabel: UILabel!
+    @IBOutlet var singleEventAttendingLabel: UILabel!
+    
     
     var searchEntry: String = ""
     var events: [Event] = []
@@ -173,9 +176,12 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    
     func displaySavedEvents(index: Int) {
+        //Displays if more than 1 event is present
         if profile.savedEvents.count > index+1 {
+            singleEventInterestedLabel.isHidden = true
+            leftHandInterestedEvent.isHidden = false
+            rightHandInterestedEvent.isHidden = false
             leftHandInterestedEvent.text = """
             \(profile.savedEvents[index].eventName)
             
@@ -191,38 +197,27 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
             
             \(profile.savedEvents[index+1].date)
             """
+        //Displays if only one event is present
         } else if profile.savedEvents.count > index {
-            leftHandInterestedEvent.text = """
+            singleEventInterestedLabel.isHidden = false
+            leftHandInterestedEvent.isHidden = true
+            rightHandInterestedEvent.isHidden = true
+            singleEventInterestedLabel.text = """
             \(profile.savedEvents[index].eventName)
             
             \(profile.savedEvents[index].venue.name)
             
             \(profile.savedEvents[index].date)
             """
-            
-            rightHandInterestedEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
-            """
+        //Displays message to user if the have no saved events.
         } else {
-            leftHandInterestedEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
+            singleEventInterestedLabel.isHidden = false
+            leftHandInterestedEvent.isHidden = true
+            rightHandInterestedEvent.isHidden = true
+            singleEventInterestedLabel.text = """
+            Save events to display them here!
             """
-            
-            rightHandInterestedEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
-            """
+
         }
         if index == 0 {
             previousInterestedEvent.isEnabled = false
@@ -237,7 +232,11 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func displayAttendingEvents(index: Int) {
+        //Displays if more than 1 event is present
         if profile.attendingEvents.count > index+1 {
+            singleEventAttendingLabel.isHidden = true
+            leftHandAttendingEvent.isHidden = false
+            rightHandAttendingEvent.isHidden = false
             leftHandAttendingEvent.text = """
             \(profile.attendingEvents[index].eventName)
             
@@ -253,37 +252,25 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
             
             \(profile.attendingEvents[index+1].date)
             """
+        //Displays if only one event is present
         } else if profile.attendingEvents.count > index {
-            leftHandAttendingEvent.text = """
+            singleEventAttendingLabel.isHidden = false
+            leftHandAttendingEvent.isHidden = true
+            rightHandAttendingEvent.isHidden = true
+            singleEventAttendingLabel.text = """
             \(profile.attendingEvents[index].eventName)
             
             \(profile.attendingEvents[index].venue.name)
             
             \(profile.attendingEvents[index].date)
             """
-            
-            rightHandAttendingEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
-            """
+        //Displays message to user if they have no saved events.
         } else {
-            leftHandAttendingEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
-            """
-            
-            rightHandAttendingEvent.text = """
-            Event Name
-            
-            Venue
-            
-            Date
+            singleEventAttendingLabel.isHidden = false
+            leftHandAttendingEvent.isHidden = true
+            rightHandAttendingEvent.isHidden = true
+            singleEventAttendingLabel.text = """
+            Purchase events to display them here!
             """
         }
         if index == 0 {
