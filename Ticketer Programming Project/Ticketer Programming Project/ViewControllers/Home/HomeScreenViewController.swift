@@ -110,6 +110,7 @@ class HomeScreenViewController: UIViewController, CLLocationManagerDelegate {
                                 fatalError("Could not load view controller from storyboard")
                             }
                             viewController.events = events
+                            viewController.searchTerm = self.searchEntry
                             self.navigationController?.pushViewController(viewController, animated: true)
                         }
                     }

@@ -13,6 +13,7 @@ class SearchViewController: UITableViewController {
     var events: [Event] = []
     let sortAndSearch = SortAndSearch()
     @IBOutlet var sortOutlet: UIButton!
+    var searchTerm = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class SearchViewController: UITableViewController {
         self.events = sortAndSearch.checkEventsAreDifferent(events: events)
         tableView.reloadData()
         sortOutlet.setTitle("Sort By Date", for: .normal)
+        navigationItem.title = searchTerm
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

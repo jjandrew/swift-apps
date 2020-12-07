@@ -45,6 +45,7 @@ class LocationSearchViewController: UIViewController {
                                 fatalError("Could not load view controller from storyboard")
                             }
                             viewController.events = events
+                            viewController.searchTerm = searchEntry
                             self.navigationController?.pushViewController(viewController, animated: true)
                         }
                     }
@@ -73,6 +74,7 @@ class LocationSearchViewController: UIViewController {
                         fatalError("Could not load view controller from storyboard")
                     }
                     viewController.events = events
+                    viewController.searchTerm = "\(profile.userLocation!)"
                     self.navigationController?.pushViewController(viewController, animated: true)
                 }
             }
